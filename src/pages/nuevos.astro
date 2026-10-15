@@ -4,6 +4,6 @@ const dias = Object.entries(casos.reduce((a,c)=>((a[c.publicado]??=[]).push(c),a
 const fmt = d => new Date(d).toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
 ---
 <Base title="Casos nuevos" description="Los últimos casos reales de IA para autónomos y pymes en España, por fecha de publicación.">
-<h1>Casos nuevos</h1><p>Cada día buscamos casos reales en español y publicamos solo los que tienen fuente comprobable. Ordenados por fecha de alta en CasosIA.</p>
+<h1>Casos nuevos</h1><p>Cada día buscamos casos reales en español y publicamos solo los que tienen fuente comprobable. Ordenados por fecha de alta en CasosAgentes.</p>
 {dias.map(([d,cs])=><><h2>{fmt(d)} · {cs.length} casos</h2><Lista casos={cs} sponsorAt={99} /></>)}
 </Base>

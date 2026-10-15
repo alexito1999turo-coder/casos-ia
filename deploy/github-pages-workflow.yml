@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # Para dominio propio: define variables de repo SITE_URL=https://casosia.es y BASE_PATH=/ y añade public/CNAME
+      # Para dominio propio: define variables de repo SITE_URL=https://casosagentes.es y BASE_PATH=/ y añade public/CNAME
       - uses: withastro/action@v3
         env:
           SITE_URL: ${{ vars.SITE_URL }}

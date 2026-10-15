@@ -2,9 +2,9 @@
 import Base from '../layouts/Base.astro'; import casos from '../data/casos.json'; import { u, MIN_INDEX } from '../data/meta.js';
 const prov = casos.filter(c=>c.fuenteTipo==='proveedor').length;
 ---
-<Base title="Metodología: cómo elegimos y verificamos casos" description="Cómo CasosIA selecciona, verifica y publica casos reales de agentes de IA en autónomos y pymes españolas: fuentes, cifras, prompts y correcciones." crumbs={[{name:'Metodología'}]}>
+<Base title="Metodología: cómo elegimos y verificamos casos" description="Cómo CasosAgentes selecciona, verifica y publica casos reales de agentes de IA en autónomos y pymes españolas: fuentes, cifras, prompts y correcciones." crumbs={[{name:'Metodología'}]}>
 <h1>Metodología</h1>
-<p>CasosIA es un directorio editorial de casos reales de agentes e IA aplicada en autónomos y pymes de España. Este texto explica qué publicamos, qué comprobamos y qué no.</p>
+<p>CasosAgentes es un directorio editorial de casos reales de agentes e IA aplicada en autónomos y pymes de España. Este texto explica qué publicamos, qué comprobamos y qué no.</p>
 <h2>Qué entra en el directorio</h2>
 <ul><li>Casos de negocios que operan en España (o con clientes españoles) y con un uso concreto de IA o de agentes.</li><li>Cada caso debe tener una fuente pública enlazable: prensa, blog o web del proveedor, o una publicación en redes sociales del propio autor.</li><li>Descartamos casos sin fuente accesible, con enlace roto o sin un negocio identificable.</li></ul>
 <h2>Qué verificamos</h2>
@@ -12,7 +12,7 @@ const prov = casos.filter(c=>c.fuenteTipo==='proveedor').length;
 <h2>Qué no verificamos</h2>
 <p>No auditamos los resultados de forma independiente. Ahora mismo {prov} de {casos.length} casos están publicados por el propio proveedor o agencia, y la ficha lo indica siempre con "según…". Léelos como casos de éxito comerciales, no como estudios.</p>
 <h2>Prompts y notas para España</h2>
-<p>Los prompts los redacta CasosIA para que puedas replicar el caso; no proceden de la fuente. Las notas sobre Hacienda, Verifactu, RGPD, WhatsApp Business o Kit Digital son orientativas y no constituyen asesoramiento legal ni fiscal.</p>
+<p>Los prompts los redacta CasosAgentes para que puedas replicar el caso; no proceden de la fuente. Las notas sobre Hacienda, Verifactu, RGPD, WhatsApp Business o Kit Digital son orientativas y no constituyen asesoramiento legal ni fiscal.</p>
 <h2>Actualización y correcciones</h2>
 <p>El directorio se actualiza a diario. Cada ficha muestra su fecha de publicación. Las páginas de sector, tarea, ciudad o herramienta con menos de {MIN_INDEX} casos no se indexan en buscadores hasta que tengan contenido suficiente. Si ves un error o eres el autor de un caso, <a href={u('/enviar-caso')}>escríbenos</a> y lo corregimos.</p>
 <h2>Patrocinios</h2>
