@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+const planes=[['Ficha destacada','Tu caso o herramienta destacada en la home y en su categoría durante 30 días.','desde 149 €/mes (ejemplo)'],['Patrocinio de categoría','Logo y mensaje en una categoría (p. ej. Hostelería) y en sus fichas.','desde 299 €/mes (ejemplo)'],['Newsletter','Bloque patrocinado en un envío de la newsletter semanal.','desde 99 €/envío (ejemplo)']];
+---
+<Base title="Patrocinar" description="Llega a autónomos y pymes españolas interesadas en IA.">
+<h1>Patrocina CasosIA</h1><p>Llega a autónomos y pymes españolas que buscan aplicar IA. Los patrocinios siempre se marcan como tales y no alteran los criterios editoriales.</p>
+<div class="grid">{planes.map(([t,d,p])=><div class="card"><h3>{t}</h3><p>{d}</p><strong>{p}</strong></div>)}</div>
+<p><em>Precios orientativos. Pagos aún no activos: escríbenos desde <a href="/enviar-caso">el formulario</a> indicando "Patrocinio".</em></p>
+</Base>

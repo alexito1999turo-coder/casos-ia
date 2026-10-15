@@ -1,0 +1,8 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Newsletter" description="Un email a la semana con los nuevos casos reales de IA para pymes.">
+<h1>Newsletter semanal</h1><p>Cada semana, los nuevos casos reales con su prompt listo para copiar. Sin spam.</p>
+<form onsubmit="event.preventDefault();this.innerHTML='<p>¡Gracias! La newsletter arranca pronto (formulario de prueba, aún no guardamos emails).</p>'" style="max-width:420px;display:grid;gap:10px">
+<input type="email" required placeholder="tu@email.com" aria-label="Email"><label><input type="checkbox" required style="width:auto"> Acepto la política de privacidad</label><button>Suscribirme</button></form>
+</Base>

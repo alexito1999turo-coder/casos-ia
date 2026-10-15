@@ -1,0 +1,31 @@
+---
+import { SITE } from '../data/meta.js';
+const { title, description = SITE.desc, jsonld } = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const full = title ? `${title} | ${SITE.nombre}` : `${SITE.nombre} · Casos reales de IA para autónomos y pymes`;
+---
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{full}</title><meta name="description" content={description}><link rel="canonical" href={canonical}>
+<meta property="og:title" content={full}><meta property="og:description" content={description}><meta property="og:type" content="website"><meta property="og:url" content={canonical}><meta property="og:locale" content="es_ES">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+{jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+<style is:global>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#1a1a2e;background:#f7f7fb;line-height:1.55}
+a{color:#4338ca}header,footer{background:#1a1a2e;color:#fff}header a,footer a{color:#fff;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}nav{display:flex;gap:18px;align-items:center;padding:14px 0;flex-wrap:wrap}
+.logo{font-weight:800;font-size:1.3rem;margin-right:auto}.logo span{color:#facc15}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:#fff;border:1px solid #e5e5ef;border-radius:12px;padding:18px}.card h3{margin:.3rem 0;font-size:1.05rem}
+.tag{display:inline-block;background:#eef2ff;color:#3730a3;border-radius:99px;padding:2px 10px;font-size:.78rem;margin:0 4px 4px 0}
+.res{background:#ecfdf5;border-left:4px solid #10b981;padding:8px 12px;border-radius:6px;font-size:.92rem}
+.res.none{background:#fff7ed;border-color:#f59e0b}
+pre{white-space:pre-wrap;background:#0f172a;color:#e2e8f0;padding:16px;border-radius:10px;font-size:.9rem}
+button,.btn{background:#4338ca;color:#fff;border:0;border-radius:8px;padding:9px 16px;cursor:pointer;font-size:.95rem;text-decoration:none;display:inline-block}
+input,select,textarea{padding:9px;border:1px solid #ccc;border-radius:8px;font-size:.95rem;width:100%}
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;margin:16px 0}@media(max-width:700px){.filters{grid-template-columns:1fr}}
+main{padding:24px 0 48px}footer{padding:24px 0;font-size:.85rem}.hero{padding:28px 0 8px}.hero h1{font-size:2rem;margin:0}
+</style></head><body>
+<header><div class="wrap"><nav><a class="logo" href="/">Casos<span>IA</span></a><a href="/categorias">Categorías</a><a href="/enviar-caso">Enviar caso</a><a href="/newsletter">Newsletter</a><a href="/patrocinar">Patrocinar</a><a href="/sobre">Sobre</a></nav></div></header>
+<main class="wrap"><slot /></main>
+<footer><div class="wrap">CasosIA · Casos reales de IA para autónomos y pymes en España. Las cifras son las que publica cada fuente; no las verificamos de forma independiente. · <a href="/llms.txt">llms.txt</a> · <a href="/sitemap-index.xml">sitemap</a></div></footer>
+</body></html>

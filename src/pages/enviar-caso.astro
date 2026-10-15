@@ -1,0 +1,8 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Enviar un caso" description="Comparte un caso real de IA en tu negocio.">
+<h1>Envía un caso real</h1><p>¿Usas IA en tu negocio o has visto un caso con fuente pública? Cuéntanoslo. Publicamos solo casos con fuente verificable.</p>
+<form onsubmit="event.preventDefault();this.innerHTML='<p>¡Gracias! Formulario de prueba: el envío se activará pronto.</p>'" style="max-width:560px;display:grid;gap:10px">
+<input required placeholder="Título del caso"><input type="url" required placeholder="URL de la fuente (post, artículo…)"><input placeholder="Sector y herramienta"><textarea rows="5" placeholder="Qué hicisteis y qué resultado (horas/euros) obtuvisteis"></textarea><input type="email" placeholder="Tu email (opcional)"><button>Enviar</button></form>
+</Base>

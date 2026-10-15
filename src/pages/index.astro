@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro'; import Card from '../components/Card.astro';
+import casos from '../data/casos.json'; import { SECTORES, TAREAS, SITE } from '../data/meta.js';
+const herrs = [...new Set(casos.map(c=>c.herramienta))].sort();
+const jsonld = {"@context":"https://schema.org","@type":"WebSite","name":SITE.nombre,"url":SITE.url,"inLanguage":"es-ES","description":SITE.desc};
+---
+<Base jsonld={jsonld}>
+<section class="hero"><h1>Casos reales de agentes de IA para autónomos y pymes en España</h1>
+<p>{casos.length} casos con resultado, prompt listo para copiar, herramienta, notas de adaptación (Hacienda, Verifactu, WhatsApp Business, Idealista…) y fuente enlazada.</p></section>
+<div class="filters"><input id="q" placeholder="Buscar: WhatsApp, facturas, reservas…" aria-label="Buscar">
+<select id="fs" aria-label="Sector"><option value="">Todos los sectores</option>{Object.entries(SECTORES).map(([k,v])=><option value={k}>{v}</option>)}</select>
+<select id="ft" aria-label="Tarea"><option value="">Todas las tareas</option>{Object.entries(TAREAS).map(([k,v])=><option value={k}>{v}</option>)}</select>
+<select id="fh" aria-label="Herramienta"><option value="">Todas las herramientas</option>{herrs.map(h=><option value={h}>{h}</option>)}</select></div>
+<p id="count"></p>
+<div class="grid" id="list">{casos.map(c=><Card c={c} />)}</div>
+<script>
+const $=id=>document.getElementById(id);const cards=[...document.querySelectorAll('#list .card')];
+function f(){const q=$('q').value.toLowerCase(),s=$('fs').value,t=$('ft').value,h=$('fh').value;let n=0;
+cards.forEach(c=>{const ok=(!q||c.dataset.text.includes(q))&&(!s||c.dataset.sector===s)&&(!t||c.dataset.tarea===t)&&(!h||c.dataset.herr===h);c.style.display=ok?'':'none';if(ok)n++});$('count').textContent=n+' casos';}
+['q','fs','ft','fh'].forEach(i=>$(i).addEventListener('input',f));
+const p=new URLSearchParams(location.search);if(p.get('sector'))$('fs').value=p.get('sector');if(p.get('tarea'))$('ft').value=p.get('tarea');f();
+</script>
+</Base>
