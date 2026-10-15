@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro'; import Lista from '../components/Lista
 import casos from '../data/casos.json'; import { SECTORES, TAREAS, SITE, u, herrBase, HERR, herrMain } from '../data/meta.js';
 const orden = [...casos].sort((a,b)=>b.publicado.localeCompare(a.publicado));
 const cnt=(f)=>{const m={};casos.forEach(c=>{const k=f(c);m[k]=(m[k]||0)+1});return Object.entries(m).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]))};
-const cHerr=cnt(c=>HERR[herrMain(c)]), cSec=cnt(c=>c.sector), nRes=casos.filter(c=>c.resultado).length;
+const cHerr=cnt(c=>HERR[herrMain(c)]), cSec=cnt(c=>c.sector), nRes=casos.filter(c=>c.resultado&&!c.patrocinado).length;
 const herrs = [...new Set(casos.map(c=>HERR[herrMain(c)]))].sort();
 const ult = orden[0].publicado; const nUlt = casos.filter(c=>c.publicado===ult).length;
 const fmt = d => new Date(d).toLocaleDateString('es-ES',{weekday:'short',day:'numeric',month:'short'});
@@ -12,7 +12,7 @@ const jsonld = [{"@context":"https://schema.org","@type":"WebSite","name":SITE.n
 <Base jsonld={jsonld}>
 <section class="hero"><span class="eyebrow">Directorio · España · Actualizado {fmt(ult)}</span><h1>Lo que autónomos y pymes en España <em>ya hacen</em> con agentes de IA</h1>
 <p>Casos reales con resultado en horas o euros, prompt para copiar, notas para España (Hacienda, Verifactu, WhatsApp Business, Idealista, Kit Digital) y fuente enlazada. <strong>Copia la idea.</strong></p>
-<p class="stats">{casos.length} casos · Fuentes: blogs, prensa, LinkedIn, X y Reddit en español · <a href={u("/feed.xml")}>RSS</a></p>
+<p class="stats">{casos.length} casos · Fuentes: blogs, prensa, LinkedIn y X en español · <a href={u("/feed.xml")}>RSS</a></p>
 <div class="ctas"><a class="btn" href={u("/newsletter")}>Recibe los casos nuevos</a><a class="btn ghost" href={u("/enviar-caso")}>Enviar un caso</a></div></section>
 <div class="strip"><span class="dot" aria-hidden="true"></span><strong>{nUlt} casos nuevos</strong><span class="stats">{fmt(ult)}</span><a href={u("/nuevos")} style="margin-left:auto">Ver los nuevos →</a></div>
 <div class="layout"><aside id="side" class="side" tabindex="-1" aria-label="Navegación por herramienta y sector"><div class="sidehead mob"><strong>Filtros</strong><button type="button" id="closeside" aria-label="Cerrar">✕</button></div>
