@@ -1,14 +1,15 @@
 ---
-import Base from '../../layouts/Base.astro'; import casos from '../../data/casos.json'; import { SECTORES, TAREAS, SITE, u, slugify, herrBase, iniciales, CHECK_ES, KIT_DIGITAL } from '../../data/meta.js'; import Lista from '../../components/Lista.astro';
+import Base from '../../layouts/Base.astro'; import casos from '../../data/casos.json'; import { SECTORES, TAREAS, SITE, u, slugify, herrBase, iniciales, CHECK_ES, KIT_DIGITAL, HERR, herrMain, fechaES } from '../../data/meta.js'; import Lista from '../../components/Lista.astro';
 export function getStaticPaths(){ return casos.map(c=>({params:{slug:c.slug},props:{c}})); }
 const { c } = Astro.props; const vars=[...new Set((c.prompt.match(/\[[^\]]+\]/g)||[]))]; const rel=casos.filter(x=>x.slug!==c.slug&&(x.tarea===c.tarea||x.sector===c.sector)).slice(0,3); const url = `${SITE.url}/casos/${c.slug}/`;
-const jsonld = [{"@context":"https://schema.org","@type":"Article","headline":c.titulo,"description":c.resumen,"inLanguage":"es-ES","url":url,"isBasedOn":c.fuenteUrl,"citation":c.fuenteUrl,"publisher":{"@type":"Organization","name":SITE.nombre}},
+const jsonld = [{"@context":"https://schema.org","@type":"Article","headline":c.titulo,"description":c.resumen,"inLanguage":"es-ES","url":url,"isBasedOn":c.fuenteUrl,"citation":c.fuenteUrl,"publisher":{"@type":"Organization","name":SITE.nombre,"url":`${SITE.url}/`},"author":{"@type":"Organization","name":SITE.nombre},"datePublished":c.publicado,"dateModified":c.publicado,"image":`${SITE.url}/og.png`},
 {"@context":"https://schema.org","@type":"HowTo","name":`Cómo replicar: ${c.titulo}`,"tool":{"@type":"HowToTool","name":c.herramienta},"step":[{"@type":"HowToStep","name":"Copia el prompt","text":c.prompt},{"@type":"HowToStep","name":"Adáptalo a España","text":c.adaptacion}]}];
 ---
-<Base title={c.titulo} description={c.resumen} jsonld={jsonld}>
-<p><a href={u("/")}>← Todos los casos</a></p>
-<div class="meta"><span class="badge">{iniciales(c.herramienta)}</span><a class="tag" href={u(`/herramientas/${slugify(herrBase(c.herramienta))}`)}>{herrBase(c.herramienta)}</a><a class="tag" href={u(`/sector/${c.sector}`)}>{SECTORES[c.sector]}</a><a class="tag" href={u(`/tarea/${c.tarea}`)}>{TAREAS[c.tarea]}</a>{c.ciudad && <a class="tag" href={u(`/ciudad/${slugify(c.ciudad)}`)}>📍 {c.ciudad}</a>}</div>
-<h1>{c.titulo}</h1><p>{c.resumen}</p>
+<Base title={c.tituloSeo ?? c.titulo} description={c.resumen} jsonld={jsonld} ogType="article" published={c.publicado} crumbs={[{name:SECTORES[c.sector],href:`/sector/${c.sector}/`},{name:c.titulo}]}>
+<div class="meta"><span class="badge">{iniciales(c.herramienta)}</span><a class="tag" href={u(`/herramientas/${herrMain(c)}`)}>{HERR[herrMain(c)]}</a><a class="tag" href={u(`/sector/${c.sector}`)}>{SECTORES[c.sector]}</a><a class="tag" href={u(`/tarea/${c.tarea}`)}>{TAREAS[c.tarea]}</a>{c.ciudad && <a class="tag" href={u(`/ciudad/${slugify(c.ciudad)}`)}>📍 {c.ciudad}</a>}</div>
+<h1>{c.titulo}</h1>
+<p class="resumen"><strong>En resumen:</strong> {SECTORES[c.sector]}{c.ciudad ? ` (${c.ciudad})` : ''} · {TAREAS[c.tarea]} con {c.herramientas.map(h=>HERR[h]).join(', ')}. Resultado: {c.resultado ? c.resultado.replace(/\.$/,'') : 'sin cifra publicada'}{c.resultadoNota ? ` (${c.resultadoNota.replace(/\.$/,'')})` : ''}. Fuente: <a href={c.fuenteUrl} rel="nofollow noopener" target="_blank">{c.fuente}</a>{c.fecha && c.fecha!=='no indicado' ? `, ${c.fecha}` : ''}. Publicado en CasosIA el {fechaES(c.publicado)}. <a href={u('/metodologia')}>Cómo verificamos</a>.</p>
+<p>{c.resumen}</p>
 <h2>Resultado</h2><p class={c.resultado?'res':'res none'}>{c.resultado ?? 'Sin cifra publicada.'} {c.resultadoNota}</p>
 <h2>Prompt listo para copiar</h2><p><small>Prompt de ejemplo redactado por CasosIA para replicar el caso (no procede de la fuente). Rellena lo que va entre [corchetes].</small></p>
 {vars.length>0 && <div class="box"><strong>Rellena antes de pegar:</strong> {vars.map(v=><code class="tag">{v}</code>)}<br><small>Consejo: pega el prompt, adjunta un ejemplo real (factura, mensaje o ficha anonimizada) y pide primero un borrador para revisarlo tú antes de automatizar.</small></div>}
@@ -16,7 +17,7 @@ const jsonld = [{"@context":"https://schema.org","@type":"Article","headline":c.
 <h2>Herramienta</h2><p>{c.herramienta}</p>
 <h2>Adaptación a España</h2><p>{c.adaptacion}</p>
 <div class="box"><strong>Checklist para España ({TAREAS[c.tarea]})</strong><ul>{CHECK_ES[c.tarea].map(x=><li>{x}</li>)}<li>{KIT_DIGITAL}</li></ul><small>Notas generales de CasosIA, no son asesoramiento legal ni fiscal.</small></div>
-<h2>Fuente</h2><p><a href={c.fuenteUrl} rel="nofollow noopener" target="_blank">{c.fuente}</a> ({c.fuenteTipo === 'proveedor' ? 'caso publicado por el proveedor o agencia: cifras no verificadas de forma independiente' : 'prensa'}) · {c.fecha}</p>
+<h2>Fuente</h2><p><a href={c.fuenteUrl} rel="nofollow noopener" target="_blank">{c.fuente}</a> ({c.fuenteTipo === 'proveedor' ? 'caso publicado por el proveedor o agencia: cifras no verificadas de forma independiente' : c.fuenteTipo === 'red social' ? 'publicación en redes sociales del autor' : c.fuenteTipo === 'cliente' ? 'publicado por el propio negocio' : 'prensa'}) · {c.fecha} · <a href={u('/metodologia')}>Metodología</a></p>
 <script>document.getElementById('copy').addEventListener('click',e=>{navigator.clipboard.writeText(document.getElementById('prompt').innerText);e.target.textContent='¡Copiado!';setTimeout(()=>e.target.textContent='Copiar prompt',1500)})</script>
 <h2>Casos relacionados</h2><Lista casos={rel} sponsorAt={2} />
 </Base>

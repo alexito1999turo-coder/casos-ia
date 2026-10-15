@@ -1,14 +1,15 @@
-export const SECTORES = { inmobiliaria:'Inmobiliaria', hosteleria:'Hostelería', comercio:'Comercio', asesoria:'Asesoría y gestoría', salud:'Salud', servicios:'Servicios' };
+export const SECTORES = { inmobiliaria:'Inmobiliaria', hosteleria:'Hostelería', comercio:'Comercio', asesoria:'Asesoría y gestoría', salud:'Salud', servicios:'Servicios', academia:'Academias y formación', abogados:'Abogados y despachos', taller:'Talleres', construccion:'Construcción y reformas' };
 export const TAREAS = { facturacion:'Facturación', 'atencion-cliente':'Atención al cliente', marketing:'Marketing', ventas:'Ventas', admin:'Administración' };
 export const SITE = { nombre:'CasosIA', url:(import.meta.env.SITE+import.meta.env.BASE_URL).replace(/\/+$/,'').replace(/([^:])\/\//,'$1/'), desc:'Directorio de casos reales de agentes de IA para autónomos y pymes en España, con resultados, prompt listo para copiar y fuente verificable.' };
 
 export const u = (p='/') => { if(!/[.?#]/.test(p) && !p.endsWith('/')) p+='/'; else p=p.replace(/^([^?#.]*[^/])([?#])/,'$1/$2'); return import.meta.env.BASE_URL.replace(/\/$/,'') + p; };
 export const ORIGIN = new URL(import.meta.env.SITE).origin;
+export { HERR, herrMain, MIN_INDEX, thinFacets } from './facets.mjs';
 export const slugify = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\(.*?\)/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 // Herramienta principal (antes de "+" o paréntesis) para agrupar
 export const herrBase = h => h.split(/[+(]/)[0].trim();
 export const iniciales = h => herrBase(h).replace(/[^A-Za-zÁÉÍÓÚÑ ]/g,'').split(/\s+/).filter(Boolean).map(w=>w[0]).join('').slice(0,2).toUpperCase() || '··';
-export const DESC_SECTOR = { inmobiliaria:'Captación de propietarios, cualificación de leads de Idealista y Fotocasa, visitas y seguimiento por WhatsApp.', hosteleria:'Reservas por teléfono y WhatsApp, TheFork, no-shows y atención 24/7 para bares y restaurantes.', comercio:'Fichas de producto, tiendas PrestaShop/Shopify, atención al cliente y contenido para e-commerce.', asesoria:'Gestorías y asesorías: facturas, modelo 303, Verifactu, Holded/A3 y atención a clientes.', salud:'Clínicas: citas, recordatorios por WhatsApp, no-shows y datos de salud (RGPD).', servicios:'Autónomos y profesionales: fiscalidad, administración, propuestas y clientes.' };
+export const DESC_SECTOR = { inmobiliaria:'Captación de propietarios, cualificación de leads de Idealista y Fotocasa, visitas y seguimiento por WhatsApp.', hosteleria:'Reservas por teléfono y WhatsApp, TheFork, no-shows y atención 24/7 para bares y restaurantes.', comercio:'Fichas de producto, tiendas PrestaShop/Shopify, atención al cliente y contenido para e-commerce.', asesoria:'Gestorías y asesorías: facturas, modelo 303, Verifactu, Holded/A3 y atención a clientes.', salud:'Clínicas: citas, recordatorios por WhatsApp, no-shows y datos de salud (RGPD).', servicios:'Autónomos y profesionales: fiscalidad, administración, propuestas y clientes.', academia:'Academias, autoescuelas y centros de formación: matrículas, altas de alumnos y atención 24/7.', abogados:'Despachos de abogados: primera consulta, onboarding de clientes y documentación, con secreto profesional.', taller:'Talleres mecánicos: llamadas, presupuestos, citas y avisos de recogida.', construccion:'Constructoras, reformas e instaladores: presupuestos, facturas de obra y certificaciones.' };
 export const DESC_TAREA = { facturacion:'Facturas, gastos, IVA, modelo 303 y Verifactu.', 'atencion-cliente':'WhatsApp, teléfono y chat respondidos por agentes de IA.', marketing:'Contenido, SEO y fichas de producto.', ventas:'Leads, captación y seguimiento comercial.', admin:'Papeleo, Hacienda, citas y back office.' };
 // Checklist legal/práctico por tarea (notas generales de CasosIA, no asesoramiento)
 export const CHECK_ES = {
@@ -19,3 +20,5 @@ export const CHECK_ES = {
  admin:['La IA no sustituye a tu gestor ni a la AEAT: contrasta en sede.agenciatributaria.gob.es.','No subas certificados digitales ni contraseñas a herramientas de IA.','Datos de salud o de terceros: usa herramientas con contrato de encargado de tratamiento (DPA) y servidores en la UE.']
 };
 export const KIT_DIGITAL = 'Kit Digital y otras ayudas públicas pueden cubrir parte de la implantación de algunas soluciones a través de agentes digitalizadores adheridos; consulta la convocatoria vigente en acelerapyme.gob.es.';
+export const recorta = (s,n) => s.length<=n ? s : s.slice(0,n-1).replace(/\s+\S*$/,'').replace(/[,;:.\s]+$/,'')+'…';
+export const fechaES = d => new Date(d+'T12:00:00Z').toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});

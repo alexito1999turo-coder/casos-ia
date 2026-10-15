@@ -1,11 +1,11 @@
 ---
-import { SECTORES, TAREAS, u, slugify, herrBase, iniciales } from '../data/meta.js';
+import { SECTORES, TAREAS, u, slugify, herrBase, iniciales, HERR, herrMain } from '../data/meta.js';
 const { c } = Astro.props;
 const esNuevo = (Date.parse('2026-10-16') - Date.parse(c.publicado)) < 7*864e5;
 const fuenteLbl = c.fuenteTipo === 'proveedor' ? 'Publicado por el proveedor' : 'Prensa';
 ---
-<article class="card" data-sector={c.sector} data-tarea={c.tarea} data-herr={herrBase(c.herramienta)} data-slug={c.slug} data-text={(c.titulo+' '+c.resumen+' '+c.herramienta+' '+(c.ciudad||'')).toLowerCase()}>
-<div class="meta"><span class="badge" aria-hidden="true">{iniciales(c.herramienta)}</span><a class="tag" href={u(`/herramientas/${slugify(herrBase(c.herramienta))}`)}>{herrBase(c.herramienta)}</a>{esNuevo && <span class="new">Nuevo</span>}</div>
+<article class="card" data-sector={c.sector} data-tarea={c.tarea} data-herr={HERR[herrMain(c)]} data-slug={c.slug} data-text={(c.titulo+' '+c.resumen+' '+c.herramienta+' '+(c.ciudad||'')).toLowerCase()}>
+<div class="meta"><span class="badge" aria-hidden="true">{iniciales(c.herramienta)}</span><a class="tag" href={u(`/herramientas/${herrMain(c)}`)}>{HERR[herrMain(c)]}</a>{esNuevo && <span class="new">Nuevo</span>}</div>
 <h3><a href={u(`/casos/${c.slug}`)}>{c.titulo}</a></h3>
 <p class={c.resultado ? 'res' : 'res none'}>{c.resultado ? `📈 ${c.resultado}` : 'Sin cifra publicada en la fuente'}</p>
 <p>{c.resumen.length > 170 ? c.resumen.slice(0,168).replace(/\s\S*$/,'')+'…' : c.resumen}</p>
