@@ -1,8 +1,9 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from '../layouts/Base.astro'; import { u } from '../data/meta.js';
 ---
-<Base title="Newsletter" description="Un email a la semana con los nuevos casos reales de IA para pymes.">
-<h1>Newsletter semanal</h1><p>Cada semana, los nuevos casos reales con su prompt listo para copiar. Sin spam.</p>
-<form onsubmit="event.preventDefault();this.innerHTML='<p>¡Gracias! La newsletter arranca pronto (formulario de prueba, aún no guardamos emails).</p>'" style="max-width:420px;display:grid;gap:10px">
-<input type="email" required placeholder="tu@email.com" aria-label="Email"><label><input type="checkbox" required style="width:auto"> Acepto la política de privacidad</label><button>Suscribirme</button></form>
+<Base title="Newsletter: 5 casos de IA cada semana" description="Cada lunes, 5 casos reales de IA para autónomos y pymes en España, con prompt listo para copiar.">
+<h1>Los 5 del lunes</h1><p>Cada lunes, los 5 mejores casos nuevos de la semana: qué hicieron, qué resultado tuvieron, el prompt para copiar y qué tener en cuenta en España. Se lee en 3 minutos. Sin spam, baja con un clic.</p>
+<form onsubmit="event.preventDefault();this.innerHTML='<p>¡Gracias! La newsletter arranca pronto. Este formulario aún es de prueba y no guarda tu email.</p>'" style="max-width:420px;display:grid;gap:10px">
+<input type="email" required placeholder="tu@email.com" aria-label="Email"><label><input type="checkbox" required style="width:auto"> Acepto la <a href={u("/privacidad")}>política de privacidad</a></label><button>Suscribirme</button></form>
+<div class="box"><strong>¿Quieres patrocinar un envío?</strong> Un único patrocinador por envío, bloque marcado como «Patrocinado». <a href={u("/patrocinar")}>Ver tarifas →</a></div>
 </Base>

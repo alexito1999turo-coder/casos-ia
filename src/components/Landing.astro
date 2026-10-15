@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro'; import Lista from './Lista.astro'; import { SITE, u } from '../data/meta.js';
+const { titulo, h1, intro, casos, path, checklist } = Astro.props;
+const jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":h1,"url":`${SITE.url}${path}`,"inLanguage":"es-ES","about":intro,"mainEntity":{"@type":"ItemList","numberOfItems":casos.length,"itemListElement":casos.map((c,i)=>({"@type":"ListItem","position":i+1,"url":`${SITE.url}/casos/${c.slug}/`}))}};
+---
+<Base title={titulo} description={`${intro} ${casos.length} casos reales con prompt y fuente.`} jsonld={jsonld}>
+<p><a href={u("/categorias")}>← Categorías</a></p><h1>{h1}</h1><p>{intro}</p><p class="stats">{casos.length} casos</p>
+{checklist && <div class="box"><strong>Antes de implantarlo en España</strong><ul>{checklist.map(x=><li>{x}</li>)}</ul></div>}
+<Lista casos={casos} />
+</Base>

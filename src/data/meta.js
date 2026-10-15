@@ -4,3 +4,18 @@ export const SITE = { nombre:'CasosIA', url:(import.meta.env.SITE+import.meta.en
 
 export const u = (p='/') => { if(!/[.?#]/.test(p) && !p.endsWith('/')) p+='/'; else p=p.replace(/^([^?#.]*[^/])([?#])/,'$1/$2'); return import.meta.env.BASE_URL.replace(/\/$/,'') + p; };
 export const ORIGIN = new URL(import.meta.env.SITE).origin;
+export const slugify = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\(.*?\)/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+// Herramienta principal (antes de "+" o paréntesis) para agrupar
+export const herrBase = h => h.split(/[+(]/)[0].trim();
+export const iniciales = h => herrBase(h).replace(/[^A-Za-zÁÉÍÓÚÑ ]/g,'').split(/\s+/).filter(Boolean).map(w=>w[0]).join('').slice(0,2).toUpperCase() || '··';
+export const DESC_SECTOR = { inmobiliaria:'Captación de propietarios, cualificación de leads de Idealista y Fotocasa, visitas y seguimiento por WhatsApp.', hosteleria:'Reservas por teléfono y WhatsApp, TheFork, no-shows y atención 24/7 para bares y restaurantes.', comercio:'Fichas de producto, tiendas PrestaShop/Shopify, atención al cliente y contenido para e-commerce.', asesoria:'Gestorías y asesorías: facturas, modelo 303, Verifactu, Holded/A3 y atención a clientes.', salud:'Clínicas: citas, recordatorios por WhatsApp, no-shows y datos de salud (RGPD).', servicios:'Autónomos y profesionales: fiscalidad, administración, propuestas y clientes.' };
+export const DESC_TAREA = { facturacion:'Facturas, gastos, IVA, modelo 303 y Verifactu.', 'atencion-cliente':'WhatsApp, teléfono y chat respondidos por agentes de IA.', marketing:'Contenido, SEO y fichas de producto.', ventas:'Leads, captación y seguimiento comercial.', admin:'Papeleo, Hacienda, citas y back office.' };
+// Checklist legal/práctico por tarea (notas generales de CasosIA, no asesoramiento)
+export const CHECK_ES = {
+ facturacion:['Verifactu / Ley Antifraude: la IA prepara, pero la factura debe emitirse con un software de facturación homologado (Holded, Quipu, A3, Sage…).','Revisa manualmente los importes antes de presentar el modelo 303 o 130; la responsabilidad ante la AEAT sigue siendo tuya o de tu gestor.','Guarda las facturas originales: la AEAT puede requerirlas durante 4 años.'],
+ 'atencion-cliente':['WhatsApp Business API: usa plantillas aprobadas por Meta y pide consentimiento (opt-in) antes de escribir primero.','RGPD/LOPDGDD: informa de que responde un sistema automatizado y ofrece pasar a una persona.','Si graba llamadas, avisa al inicio de la llamada.'],
+ marketing:['Revisa los textos generados: la Ley de Competencia Desleal y la normativa de consumo prohíben afirmaciones engañosas.','Si usas datos o imágenes de clientes, necesitas su consentimiento.','Pide el contenido en castellano de España (no neutro) y, si aplica, en catalán, euskera o gallego.'],
+ ventas:['Las llamadas o WhatsApp comerciales en frío requieren consentimiento previo (Ley General de Telecomunicaciones 2022).','Registra en tu CRM la base legal de cada lead (RGPD).','Portales como Idealista o Fotocasa limitan el uso automatizado de sus datos: revisa sus condiciones.'],
+ admin:['La IA no sustituye a tu gestor ni a la AEAT: contrasta en sede.agenciatributaria.gob.es.','No subas certificados digitales ni contraseñas a herramientas de IA.','Datos de salud o de terceros: usa herramientas con contrato de encargado de tratamiento (DPA) y servidores en la UE.']
+};
+export const KIT_DIGITAL = 'Kit Digital y otras ayudas públicas pueden cubrir parte de la implantación de algunas soluciones a través de agentes digitalizadores adheridos; consulta la convocatoria vigente en acelerapyme.gob.es.';

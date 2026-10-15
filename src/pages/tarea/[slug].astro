@@ -1,0 +1,6 @@
+---
+import Landing from '../../components/Landing.astro'; import casos from '../../data/casos.json'; import { TAREAS, DESC_TAREA, CHECK_ES } from '../../data/meta.js';
+export function getStaticPaths(){ return Object.keys(TAREAS).filter(k=>casos.some(c=>c.tarea===k)).map(k=>({params:{slug:k}})); }
+const k = Astro.params.slug; const cs = casos.filter(c=>c.tarea===k);
+---
+<Landing titulo={`IA para ${TAREAS[k].toLowerCase()} en pymes: casos reales`} h1={`${TAREAS[k]} con agentes de IA: casos de pymes españolas`} intro={DESC_TAREA[k]} casos={cs} path={`/tarea/${k}/`} checklist={CHECK_ES[k]} />

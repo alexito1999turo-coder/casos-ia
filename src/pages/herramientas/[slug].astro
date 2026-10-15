@@ -1,0 +1,6 @@
+---
+import Landing from '../../components/Landing.astro'; import casos from '../../data/casos.json'; import { slugify, herrBase } from '../../data/meta.js';
+export function getStaticPaths(){ return [...new Set(casos.map(c=>herrBase(c.herramienta)))].map(n=>({params:{slug:slugify(n)},props:{n}})); }
+const { n } = Astro.props; const cs = casos.filter(c=>herrBase(c.herramienta)===n);
+---
+<Landing titulo={`${n}: casos reales en pymes españolas`} h1={`Qué hacen las pymes españolas con ${n}`} intro={`Casos reales de uso de ${n} en autónomos y pymes de España, con resultado publicado, prompt de ejemplo y fuente.`} casos={cs} path={`/herramientas/${slugify(n)}/`} />

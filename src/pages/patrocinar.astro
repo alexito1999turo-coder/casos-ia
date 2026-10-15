@@ -1,10 +1,16 @@
 ---
-import { u } from '../data/meta.js';
+import { u } from '../data/meta.js'; import casos from '../data/casos.json';
 import Base from '../layouts/Base.astro';
-const planes=[['Ficha destacada','Tu caso o herramienta destacada en la home y en su categoría durante 30 días.','desde 149 €/mes (ejemplo)'],['Patrocinio de categoría','Logo y mensaje en una categoría (p. ej. Hostelería) y en sus fichas.','desde 299 €/mes (ejemplo)'],['Newsletter','Bloque patrocinado en un envío de la newsletter semanal.','desde 99 €/envío (ejemplo)']];
+const planes=[
+['Hueco en el listado','Tarjeta patrocinada fija en la posición 4 de la home y del listado de casos nuevos, con el mismo formato que un caso.','149 €/mes','1 hueco'],
+['Patrocinio de sector','Tu tarjeta en la landing del sector (p. ej. Hostelería o Inmobiliaria) y en las fichas de ese sector, en «Casos relacionados».','99 €/mes por sector','1 por sector'],
+['Patrocinador de la newsletter','Bloque único al principio de «Los 5 del lunes»: logo, 50 palabras y enlace.','79 €/envío · 249 € por 4','1 por envío'],
+['Caso patrocinado','Escribimos la ficha de un caso real de tu cliente, con cifras que tú documentas y etiqueta «Patrocinado».','199 € único','2 al mes']];
 ---
-<Base title="Patrocinar" description="Llega a autónomos y pymes españolas interesadas en IA.">
-<h1>Patrocina CasosIA</h1><p>Llega a autónomos y pymes españolas que buscan aplicar IA. Los patrocinios siempre se marcan como tales y no alteran los criterios editoriales.</p>
-<div class="grid">{planes.map(([t,d,p])=><div class="card"><h3>{t}</h3><p>{d}</p><strong>{p}</strong></div>)}</div>
-<p><em>Precios orientativos. Pagos aún no activos: escríbenos desde <a href={u("/enviar-caso")}>el formulario</a> indicando "Patrocinio".</em></p>
+<Base title="Patrocinar" description="Llega a autónomos y pymes españolas que buscan casos reales de IA.">
+<h1>Patrocina CasosIA</h1><p>Llega a autónomos, gestorías, clínicas, inmobiliarias y comercios españoles en el momento en que buscan cómo aplicar IA a su negocio.</p>
+<p class="stats">{casos.length} casos publicados · sitio en lanzamiento: aún no publicamos cifras de tráfico. Las mostraremos aquí en cuanto haya datos reales.</p>
+<div class="grid">{planes.map(([t,d,p,l])=><div class="card"><h3>{t}</h3><p>{d}</p><strong>{p}</strong><span class="stats">Disponibilidad: {l}</span></div>)}</div>
+<h2>Reglas</h2><ul><li>Todo patrocinio se marca como «Patrocinado».</li><li>Pagar no cambia qué casos publicamos ni sus cifras.</li><li>Solo aceptamos productos útiles para pymes españolas.</li></ul>
+<p><em>Precios de lanzamiento orientativos. El pago online aún no está activo: escríbenos desde <a href={u("/enviar-caso")}>el formulario</a> indicando «Patrocinio».</em></p>
 </Base>

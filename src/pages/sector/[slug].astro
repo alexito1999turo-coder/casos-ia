@@ -1,0 +1,6 @@
+---
+import Landing from '../../components/Landing.astro'; import casos from '../../data/casos.json'; import { SECTORES, DESC_SECTOR } from '../../data/meta.js';
+export function getStaticPaths(){ return Object.keys(SECTORES).filter(k=>casos.some(c=>c.sector===k)).map(k=>({params:{slug:k}})); }
+const k = Astro.params.slug; const cs = casos.filter(c=>c.sector===k);
+---
+<Landing titulo={`IA para ${SECTORES[k].toLowerCase()} en España: casos reales`} h1={`Agentes de IA en ${SECTORES[k]}: casos reales en España`} intro={DESC_SECTOR[k]} casos={cs} path={`/sector/${k}/`} />

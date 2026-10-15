@@ -1,0 +1,7 @@
+<script is:inline>
+(()=>{const S=JSON.parse(localStorage.casosGuardados||'[]');
+document.querySelectorAll('.card[data-slug]').forEach(c=>{const b=c.querySelector('.sv');if(!b)return;const on=()=>{const y=S.includes(c.dataset.slug);b.classList.toggle('on',y);b.textContent=y?'★ Guardado':'☆ Guardar';b.setAttribute('aria-pressed',y)};on();
+b.onclick=()=>{const i=S.indexOf(c.dataset.slug);i<0?S.push(c.dataset.slug):S.splice(i,1);localStorage.casosGuardados=JSON.stringify(S);on();document.dispatchEvent(new Event('guardados'))}});
+document.querySelectorAll('.cp').forEach(b=>b.onclick=()=>{navigator.clipboard.writeText(b.dataset.p);b.textContent='¡Copiado!';setTimeout(()=>b.textContent='Copiar prompt',1500)});
+document.querySelectorAll('.sh').forEach(b=>b.onclick=async()=>{const url=new URL(b.dataset.u,location.href).href;if(navigator.share){try{await navigator.share({title:b.dataset.t,url})}catch(e){}}else{navigator.clipboard.writeText(url);b.textContent='Enlace copiado'}});})();
+</script>
