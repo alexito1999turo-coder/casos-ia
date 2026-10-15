@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro'; import casos from '../../data/casos.json'; import { SECTORES, TAREAS, SITE , u } from '../../data/meta.js';
 export function getStaticPaths(){ return casos.map(c=>({params:{slug:c.slug},props:{c}})); }
-const { c } = Astro.props; const url = `${SITE.url}/casos/${c.slug}`;
+const { c } = Astro.props; const url = `${SITE.url}/casos/${c.slug}/`;
 const jsonld = [{"@context":"https://schema.org","@type":"Article","headline":c.titulo,"description":c.resumen,"inLanguage":"es-ES","url":url,"isBasedOn":c.fuenteUrl,"citation":c.fuenteUrl,"publisher":{"@type":"Organization","name":SITE.nombre}},
 {"@context":"https://schema.org","@type":"HowTo","name":`Cómo replicar: ${c.titulo}`,"tool":{"@type":"HowToTool","name":c.herramienta},"step":[{"@type":"HowToStep","name":"Copia el prompt","text":c.prompt},{"@type":"HowToStep","name":"Adáptalo a España","text":c.adaptacion}]}];
 ---
