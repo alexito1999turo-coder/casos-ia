@@ -85,28 +85,6 @@
     "tituloSeo": "Gestoría pasa de 120 a 240 clientes sin contratar"
   },
   {
-    "slug": "inmobiliaria-madrid-whatsapp-ia-cualifica-leads",
-    "titulo": "Inmobiliaria de Madrid responde y cualifica leads de WhatsApp con IA",
-    "resumen": "Agencia con 8 comerciales conectó WhatsApp Business API a un asistente de IA que responde en segundos, distingue compra/alquiler y agenda visitas en el calendario de cada agente.",
-    "resultado": "Conversión de leads del 40% al 65% y +127.000 € en el primer año; la IA gestiona el 85% de conversaciones (según el proveedor).",
-    "sector": "inmobiliaria",
-    "tarea": "atencion-cliente",
-    "herramienta": "Nubioo + WhatsApp Business API",
-    "prompt": "Eres el asistente de WhatsApp de [inmobiliaria]. Responde en menos de 3 frases. Objetivo: saber si el contacto quiere comprar o alquilar, zona, presupuesto, plazo y si tiene financiación. Usa solo los datos del inmueble de este listado [pegar fichas]; si preguntan algo que no está, di que un agente lo confirmará. Si el lead cumple [criterio], ofrece 3 huecos de visita de este calendario [huecos]. Nunca negocies precio.",
-    "adaptacion": "Integra los leads que llegan desde Idealista y Fotocasa. Pide consentimiento RGPD antes de guardar datos. Para escribir tú primero fuera de 24 h necesitas plantillas aprobadas de WhatsApp Business API.",
-    "fuente": "Nubioo (proveedor)",
-    "fuenteUrl": "https://nubioo.io/casos/inmobiliarias",
-    "fuenteTipo": "proveedor",
-    "fecha": "2023-09",
-    "ciudad": "Madrid",
-    "publicado": "2026-10-15",
-    "herramientas": [
-      "whatsapp-business",
-      "nubioo"
-    ],
-    "tituloSeo": "Inmobiliaria de Madrid cualifica leads de WhatsApp con IA"
-  },
-  {
     "slug": "inmobiliaria-capta-propietarios-whatsapp-ia",
     "titulo": "ForYou Inmo capta propietarios atendiéndolos por WhatsApp con IA",
     "resumen": "Inmobiliaria española que atiende a propietarios interesados en vender por WhatsApp en minutos y agenda la reunión con el comercial automáticamente.",
@@ -848,7 +826,7 @@
     "herramienta": "ChatGPT",
     "prompt": "prompt sugerido: Actúa como chef de pizza artesanal. Con tendencias de consumo [datos] y restricciones de alérgenos [lista], propón 1 pizza con ingredientes, técnica y justificación. No inventes certificados ni alérgenos.",
     "adaptacion": "Información de alérgenos (Reglamento UE 1169/2011) no debe improvisarla el LLM. Experiencia de marca HORECA; no sustituye carta validada ni TPV/Verifactu.",
-    "fuente": "El País (Hub Empresa)",
+    "fuente": "El País Hub Empresa, contenido patrocinado por Banco Sabadell",
     "fuenteUrl": "https://elpais.com/economia/branded/hub-empresa/2024-06-13/la-hosteleria-adopta-la-tecnologia-para-sorprender-al-cliente.html",
     "fuenteTipo": "prensa",
     "fecha": "2024-06-13",
@@ -857,7 +835,8 @@
     "herramientas": [
       "chatgpt"
     ],
-    "tituloSeo": "Can Pizza enfrenta a su pizzero con ChatGPT"
+    "tituloSeo": "Can Pizza enfrenta a su pizzero con ChatGPT",
+    "patrocinado": "Banco Sabadell"
   },
   {
     "slug": "carlos-castro-vigo-claude-generador-figuras-3d",
@@ -928,55 +907,9 @@
     "tituloSeo": "Facturas de seguridad de obra con ChatGPT y Make"
   },
   {
-    "slug": "glop-mcp-tpv-hosteleria-chatgpt-claude",
-    "titulo": "Glop MCP conecta el TPV de hostelería con ChatGPT o Claude en español",
-    "resumen": "Glop (Castalla, Alicante), software TPV para hostelería/comercio, lanza MCP para preguntar en lenguaje natural por ventas, turnos, stock, proveedores y pedidos, con previsualización antes de guardar cambios.",
-    "resultado": null,
-    "resultadoNota": "Producto/documentación del proveedor; sin caso de un bar concreto con cifras.",
-    "sector": "hosteleria",
-    "tarea": "admin",
-    "herramienta": "Glop MCP + ChatGPT o Claude",
-    "prompt": "Ejemplos de la fuente: «¿Cómo van las ventas este mes?»; «¿Cuánto stock queda de cerveza?»; «Compara terraza vs interior este verano.»",
-    "adaptacion": "TPV habitual en bares/restaurantes España. TicketBAI/Verifactu según CCAA. Definir qué puede ver la IA; conversación bajo términos del LLM.",
-    "fuente": "Glop",
-    "fuenteUrl": "https://www.glop.es/mcp-glop/",
-    "fuenteTipo": "proveedor",
-    "fecha": "no indicado",
-    "ciudad": null,
-    "publicado": "2026-10-16",
-    "herramientas": [
-      "chatgpt",
-      "claude"
-    ],
-    "tituloSeo": "Glop MCP: el TPV de hostelería conectado a ChatGPT y Claude"
-  },
-  {
-    "slug": "camby-web-asistente-energetico-gpt",
-    "titulo": "Camby detalla en su web el GPT y el canal WhatsApp para auditar el gasto energético",
-    "resumen": "La propia Camby describe el GPT especializado para auditar gasto, resolver dudas de consumo y gestionar cambios de tarifa, más el flujo de enviar foto de factura por WhatsApp para análisis en segundos.",
-    "resultado": "Hasta 300 € de ahorro al año en la factura de luz (cifra de la web de Camby).",
-    "resultadoNota": null,
-    "sector": "servicios",
-    "tarea": "atencion-cliente",
-    "herramienta": "GPT Camby + WhatsApp",
-    "prompt": "Sugerencia de la web: empezar preguntando «¿Cómo puedo ahorrar en mi factura?»",
-    "adaptacion": "Complementa la mención en Cinco Días con detalle de producto. Autónomos/hogares España; permanencia y 14 días de desistimiento mencionados en FAQ.",
-    "fuente": "Camby (web)",
-    "fuenteUrl": "https://camby.es/",
-    "fuenteTipo": "cliente",
-    "fecha": "no indicado",
-    "ciudad": null,
-    "publicado": "2026-10-16",
-    "herramientas": [
-      "whatsapp-business",
-      "chatgpt"
-    ],
-    "tituloSeo": "Camby: GPT y WhatsApp para auditar el gasto energético"
-  },
-  {
     "slug": "mes-que-fisio-healthmate",
-    "titulo": "Més que Fisio (Mollet del Vallès) centraliza WhatsApp, llamadas y agenda con el asistente IA de HealthMate",
-    "resumen": "Toni Contreras, fisioterapeuta de Més que Fisio, cuenta en un testimonio con nombre y autorización que la clínica usa HealthMate para atender mensajes y llamadas con IA: «Tener mensajes, llamadas y agenda en el mismo sitio nos ha quitado de encima buena parte del trabajo administrativo.»",
+    "titulo": "Més que Fisio (Mollet del Vallès) quita trabajo administrativo uniendo mensajes, llamadas y agenda con HealthMate",
+    "resumen": "Toni Contreras, fisioterapeuta de Més que Fisio, explica que su cuello de botella «nunca fue tratar, fue coordinar»: con HealthMate tienen mensajes, llamadas y agenda en el mismo sitio, lo que les ha quitado buena parte del trabajo administrativo.",
     "resultado": null,
     "resultadoNota": "El testimonio no da cifras.",
     "sector": "salud",
@@ -993,12 +926,12 @@
     "herramientas": [
       "whatsapp-business"
     ],
-    "tituloSeo": "Més que Fisio: WhatsApp, llamadas y agenda con IA"
+    "tituloSeo": "Més que Fisio: menos administración con IA"
   },
   {
     "slug": "clinica-kinetica-huelva-healthmate",
-    "titulo": "Clínica Kinética (Huelva) centraliza WhatsApp, llamadas y agenda con el asistente IA de HealthMate",
-    "resumen": "Saulo Terrades Martín, fisioterapeuta de Clínica Kinética, cuenta en un testimonio con nombre y autorización que la clínica usa HealthMate para atender mensajes y llamadas con IA: «llegas y las preguntas de la noche ya están contestadas. Solo revisas lo que de verdad necesita a una persona.»",
+    "titulo": "Clínica Kinética (Huelva) empieza el día con las preguntas nocturnas ya contestadas por la IA de HealthMate",
+    "resumen": "Saulo Terrades Martín, fisioterapeuta de Clínica Kinética, cuenta que lo que más nota es a primera hora: las preguntas que llegan de noche ya están contestadas por el asistente de HealthMate y solo revisa lo que necesita a una persona.",
     "resultado": null,
     "resultadoNota": "El testimonio no da cifras.",
     "sector": "salud",
@@ -1015,12 +948,12 @@
     "herramientas": [
       "whatsapp-business"
     ],
-    "tituloSeo": "Clínica Kinética (Huelva): agenda y WhatsApp con IA"
+    "tituloSeo": "Clínica Kinética: dudas nocturnas resueltas con IA"
   },
   {
     "slug": "fisio-miguel-perez-alicante-healthmate",
-    "titulo": "Centro de Fisioterapia Miguel Pérez (Alicante) centraliza WhatsApp, llamadas y agenda con el asistente IA de HealthMate",
-    "resumen": "Miguel Pérez Albert, fisioterapeuta de Centro de Fisioterapia Miguel Pérez, cuenta en un testimonio con nombre y autorización que la clínica usa HealthMate para atender mensajes y llamadas con IA: «Siendo dos, o estás tratando o estás cogiendo el teléfono [...] Ahora el paciente que llama mientras estoy en camilla recibe respuesta igual.»",
+    "titulo": "Centro de Fisioterapia Miguel Pérez (Alicante): la IA atiende al paciente que llama mientras el fisio está en camilla",
+    "resumen": "Miguel Pérez Albert, que trabaja con un equipo de dos, explica que antes o trataba o cogía el teléfono. Con HealthMate, el paciente que llama durante una sesión recibe respuesta y él revisa la conversación al terminar.",
     "resultado": null,
     "resultadoNota": "El testimonio no da cifras.",
     "sector": "salud",
@@ -1037,12 +970,12 @@
     "herramientas": [
       "whatsapp-business"
     ],
-    "tituloSeo": "Fisioterapia Miguel Pérez (Alicante): asistente IA"
+    "tituloSeo": "Fisio Miguel Pérez: la IA atiende si estás en camilla"
   },
   {
     "slug": "motiva-fisioterapia-healthmate",
-    "titulo": "Motiva Fisioterapia (Villafranca de los Caballeros) centraliza WhatsApp, llamadas y agenda con el asistente IA de HealthMate",
-    "resumen": "Moisés Rodríguez Rullo, fisioterapeuta de Motiva Fisioterapia, cuenta en un testimonio con nombre y autorización que la clínica usa HealthMate para atender mensajes y llamadas con IA: «Antes cada uno contestaba desde su móvil [...] Ahora está todo en el mismo sitio y cualquiera del equipo puede seguir la conversación.»",
+    "titulo": "Motiva Fisioterapia (Villafranca de los Caballeros) pasa del WhatsApp de cada móvil a una bandeja compartida con HealthMate",
+    "resumen": "Moisés Rodríguez Rullo, de Motiva Fisioterapia, cuenta que antes cada uno contestaba desde su móvil y nadie sabía qué se había dicho al paciente. Con HealthMate está todo en un sitio y cualquiera del equipo puede seguir la conversación.",
     "resultado": null,
     "resultadoNota": "El testimonio no da cifras.",
     "sector": "salud",
@@ -1059,7 +992,7 @@
     "herramientas": [
       "whatsapp-business"
     ],
-    "tituloSeo": "Motiva Fisioterapia: WhatsApp, llamadas y agenda con IA"
+    "tituloSeo": "Motiva Fisioterapia: WhatsApp compartido con IA"
   },
   {
     "slug": "seneca-fisioterapia-langreo-chat-blanca",
@@ -1069,7 +1002,7 @@
     "resultadoNota": "La fuente no da cifras para Séneca (sí para otra clínica ya publicada).",
     "sector": "salud",
     "tarea": "atencion-cliente",
-    "herramienta": "Chatbot web de BCL IA (OpenAI)",
+    "herramienta": "Chatbot web de BCL IA",
     "prompt": "Prompt sugerido: «Eres Blanca, asistente virtual de la clínica. Explica servicios (fisioterapia, rehabilitación, pilates), horarios y cómo pedir cita. Preséntate como asistente virtual y no des diagnósticos.»",
     "adaptacion": "AI Act: desde agosto de 2026 el asistente debe identificarse como IA ante el paciente. RGPD: datos de salud (categoría especial), exige contrato de encargado del tratamiento con el proveedor.",
     "fuente": "BCL IA (web, casos reales)",
@@ -1079,7 +1012,7 @@
     "ciudad": "Langreo",
     "publicado": "2026-10-16",
     "herramientas": [
-      "chatgpt"
+      "agente-ia-a-medida"
     ],
     "tituloSeo": "Séneca Fisioterapia (Langreo): asistente IA web 24 h"
   },
@@ -1107,11 +1040,11 @@
     "tituloSeo": "FaceStylist (Marbella): 93% de reservas por WhatsApp con IA"
   },
   {
-    "slug": "clinica-domenech-valencia-kokuai",
-    "titulo": "Clínica Domènech (Valencia) automatiza confirmaciones, reseñas y recalls por WhatsApp",
+    "slug": "clinica-domenech-kokuai",
+    "titulo": "Clínica Domènech (Barcelona) automatiza confirmaciones, reseñas y recalls por WhatsApp",
     "resumen": "Clínica dental de 7 gabinetes y ~150 pacientes diarios. Con Kokuai pasó de confirmar a mano por WhatsApp a recordatorios automáticos, encuestas que generan reseñas y un asistente de IA que gestiona recalls y agenda citas.",
     "resultado": "~40 reseñas de 5 estrellas al mes en Google y 90% de citas confirmadas automáticamente.",
-    "resultadoNota": "Cifras del proveedor; testimonio de Alicia Sanchís Aguado (coordinación).",
+    "resultadoNota": "Cifras del proveedor; testimonio de Alicia Sanchís Aguado (coordinación). Ciudad según la página del caso (2 centros: Tuset y Travesera); el 90 % de citas confirmadas figura en el listado de testimonios de Kokuai.",
     "sector": "salud",
     "tarea": "atencion-cliente",
     "herramienta": "Kokuai (WhatsApp + asistente IA)",
@@ -1121,13 +1054,19 @@
     "fuenteUrl": "https://kokuai.com/clinica-domenech",
     "fuenteTipo": "proveedor",
     "fecha": "2026",
-    "ciudad": "Valencia",
+    "ciudad": "Barcelona",
     "publicado": "2026-10-16",
     "herramientas": [
       "whatsapp-business",
       "kokuai"
     ],
-    "tituloSeo": "Clínica Domènech: citas, reseñas y recalls por WhatsApp"
+    "tituloSeo": "Clínica Domènech: citas, reseñas y recalls por WhatsApp",
+    "fuentesExtra": [
+      {
+        "nombre": "Kokuai (testimonios, fuente del 90 % de citas confirmadas)",
+        "url": "https://kokuai.com/testimonials"
+      }
+    ]
   },
   {
     "slug": "clinica-dental-establiments-palma-kokuai",
@@ -1157,7 +1096,7 @@
     "titulo": "Los talleres de Grupo Torrejón codiseñan Motomeit, un agente de voz IA para no perder llamadas",
     "resumen": "Infotaller explica que Motomeit, agente de voz que atiende llamadas 24/7, recoge matrícula, avería y datos de aseguradora y cierra citas, nació en colaboración con los talleres de Grupo Torrejón, que participaron en su diseño. Ya opera en talleres de la Comunidad de Madrid.",
     "resultado": null,
-    "resultadoNota": "El artículo no da cifras del taller. Red de 8 talleres (4 propios); ~23 empleados según LinkedIn.",
+    "resultadoNota": "El artículo no da cifras del taller.",
     "sector": "taller",
     "tarea": "atencion-cliente",
     "herramienta": "Motomeit (voz IA + WhatsApp)",
@@ -1177,12 +1116,12 @@
   {
     "slug": "bakery-de-stefano-ia-facturacion-produccion",
     "titulo": "Bakery de Stefano (Las Palmas): el pastelero que delegó facturación y previsión de producción en la IA",
-    "resumen": "Flavio de Stefano usa ChatGPT conectado a su correo para preparar la facturación mensual para el asesor, un sistema que extrae datos de facturas y los cruza con el banco, y un modelo de previsión con 5 años de ventas, clima y eventos. También turnos, alérgenos y campañas.",
+    "resumen": "Flavio de Stefano usa IA (empezó con ChatGPT) conectada a su correo para preparar la facturación mensual para el asesor, un sistema que extrae datos de facturas y los cruza con el banco, y un modelo de previsión con 5 años de ventas, clima y eventos. También turnos, alérgenos y campañas.",
     "resultado": null,
-    "resultadoNota": "Cita coste: «con 20 euros al mes ya tienes mucho más de lo que necesitas»; sin cifra de ahorro.",
+    "resultadoNota": "Cita coste: «con 20 euros al mes ya tienes mucho más de lo que necesitas»; sin cifra de ahorro. Nota: según la fuente, el dueño ha creado su propia consultoría de IA para hostelería (de Stefano Consulting).",
     "sector": "hosteleria",
     "tarea": "facturacion",
-    "herramienta": "ChatGPT",
+    "herramienta": "IA (empezó con ChatGPT)",
     "prompt": "Prompt literal citado: «hazme la facturación del mes».",
     "adaptacion": "Facturas para el asesor compatibles con Verifactu; alérgenos según normativa UE 1169/2011.",
     "fuente": "Canarias7",
@@ -1223,7 +1162,7 @@
     "titulo": "Lemme's (Madrid): un hostelero solo usa un copiloto de IA para sus números y su WhatsApp",
     "resumen": "Germán Lemme, al frente en solitario de una cafetería de take away en el Barrio de Salamanca, probó un asistente de IA que analizó su contabilidad (márgenes, umbral de rentabilidad) y reestructuró su mensaje diario de menú por WhatsApp a más de cien contactos.",
     "resultado": null,
-    "resultadoNota": "Sin cifras; «Antes sabía que el negocio iba bien, pero no sabía exactamente por qué».",
+    "resultadoNota": "Sin cifras; «Antes sabía que el negocio iba bien, pero no sabía exactamente por qué». Nota: la autora del artículo (Alejandra Feldman) coordinó el piloto, según la propia fuente.",
     "sector": "hosteleria",
     "tarea": "admin",
     "herramienta": "Asistente de IA personalizado",
@@ -1248,7 +1187,7 @@
     "resultadoNota": "Cifras del consultor; mantenimiento desde 100 €/mes.",
     "sector": "hosteleria",
     "tarea": "facturacion",
-    "herramienta": "Asistente IA (Claude) + automatización de correo + Telegram",
+    "herramienta": "Asistente IA a medida + automatización de correo + Telegram",
     "prompt": "Prompt sugerido: «Lee las facturas del correo, identifica el proveedor, renómbralas y guárdalas en la carpeta del gestor; avisa si un PDF no se puede leer.»",
     "adaptacion": "Archivo ordenado para el gestor y Verifactu; aprobación humana antes de enviar nada.",
     "fuente": "hsmart.dev (portfolio)",
@@ -1258,7 +1197,7 @@
     "ciudad": "Madrid",
     "publicado": "2026-10-16",
     "herramientas": [
-      "claude"
+      "agente-ia-a-medida"
     ],
     "tituloSeo": "Hatillo (Madrid): un asistente IA archiva las facturas"
   },
@@ -1277,7 +1216,7 @@
     "fuenteUrl": "https://www.elperiodicodearagon.com/aragon/2026/02/19/tecnologia-aragon-turismo-rural-lujo-127033613.html",
     "fuenteTipo": "prensa",
     "fecha": "2026-02-19",
-    "ciudad": "Monroyo (Teruel)",
+    "ciudad": "Matarraña (Teruel)",
     "publicado": "2026-10-16",
     "herramientas": [
       "agente-ia-a-medida"
@@ -1289,13 +1228,13 @@
     "titulo": "Garay Ballester (Almería): administración de fincas con recepcionista de voz IA 24/7",
     "resumen": "El socio Rafael Garay explicó en esRadio Almería que su despacho de administración de fincas y asesoría legal usa IACall (Ovisoft) para atender llamadas 24 h, registrar avisos de averías y agendar citas en varios idiomas.",
     "resultado": null,
-    "resultadoNota": "Contenido patrocinado por el proveedor (Ovisoft); la pieza no da cifras.",
+    "resultadoNota": "Pieza en la sección del proveedor (Ovisoft) en esRadio Almería; no da cifras",
     "sector": "servicios",
     "tarea": "atencion-cliente",
     "herramienta": "IACall (Ovisoft)",
     "prompt": "Prompt sugerido: «Registra el aviso de avería con comunidad, dirección, tipo y urgencia; agenda cita si la piden.»",
     "adaptacion": "Aviso de IA (AI Act); RGPD de comuneros. Pieza en sección patrocinada por el proveedor.",
-    "fuente": "esRadio Almería (contenido patrocinado por el proveedor Ovisoft)",
+    "fuente": "esRadio Almería (sección OVISOFT, con intervención del CEO del proveedor)",
     "fuenteUrl": "https://www.esradioalmeria.com/ovisoft/2025/12/19/un-despacho-de-almeria-implementa-una-recepcionista-con-ia-para-optimizar-su-servicio-24-7/00/",
     "fuenteTipo": "proveedor",
     "fecha": "2025-12-19",

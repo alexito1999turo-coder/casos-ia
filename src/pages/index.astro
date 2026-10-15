@@ -10,7 +10,7 @@ const jsonld = [{"@context":"https://schema.org","@type":"WebSite","name":SITE.n
 <Base jsonld={jsonld}>
 <section class="hero"><h1>Lo que autónomos y pymes en España ya hacen con agentes de IA</h1>
 <p>Casos reales con resultado en horas o euros, prompt para copiar, notas para España (Hacienda, Verifactu, WhatsApp Business, Idealista, Kit Digital) y fuente enlazada. <strong>Copia la idea.</strong></p>
-<p class="stats">{casos.length} casos · Actualizado {fmt(ult)} · Fuentes: blogs, prensa, LinkedIn, X y Reddit en español · <a href={u("/feed.xml")}>RSS</a></p>
+<p class="stats">{casos.length} casos · Actualizado {fmt(ult)} · Fuentes: blogs, prensa, LinkedIn y X en español · <a href={u("/feed.xml")}>RSS</a></p>
 <p><a class="btn" href={u("/newsletter")}>Recibe los casos nuevos</a> <a class="btn" style="background:none;color:var(--fg)" href={u("/enviar-caso")}>Enviar un caso</a></p></section>
 <div class="box"><strong>{nUlt} casos nuevos</strong> · {fmt(ult)} · <a href={u("/nuevos")}>ver todos los nuevos →</a></div>
 <div class="filters"><input id="q" placeholder="Buscar: WhatsApp, facturas, reservas, Madrid…" aria-label="Buscar">
