@@ -72,6 +72,17 @@ h1,h2{letter-spacing:-.025em}h2{font-size:1.15rem;margin:32px 0 10px}
 .ficha aside{position:sticky;top:76px;border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:12px;font-size:.88rem}.ficha aside dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px}.ficha aside dt{font:.7rem var(--mono);text-transform:uppercase;color:var(--faint);padding-top:3px}.ficha aside dd{margin:0}
 @media(max-width:900px){.ficha{grid-template-columns:1fr;gap:8px}.ficha aside{position:static;order:-1}}
 .planes .card .price{font-size:1.5rem;font-weight:750;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:start;margin-top:8px}.mob{display:none!important}
+.side{position:sticky;top:72px;max-height:calc(100vh - 88px);overflow:auto;font-size:.86rem;padding-top:10px;scrollbar-width:thin}
+.side details{border-top:1px solid var(--line);padding:10px 0}.side summary{font:600 .7rem var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--faint);margin-bottom:6px}
+.side ul{list-style:none;margin:0;padding:0}.side li button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;justify-content:space-between;width:100%;padding:5px 8px;color:var(--muted)}
+.side li button span{font:.74rem var(--mono);color:var(--faint);font-variant-numeric:tabular-nums}.side li button:hover{background:var(--hatch);color:var(--fg)}.side li button.on{background:var(--accent);color:var(--bg)}.side li button.on span{color:var(--bg)}
+.side li button:focus-visible{outline:2px solid var(--accent)}
+.sort{display:inline-flex;margin-left:auto;border:1px solid var(--line)}.sort button,.fmeta .mob{background:none;color:var(--muted);border:0;padding:4px 10px;font:600 .7rem var(--mono);text-transform:uppercase;letter-spacing:.06em}.fmeta .mob{border:1px solid var(--line);color:var(--fg)}.sort button.on{background:var(--accent);color:var(--bg)}
+.maincol .fbar{margin-top:0}
+@media(max-width:900px){.layout{grid-template-columns:1fr;gap:0}.mob{display:revert!important}.side .sidehead{display:flex!important;justify-content:space-between;align-items:center;padding:4px 0 10px}.side .sidehead button{background:none;color:var(--fg);border:1px solid var(--line);padding:4px 10px}
+.side{position:fixed;top:0;left:0;bottom:0;width:min(86vw,320px);max-height:none;z-index:50;background:var(--bg);border-right:1px solid var(--line2);padding:16px 20px;transform:translateX(-102%);transition:transform .2s}.side.open{transform:none}
+#scrim{position:fixed;inset:0;background:rgb(0 0 0/.45);z-index:40}#scrim[hidden]{display:none!important}}
 </style>
 <script is:inline>if(localStorage.theme==='dark'||(!localStorage.theme&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')</script>
 <link rel="alternate" type="application/rss+xml" title="CasosAgentes" href={u("/feed.xml")}></head><body>

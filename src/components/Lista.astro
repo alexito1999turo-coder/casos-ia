@@ -2,5 +2,5 @@
 import Card from './Card.astro'; import SponsorCard from './SponsorCard.astro'; import CardJs from './CardJs.astro';
 const { casos, sponsorAt = 3 } = Astro.props;
 ---
-<div class="grid" id="list">{casos.map((c,i)=><>{i===sponsorAt && <SponsorCard />}<Card c={c} /></>)}{casos.length<=sponsorAt && <SponsorCard />}</div>
+<div class="grid" id="list" data-sp={sponsorAt}>{casos.map((c,i)=><>{i===sponsorAt && <SponsorCard />}<Card c={c} /></>)}{casos.length<=sponsorAt && <SponsorCard />}</div>
 <CardJs />

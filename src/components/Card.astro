@@ -4,7 +4,7 @@ const { c } = Astro.props;
 const esNuevo = (Date.parse('2026-10-16') - Date.parse(c.publicado)) < 7*864e5;
 const fuenteLbl = ({proveedor:'Publicado por el proveedor','red social':'Redes sociales',cliente:'Publicado por el negocio'})[c.fuenteTipo] ?? 'Prensa';
 ---
-<article class="card" data-sector={c.sector} data-tarea={c.tarea} data-herr={HERR[herrMain(c)]} data-slug={c.slug} data-text={(c.titulo+' '+c.resumen+' '+c.herramienta+' '+(c.ciudad||'')).toLowerCase()}>
+<article class="card" data-sector={c.sector} data-tarea={c.tarea} data-herr={HERR[herrMain(c)]} data-slug={c.slug} data-pub={c.publicado} data-res={c.resultado?1:0} data-text={(c.titulo+' '+c.resumen+' '+c.herramienta+' '+(c.ciudad||'')).toLowerCase()}>
 <div class="head"><span class="badge" aria-hidden="true">{iniciales(c.herramienta)}</span><span class="who"><a href={u(`/herramientas/${herrMain(c)}`)}>{HERR[herrMain(c)]}</a><small>{SECTORES[c.sector]}</small></span>{esNuevo && <span class="new">Nuevo</span>}</div>
 <h3><a href={u(`/casos/${c.slug}`)}>{c.titulo}</a></h3>
 <p class={c.resultado ? 'res' : 'res none'}>{c.resultado ? c.resultado : 'Sin cifra publicada en la fuente'}</p>
