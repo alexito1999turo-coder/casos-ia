@@ -3,7 +3,7 @@ import { SITE , u, ORIGIN } from '../data/meta.js';
 import { recorta } from '../data/meta.js';
 const { title, rawTitle, description = SITE.desc, jsonld, robots = 'index,follow', ogType = 'website', published, crumbs } = Astro.props;
 let canonical = new URL(Astro.url.pathname, ORIGIN).href; if (!canonical.endsWith('/')) canonical += '/';
-const full = rawTitle ?? (title ? (`${title} | ${SITE.nombre}`.length <= 60 ? `${title} | ${SITE.nombre}` : recorta(title, 60)) : `${SITE.nombre} · Casos reales de IA para pymes`);
+const full = rawTitle ?? (title ? (`${title} | ${SITE.nombre}`.length <= 60 ? `${title} | ${SITE.nombre}` : title) : `${SITE.nombre} · Casos reales de IA para pymes`);
 const desc = recorta(description, 155);
 const ogImage = `${SITE.url}/og.png`;
 const bc = crumbs && { "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{name:'Inicio',href:'/'},...crumbs].map((c,i)=>({"@type":"ListItem","position":i+1,"name":c.name,...(c.href?{"item":`${SITE.url}${c.href}`}:{})})) };

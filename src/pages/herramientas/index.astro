@@ -1,8 +1,8 @@
 ---
-import Base from '../../layouts/Base.astro'; import casos from '../../data/casos.json'; import { u, HERR, iniciales, SECTORES } from '../../data/meta.js';
+import Base from '../../layouts/Base.astro'; import casos from '../../data/casos.json'; import { u, HERR, iniciales, SECTORES, SITE } from '../../data/meta.js';
 const hs = Object.entries(casos.reduce((a,c)=>(c.herramientas.forEach(h=>(a[h]??=[]).push(c)),a),{})).sort((a,b)=>b[1].length-a[1].length||a[0].localeCompare(b[0]));
 ---
-<Base title="Herramientas de IA usadas por pymes españolas" description="Las herramientas y agentes de IA que usan autónomos y pymes en España, con casos reales de cada una.">
+<Base title="Herramientas de IA usadas por pymes españolas" description="Las herramientas y agentes de IA que usan autónomos y pymes en España, con casos reales de cada una." crumbs={[{name:'Herramientas'}]} jsonld={{"@context":"https://schema.org","@type":"CollectionPage","name":"Herramientas y agentes","inLanguage":"es-ES","url":`${SITE.url}/herramientas/`,"mainEntity":{"@type":"ItemList","numberOfItems":hs.length,"itemListElement":hs.map(([n],i)=>({"@type":"ListItem","position":i+1,"name":HERR[n],"url":`${SITE.url}/herramientas/${n}/`}))}}}>
 <h1>Herramientas y agentes</h1><p>{hs.length} herramientas y {casos.length} casos. Elige una para ver qué han conseguido con ella.</p>
 <div class="grid">{hs.map(([n,cs])=><article class="card"><div class="meta"><span class="badge">{iniciales(HERR[n])}</span><strong>{cs.length} {cs.length===1?'caso':'casos'}</strong></div><h3><a href={u(`/herramientas/${n}`)}>{HERR[n]}</a></h3><p>Sobre todo en: {[...new Set(cs.map(c=>SECTORES[c.sector]))].join(' · ')}</p></article>)}</div>
 </Base>

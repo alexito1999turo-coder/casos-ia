@@ -2,7 +2,7 @@
 import { u } from '../data/meta.js';
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Sobre CasosAgentes" description="Qué es CasosAgentes y cómo seleccionamos los casos.">
+<Base title="Sobre CasosAgentes" description="Qué es CasosAgentes y cómo seleccionamos los casos." crumbs={[{name:'Sobre'}]} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Sobre","inLanguage":"es-ES"}}>
 <h1>Sobre CasosAgentes</h1><p>CasosAgentes recopila casos <strong>reales y replicables</strong> de uso de IA y agentes en autónomos y pymes de España.</p>
 <h2>Criterios editoriales</h2><ul><li>Cada caso enlaza a una fuente pública y comprobamos que la URL responde.</li><li>Solo mostramos cifras (horas, euros) si la fuente las publica. Si no hay cifra, lo decimos.</li><li>Muchos casos los publica el propio proveedor o agencia: lo indicamos en cada ficha, y sus cifras no están verificadas de forma independiente.</li><li>Los prompts son ejemplos redactados por nosotros para ayudarte a replicar el caso.</li></ul>
 <p>¿Ves un error? Escríbenos desde <a href={u("/enviar-caso")}>Enviar caso</a>.</p>

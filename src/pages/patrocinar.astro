@@ -7,7 +7,7 @@ const planes=[
 ['Patrocinador de la newsletter','Bloque único al principio de «Los 5 del lunes»: logo, 50 palabras y enlace.','79 €/envío · 249 € por 4','1 por envío'],
 ['Caso patrocinado','Escribimos la ficha de un caso real de tu cliente, con cifras que tú documentas y etiqueta «Patrocinado».','199 € único','2 al mes']];
 ---
-<Base title="Patrocinar" description="Llega a autónomos y pymes españolas que buscan casos reales de IA.">
+<Base title="Patrocinar" description="Llega a autónomos y pymes españolas que buscan casos reales de IA." crumbs={[{name:'Patrocinar'}]} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Patrocinar","inLanguage":"es-ES"}}>
 <h1>Patrocina CasosAgentes</h1><p>Llega a autónomos, gestorías, clínicas, inmobiliarias y comercios españoles en el momento en que buscan cómo aplicar IA a su negocio.</p>
 <p class="stats">{casos.length} casos publicados · sitio en lanzamiento: aún no publicamos cifras de tráfico. Las mostraremos aquí en cuanto haya datos reales.</p>
 <div class="grid">{planes.map(([t,d,p,l])=><div class="card"><h3>{t}</h3><p>{d}</p><strong>{p}</strong><span class="stats">Disponibilidad: {l}</span></div>)}</div>

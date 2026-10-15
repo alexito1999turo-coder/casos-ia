@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro'; import casos from '../data/casos.json'; import { SECTORES, TAREAS, DESC_SECTOR, DESC_TAREA, u, slugify } from '../data/meta.js';
 const n=(k,v)=>casos.filter(c=>c[k]===v).length; const ciudades=[...new Set(casos.map(c=>c.ciudad).filter(Boolean))];
 ---
-<Base title="Categorías" description="Casos de IA para pymes por sector, tarea y ciudad.">
+<Base title="Categorías" description="Casos de IA para pymes por sector, tarea y ciudad." crumbs={[{name:'Categorías'}]} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Categorías","inLanguage":"es-ES"}}>
 <h1>Categorías</h1>
 <h2>Por sector</h2><div class="grid">{Object.entries(SECTORES).filter(([k])=>n('sector',k)).map(([k,v])=><article class="card"><strong class="stats">{n('sector',k)} casos</strong><h3><a href={u(`/sector/${k}`)}>{v}</a></h3><p>{DESC_SECTOR[k]}</p></article>)}</div>
 <h2>Por tarea</h2><div class="grid">{Object.entries(TAREAS).filter(([k])=>n('tarea',k)).map(([k,v])=><article class="card"><strong class="stats">{n('tarea',k)} casos</strong><h3><a href={u(`/tarea/${k}`)}>{v}</a></h3><p>{DESC_TAREA[k]}</p></article>)}</div>
