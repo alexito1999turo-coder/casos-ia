@@ -8,21 +8,22 @@ const fmt = d => new Date(d).toLocaleDateString('es-ES',{weekday:'short',day:'nu
 const jsonld = [{"@context":"https://schema.org","@type":"WebSite","name":SITE.nombre,"url":SITE.url+'/',"inLanguage":"es-ES","description":SITE.desc},{"@context":"https://schema.org","@type":"ItemList","itemListElement":orden.map((c,i)=>({"@type":"ListItem","position":i+1,"url":`${SITE.url}/casos/${c.slug}/`,"name":c.titulo}))}];
 ---
 <Base jsonld={jsonld}>
-<section class="hero"><h1>Lo que autónomos y pymes en España ya hacen con agentes de IA</h1>
+<section class="hero"><span class="eyebrow">Directorio · España · Actualizado {fmt(ult)}</span><h1>Lo que autónomos y pymes en España <em>ya hacen</em> con agentes de IA</h1>
 <p>Casos reales con resultado en horas o euros, prompt para copiar, notas para España (Hacienda, Verifactu, WhatsApp Business, Idealista, Kit Digital) y fuente enlazada. <strong>Copia la idea.</strong></p>
-<p class="stats">{casos.length} casos · Actualizado {fmt(ult)} · Fuentes: blogs, prensa, LinkedIn y X en español · <a href={u("/feed.xml")}>RSS</a></p>
-<p><a class="btn" href={u("/newsletter")}>Recibe los casos nuevos</a> <a class="btn" style="background:none;color:var(--fg)" href={u("/enviar-caso")}>Enviar un caso</a></p></section>
-<div class="box"><strong>{nUlt} casos nuevos</strong> · {fmt(ult)} · <a href={u("/nuevos")}>ver todos los nuevos →</a></div>
-<div class="filters"><input id="q" placeholder="Buscar: WhatsApp, facturas, reservas, Madrid…" aria-label="Buscar">
-<select id="fs" aria-label="Sector"><option value="">Todos los sectores</option>{Object.entries(SECTORES).map(([k,v])=><option value={k}>{v}</option>)}</select>
-<select id="ft" aria-label="Tarea"><option value="">Todas las tareas</option>{Object.entries(TAREAS).map(([k,v])=><option value={k}>{v}</option>)}</select>
-<select id="fh" aria-label="Herramienta"><option value="">Todas las herramientas</option>{herrs.map(h=><option value={h}>{h}</option>)}</select></div>
-<p class="stats"><span id="count"></span> · <label style="cursor:pointer"><input type="checkbox" id="fg" style="width:auto"> Solo mis guardados</label></p>
+<p class="stats">{casos.length} casos · Fuentes: blogs, prensa, LinkedIn, X y Reddit en español · <a href={u("/feed.xml")}>RSS</a></p>
+<div class="ctas"><a class="btn" href={u("/newsletter")}>Recibe los casos nuevos</a><a class="btn ghost" href={u("/enviar-caso")}>Enviar un caso</a></div></section>
+<div class="strip"><span class="dot" aria-hidden="true"></span><strong>{nUlt} casos nuevos</strong><span class="stats">{fmt(ult)}</span><a href={u("/nuevos")} style="margin-left:auto">Ver los nuevos →</a></div>
+<div class="fbar"><div class="filters"><input type="search" id="q" placeholder="Buscar: WhatsApp, facturas, reservas, Madrid…" aria-label="Buscar">
+<select id="fs" aria-label="Sector"><option value="">Sector</option>{Object.entries(SECTORES).map(([k,v])=><option value={k}>{v}</option>)}</select>
+<select id="ft" aria-label="Tarea"><option value="">Tarea</option>{Object.entries(TAREAS).map(([k,v])=><option value={k}>{v}</option>)}</select>
+<select id="fh" aria-label="Herramienta"><option value="">Herramienta</option>{herrs.map(h=><option value={h}>{h}</option>)}</select><button id="clr" type="button">Limpiar</button></div>
+<div class="fmeta"><span id="count" aria-live="polite"></span><label><input type="checkbox" id="fg"> Solo mis guardados</label></div></div>
 <Lista casos={orden} />
 <script is:inline>
 const $=id=>document.getElementById(id);const cards=[...document.querySelectorAll('#list .card[data-slug]')];
 function f(){const q=$('q').value.toLowerCase(),s=$('fs').value,t=$('ft').value,h=$('fh').value,g=$('fg').checked,G=JSON.parse(localStorage.casosGuardados||'[]');let n=0;
-cards.forEach(c=>{const ok=(!q||c.dataset.text.includes(q))&&(!s||c.dataset.sector===s)&&(!t||c.dataset.tarea===t)&&(!h||c.dataset.herr===h)&&(!g||G.includes(c.dataset.slug));c.style.display=ok?'':'none';if(ok)n++});$('count').textContent=n+' casos';}
+cards.forEach(c=>{const ok=(!q||c.dataset.text.includes(q))&&(!s||c.dataset.sector===s)&&(!t||c.dataset.tarea===t)&&(!h||c.dataset.herr===h)&&(!g||G.includes(c.dataset.slug));c.style.display=ok?'':'none';if(ok)n++});$('count').textContent=n+(n===1?' caso':' casos');const u=new URLSearchParams();if(q)u.set('q',q);if(s)u.set('sector',s);if(t)u.set('tarea',t);history.replaceState(null,'',u.toString()?'?'+u:location.pathname);}
+$('clr').onclick=()=>{['q','fs','ft','fh'].forEach(i=>$(i).value='');$('fg').checked=false;f()};
 ['q','fs','ft','fh','fg'].forEach(i=>$(i).addEventListener('input',f));document.addEventListener('guardados',f);
 const p=new URLSearchParams(location.search);if(p.get('sector'))$('fs').value=p.get('sector');if(p.get('tarea'))$('ft').value=p.get('tarea');if(p.get('q'))$('q').value=p.get('q');f();
 </script>

@@ -1,6 +1,6 @@
 ---
 import { u } from '../data/meta.js'; import casos from '../data/casos.json';
-import Base from '../layouts/Base.astro';
+import Base from '../layouts/Base.astro'; import SponsorCard from '../components/SponsorCard.astro';
 const planes=[
 ['Hueco en el listado','Tarjeta patrocinada fija en la posición 4 de la home y del listado de casos nuevos, con el mismo formato que un caso.','149 €/mes','1 hueco'],
 ['Patrocinio de sector','Tu tarjeta en la landing del sector (p. ej. Hostelería o Inmobiliaria) y en las fichas de ese sector, en «Casos relacionados».','99 €/mes por sector','1 por sector'],
@@ -8,9 +8,10 @@ const planes=[
 ['Caso patrocinado','Escribimos la ficha de un caso real de tu cliente, con cifras que tú documentas y etiqueta «Patrocinado».','199 € único','2 al mes']];
 ---
 <Base title="Patrocinar" description="Llega a autónomos y pymes españolas que buscan casos reales de IA." crumbs={[{name:'Patrocinar'}]} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Patrocinar","inLanguage":"es-ES"}}>
-<h1>Patrocina CasosAgentes</h1><p>Llega a autónomos, gestorías, clínicas, inmobiliarias y comercios españoles en el momento en que buscan cómo aplicar IA a su negocio.</p>
-<p class="stats">{casos.length} casos publicados · sitio en lanzamiento: aún no publicamos cifras de tráfico. Las mostraremos aquí en cuanto haya datos reales.</p>
-<div class="grid">{planes.map(([t,d,p,l])=><div class="card"><h3>{t}</h3><p>{d}</p><strong>{p}</strong><span class="stats">Disponibilidad: {l}</span></div>)}</div>
+<section class="hero"><span class="eyebrow">Patrocinio · Siempre marcado como «Patrocinado»</span><h1>Patrocina CasosAgentes</h1><p>Llega a autónomos, gestorías, clínicas, inmobiliarias y comercios españoles en el momento en que buscan cómo aplicar IA a su negocio.</p>
+<p class="stats">{casos.length} casos publicados · sitio en lanzamiento: aún no publicamos cifras de tráfico. Las mostraremos aquí en cuanto haya datos reales.</p></section>
+<div class="grid planes">{planes.map(([t,d,p,l])=><div class="card"><span class="splbl" style="align-self:flex-start">Patrocinado</span><h3>{t}</h3><p>{d}</p><span class="price">{p}</span><span class="src">Disponibilidad: {l}</span></div>)}</div>
+<h2>Así se ve un hueco patrocinado</h2><div class="grid" style="max-width:420px"><SponsorCard /></div>
 <h2>Reglas</h2><ul><li>Todo patrocinio se marca como «Patrocinado».</li><li>Pagar no cambia qué casos publicamos ni sus cifras.</li><li>Solo aceptamos productos útiles para pymes españolas.</li></ul>
 <p><em>Precios de lanzamiento orientativos. El pago online aún no está activo: escríbenos desde <a href={u("/enviar-caso")}>el formulario</a> indicando «Patrocinio».</em></p>
 </Base>
