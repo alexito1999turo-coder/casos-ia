@@ -1,8 +1,8 @@
 ---
-import Base from '../layouts/Base.astro'; import casos from '../data/casos.json'; import { SECTORES, TAREAS } from '../data/meta.js';
+import Base from '../layouts/Base.astro'; import casos from '../data/casos.json'; import { SECTORES, TAREAS , u } from '../data/meta.js';
 const n=(k,v)=>casos.filter(c=>c[k]===v).length;
 ---
 <Base title="Categorías" description="Casos de IA por sector y por tarea para pymes españolas.">
-<h1>Categorías</h1><h2>Por sector</h2><div class="grid">{Object.entries(SECTORES).map(([k,v])=><a class="card" href={`/?sector=${k}`}><h3>{v}</h3>{n('sector',k)} casos</a>)}</div>
-<h2>Por tarea</h2><div class="grid">{Object.entries(TAREAS).map(([k,v])=><a class="card" href={`/?tarea=${k}`}><h3>{v}</h3>{n('tarea',k)} casos</a>)}</div>
+<h1>Categorías</h1><h2>Por sector</h2><div class="grid">{Object.entries(SECTORES).map(([k,v])=><a class="card" href={u(`/?sector=${k}`)}><h3>{v}</h3>{n('sector',k)} casos</a>)}</div>
+<h2>Por tarea</h2><div class="grid">{Object.entries(TAREAS).map(([k,v])=><a class="card" href={u(`/?tarea=${k}`)}><h3>{v}</h3>{n('tarea',k)} casos</a>)}</div>
 </Base>

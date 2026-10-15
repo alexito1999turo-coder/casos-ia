@@ -1,13 +1,13 @@
 ---
-import { SITE } from '../data/meta.js';
+import { SITE , u, ORIGIN } from '../data/meta.js';
 const { title, description = SITE.desc, jsonld } = Astro.props;
-const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const canonical = new URL(Astro.url.pathname, ORIGIN).href;
 const full = title ? `${title} | ${SITE.nombre}` : `${SITE.nombre} · Casos reales de IA para autónomos y pymes`;
 ---
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{full}</title><meta name="description" content={description}><link rel="canonical" href={canonical}>
 <meta property="og:title" content={full}><meta property="og:description" content={description}><meta property="og:type" content="website"><meta property="og:url" content={canonical}><meta property="og:locale" content="es_ES">
-<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+<link rel="alternate" type="text/plain" href={u("/llms.txt")} title="llms.txt">
 {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
 <style is:global>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#1a1a2e;background:#f7f7fb;line-height:1.55}
@@ -25,7 +25,7 @@ input,select,textarea{padding:9px;border:1px solid #ccc;border-radius:8px;font-s
 .filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;margin:16px 0}@media(max-width:700px){.filters{grid-template-columns:1fr}}
 main{padding:24px 0 48px}footer{padding:24px 0;font-size:.85rem}.hero{padding:28px 0 8px}.hero h1{font-size:2rem;margin:0}
 </style></head><body>
-<header><div class="wrap"><nav><a class="logo" href="/">Casos<span>IA</span></a><a href="/categorias">Categorías</a><a href="/enviar-caso">Enviar caso</a><a href="/newsletter">Newsletter</a><a href="/patrocinar">Patrocinar</a><a href="/sobre">Sobre</a></nav></div></header>
+<header><div class="wrap"><nav><a class="logo" href={u("/")}>Casos<span>IA</span></a><a href={u("/categorias")}>Categorías</a><a href={u("/enviar-caso")}>Enviar caso</a><a href={u("/newsletter")}>Newsletter</a><a href={u("/patrocinar")}>Patrocinar</a><a href={u("/sobre")}>Sobre</a></nav></div></header>
 <main class="wrap"><slot /></main>
-<footer><div class="wrap">CasosIA · Casos reales de IA para autónomos y pymes en España. Las cifras son las que publica cada fuente; no las verificamos de forma independiente. · <a href="/llms.txt">llms.txt</a> · <a href="/sitemap-index.xml">sitemap</a></div></footer>
+<footer><div class="wrap">CasosIA · Casos reales de IA para autónomos y pymes en España. Las cifras son las que publica cada fuente; no las verificamos de forma independiente. · <a href={u("/llms.txt")}>llms.txt</a> · <a href={u("/sitemap-index.xml")}>sitemap</a></div></footer>
 </body></html>

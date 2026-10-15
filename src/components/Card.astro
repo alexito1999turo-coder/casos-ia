@@ -1,10 +1,10 @@
 ---
-import { SECTORES, TAREAS } from '../data/meta.js';
+import { SECTORES, TAREAS , u } from '../data/meta.js';
 const { c } = Astro.props;
 ---
 <article class="card" data-sector={c.sector} data-tarea={c.tarea} data-herr={c.herramienta} data-text={(c.titulo+' '+c.resumen+' '+c.herramienta).toLowerCase()}>
 <span class="tag">{SECTORES[c.sector]}</span><span class="tag">{TAREAS[c.tarea]}</span>
-<h3><a href={`/casos/${c.slug}`}>{c.titulo}</a></h3>
+<h3><a href={u(`/casos/${c.slug}`)}>{c.titulo}</a></h3>
 <p class={c.resultado ? 'res' : 'res none'}>{c.resultado ?? 'Sin cifra publicada en la fuente'}</p>
 <small>🛠 {c.herramienta}</small>
 </article>

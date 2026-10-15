@@ -1,13 +1,13 @@
 ---
-import Base from '../../layouts/Base.astro'; import casos from '../../data/casos.json'; import { SECTORES, TAREAS, SITE } from '../../data/meta.js';
+import Base from '../../layouts/Base.astro'; import casos from '../../data/casos.json'; import { SECTORES, TAREAS, SITE , u } from '../../data/meta.js';
 export function getStaticPaths(){ return casos.map(c=>({params:{slug:c.slug},props:{c}})); }
 const { c } = Astro.props; const url = `${SITE.url}/casos/${c.slug}`;
 const jsonld = [{"@context":"https://schema.org","@type":"Article","headline":c.titulo,"description":c.resumen,"inLanguage":"es-ES","url":url,"isBasedOn":c.fuenteUrl,"citation":c.fuenteUrl,"publisher":{"@type":"Organization","name":SITE.nombre}},
 {"@context":"https://schema.org","@type":"HowTo","name":`Cómo replicar: ${c.titulo}`,"tool":{"@type":"HowToTool","name":c.herramienta},"step":[{"@type":"HowToStep","name":"Copia el prompt","text":c.prompt},{"@type":"HowToStep","name":"Adáptalo a España","text":c.adaptacion}]}];
 ---
 <Base title={c.titulo} description={c.resumen} jsonld={jsonld}>
-<p><a href="/">← Todos los casos</a></p>
-<a class="tag" href={`/?sector=${c.sector}`}>{SECTORES[c.sector]}</a><a class="tag" href={`/?tarea=${c.tarea}`}>{TAREAS[c.tarea]}</a>
+<p><a href={u("/")}>← Todos los casos</a></p>
+<a class="tag" href={u(`/?sector=${c.sector}`)}>{SECTORES[c.sector]}</a><a class="tag" href={u(`/?tarea=${c.tarea}`)}>{TAREAS[c.tarea]}</a>
 <h1>{c.titulo}</h1><p>{c.resumen}</p>
 <h2>Resultado</h2><p class={c.resultado?'res':'res none'}>{c.resultado ?? 'Sin cifra publicada.'} {c.resultadoNota}</p>
 <h2>Prompt listo para copiar</h2><p><small>Prompt de ejemplo redactado por CasosIA para replicar el caso (no procede de la fuente). Rellena lo que va entre [corchetes].</small></p>
