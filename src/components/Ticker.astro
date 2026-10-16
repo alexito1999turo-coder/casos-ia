@@ -1,0 +1,24 @@
+---
+import casos from '../data/casos.json';
+import { u, HERR, herrMain, iniciales } from '../data/meta.js';
+// Solo datos reales: herramientas con más casos (conteo de casos.json), casos más recientes y huecos patrocinados marcados.
+const m = {}; casos.forEach(c => { const k = herrMain(c); m[k] = (m[k] || 0) + 1; });
+const top = Object.entries(m).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 5);
+const recientes = [...casos].filter(c => !c.patrocinado).sort((a, b) => b.publicado.localeCompare(a.publicado)).slice(0, 6);
+const pats = casos.filter(c => c.patrocinado);
+const corta = (s, n = 70) => s.length > n ? s.slice(0, n - 1).replace(/\s\S*$/, '') + '…' : s;
+const items = [
+  ...top.map(([k, n]) => ({ k: 'Más casos', href: u(`/herramientas/${k}`), ini: iniciales(HERR[k]), t: HERR[k], d: `${n} ${n === 1 ? 'caso' : 'casos'}` })),
+  ...recientes.map(c => ({ k: 'Reciente', href: u(`/casos/${c.slug}`), ini: iniciales(c.herramienta), t: corta(c.titulo) })),
+  ...pats.map(c => ({ k: 'Patrocinado', sp: true, href: u(`/casos/${c.slug}`), ini: iniciales(c.herramienta), t: corta(c.titulo), d: c.patrocinado })),
+  { k: 'Patrocinado', sp: true, href: u('/patrocinar'), ini: '+', t: 'Tu herramienta aquí', d: 'hueco libre' },
+];
+---
+<aside class="tk" id="tk" aria-label="Destacados del directorio" data-tk>
+<span class="tk-lbl" aria-hidden="true">En el directorio</span>
+<div class="tk-m" tabindex="-1"><div class="tk-track">
+{[0, 1].map(i => <ul class="tk-set" aria-hidden={i ? 'true' : undefined}>{items.map(it => <li><a href={it.href} class={it.sp ? 'sp' : undefined} tabindex={i ? -1 : undefined}><span class="tk-k">{it.k}</span><span class="tk-b" aria-hidden="true">{it.ini}</span><span class="tk-t">{it.t}</span>{it.d && <span class="tk-d">· {it.d}</span>}</a></li>)}</ul>)}
+</div></div>
+<button type="button" class="tk-x" id="tkx" aria-label="Cerrar la barra de destacados">✕</button>
+</aside>
+<script is:inline>document.getElementById('tkx').onclick=()=>{localStorage.tkHidden='1';document.documentElement.setAttribute('data-tk-hidden','')};</script>
