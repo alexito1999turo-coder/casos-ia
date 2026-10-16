@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alexito1999turo-coder.github.io/casos-ia/sitemap-index.xml
