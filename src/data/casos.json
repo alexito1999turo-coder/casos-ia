@@ -98,7 +98,7 @@
     "fuenteUrl": "https://nievasconsulting.com/casos/foryou-inmo",
     "fuenteTipo": "proveedor",
     "fecha": "2025",
-    "ciudad": null,
+    "ciudad": "San Sebastián-Donostia",
     "publicado": "2026-10-15",
     "herramientas": [
       "whatsapp-business"
@@ -163,7 +163,7 @@
     "fuenteUrl": "https://bookline.ai/casos-de-exito/grupo-ceviche",
     "fuenteTipo": "proveedor",
     "fecha": "2025",
-    "ciudad": null,
+    "ciudad": "Barcelona",
     "publicado": "2026-10-15",
     "herramientas": [
       "thefork",
@@ -248,7 +248,7 @@
     "fuenteUrl": "https://emprendedores.es/gestion/ecommerce-chatgpt/",
     "fuenteTipo": "prensa",
     "fecha": "2023-05-30",
-    "ciudad": null,
+    "ciudad": "El Ejido (Almería)",
     "publicado": "2026-10-15",
     "herramientas": [
       "chatgpt"
@@ -364,7 +364,7 @@
     "fuenteUrl": "https://www.bclia.es/servicios/chatbot-whatsapp-asturias",
     "fuenteTipo": "proveedor",
     "fecha": "no indicado",
-    "ciudad": null,
+    "ciudad": "Vitoria-Gasteiz",
     "publicado": "2026-10-16",
     "herramientas": [
       "whatsapp-business",
@@ -412,7 +412,7 @@
     "fuenteUrl": "https://www.bclia.es/servicios/chatbot-whatsapp-clinicas-fisioterapia",
     "fuenteTipo": "proveedor",
     "fecha": "2026-09",
-    "ciudad": null,
+    "ciudad": "La Fresneda (Siero)",
     "publicado": "2026-10-16",
     "herramientas": [
       "whatsapp-business",
@@ -784,7 +784,7 @@
     "fuenteUrl": "https://www.codigoadria.com/publicidad-en-chatgpt/",
     "fuenteTipo": "cliente",
     "fecha": "2026-09",
-    "ciudad": null,
+    "ciudad": "Valencia",
     "publicado": "2026-10-16",
     "herramientas": [
       "chatgpt",
@@ -807,7 +807,7 @@
     "fuenteUrl": "https://www.codigoadria.com/claude-para-ecommerce-33000-productos/",
     "fuenteTipo": "cliente",
     "fecha": "2026-08",
-    "ciudad": null,
+    "ciudad": "Valencia",
     "publicado": "2026-10-16",
     "herramientas": [
       "claude",
@@ -1150,7 +1150,7 @@
     "fuenteUrl": "https://www.elperiodico.com/es/vida-y-estilo/20260507/eric-ayala-pizzero-chatgpt-gestionar-equipo-comida-pizza-dv-129747353",
     "fuenteTipo": "prensa",
     "fecha": "2026-05-07",
-    "ciudad": null,
+    "ciudad": "Sabadell",
     "publicado": "2026-10-16",
     "herramientas": [
       "chatgpt"
@@ -1244,5 +1244,161 @@
       "agente-ia-a-medida"
     ],
     "tituloSeo": "Garay Ballester (Almería): recepcionista de voz IA 24/7"
+  },
+  {
+    "slug": "excelsior-barber-studio-palma-citaflow",
+    "titulo": "Excelsior Barber Studio (Palma) gestiona citas con Citaflow por teléfono y WhatsApp",
+    "resumen": "Diario de Mallorca cuenta que Excelsior Barber Studio, con locales en Palma, ha incorporado Citaflow, un sistema de IA que atiende llamadas, responde WhatsApp y gestiona reservas. Ángel Gabriel Prado, responsable del local, dice que puede estar comiendo o dormido y la IA sigue programando citas, y que antes el teléfono le limitaba muchos cortes al día. La pieza lleva content-branded:0 (no marcada como patrocinada).",
+    "resultado": null,
+    "resultadoNota": "La pieza no publica cifras de reservas, facturación o cortes atribuidas a la IA.",
+    "sector": "servicios",
+    "tarea": "atencion-cliente",
+    "herramienta": "Citaflow (llamadas, WhatsApp y reservas)",
+    "herramientas": [
+      "citaflow",
+      "whatsapp-business"
+    ],
+    "prompt": "Prompt sugerido: «Atiende llamadas y WhatsApp del estudio. Informa de precios, horarios y disponibilidad, y reserva, cambia o cancela citas según la agenda real. Preséntate como asistente automático.»",
+    "adaptacion": "AI Act: identificarse como IA. WhatsApp Business. RGPD en historial de clientes. Fuente periodística regional (content-branded:0).",
+    "fuente": "Diario de Mallorca",
+    "fuenteUrl": "https://www.diariodemallorca.es/sociedad/2026/07/16/inteligencia-artificial-cuela-barberias-mallorca-132222390.html",
+    "fuenteTipo": "prensa",
+    "fecha": "2026-07-16",
+    "ciudad": "Palma de Mallorca",
+    "publicado": "2026-10-16",
+    "tituloSeo": "Excelsior Barber (Palma): citas con Citaflow por teléfono"
+  },
+  {
+    "slug": "hotel-rural-la-encantada-becerril-ia-gestion",
+    "titulo": "Hotel Rural La Encantada (Becerril, Segovia): Elena Rodríguez usa IA en la gestión",
+    "resumen": "En la web del hotel, Elena Rodríguez González, propietaria del Hotel Rural La Encantada y de La Pizarrera en Becerril (Sierra de Ayllón, Segovia), escribe que en el último año presta especial atención al uso de la inteligencia artificial aplicada a la gestión: la utiliza para analizar datos, mejorar procesos, organizar la comunicación y ganar eficiencia con recursos limitados. La web no nombra ChatGPT ni otra marca de producto.",
+    "resultado": null,
+    "resultadoNota": "La fuente no da cifras de ahorro ni de uso.",
+    "sector": "hosteleria",
+    "tarea": "admin",
+    "herramienta": "inteligencia artificial (sin marca de producto en la fuente)",
+    "herramientas": [
+      "agente-ia-a-medida"
+    ],
+    "prompt": "Prompt sugerido: «Con estos datos de reservas y perfiles de huésped, propón experiencias del catálogo que encajen y un borrador de mensaje personalizado.»",
+    "adaptacion": "Hotel rural independiente. RGPD en datos de huéspedes. La web no nombra ChatGPT ni otra marca: no inventar la herramienta.",
+    "fuente": "Hotel Rural La Encantada (web)",
+    "fuenteUrl": "https://hotelruralaencantada.es/elena-rodriguez-gonzalez-gestion-hospitalidad-autor/",
+    "fuenteTipo": "cliente",
+    "fecha": "no indicado",
+    "ciudad": "Becerril (Segovia)",
+    "publicado": "2026-10-16",
+    "tituloSeo": "Hotel Rural La Encantada: IA en la gestión hotelera"
+  },
+  {
+    "slug": "anukys-malaga-api-openai-limites-gasto",
+    "titulo": "Anukys Europe (Málaga): pyme que usa la API de OpenAI y disputa un fallo de límites de gasto",
+    "resumen": "El Español (Málaga) relata que Anukys Europe, pyme tecnológica malagueña dirigida por Diego J. Pavón, usa la API de OpenAI con un presupuesto mensual configurado de 100 dólares y documenta un cargo de 3.284,66 dólares pese a ese tope. El caso describe uso real de modelos vía API en una pyme española y el riesgo de los controles de gasto.",
+    "resultado": null,
+    "resultadoNota": "La cifra 3.284,66 $ es el cargo disputado, no un resultado de negocio positivo de la IA.",
+    "sector": "servicios",
+    "tarea": "admin",
+    "herramienta": "API de OpenAI",
+    "herramientas": [
+      "chatgpt"
+    ],
+    "prompt": "Prompt sugerido: no aplica (uso vía API; la fuente no publica un prompt de negocio).",
+    "adaptacion": "Pyme tecnológica. Controlar presupuestos duros en la API. RGPD si se envían datos de clientes a OpenAI. Pieza sin marcas de patrocinio en cabecera.",
+    "fuente": "El Español (Málaga)",
+    "fuenteUrl": "https://www.elespanol.com/malaga/economia/tecnologia/20260319/lucha-pyme-malaguena-gigante-open-ai-gran-fallo-limites-gasto/1003744176276_0.html",
+    "fuenteTipo": "prensa",
+    "fecha": "2026-03-19",
+    "ciudad": "Málaga",
+    "publicado": "2026-10-16",
+    "tituloSeo": "Anukys Europe (Málaga): API de OpenAI y límites de gasto"
+  },
+  {
+    "slug": "psi-valencia-crm-ia-auttomai",
+    "titulo": "PSI Valencia: CRM con IA que clasifica y responde leads (Manuel Fernández)",
+    "resumen": "Auttomai documenta el caso concreto de PSI Valencia, consultora inmobiliaria (personal shopper) fundada por Manuel Fernández: CRM a medida con automatizaciones de IA para clasificar y responder leads desde web, formularios, email y redes, email marketing con Mailchimp y un asistente de IA dentro del CRM. La página sitúa el proyecto en Valencia (España).",
+    "resultado": null,
+    "resultadoNota": "Cifras de ventas y tareas repetitivas aparecen en la página del proveedor; no se toman como resultado verificado.",
+    "sector": "inmobiliaria",
+    "tarea": "ventas",
+    "herramienta": "CRM a medida con IA (Auttomai) + Mailchimp",
+    "herramientas": [
+      "agente-ia-a-medida"
+    ],
+    "prompt": "Prompt sugerido: «Clasifica este lead por urgencia y zona, resume qué pide y propón el siguiente mensaje.»",
+    "adaptacion": "Inmobiliaria. RGPD en leads. URL de caso concreto del proveedor, no página genérica de servicios.",
+    "fuente": "Auttomai (caso PSI Valencia)",
+    "fuenteUrl": "https://auttomai.com/casos-de-exito/crm-ceo-control",
+    "fuenteTipo": "proveedor",
+    "fecha": "2026-04",
+    "ciudad": "Valencia",
+    "publicado": "2026-10-16",
+    "tituloSeo": "PSI Valencia: CRM con IA para clasificar leads"
+  },
+  {
+    "slug": "urban-psi-crm-ia-franquiciados-auttomai",
+    "titulo": "Urban PSI: CRM con IA para captar franquiciados desde portales",
+    "resumen": "Auttomai describe el CRM inteligente de Urban PSI (red de franquicia inmobiliaria vinculada a Manuel Fernández / PSI Valencia) que registra leads de Infofranquicias, Tormo y otros portales, los cualifica con IA y ofrece un asistente de IA al equipo de expansión. El testimonio identifica al fundador con PSI Valencia.",
+    "resultado": null,
+    "resultadoNota": "Cifras de leads y reuniones solo en la página del proveedor; resultado null.",
+    "sector": "inmobiliaria",
+    "tarea": "ventas",
+    "herramienta": "CRM a medida con IA (Auttomai) + portales de franquicia",
+    "herramientas": [
+      "agente-ia-a-medida"
+    ],
+    "prompt": "Prompt sugerido: «Cualifica a este candidato a franquiciado según perfil y resume si está listo para reunión.»",
+    "adaptacion": "Franquicia inmobiliaria. RGPD. Misma órbita que PSI Valencia; no duplica el CRM de leads de clientes finales.",
+    "fuente": "Auttomai (caso Urban PSI)",
+    "fuenteUrl": "https://auttomai.com/casos-de-exito/crm-automatizado-ia-urban-psi",
+    "fuenteTipo": "proveedor",
+    "fecha": "2026-04",
+    "ciudad": "Valencia",
+    "publicado": "2026-10-16",
+    "tituloSeo": "Urban PSI: CRM con IA para captar franquiciados"
+  },
+  {
+    "slug": "nohek-salon-terrassa-claudia-telefono-whatsapp",
+    "titulo": "Nohek Salón (Terrassa): Adelina atiende citas con ClaudIA en teléfono, WhatsApp e Instagram",
+    "resumen": "ClaudIA Tech publica el caso de Nohek Salón, peluquería y estética en Carrer d'Arquímedes 177, 08224 Terrassa (Barcelona). Adelina conectó teléfono, WhatsApp e Instagram a ClaudIA para informar de servicios, consultar la agenda real y reservar citas. El salón publicó vídeos del uso en su Instagram (citados por la fuente).",
+    "resultado": null,
+    "resultadoNota": "Las cifras 90 % atención, 100 % citas telefónicas y −80 % ausencias están solo en la landing del proveedor; no se usan como resultado.",
+    "sector": "servicios",
+    "tarea": "atencion-cliente",
+    "herramienta": "ClaudIA (voz + WhatsApp + Instagram)",
+    "herramientas": [
+      "claudia",
+      "whatsapp-business"
+    ],
+    "prompt": "Prompt sugerido: «Eres la asistente del salón. Informa de servicios y precios, consulta la agenda y reserva, cambia o cancela citas. Si piden hablar con una persona, deriva al equipo.»",
+    "adaptacion": "Peluquería. AI Act: identificarse como IA. RGPD. Fuente: URL de caso concreto; cifras comerciales del proveedor no trasladadas.",
+    "fuente": "ClaudIA Tech (caso Nohek Salón)",
+    "fuenteUrl": "https://www.claudiatech.es/casos/nohek-salon",
+    "fuenteTipo": "proveedor",
+    "fecha": "no indicado",
+    "ciudad": "Terrassa",
+    "publicado": "2026-10-16",
+    "tituloSeo": "Nohek Salón (Terrassa): citas con ClaudIA"
+  },
+  {
+    "slug": "sana-nutrients-marbella-asistente-ia-web",
+    "titulo": "SANA Nutrients (Marbella): asistente de IA en la web para dudas de productos",
+    "resumen": "En su página Sobre nosotros, SANA Nutrients (Preventive Lifestyle Health S.L.) declara haber desarrollado un asistente de inteligencia artificial integrado en toda la web para acompañar al usuario con dudas sobre productos, ingredientes, rutinas, packs y ofertas, con enfoque divulgativo y sin sustituir a un profesional sanitario. El aviso legal fija el domicilio en Avda. Ricardo Soriano 65, 29601 Marbella.",
+    "resultado": null,
+    "resultadoNota": "La web del negocio no publica métricas de conversión del asistente.",
+    "sector": "comercio",
+    "tarea": "atencion-cliente",
+    "herramienta": "asistente de IA en la web (sin marca de modelo en la fuente)",
+    "herramientas": [
+      "agente-ia-a-medida"
+    ],
+    "prompt": "Prompt sugerido: «Eres el asistente de SANA. Responde dudas sobre productos e ingredientes con tono divulgativo. No des consejo médico personalizado; deriva a un profesional sanitario cuando proceda.»",
+    "adaptacion": "Ecommerce de suplementación. No sustituye consejo sanitario. RGPD. Ciudad en aviso legal del mismo dominio.",
+    "fuente": "SANA Nutrients (web)",
+    "fuenteUrl": "https://sananutrients.com/pages/about-us",
+    "fuenteTipo": "cliente",
+    "fecha": "no indicado",
+    "ciudad": "Marbella",
+    "publicado": "2026-10-16",
+    "tituloSeo": "SANA Nutrients (Marbella): asistente de IA en la web"
   }
 ]
