@@ -1,6 +1,7 @@
 ---
 import { SITE , u, ORIGIN } from '../data/meta.js';
 import { recorta } from '../data/meta.js';
+import Ticker from '../components/Ticker.astro';
 const { title, rawTitle, description = SITE.desc, jsonld, robots = 'index,follow', ogType = 'website', published, crumbs } = Astro.props;
 let canonical = new URL(Astro.url.pathname, ORIGIN).href; if (!canonical.endsWith('/')) canonical += '/';
 const full = rawTitle ?? (title ? (`${title} | ${SITE.nombre}`.length <= 60 ? `${title} | ${SITE.nombre}` : title) : `${SITE.nombre} · Casos reales de IA para pymes`);
@@ -84,11 +85,28 @@ h1,h2{letter-spacing:-.025em}h2{font-size:1.15rem;margin:32px 0 10px}
 @media(max-width:900px){.layout{grid-template-columns:1fr;gap:0}.mob{display:revert!important}.side .sidehead{display:flex!important;justify-content:space-between;align-items:center;padding:4px 0 10px}.side .sidehead button{background:none;color:var(--fg);border:1px solid var(--line);padding:4px 10px}
 .side{position:fixed;top:0;left:0;bottom:0;width:min(86vw,320px);max-height:none;z-index:50;background:var(--bg);border-right:1px solid var(--line2);padding:16px 20px;transform:translateX(-102%);transition:transform .2s}.side.open{transform:none}
 #scrim{position:fixed;inset:0;background:rgb(0 0 0/.45);z-index:40}#scrim[hidden]{display:none!important}}
+:root{--tk:40px}html[data-tk-hidden]{--tk:0px}html[data-tk-hidden] .tk{display:none}
+body{padding-bottom:calc(var(--tk) + env(safe-area-inset-bottom,0px))}html{scroll-padding-bottom:var(--tk)}
+.tk{position:fixed;left:0;right:0;bottom:0;z-index:30;height:calc(var(--tk) + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px);display:flex;align-items:stretch;background:var(--bg);border-top:1px solid var(--line2);font-size:.8rem}
+.tk-lbl{display:flex;align-items:center;padding:0 12px;border-right:1px solid var(--line);font:600 .64rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);white-space:nowrap}
+.tk-m{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,#0000,#000 16px calc(100% - 16px),#0000);mask-image:linear-gradient(90deg,#0000,#000 16px calc(100% - 16px),#0000)}
+.tk-track{display:flex;width:max-content;height:100%;animation:tk 70s linear infinite}
+.tk-set{display:flex;align-items:center;list-style:none;margin:0;padding:0;height:100%}.tk-set li{height:100%;border-right:1px solid var(--line)}
+.tk a{display:flex;align-items:center;gap:7px;height:100%;padding:0 16px;text-decoration:none;white-space:nowrap;color:var(--fg)}.tk a:hover .tk-t,.tk a:focus-visible .tk-t{text-decoration:underline}.tk a:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+.tk-k{font:600 .6rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}.tk-b{width:22px;height:22px;border:1px solid var(--line2);display:grid;place-items:center;font:700 .6rem var(--mono)}.tk-d{color:var(--muted);font-variant-numeric:tabular-nums}
+.tk a.sp{background:repeating-linear-gradient(135deg,var(--hatch) 0 1px,var(--bg) 1px 7px)}.tk a.sp .tk-k{color:var(--bg);background:#b45309;padding:3px 5px}
+.tk-x{flex:none;width:40px;background:var(--bg);color:var(--fg);border:0;border-left:1px solid var(--line);padding:0;font-size:.85rem}.tk-x:hover{background:var(--hatch)}
+.tk:hover .tk-track,.tk:focus-within .tk-track{animation-play-state:paused}
+@keyframes tk{to{transform:translateX(-50%)}}
+@media(max-width:700px){:root{--tk:36px}.tk-lbl{display:none}.tk a{padding:0 12px}.tk-track{animation-duration:55s}}
+@media(prefers-reduced-motion:reduce){.tk-track{animation:none}.tk-m{overflow-x:auto;scrollbar-width:none;-webkit-mask-image:none;mask-image:none}.tk-m::-webkit-scrollbar{display:none}.tk-set[aria-hidden]{display:none}}
+@media print{.tk{display:none}}
 </style>
-<script is:inline>if(localStorage.theme==='dark'||(!localStorage.theme&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')</script>
+<script is:inline>if(localStorage.tkHidden)document.documentElement.setAttribute('data-tk-hidden','');if(localStorage.theme==='dark'||(!localStorage.theme&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')</script>
 <link rel="alternate" type="application/rss+xml" title="CasosAgentes" href={u("/feed.xml")}></head><body>
 <header><div class="wrap"><nav class="top" aria-label="Principal"><a class="logo" href={u("/")}>Casos<span>Agentes</span>.es</a><div class="links"><a href={u("/nuevos")}>Nuevos</a><a href={u("/herramientas")}>Herramientas</a><a href={u("/categorias")}>Categorías</a><a href={u("/newsletter")}>Newsletter</a><a href={u("/patrocinar")}>Patrocinar</a><a class="cta" href={u("/enviar-caso")}>Enviar caso</a></div><button id="theme" aria-label="Cambiar tema claro/oscuro">◐</button></nav></div></header>
 <main class="wrap">{crumbs && <nav class="crumbs" aria-label="Migas de pan"><a href={u("/")}>Inicio</a>{crumbs.map(c=><Fragment> › {c.href?<a href={u(c.href)}>{c.name}</a>:<span aria-current="page">{c.name}</span>}</Fragment>)}</nav>}<slot /></main>
 <footer><div class="wrap">CasosAgentes · Casos reales de IA para autónomos y pymes en España. Las cifras son las que publica cada fuente; no las verificamos de forma independiente. · <a href={u("/llms.txt")}>llms.txt</a> · <a href={u("/sitemap-index.xml")}>sitemap</a> · <a href={u("/feed.xml")}>RSS</a> · <a href={u("/metodologia")}>Metodología</a> · <a href={u("/sobre")}>Sobre</a> · <a href={u("/privacidad")}>Privacidad</a></div></footer>
+<Ticker />
 <script is:inline>document.getElementById('theme').onclick=()=>{const d=document.documentElement.classList.toggle('dark');localStorage.theme=d?'dark':'light'}</script>
 </body></html>
