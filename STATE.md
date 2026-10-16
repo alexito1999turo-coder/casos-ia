@@ -5,7 +5,7 @@ Actualizado: 2026-10-16 03:00 Europe/Madrid
 - En línea: https://alexito1999turo-coder.github.io/casos-ia/ (GitHub Pages)
 - Casos publicados: **39** (32 sólidos + lote 4)
 - Diseño: barra inferior tipo marcador (ticker) fusionada
-- Main: `4c9e5d9`
+- Main: `cc7b283` (lote4+ticker)
 
 ## Decisiones vigentes
 - Solo negocios identificables (anónimos/NDA retirados; Alex OK 2026-10-16)
