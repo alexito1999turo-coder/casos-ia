@@ -27,3 +27,8 @@ Actualizado: 2026-10-16 03:00 Europe/Madrid
 ## Evidencias
 - Repo: /workspace/casos-ia-main (worktree main)
 - Deploy: deploy/publish-gh-pages.sh
+
+## Rutina 2026-10-23
+- Sin lotes nuevos en inbox; lote 5 pedido al Investigador (lote-5.json). Web en línea (200). Nada que publicar.
+
+- Lote 5: 43 casos, publicado 2026-10-23, aprobado por el Director.
