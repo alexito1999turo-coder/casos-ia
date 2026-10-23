@@ -876,5 +876,99 @@
     "ciudad": "Marbella",
     "publicado": "2026-10-16",
     "tituloSeo": "SANA Nutrients (Marbella): asistente de IA en la web"
+  },
+  {
+    "slug": "cafe-bar-frale-valverde-de-leganes-carta-digital-codex",
+    "titulo": "Café Bar Fralé (Valverde de Leganés) crea su carta digital interactiva con Codex",
+    "resumen": "Johana y Leo, pareja de emprendedores que ha abierto Café Bar Fralé en Valverde de Leganés (hamburguesas prémium y gastronomía colombiana), recibieron cuatro sesiones del Espacio Digital del municipio dentro del taller 'Principios de marketing digital e inteligencia artificial generativa'. Desarrollaron una carta digital interactiva con Codex, vinculada a códigos QR en las mesas, además de la carta en Canva, el perfil de Google y WhatsApp Business para pedidos y eventos.",
+    "resultado": null,
+    "resultadoNota": "La fuente no publica cifras; solo la valoración cualitativa de los dueños ('impacto directo en nuestro negocio').",
+    "sector": "hosteleria",
+    "tarea": "marketing",
+    "herramienta": "Codex (carta digital interactiva) + Canva + WhatsApp Business",
+    "herramientas": [
+      "codex",
+      "canva",
+      "whatsapp-business"
+    ],
+    "prompt": "Prompt sugerido: «Crea una carta digital interactiva para móvil de un café bar con estas secciones y platos [pegar carta con precios y alérgenos]. Diseño sencillo, botones por categoría y que funcione al abrirla desde un QR.»",
+    "adaptacion": "Revisar precios y alérgenos (Reglamento UE 1169/2011) antes de publicar. Fuente: web del programa público Espacios Digitalex (Junta de Extremadura/SEXPE, gestionado por AUPEX), no vendedor de la herramienta.",
+    "fuente": "Espacios Digitalex (Junta de Extremadura)",
+    "fuenteUrl": "https://www.espaciosdigitalex.org/2026/07/07/el-espacio-digital-de-valverde-de-leganes-colabora-en-el-lanzamiento-digital-de-un-nuevo-negocio-local/",
+    "fuenteTipo": "institucional",
+    "fecha": "2026-07-07",
+    "ciudad": "Valverde de Leganés (Badajoz)",
+    "publicado": "2026-10-23",
+    "tituloSeo": "Café Bar Fralé: carta digital interactiva con Codex",
+    "institucion": "Junta de Extremadura"
+  },
+  {
+    "slug": "pan-delirio-madrid-chatgpt-prevision-ventas",
+    "titulo": "Pan Delirio (Madrid) usa ChatGPT en el día a día y prepara IA de previsión de ventas",
+    "resumen": "Javier, propietario del obrador y cadena Pan Delirio (106 empleados), cuenta en COPE que en 2018 encargó a una empresa especializada un programa de IA para prever ventas por referencia (clima, día, eventos) que 'clavó' las ventas de diciembre de 2019, pero la pandemia invalidó el histórico. Hoy usan ChatGPT para redactar ofertas de empleo, presentaciones para clientes y material de formación (símiles y gráficos sobre fermentación), y tras implantar un ERP de Microsoft retomarán la IA de previsión de ventas.",
+    "resultado": null,
+    "resultadoNota": "La merma del 10-14% diaria que cita es el problema de partida, no un resultado de la IA. No hay cifras de ahorro atribuidas a ChatGPT ('nos ahorran horas', sin cuantificar).",
+    "sector": "hosteleria",
+    "tarea": "admin",
+    "herramienta": "ChatGPT (ofertas de empleo, presentaciones, formación); IA de previsión de ventas a medida (2018-2019)",
+    "herramientas": [
+      "chatgpt",
+      "agente-ia-a-medida"
+    ],
+    "prompt": "Prompt sugerido: «Explica la fermentación de la masa madre a un nuevo panadero con un símil cotidiano y un esquema de 5 pasos, en lenguaje sencillo.»",
+    "adaptacion": "No introducir datos personales de candidatos ni empleados en ChatGPT sin base RGPD. Ciudad: la pieza solo lleva data 'Madrid' de la emisora; las tiendas en Madrid (C/ Juan Bravo 21, C/ Naranjo 7, etc.) constan en pandelirio.com. COPE indica que el texto se elaboró con asistencia de herramientas de IA; el apellido de Javier no aparece.",
+    "fuente": "COPE (La Mañana de Fin de Semana)",
+    "fuenteUrl": "https://www.cope.es/programas/la-manana-fin-de-semana/noticias/javier-panadero-2019-empezamos-trabajar-inteligencia-artificial-logro-acertar-ventas-dias-algidos-navidad-todos-quedamos-sorprendidos-20260502_3356387.html",
+    "fuenteTipo": "prensa",
+    "fecha": "2026-05-02",
+    "ciudad": "Madrid",
+    "publicado": "2026-10-23",
+    "tituloSeo": "Pan Delirio (Madrid): ChatGPT y previsión de ventas"
+  },
+  {
+    "slug": "konestilochic-tauste-ia-colorimetria-probador-virtual",
+    "titulo": "Konestilochic (Tauste) añade a su web una IA de colorimetría y probador virtual",
+    "resumen": "Ana Salas, fundadora de la tienda de moda multimarca Konestilochic (calle Zaragoza 55, Tauste), explica a Plaza Nueva que ha integrado en su web una herramienta de IA que analiza una foto del rostro (tono de piel, temperatura de color, estación cromática) para proponer una paleta personalizada, y un probador virtual que estudia la silueta y recomienda prendas del catálogo. Un equipo de asesoras supervisa el proceso y la tienda mantiene talleres y asesorías presenciales.",
+    "resultado": null,
+    "resultadoNota": "La fuente no publica cifras de ventas, conversiones ni uso.",
+    "sector": "comercio",
+    "tarea": "ventas",
+    "herramienta": "Asesor de moda con IA integrado en la web (análisis facial y probador virtual; proveedor no citado)",
+    "herramientas": [
+      "ia-generica"
+    ],
+    "prompt": "Prompt sugerido: «Según esta paleta de colores [estación cromática del cliente] y su tipo de silueta, elige 5 prendas de este catálogo [pegar lista] y explica en una frase por qué favorece cada una.»",
+    "adaptacion": "El análisis facial trata imágenes de clientes: informar, pedir consentimiento expreso y no conservar fotos más de lo necesario (RGPD); si hubiera identificación biométrica, revisar AI Act. Artículo de prensa local (Plaza Nueva).",
+    "fuente": "Plaza Nueva",
+    "fuenteUrl": "https://www.plazanueva.com/articulo/aragon/sistema-inteligencia-artificial-que-dice-que-ropa-queda-mejor-llega-tauste/20260602120452289992.html",
+    "fuenteTipo": "prensa",
+    "fecha": "2026-06-06",
+    "ciudad": "Tauste (Zaragoza)",
+    "publicado": "2026-10-23",
+    "tituloSeo": "Konestilochic (Tauste): IA de colorimetría"
+  },
+  {
+    "slug": "yolanda-blanco-artesana-caceres-chatgpt-albaranes-stock",
+    "titulo": "Yolanda Blanco, artesana cacereña, usa ChatGPT para albaranes, stock y planificación",
+    "resumen": "Espacios Digitalex relata que la emprendedora cacereña Yolanda Blanco, con tienda artesana, recibió formación individualizada en su propio entorno de trabajo. Aprendió a usar ChatGPT para organizar tareas e ideas y planificar proyectos, desarrolló prompts para distintas tareas y automatizó la generación de hojas de cálculo a partir de albaranes de proveedores y la gestión del stock de su tienda mediante imágenes; también exploró Lovable y Google Canvas.",
+    "resultado": null,
+    "resultadoNota": "La fuente no publica cifras de tiempo ni ventas.",
+    "sector": "comercio",
+    "tarea": "admin",
+    "herramienta": "ChatGPT (prompts, albaranes a hoja de cálculo, stock por imágenes) + Lovable",
+    "herramientas": [
+      "chatgpt",
+      "lovable"
+    ],
+    "prompt": "Prompt sugerido: «Te adjunto la foto de un albarán de proveedor. Extrae en una tabla: fecha, proveedor, referencia, descripción, cantidad, precio unitario e importe, lista para pegar en mi hoja de stock.»",
+    "adaptacion": "Revisar siempre las cifras extraídas antes de actualizar stock o contabilidad. La fuente no da el nombre comercial de la tienda; ciudad según 'emprendedora cacereña' (puede referirse a la provincia). Fuente: programa público Espacios Digitalex.",
+    "fuente": "Espacios Digitalex (Junta de Extremadura)",
+    "fuenteUrl": "https://www.espaciosdigitalex.org/2026/04/16/espacios-digitalex-impulsa-la-digitalizacion-de-una-tienda-artesana-mediante-el-uso-de-inteligencia-artificial/",
+    "fuenteTipo": "institucional",
+    "fecha": "2026-04-16",
+    "ciudad": "Provincia de Cáceres",
+    "publicado": "2026-10-23",
+    "tituloSeo": "Artesana de Cáceres: ChatGPT para albaranes y stock",
+    "institucion": "Junta de Extremadura"
   }
 ]
