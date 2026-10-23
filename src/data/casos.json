@@ -899,7 +899,8 @@
     "fecha": "2026-07-07",
     "ciudad": "Valverde de Leganés (Badajoz)",
     "publicado": "2026-10-23",
-    "tituloSeo": "Café Bar Fralé: carta digital interactiva con Codex"
+    "tituloSeo": "Café Bar Fralé: carta digital interactiva con Codex",
+    "institucion": "Junta de Extremadura"
   },
   {
     "slug": "pan-delirio-madrid-chatgpt-prevision-ventas",
@@ -937,7 +938,7 @@
       "ia-generica"
     ],
     "prompt": "Prompt sugerido: «Según esta paleta de colores [estación cromática del cliente] y su tipo de silueta, elige 5 prendas de este catálogo [pegar lista] y explica en una frase por qué favorece cada una.»",
-    "adaptacion": "El análisis facial trata imágenes de clientes: informar, pedir consentimiento expreso y no conservar fotos más de lo necesario (RGPD); si hubiera identificación biométrica, revisar AI Act. Pieza de prensa local sin marca de patrocinio.",
+    "adaptacion": "El análisis facial trata imágenes de clientes: informar, pedir consentimiento expreso y no conservar fotos más de lo necesario (RGPD); si hubiera identificación biométrica, revisar AI Act. Artículo de prensa local (Plaza Nueva).",
     "fuente": "Plaza Nueva",
     "fuenteUrl": "https://www.plazanueva.com/articulo/aragon/sistema-inteligencia-artificial-que-dice-que-ropa-queda-mejor-llega-tauste/20260602120452289992.html",
     "fuenteTipo": "prensa",
@@ -965,8 +966,9 @@
     "fuenteUrl": "https://www.espaciosdigitalex.org/2026/04/16/espacios-digitalex-impulsa-la-digitalizacion-de-una-tienda-artesana-mediante-el-uso-de-inteligencia-artificial/",
     "fuenteTipo": "institucional",
     "fecha": "2026-04-16",
-    "ciudad": "Cáceres",
+    "ciudad": "Provincia de Cáceres",
     "publicado": "2026-10-23",
-    "tituloSeo": "Artesana de Cáceres: ChatGPT para albaranes y stock"
+    "tituloSeo": "Artesana de Cáceres: ChatGPT para albaranes y stock",
+    "institucion": "Junta de Extremadura"
   }
 ]
