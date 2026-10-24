@@ -35,3 +35,4 @@ Actualizado: 2026-10-16 03:00 Europe/Madrid
 
 ## Rutina 2026-10-24
 - Inbox sin lote nuevo. Web en línea (200) con lote 5 (43 casos). Lote 6 pedido al Investigador (lote-6.json). Nada que publicar.
+- Lote 6: 46 casos, publicado 2026-10-24, aprobado por el Director; Destacados excluye contenido de proveedor
