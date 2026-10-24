@@ -970,5 +970,78 @@
     "publicado": "2026-10-23",
     "tituloSeo": "Artesana de Cáceres: ChatGPT para albaranes y stock",
     "institucion": "Junta de Extremadura"
+  },
+  {
+    "slug": "merceria-sarabia-vigo-ia-webs-europa-traduccion",
+    "titulo": "Mercería Sarabia (Vigo) abre y traduce con IA sus webs para Alemania, Francia, Portugal y Países Bajos",
+    "resumen": "Faro de Vigo cuenta que Lucía Diz, que lleva 15 años al frente de la Mercería Sarabia (fundada por su madre, Mari Carmen Ballesteros), ha cerrado la tienda física para centrarse en la venta online. «Con inteligencia artificial, a principios de año abrí y traduje páginas web de la Mercería Sarabia en Alemania, Francia, Portugal y Países Bajos, y ya empezamos a vender, sin invertir en anuncios ni en nada más», explica. El negocio ofrece además atención en varios idiomas por WhatsApp y cuida las descripciones de producto para SEO y GEO.",
+    "resultado": null,
+    "resultadoNota": "La pieza dice que «ya empezamos a vender» en esos países, pero no da cifras de pedidos ni de facturación atribuidas a la IA.",
+    "sector": "comercio",
+    "tarea": "ventas",
+    "herramienta": "IA para abrir y traducir las webs internacionales (herramienta no citada) + WhatsApp multilingüe",
+    "herramientas": [
+      "ia-generica",
+      "whatsapp-business"
+    ],
+    "prompt": "Prompt sugerido: «Traduce al alemán esta ficha de producto de mercería [pegar texto], adaptando las medidas y los términos al uso habitual en Alemania y manteniendo las palabras clave que buscaría un cliente alemán.»",
+    "adaptacion": "Revisar las traducciones con un nativo o con clientes antes de publicar. Para vender en la UE hay que adaptar a cada país los textos legales (desistimiento, envíos, precios con IVA). Artículo de prensa local (Faro de Vigo).",
+    "fuente": "Faro de Vigo",
+    "fuenteUrl": "https://www.farodevigo.es/gran-vigo/2026/03/31/merceria-sarabia-cierra-tienda-fisica-vigo-vende-internet-europa-128641278.html",
+    "fuenteTipo": "prensa",
+    "fecha": "2026-03-31",
+    "ciudad": "Vigo",
+    "tituloSeo": "Mercería Sarabia: webs traducidas con IA para Europa",
+    "publicado": "2026-10-24"
+  },
+  {
+    "slug": "tabar-instalaciones-tajonar-chatbot-pedidos-audio-ia",
+    "titulo": "Tabar Instalaciones (Navarra) usa un chatbot y pedidos por audio con IA entre la obra y el almacén",
+    "resumen": "Joseba Tabar, gerente de Tabar Instalaciones Industriales de Fluidos (empresa familiar), explicó en una jornada de ANEL recogida por Navarra Capital que han incorporado un chatbot para agilizar consultas de recursos humanos y técnicas. Con la IA asignan automáticamente los tiempos de cada proyecto para ajustar costes, y han montado un sistema de pedidos automáticos en el que los técnicos de campo mandan audios para pedir material y el almacén verifica la compra.",
+    "resultado": null,
+    "resultadoNota": "Solo hay valoraciones cualitativas («somos más efectivos, tenemos menos incidencias»), sin cifras.",
+    "sector": "construccion",
+    "tarea": "admin",
+    "herramienta": "Chatbot interno + automatización de pedidos por audio con IA (proveedor no citado)",
+    "herramientas": [
+      "ia-generica"
+    ],
+    "prompt": "Prompt sugerido: «Transcribe este audio de un técnico y conviértelo en un pedido de almacén: obra, material, referencia o descripción, cantidad y urgencia. Si falta algún dato, indícalo para preguntarlo.»",
+    "adaptacion": "Que una persona del almacén valide siempre el pedido antes de comprar, como hacen ellos. Informar a la plantilla del uso del chatbot con datos de RR. HH. (RGPD). La ciudad no aparece en la pieza: Tajonar (Navarra) sale del aviso legal de tabarinstalaciones.com. Artículo de mayo de 2024 (Navarra Capital, 8/5/2024).",
+    "fuente": "Navarra Capital (8 de mayo de 2024)",
+    "fuenteUrl": "https://navarracapital.es/empresas-de-economia-social-que-ya-han-implantado-con-exito-la-inteligencia-artificial/",
+    "fuenteTipo": "prensa",
+    "fecha": "2024-05-08",
+    "ciudad": "Tajonar (Navarra)",
+    "tituloSeo": "Tabar Instalaciones: chatbot y pedidos por audio con IA",
+    "publicado": "2026-10-24",
+    "fuentesExtra": [
+      {
+        "nombre": "Aviso legal de Tabar Instalaciones (ciudad)",
+        "url": "https://tabarinstalaciones.com/aviso-legal/"
+      }
+    ]
+  },
+  {
+    "slug": "estivill-assessors-reus-claude-uso-diario-despacho",
+    "titulo": "Estivill Assessors (Reus) pasa del uso ocasional al uso diario de Claude en su despacho",
+    "resumen": "Estivill Assessors, firma de asesoramiento de Reus integrada en ETL Global, hizo con Edvolution cuatro talleres de Claude para 22 profesionales de 8 áreas (7 sep.-8 oct. 2026). Cada área montó proyectos con instrucciones propias y el equipo dejó rutinas diarias programadas en Claude Cowork: resumen del correo con aviso de urgentes, resumen de ayudas publicadas en BOE, BOPT y DOGC, resumen de facturas recibidas, control de lo pendiente de facturar por expediente y revisión de licitaciones.",
+    "resultado": "Según Edvolution (formador): el 63 % del equipo ya lo usa casi a diario (frente al 36 % al empezar)",
+    "resultadoNota": "Cifra de la página del caso de Edvolution (empresa formadora y partner de Anthropic), calculada con 129 respuestas a sus propios formularios. También indica: «Personas con ahorro estimado de más de 2 horas: 10 de 22, a las dos semanas».",
+    "sector": "asesoria",
+    "tarea": "admin",
+    "herramienta": "Claude (proyectos por área y rutinas programadas en Claude Cowork)",
+    "herramientas": [
+      "claude"
+    ],
+    "prompt": "Prompt sugerido: «Cada mañana, resume las ayudas y subvenciones publicadas ayer en el BOE, el BOPT y el DOGC que puedan interesar a pymes de Tarragona: organismo, beneficiarios, cuantía y fecha límite.»",
+    "adaptacion": "Seguir un protocolo de datos antes de subir documentación de clientes (el despacho lo creó en la primera sesión). Secreto profesional y RGPD. Revisar siempre los cálculos de plazos y convenios.",
+    "fuente": "Edvolution",
+    "fuenteUrl": "https://edvolution.io/estivill-assessors-claude-uso-diario-en-menos-de-un-mes/",
+    "fuenteTipo": "proveedor",
+    "fecha": "2026-10-13",
+    "ciudad": "Reus",
+    "tituloSeo": "Estivill Assessors: uso diario de Claude en el despacho",
+    "publicado": "2026-10-24"
   }
 ]
