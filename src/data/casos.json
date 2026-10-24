@@ -1014,7 +1014,13 @@
     "fecha": "2024-05-08",
     "ciudad": "Tajonar (Navarra)",
     "tituloSeo": "Tabar Instalaciones: chatbot y pedidos por audio con IA",
-    "publicado": "2026-10-24"
+    "publicado": "2026-10-24",
+    "fuentesExtra": [
+      {
+        "nombre": "Aviso legal de Tabar Instalaciones (ciudad)",
+        "url": "https://tabarinstalaciones.com/aviso-legal/"
+      }
+    ]
   },
   {
     "slug": "estivill-assessors-reus-claude-uso-diario-despacho",

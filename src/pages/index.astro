@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro'; import Lista from '../components/Lista
 import casos from '../data/casos.json'; import { SECTORES, TAREAS, SITE, u, herrBase, HERR, herrMain } from '../data/meta.js';
 const orden = [...casos].sort((a,b)=>b.publicado.localeCompare(a.publicado));
 const cnt=(f)=>{const m={};casos.forEach(c=>{const k=f(c);m[k]=(m[k]||0)+1});return Object.entries(m).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]))};
-const cHerr=cnt(c=>HERR[herrMain(c)]), cSec=cnt(c=>c.sector), nRes=casos.filter(c=>c.resultado&&!c.patrocinado).length;
+const cHerr=cnt(c=>HERR[herrMain(c)]), cSec=cnt(c=>c.sector), nRes=casos.filter(c=>c.resultado&&!c.patrocinado&&c.fuenteTipo!=="proveedor").length;
 const herrs = [...new Set(casos.map(c=>HERR[herrMain(c)]))].sort();
 const ult = orden[0].publicado; const nUlt = casos.filter(c=>c.publicado===ult).length;
 const fmt = d => new Date(d).toLocaleDateString('es-ES',{weekday:'short',day:'numeric',month:'short'});
@@ -18,11 +18,11 @@ const jsonld = [{"@context":"https://schema.org","@type":"WebSite","name":SITE.n
 <div class="layout"><aside id="side" class="side" tabindex="-1" aria-label="Navegación por herramienta y sector"><div class="sidehead mob"><strong>Filtros</strong><button type="button" id="closeside" aria-label="Cerrar">✕</button></div>
 <details open><summary>Herramientas</summary><ul><li><button type="button" data-f="fh" data-v="" class="on">Todas <span>{casos.length}</span></button></li>{cHerr.map(([k,n])=><li><button type="button" data-f="fh" data-v={k}>{k} <span>{n}</span></button></li>)}</ul></details>
 <details open><summary>Sectores</summary><ul><li><button type="button" data-f="fs" data-v="" class="on">Todos <span>{casos.length}</span></button></li>{cSec.map(([k,n])=><li><button type="button" data-f="fs" data-v={k}>{SECTORES[k]} <span>{n}</span></button></li>)}</ul></details>
-<p class="src" style="margin:12px 0 0">«Destacados» = {nRes} casos con cifra publicada en la fuente, primero.</p></aside><div id="scrim" class="mob" hidden></div><div class="maincol"><div class="fbar"><div class="filters"><input type="search" id="q" placeholder="Buscar: WhatsApp, facturas, reservas, Madrid…  (⌘K)" aria-label="Buscar">
+<p class="src" style="margin:12px 0 0">«Destacados» = {nRes} casos con cifra de prensa o del propio negocio, primero.</p></aside><div id="scrim" class="mob" hidden></div><div class="maincol"><div class="fbar"><div class="filters"><input type="search" id="q" placeholder="Buscar: WhatsApp, facturas, reservas, Madrid…  (⌘K)" aria-label="Buscar">
 <select id="fs" aria-label="Sector"><option value="">Sector</option>{Object.entries(SECTORES).map(([k,v])=><option value={k}>{v}</option>)}</select>
 <select id="ft" aria-label="Tarea"><option value="">Tarea</option>{Object.entries(TAREAS).map(([k,v])=><option value={k}>{v}</option>)}</select>
 <select id="fh" aria-label="Herramienta"><option value="">Herramienta</option>{herrs.map(h=><option value={h}>{h}</option>)}</select><button id="clr" type="button">Limpiar</button></div>
-<div class="fmeta"><button type="button" id="openside" class="mob">☰ Filtros</button><span class="sort" role="group" aria-label="Orden"><button type="button" data-o="new" class="on" aria-pressed="true">Nuevos</button><button type="button" data-o="top" aria-pressed="false" title="Primero los casos con cifra publicada en la fuente">Destacados</button></span><span id="count" aria-live="polite"></span><span id="sortnote" hidden>Primero los {nRes} casos con cifra publicada en la fuente</span><label><input type="checkbox" id="fg"> Solo mis guardados</label></div></div>
+<div class="fmeta"><button type="button" id="openside" class="mob">☰ Filtros</button><span class="sort" role="group" aria-label="Orden"><button type="button" data-o="new" class="on" aria-pressed="true">Nuevos</button><button type="button" data-o="top" aria-pressed="false" title="Primero los casos con cifra publicada en la fuente">Destacados</button></span><span id="count" aria-live="polite"></span><span id="sortnote" hidden>Primero los {nRes} casos con cifra de prensa o del propio negocio</span><label><input type="checkbox" id="fg"> Solo mis guardados</label></div></div>
 <Lista casos={orden} /></div></div>
 <script is:inline>
 const $=id=>document.getElementById(id);const cards=[...document.querySelectorAll('#list .card[data-slug]')];
