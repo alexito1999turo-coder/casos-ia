@@ -1043,5 +1043,72 @@
     "ciudad": "Reus",
     "tituloSeo": "Estivill Assessors: uso diario de Claude en el despacho",
     "publicado": "2026-10-24"
+  },
+  {
+    "slug": "bacai-valencia-ia-reservas-whatsapp-carta",
+    "titulo": "Bacai (Valencia) usa IA para gestionar reservas por WhatsApp y ajustar la carta con lo que piden los clientes",
+    "resumen": "Las Provincias cuenta que el restaurante Bacai, fundado por Carlos Rivero y su socio Ricardo Giner, utiliza una inteligencia artificial llamada UtopIA que gestiona las reservas por WhatsApp y conversa con los clientes para conocer sus preferencias antes de que lleguen. También analiza qué platos rotan más y el feedback de los comensales para orientar la carta, aunque las recetas las crea el chef Julius Benert. El local de Malilla tiene casi dos años, abrió otro en Mas Camarena y prepara un tercero en L'Eliana.",
+    "resultado": null,
+    "resultadoNota": "La pieza no da cifras de resultados atribuidas a la IA. El 90-95 % de apertura que menciona se refiere a WhatsApp frente al correo, no a un resultado del negocio.",
+    "sector": "hosteleria",
+    "tarea": "atencion-cliente",
+    "herramienta": "UtopIA (asistente de IA por WhatsApp para reservas y análisis de preferencias; la pieza no dice quién la desarrolla)",
+    "herramientas": [
+      "ia-generica",
+      "whatsapp-business"
+    ],
+    "prompt": "Prompt sugerido: «Con estas valoraciones de clientes del último mes y las ventas por plato [pegar datos], dime qué platos conviene revisar, qué ingredientes se repiten en las quejas y qué tipo de plato echan de menos. No propongas recetas.»",
+    "adaptacion": "Avisar al cliente de que habla con un asistente automático y dejar siempre paso a una persona. Para guardar preferencias y alergias hace falta base legal y una información RGPD clara. El chef decide la carta; la IA solo da pistas.",
+    "fuente": "Las Provincias",
+    "fuenteUrl": "https://www.lasprovincias.es/gastronomia/restaurante-valenciano-utiliza-ia-dar-experiencia-maitre-20260221174606-nt.html",
+    "fuenteTipo": "prensa",
+    "fecha": "2026-02-26",
+    "ciudad": "Valencia",
+    "tituloSeo": "Bacai (Valencia): IA para reservas por WhatsApp y la carta",
+    "publicado": "2026-10-25"
+  },
+  {
+    "slug": "vivelavita-mairena-aljarafe-ia-fichas-producto-recomendador",
+    "titulo": "VivelaVita (Mairena del Aljarafe) mueve una tienda online de 20.000 referencias con tres personas, automatización e IA",
+    "resumen": "El Conciso (Grupo Joly) cuenta que Sergio Romero, CEO de VivelaVita, tienda online de bienestar con oficinas en Mairena del Aljarafe (Sevilla), funciona con tres personas en plantilla gracias a un sistema de automatización e IA que él mismo ha diseñado. La IA lee y unifica las fichas de los proveedores en cualquier idioma y genera descripciones propias. Además, la tienda personaliza en tiempo real lo que ve cada visitante y tiene asistentes que recomiendan productos. Un algoritmo propio elige proveedor y lanza los envíos por API.",
+    "resultado": null,
+    "resultadoNota": "La pieza da datos internos de la empresa: «Más del 97% de los compradores andaluces interactúan con los sistemas de recomendación» y la tasa de devoluciones en Andalucía es del 2,63 % (frente al 3,37 %), algo que la empresa atribuye a esos asistentes. No hay cifras de ahorro ni de ventas atribuidas directamente a la IA.",
+    "sector": "comercio",
+    "tarea": "ventas",
+    "herramienta": "Sistema propio de automatización e IA (fichas de producto multilingües, personalización y asistentes de recomendación)",
+    "herramientas": [
+      "agente-ia-a-medida"
+    ],
+    "prompt": "Prompt sugerido: «Unifica estas tres fichas de proveedor del mismo producto [pegar textos en distintos idiomas] y escribe una descripción propia en español: qué es, materiales, medidas, cuidados y para quién está pensado, sin copiar frases de las originales.»",
+    "adaptacion": "Comprobar los datos técnicos y de seguridad de cada ficha antes de publicarla. Para personalizar según la navegación hace falta consentimiento de cookies (LSSI/RGPD). El dueño es programador; una pyme sin ese perfil necesitaría proveedor o herramientas estándar.",
+    "fuente": "El Conciso (Grupo Joly)",
+    "fuenteUrl": "https://www.elconciso.es/empresas/empleados-ia-vivelavita-ecommerce-especializado_0_2007093058.html",
+    "fuenteTipo": "prensa",
+    "fecha": "2026-06-21",
+    "ciudad": "Mairena del Aljarafe (Sevilla)",
+    "tituloSeo": "VivelaVita: tienda online de 3 personas con IA",
+    "publicado": "2026-10-25"
+  },
+  {
+    "slug": "gemap-barcelona-ia-consultas-expediente-borradores-correo",
+    "titulo": "La asesoría GEMAP (Barcelona) usa IA para consultar al instante el historial de cada cliente y redactar borradores",
+    "resumen": "En La Vanguardia, Juan Pañella, director de la asesoría GEMAP, explica que el despacho utiliza distintas herramientas de IA para consultar en segundos qué trabajos se han hecho para un cliente, cuánto han costado, qué se ha facturado o qué impuestos se han presentado. También convierten las notas de una reunión en un borrador de correo y preparan documentación que antes les llevaba horas. Ese tiempo lo dedican a estar con el cliente y a organizar encuentros reducidos sobre sucesiones, inversiones o transmisión de empresas.",
+    "resultado": null,
+    "resultadoNota": "Sin cifras propias de GEMAP: solo dice que la documentación «antes consumía horas» y que el resultado es «más tiempo delante del cliente».",
+    "sector": "asesoria",
+    "tarea": "admin",
+    "herramienta": "Varias herramientas de IA (no citadas) para consultar datos de clientes y redactar borradores",
+    "herramientas": [
+      "ia-generica"
+    ],
+    "prompt": "Prompt sugerido: «Con estas notas de la reunión con el cliente [pegar notas], redacta un correo de seguimiento con lo acordado, los documentos que nos tiene que enviar y los plazos. Señala cualquier dato que falte.»",
+    "adaptacion": "Los datos fiscales y laborales son sensibles: hay que usar herramientas con contrato de encargado de tratamiento y no meter datos de clientes en IA gratuitas. El profesional revisa todo antes de enviarlo. La ciudad sale de la web oficial de GEMAP (Barcelona y Viladecans, unos 70 profesionales); la pieza solo lleva la firma de Barcelona. La pieza cita a un directivo de Wolters Kluwer, pero no está marcada como patrocinada ni de marca.",
+    "fuente": "La Vanguardia",
+    "fuenteUrl": "https://www.lavanguardia.com/dinero/20261013/11657777/ia-impulsa-salto-gestor-asesor.html",
+    "fuenteTipo": "prensa",
+    "fecha": "2026-10-13",
+    "ciudad": "Barcelona",
+    "tituloSeo": "Asesoría GEMAP (Barcelona): IA para consultas y borradores",
+    "publicado": "2026-10-25"
   }
 ]
