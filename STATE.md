@@ -39,3 +39,4 @@ Actualizado: 2026-10-16 03:00 Europe/Madrid
 
 ## Rutina 2026-10-25
 - Inbox sin lote nuevo (lote 6 ya publicado). Web en línea (200, 46 casos). Lote 7 pedido al Investigador (lote-7.json). Nada que publicar.
+- Lote 7: 48 casos, publicado 2026-10-25, aprobado por el Director; VivelaVita descartado (contenido adulto)
