@@ -243,7 +243,8 @@
       "chatgpt",
       "woocommerce"
     ],
-    "tituloSeo": "Adrihosan: tienda de azulejos con app propia en ChatGPT"
+    "tituloSeo": "Adrihosan: tienda de azulejos con app propia en ChatGPT",
+    "empresa": "Adrihosan"
   },
   {
     "slug": "adrihosan-primer-anuncio-chatgpt-espana-100e",
@@ -266,7 +267,8 @@
       "chatgpt",
       "claude"
     ],
-    "tituloSeo": "Adrihosan: primer anuncio en ChatGPT Ads en España"
+    "tituloSeo": "Adrihosan: primer anuncio en ChatGPT Ads en España",
+    "empresa": "Adrihosan"
   },
   {
     "slug": "adrihosan-claude-mcp-33000-productos",
@@ -289,7 +291,8 @@
       "claude",
       "woocommerce"
     ],
-    "tituloSeo": "Adrihosan: fichas de producto en 10 min con Claude y MCP"
+    "tituloSeo": "Adrihosan: fichas de producto en 10 min con Claude y MCP",
+    "empresa": "Adrihosan"
   },
   {
     "slug": "can-pizza-chatgpt-versus-pizzero-elpais",
@@ -400,9 +403,11 @@
     "ciudad": "Mollet del Vallès",
     "publicado": "2026-10-16",
     "herramientas": [
-      "whatsapp-business"
+      "whatsapp-business",
+      "healthmate"
     ],
-    "tituloSeo": "Més que Fisio: menos administración con IA"
+    "tituloSeo": "Més que Fisio: menos administración con IA",
+    "empresa": "HealthMate"
   },
   {
     "slug": "clinica-kinetica-huelva-healthmate",
@@ -422,9 +427,11 @@
     "ciudad": "Huelva",
     "publicado": "2026-10-16",
     "herramientas": [
-      "whatsapp-business"
+      "whatsapp-business",
+      "healthmate"
     ],
-    "tituloSeo": "Clínica Kinética: dudas nocturnas resueltas con IA"
+    "tituloSeo": "Clínica Kinética: dudas nocturnas resueltas con IA",
+    "empresa": "HealthMate"
   },
   {
     "slug": "fisio-miguel-perez-alicante-healthmate",
@@ -444,9 +451,11 @@
     "ciudad": "Alicante",
     "publicado": "2026-10-16",
     "herramientas": [
-      "whatsapp-business"
+      "whatsapp-business",
+      "healthmate"
     ],
-    "tituloSeo": "Fisio Miguel Pérez: la IA atiende si estás en camilla"
+    "tituloSeo": "Fisio Miguel Pérez: la IA atiende si estás en camilla",
+    "empresa": "HealthMate"
   },
   {
     "slug": "motiva-fisioterapia-healthmate",
@@ -466,9 +475,11 @@
     "ciudad": "Villafranca de los Caballeros",
     "publicado": "2026-10-16",
     "herramientas": [
-      "whatsapp-business"
+      "whatsapp-business",
+      "healthmate"
     ],
-    "tituloSeo": "Motiva Fisioterapia: WhatsApp compartido con IA"
+    "tituloSeo": "Motiva Fisioterapia: WhatsApp compartido con IA",
+    "empresa": "HealthMate"
   },
   {
     "slug": "seneca-fisioterapia-langreo-chat-blanca",

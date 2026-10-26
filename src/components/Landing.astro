@@ -1,7 +1,8 @@
 ---
 import Base from '../layouts/Base.astro'; import Lista from './Lista.astro'; import { SITE, u } from '../data/meta.js';
 const { titulo, h1, intro, casos, path, checklist, crumb } = Astro.props; import { MIN_INDEX } from '../data/meta.js'; import { EXTRA } from '../data/extra.js'; const ex = EXTRA[path];
-const robots = casos.length >= MIN_INDEX ? 'index,follow' : 'noindex,follow';
+import { NOINDEX_FACETS } from '../data/meta.js';
+const robots = casos.length >= MIN_INDEX && !NOINDEX_FACETS.includes(path) ? 'index,follow' : 'noindex,follow';
 const jsonld0 = {"@context":"https://schema.org","@type":"CollectionPage","name":h1,"url":`${SITE.url}${path}`,"inLanguage":"es-ES","about":intro,"mainEntity":{"@type":"ItemList","numberOfItems":casos.length,"itemListElement":casos.map((c,i)=>({"@type":"ListItem","position":i+1,"url":`${SITE.url}/casos/${c.slug}/`}))}};
 const jsonld = ex ? [jsonld0, {"@context":"https://schema.org","@type":"FAQPage","mainEntity":ex.faq.map(([q,a])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}}))}] : jsonld0;
 ---

@@ -4,7 +4,7 @@ export const SITE = { nombre:'CasosAgentes', url:(import.meta.env.SITE+import.me
 
 export const u = (p='/') => { if(!/[.?#]/.test(p) && !p.endsWith('/')) p+='/'; else p=p.replace(/^([^?#.]*[^/])([?#])/,'$1/$2'); return import.meta.env.BASE_URL.replace(/\/$/,'') + p; };
 export const ORIGIN = new URL(import.meta.env.SITE).origin;
-export { HERR, herrMain, MIN_INDEX, thinFacets } from './facets.mjs';
+export { HERR, herrMain, MIN_INDEX, thinFacets, ciudadSlug, ciudadNombre, NOINDEX_FACETS } from './facets.mjs';
 export const slugify = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\(.*?\)/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 // Herramienta principal (antes de "+" o paréntesis) para agrupar
 export const herrBase = h => h.split(/[+(]/)[0].trim();
@@ -20,5 +20,5 @@ export const CHECK_ES = {
  admin:['La IA no sustituye a tu gestor ni a la AEAT: contrasta en sede.agenciatributaria.gob.es.','No subas certificados digitales ni contraseñas a herramientas de IA.','Datos de salud o de terceros: usa herramientas con contrato de encargado de tratamiento (DPA) y servidores en la UE.']
 };
 export const KIT_DIGITAL = 'Kit Digital y otras ayudas públicas pueden cubrir parte de la implantación de algunas soluciones a través de agentes digitalizadores adheridos; consulta la convocatoria vigente en acelerapyme.gob.es.';
-export const recorta = (s,n) => s.length<=n ? s : s.slice(0,n-1).replace(/\s+\S*$/,'').replace(/[,;:.\s]+$/,'')+'…';
+export const recorta = (s,n) => { s=String(s).trim(); if(s.length<=n) return s; const cut=s.slice(0,n); const m=cut.match(/^[\s\S]*[.!?](?=\s|$)/); if(m && m[0].length>=40) return m[0].trim(); return cut.replace(/\s+\S*$/,'').replace(/[,;:\s]+$/,''); };
 export const fechaES = d => new Date(d+'T12:00:00Z').toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});

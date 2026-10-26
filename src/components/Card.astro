@@ -1,5 +1,5 @@
 ---
-import { SECTORES, TAREAS, u, slugify, herrBase, iniciales, HERR, herrMain } from '../data/meta.js';
+import { SECTORES, TAREAS, u, slugify, herrBase, iniciales, HERR, herrMain, ciudadSlug } from '../data/meta.js';
 const { c } = Astro.props;
 const esNuevo = (Date.parse('2026-10-16') - Date.parse(c.publicado)) < 7*864e5;
 const fuenteLbl = c.patrocinado ? `Contenido patrocinado (${c.patrocinado})` : ({proveedor:'Publicado por el proveedor','red social':'Redes sociales',cliente:'Publicado por el negocio',institucional:`Programa público (${c.institucion}) · lo publica el propio programa sobre su formación`})[c.fuenteTipo] ?? 'Prensa';
@@ -10,7 +10,7 @@ const fuenteLbl = c.patrocinado ? `Contenido patrocinado (${c.patrocinado})` : (
 <h3><a href={u(`/casos/${c.slug}`)}>{c.titulo}</a></h3>
 <p class={c.resultado ? 'res' : 'res none'}>{c.resultado ? c.resultado : 'Sin cifra publicada en la fuente'}</p>
 <p class="sum">{c.resumen.length > 170 ? c.resumen.slice(0,168).replace(/\s\S*$/,'')+'…' : c.resumen}</p>
-<div class="meta"><a class="tag" href={u(`/sector/${c.sector}`)}>{SECTORES[c.sector]}</a><a class="tag" href={u(`/tarea/${c.tarea}`)}>{TAREAS[c.tarea]}</a>{c.ciudad && <a class="tag" href={u(`/ciudad/${slugify(c.ciudad)}`)}>📍 {c.ciudad}</a>}</div><span class="src">{fuenteLbl} · {c.fecha}</span>
+<div class="meta"><a class="tag" href={u(`/sector/${c.sector}`)}>{SECTORES[c.sector]}</a><a class="tag" href={u(`/tarea/${c.tarea}`)}>{TAREAS[c.tarea]}</a>{c.ciudad && (ciudadSlug(c) ? <a class="tag" href={u(`/ciudad/${ciudadSlug(c)}`)}>📍 {c.ciudad}</a> : <span class="tag">📍 {c.ciudad}</span>)}</div><span class="src">{fuenteLbl} · {c.fecha}</span>
 <details><summary>Ver prompt</summary><pre>{c.prompt}</pre></details>
 <div class="acts"><button class="cp" data-p={c.prompt}>Copiar prompt</button><button class="sh" data-u={u(`/casos/${c.slug}`)} data-t={c.titulo}>Compartir</button><button class="sv" aria-pressed="false">☆ Guardar</button></div>
 </article>

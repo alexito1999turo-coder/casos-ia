@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro'; import casos from '../../data/casos.json'; import { SECTORES, TAREAS, SITE, u, slugify, herrBase, iniciales, CHECK_ES, KIT_DIGITAL, HERR, herrMain, fechaES } from '../../data/meta.js'; import Lista from '../../components/Lista.astro';
 export function getStaticPaths(){ return casos.map(c=>({params:{slug:c.slug},props:{c}})); }
-const { c } = Astro.props; const vars=[...new Set((c.prompt.match(/\[[^\]]+\]/g)||[]))]; const rel=casos.filter(x=>x.slug!==c.slug&&(x.tarea===c.tarea||x.sector===c.sector)).slice(0,3); const url = `${SITE.url}/casos/${c.slug}/`;
+const { c } = Astro.props; const vars=[...new Set((c.prompt.match(/\[[^\]]+\]/g)||[]))]; const rel=casos.filter(x=>x.slug!==c.slug&&(x.tarea===c.tarea||x.sector===c.sector)).slice(0,3); const url = `${SITE.url}/casos/${c.slug}/`; const serie = c.empresa ? casos.filter(x=>x.empresa===c.empresa&&x.slug!==c.slug) : [];
 const jsonld = [{"@context":"https://schema.org","@type":"Article","headline":c.titulo,"description":c.resumen,"inLanguage":"es-ES","url":url,"isBasedOn":c.fuenteUrl,"citation":c.fuenteUrl,"publisher":{"@type":"Organization","name":SITE.nombre,"url":`${SITE.url}/`},"author":{"@type":"Organization","name":SITE.nombre},"datePublished":c.publicado,"dateModified":c.publicado,"image":`${SITE.url}/og.png`},
 {"@context":"https://schema.org","@type":"HowTo","name":`Cómo replicar: ${c.titulo}`,"tool":{"@type":"HowToTool","name":c.herramienta},"step":[{"@type":"HowToStep","name":"Copia el prompt","text":c.prompt},{"@type":"HowToStep","name":"Adáptalo a España","text":c.adaptacion}]}];
 ---
@@ -22,5 +22,6 @@ const jsonld = [{"@context":"https://schema.org","@type":"Article","headline":c.
 {c.fuentesExtra && <ul>{c.fuentesExtra.map(f=><li><a href={f.url} rel="nofollow noopener" target="_blank">{f.nombre}</a></li>)}</ul>}
 </div><aside aria-label="Ficha del caso"><span class="eyebrow" style="margin:0">Ficha</span><dl><dt>Sector</dt><dd><a href={u(`/sector/${c.sector}`)}>{SECTORES[c.sector]}</a></dd><dt>Tarea</dt><dd><a href={u(`/tarea/${c.tarea}`)}>{TAREAS[c.tarea]}</a></dd><dt>Herram.</dt><dd>{c.herramientas.map(h=>HERR[h]).join(', ')}</dd>{c.ciudad && <><dt>Ciudad</dt><dd>{c.ciudad}</dd></>}<dt>Fuente</dt><dd><a href={c.fuenteUrl} rel="nofollow noopener" target="_blank">{c.fuente} ↗</a></dd><dt>Fecha</dt><dd>{c.fecha}</dd></dl><p class={c.resultado?'res':'res none'} style="margin:0">{c.resultado ?? 'Sin cifra publicada en la fuente.'}</p><a class="btn" href="#prompt">Ir al prompt</a><small class="stats">Cifras tal como las publica la fuente. <a href={u('/metodologia')}>Metodología</a></small></aside></div>
 <script>document.getElementById('copy').addEventListener('click',e=>{navigator.clipboard.writeText(document.getElementById('prompt').innerText);e.target.textContent='¡Copiado!';setTimeout(()=>e.target.textContent='Copiar prompt',1500)})</script>
+{serie.length > 0 && <><h2>Más casos de {c.empresa}</h2><ul>{serie.map(x=><li><a href={u(`/casos/${x.slug}`)}>{x.titulo}</a></li>)}</ul></>}
 <h2>Casos relacionados</h2><Lista casos={rel} sponsorAt={2} />
 </Base>
