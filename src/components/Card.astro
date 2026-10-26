@@ -1,12 +1,13 @@
 ---
+import { etiquetaInst } from "../data/meta.js";
 import { SECTORES, TAREAS, u, slugify, herrBase, iniciales, HERR, herrMain, ciudadSlug } from '../data/meta.js';
 const { c } = Astro.props;
 const esNuevo = (Date.parse('2026-10-16') - Date.parse(c.publicado)) < 7*864e5;
-const fuenteLbl = c.patrocinado ? `Contenido patrocinado (${c.patrocinado})` : ({proveedor:'Publicado por el proveedor','red social':'Redes sociales',cliente:'Publicado por el negocio',institucional:`Programa público (${c.institucion}) · lo publica el propio programa sobre su formación`})[c.fuenteTipo] ?? 'Prensa';
+const fuenteLbl = c.patrocinado ? `Contenido patrocinado (${c.patrocinado})` : ({proveedor:'Publicado por el proveedor','red social':'Redes sociales',cliente:'Publicado por el negocio',institucional:etiquetaInst(c)})[c.fuenteTipo] ?? 'Prensa';
 ---
 <article class="card" data-sector={c.sector} data-tarea={c.tarea} data-herr={HERR[herrMain(c)]} data-slug={c.slug} data-pub={c.publicado} data-res={c.resultado && !c.patrocinado && c.fuenteTipo!=="proveedor"?1:0} data-text={(c.titulo+' '+c.resumen+' '+c.herramienta+' '+(c.ciudad||'')).toLowerCase()}>
 <div class="head"><span class="badge" aria-hidden="true">{iniciales(c.herramienta)}</span><span class="who"><a href={u(`/herramientas/${herrMain(c)}`)}>{HERR[herrMain(c)]}</a><small>{SECTORES[c.sector]}</small></span>{esNuevo && <span class="new">Nuevo</span>}</div>
-{(c.patrocinado || c.fuenteTipo === 'proveedor' || c.fuenteTipo === 'institucional') && <div class="meta">{c.patrocinado && <span class="new pat">Patrocinado ({c.patrocinado})</span>}{c.fuenteTipo === 'proveedor' && <span class="new prov">Contenido de proveedor</span>}{c.fuenteTipo === 'institucional' && <span class="new prov">{`Programa público (${c.institucion}) · lo publica el propio programa sobre su formación`}</span>}</div>}
+{(c.patrocinado || c.fuenteTipo === 'proveedor' || c.fuenteTipo === 'institucional') && <div class="meta">{c.patrocinado && <span class="new pat">Patrocinado ({c.patrocinado})</span>}{c.fuenteTipo === 'proveedor' && <span class="new prov">Contenido de proveedor</span>}{c.fuenteTipo === 'institucional' && <span class="new prov">{etiquetaInst(c)}</span>}</div>}
 <h3><a href={u(`/casos/${c.slug}`)}>{c.titulo}</a></h3>
 <p class={c.resultado ? 'res' : 'res none'}>{c.resultado ? c.resultado : 'Sin cifra publicada en la fuente'}</p>
 <p class="sum">{c.resumen.length > 170 ? c.resumen.slice(0,168).replace(/\s\S*$/,'')+'…' : c.resumen}</p>

@@ -1099,5 +1099,51 @@
     "ciudad": "Barcelona",
     "tituloSeo": "Asesoría GEMAP (Barcelona): IA para consultas y borradores",
     "publicado": "2026-10-25"
+  },
+  {
+    "slug": "reyca-ribamontan-al-monte-ia-datos-propios-tecnicos",
+    "titulo": "REYCA (Ribamontán al Monte) da a sus técnicos un asistente de IA que consulta solo los datos de la empresa",
+    "resumen": "El Gobierno de Cantabria explica que REYCA, empresa familiar de mantenimiento, reparación, venta y alquiler de carretillas y maquinaria industrial con 45 personas en plantilla, ha implantado con el programa TriRural Tech una solución de IA que trabaja solo con sus propios datos. Según su gerente y propietario, Jaime Rodríguez, los técnicos reparadores consultan desde el móvil historiales, órdenes de trabajo y el estado de cada máquina sin tener que llamar a la empresa. El proyecto lo desarrolló Acicatech.",
+    "resultado": null,
+    "resultadoNota": "Sin cifras de resultado. El consejero habla de «reducción del tiempo en la resolución de incidencias» sin cuantificarla. Los 56.000 euros son la subvención del programa, no un resultado.",
+    "sector": "taller",
+    "tarea": "admin",
+    "herramienta": "Agente de soporte con IA (AIQUINTA, de Acicatech) sobre los datos de la empresa, accesible desde el móvil",
+    "herramientas": [
+      "agente-ia-a-medida"
+    ],
+    "prompt": "Prompt sugerido: «Eres el asistente de los técnicos. Responde solo con la información de los documentos y el historial que te doy [pegar órdenes de trabajo y manual]. Si la respuesta no está en esos datos, dilo. Pregunta: ¿qué averías ha tenido antes la carretilla [número de serie] y qué se hizo?»",
+    "adaptacion": "Limitar el asistente a los datos propios (manuales, órdenes de trabajo, historiales) y que cite de dónde saca cada respuesta. El técnico confirma el diagnóstico en la máquina. Duda: REYCA trabaja con carretillas Linde, pero la nota la presenta como empresa familiar, no como franquicia. La ciudad sale de la nota oficial, que sitúa la empresa entre Hoz de Anero y Ribamontán al Monte; la ficha de TriRural Tech habla del municipio de Ribamontán al Monte.",
+    "fuente": "Gobierno de Cantabria (comunicado de la Consejería de Economía)",
+    "fuenteUrl": "https://www.cantabria.es/web/comunicados/detalle/-/journal_content/56_INSTANCE_DETALLE/16413/119444488",
+    "fuenteTipo": "institucional",
+    "fecha": "2026-02-04",
+    "ciudad": "Ribamontán al Monte (Cantabria)",
+    "institucion": "Gobierno de Cantabria (programa TriRural Tech)",
+    "institucionNota": "lo publica el propio Gobierno sobre una empresa subvencionada",
+    "tituloSeo": "REYCA: asistente de IA con datos propios para técnicos",
+    "publicado": "2026-10-26"
+  },
+  {
+    "slug": "la-excusa-perfecta-gijon-ia-pedidos-produccion-cocina",
+    "titulo": "La Excusa Perfecta (Gijón) usa una IA propia para avisar de pedidos, planificar la producción y asignar platos a los cocineros",
+    "resumen": "miGijón cuenta que Sergio Prieto, responsable del restaurante La Excusa Perfecta, dedicó casi un año a desarrollar un sistema que aprende las recetas, los métodos de cocinado y las especias de su cocina y se conecta con básculas inteligentes en las neveras. Con eso la IA avisa de cuándo hay que pedir ingredientes, planifica la producción diaria y asigna platos a los cocineros. El restaurante recibió el Premio Trayectoria Innovadora Visita Gijón/Xixón Profesional 2025.",
+    "resultado": null,
+    "resultadoNota": "Sin cifras atribuidas a la IA. Prieto dice que le permite «dedicarme a lo realmente importante: cocinar, cuidar a los clientes y formar al equipo». Los 2.000 platos creados y las pérdidas de 25.000 euros por falta de personal no tienen que ver con la IA.",
+    "sector": "hosteleria",
+    "tarea": "admin",
+    "herramienta": "Sistema de IA desarrollado por el propio dueño, conectado a básculas inteligentes en las neveras",
+    "herramientas": [
+      "agente-ia-a-medida"
+    ],
+    "prompt": "Prompt sugerido: «Con las reservas de mañana [número de comensales por turno], las ventas medias por plato de las últimas cuatro semanas y el stock actual [pegar], calcula qué hay que producir, qué ingredientes pedir hoy y cómo repartir las partidas entre [nombres de cocineros].»",
+    "adaptacion": "Sin básculas conectadas se puede empezar con un inventario en hoja de cálculo y las ventas del TPV. El pedido final lo revisa el jefe de cocina. La ciudad sale de la pieza.",
+    "fuente": "miGijón",
+    "fuenteUrl": "https://migijon.com/la-excusa-perfecta-asi-es-el-restaurante-mas-digitalizado-de-gijon/",
+    "fuenteTipo": "prensa",
+    "fecha": "2025-11-02",
+    "ciudad": "Gijón",
+    "tituloSeo": "La Excusa Perfecta (Gijón): IA propia para cocina y pedidos",
+    "publicado": "2026-10-26"
   }
 ]
