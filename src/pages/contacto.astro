@@ -3,7 +3,7 @@ import { u } from '../data/meta.js';
 import Base from '../layouts/Base.astro';
 import { CONTACT_EMAIL } from '../data/config.mjs';
 ---
-<Base title="Contacto" description="Cómo contactar con CasosAgentes: corregir o retirar un caso, enviar uno nuevo, patrocinar o implantar una solución de IA en tu negocio." crumbs={[{name:'Contacto'}]} jsonld={{"@context":"https://schema.org","@type":"ContactPage","name":"Contacto","inLanguage":"es-ES"}}>
+<Base title="Contacto" description="Cómo contactar con CasosAgentes: corregir o retirar un caso, enviar uno nuevo o patrocinar." crumbs={[{name:'Contacto'}]} jsonld={{"@context":"https://schema.org","@type":"ContactPage","name":"Contacto","inLanguage":"es-ES"}}>
 <h1>Contacto</h1>
 <p>Escríbenos a <a href={`mailto:${CONTACT_EMAIL}`}><strong>{CONTACT_EMAIL}</strong></a>. Respondemos en uno o dos días laborables.</p>
 <h2>Para qué puedes escribirnos</h2>
@@ -12,7 +12,6 @@ import { CONTACT_EMAIL } from '../data/config.mjs';
 <li><strong>Retirar un caso o tus datos:</strong> si apareces en un caso y no quieres estar, lo retiramos. Indica la URL del caso. Más información en <a href={u("/privacidad")}>Privacidad</a>.</li>
 <li><strong>Enviar un caso:</strong> un negocio de España que ya use IA, con un enlace donde se cuente. También desde <a href={u("/enviar-caso")}>Enviar caso</a>.</li>
 <li><strong>Patrocinar:</strong> condiciones en <a href={u("/patrocinar")}>Patrocinar</a>.</li>
-<li><strong>Implantarlo en tu negocio:</strong> si quieres algo parecido a un caso del directorio, ALAXIA, la agencia de quien edita CasosAgentes, puede ayudarte. Cuéntanos qué caso te interesa. Lo explicamos en <a href={u("/transparencia")}>Cómo nos financiamos</a>.</li>
 </ul>
 <p><small>Responsable: datos del titular en el <a href={u("/aviso-legal")}>aviso legal</a>.</small></p>
 </Base>

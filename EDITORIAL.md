@@ -39,5 +39,6 @@ Rellenarlos en los casos nuevos; Claude activará su visualización cuando haya 
 ## Cosas que ya están decididas (no deshacer)
 
 - Contadores: la barra «En el directorio» cuenta todas las herramientas de cada caso, igual que el filtro. La franja de la portada cuenta los casos de los últimos 7 días, igual que la etiqueta «Nuevo».
-- Páginas `/sobre/` (ampliada), `/contacto/` (nueva) y la sección «Conflicto de intereses: ALAXIA» en `/transparencia/`.
+- Páginas `/sobre/` (ampliada) y `/contacto/` (nueva).
+- **CasosAgentes y ALAXIA (la agencia de Alex) van separadas.** La web no menciona ALAXIA ni vende servicios; Alex usa los casos por su cuenta en su prospección. No añadir enlaces, bloques ni menciones a ALAXIA.
 - Search Console: propiedad de dominio `casosagentes.es`, sitemap `https://casosagentes.es/sitemap-index.xml`.

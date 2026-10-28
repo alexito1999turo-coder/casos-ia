@@ -10,16 +10,12 @@ const n = casos.length; const mezcla = Object.entries(FUENTE_TIPOS).map(([k, l])
 <Base title="Cómo nos financiamos" description="Cómo se financia CasosAgentes: patrocinio siempre marcado, reglas de afiliación y por qué ni patrocinadores ni afiliados deciden qué casos entran." crumbs={[{name:'Cómo nos financiamos'}]} robots={pend ? 'noindex,follow' : 'index,follow'} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Cómo nos financiamos","inLanguage":"es-ES"}}>
 <h1>Cómo nos financiamos</h1>
 {pend && <p class="box pend"><strong>Página en preparación:</strong> faltan los datos del titular marcados como [PLACEHOLDER].</p>}
-<p>CasosAgentes es de <Ph v={TITULAR.nombre} k="nombre del titular" /> (<a href={u('/aviso-legal')}>aviso legal</a>). Es gratis para quien lo lee. Para cubrir costes podemos usar tres vías, siempre identificadas como comunicación comercial (LSSI art. 20): <strong>patrocinio</strong>, <strong>enlaces de afiliado</strong> y los <strong>servicios de ALAXIA</strong>, la agencia del editor (ver abajo). No usamos publicidad programática ni cookies de seguimiento.</p>
+<p>CasosAgentes es de <Ph v={TITULAR.nombre} k="nombre del titular" /> (<a href={u('/aviso-legal')}>aviso legal</a>). Es gratis para quien lo lee. Para cubrir costes podemos usar dos vías, siempre identificadas como comunicación comercial (LSSI art. 20): <strong>patrocinio</strong> y <strong>enlaces de afiliado</strong>. No usamos publicidad programática ni cookies de seguimiento.</p>
 <h2>La regla principal</h2>
 <p class="box"><strong>Ni los afiliados ni los patrocinadores deciden qué casos entran.</strong> Todos los casos cumplen los mismos criterios de la <a href={u('/metodologia')}>metodología</a>: negocio identificable, pyme o autónomo de España, fuente pública y cifras literales. Un caso no entra, no sale ni cambia de orden porque una herramienta pague o tenga programa de afiliados.</p>
 <h2>Estado hoy</h2>
 <ul><li>Patrocinadores propios: <strong>ninguno</strong>.{patro.length ? ` Algún caso lleva «Patrocinado» porque lo patrocinó su fuente original (${patro.join(', ')}), no porque nos pague a nosotros.` : ''}</li>
 <li>Enlaces de afiliado activos: <strong>{activos.length ? activos.map(a => a.nombre).join(', ') : 'ninguno'}</strong>.</li></ul>
-<h2>Conflicto de intereses: ALAXIA</h2>
-<p>Quien edita CasosAgentes tiene una agencia, <strong>ALAXIA</strong>, que implanta webs, automatizaciones e IA en negocios. Si un lector nos pide ayuda para aplicar un caso en su negocio, podemos ofrecerle ese servicio. Es otra vía de ingresos y la declaramos aquí.</p>
-<ul><li>ALAXIA no decide qué casos entran, ni su orden, ni qué herramienta aparece en cada uno.</li>
-<li>No publicamos casos de clientes de ALAXIA sin marcarlo en la ficha.</li></ul>
 <h2>Patrocinio</h2><ul>
 <li>Todo hueco o caso pagado lleva la etiqueta «Patrocinado (Marca)» y queda fuera de Destacados.</li>
 <li>El patrocinador no toca el contenido: solo puede pedir correcciones de hechos aportando una fuente. No puede pedir que se quite un caso de la competencia ni cambiar el orden fuera de su hueco.</li>
