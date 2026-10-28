@@ -173,7 +173,8 @@
       "make",
       "google-workspace"
     ],
-    "tituloSeo": "RC15 Academy: alta de alumnos en segundos con Make"
+    "tituloSeo": "RC15 Academy: alta de alumnos en segundos con Make",
+    "descripcionSeo": "Academia RC15 automatizó con Make y Google Sheets el alta de alumnos, sin transcribir a mano, para que los entrenadores se centren en entrenar."
   },
   {
     "slug": "fresneda-fisioterapia-ana-whatsapp",
@@ -360,12 +361,13 @@
       "chatgpt",
       "make"
     ],
-    "tituloSeo": "Autónomo automatiza sus facturas con Make y ChatGPT"
+    "tituloSeo": "Autónomo automatiza sus facturas con Make y ChatGPT",
+    "descripcionSeo": "Escenario de Make descrito en LinkedIn: ChatGPT Vision extrae proveedor, fecha, NIF e importe de facturas en PDF y los pasa a Google Sheets para el gestor."
   },
   {
     "slug": "maria-jesus-puerta-make-chatgpt-factura-obra",
     "titulo": "María Jesús Puerta documenta facturación de plan de seguridad de obra con ChatGPT y Make",
-    "resumen": "Publicación LinkedIn: tras cerrar un plan de seguridad de obra, un mensaje a ChatGPT ('factura para Construcciones Martínez… 450€') dispara Make: alta de cliente, factura en Google Docs, PDF en Drive y envío por correo.",
+    "resumen": "Publicación LinkedIn: tras cerrar un plan de seguridad de obra, un mensaje a ChatGPT («factura para Construcciones Martínez, 450 €») dispara Make: alta de cliente, factura en Google Docs, PDF en Drive y envío por correo.",
     "resultado": null,
     "resultadoNota": "Flujo demostrado/enseñado por la autora; sin métricas de su cartera.",
     "sector": "construccion",
@@ -383,7 +385,8 @@
       "chatgpt",
       "make"
     ],
-    "tituloSeo": "Facturas de seguridad de obra con ChatGPT y Make"
+    "tituloSeo": "Facturas de seguridad de obra con ChatGPT y Make",
+    "descripcionSeo": "María Jesús Puerta factura una obra con un mensaje a ChatGPT que dispara Make: alta de cliente, factura en Google Docs, PDF en Drive y envío por correo."
   },
   {
     "slug": "mes-que-fisio-healthmate",
@@ -407,7 +410,7 @@
       "healthmate"
     ],
     "tituloSeo": "Més que Fisio: menos administración con IA",
-    "empresa": "HealthMate"
+    "descripcionSeo": "Toni Contreras, de Més que Fisio, explica que su cuello de botella «nunca fue tratar, fue coordinar»: con HealthMate reúnen mensajes, llamadas y agenda."
   },
   {
     "slug": "clinica-kinetica-huelva-healthmate",
@@ -430,8 +433,7 @@
       "whatsapp-business",
       "healthmate"
     ],
-    "tituloSeo": "Clínica Kinética: dudas nocturnas resueltas con IA",
-    "empresa": "HealthMate"
+    "tituloSeo": "Clínica Kinética: dudas nocturnas resueltas con IA"
   },
   {
     "slug": "fisio-miguel-perez-alicante-healthmate",
@@ -454,8 +456,7 @@
       "whatsapp-business",
       "healthmate"
     ],
-    "tituloSeo": "Fisio Miguel Pérez: la IA atiende si estás en camilla",
-    "empresa": "HealthMate"
+    "tituloSeo": "Fisio Miguel Pérez: la IA atiende si estás en camilla"
   },
   {
     "slug": "motiva-fisioterapia-healthmate",
@@ -478,8 +479,7 @@
       "whatsapp-business",
       "healthmate"
     ],
-    "tituloSeo": "Motiva Fisioterapia: WhatsApp compartido con IA",
-    "empresa": "HealthMate"
+    "tituloSeo": "Motiva Fisioterapia: WhatsApp compartido con IA"
   },
   {
     "slug": "seneca-fisioterapia-langreo-chat-blanca",
@@ -501,7 +501,8 @@
     "herramientas": [
       "agente-ia-a-medida"
     ],
-    "tituloSeo": "Séneca Fisioterapia (Langreo): asistente IA web 24 h"
+    "tituloSeo": "Séneca Fisioterapia (Langreo): asistente IA web 24 h",
+    "descripcionSeo": "Séneca Fisioterapia (Langreo, Asturias) usa a Blanca, asistente de BCL IA que atiende por chat en la web a cualquier hora sobre fisioterapia y pilates."
   },
   {
     "slug": "facestylist-marbella-reservas-whatsapp-solwees",
@@ -553,7 +554,8 @@
         "nombre": "Kokuai (testimonios, fuente del 90 % de citas confirmadas)",
         "url": "https://kokuai.com/testimonials"
       }
-    ]
+    ],
+    "descripcionSeo": "Clínica dental Domènech, 7 gabinetes y ~150 pacientes al día: con Kokuai pasó de confirmar citas a mano por WhatsApp a recordatorios y recalls automáticos."
   },
   {
     "slug": "clinica-dental-establiments-palma-kokuai",
@@ -708,7 +710,8 @@
     "herramientas": [
       "agente-ia-a-medida"
     ],
-    "tituloSeo": "Hotel Torre del Marqués: concierge IA en seis idiomas"
+    "tituloSeo": "Hotel Torre del Marqués: concierge IA en seis idiomas",
+    "descripcionSeo": "Hotel Torre del Marqués, hotel rural de 18 habitaciones en el Matarraña: su avatar con IA generativa reserva actividades y mesa y recomienda la zona."
   },
   {
     "slug": "garay-ballester-almeria-recepcionista-voz-ia",
@@ -1122,7 +1125,13 @@
     "institucion": "Gobierno de Cantabria (programa TriRural Tech)",
     "institucionNota": "lo publica el propio Gobierno sobre una empresa subvencionada",
     "tituloSeo": "REYCA: asistente de IA con datos propios para técnicos",
-    "publicado": "2026-10-26"
+    "publicado": "2026-10-26",
+    "fuentesExtra": [
+      {
+        "nombre": "TriRuralTech: proyectos seleccionados (AIQUINTA / Acicatech)",
+        "url": "https://triruraltech.es/triruraltech/triruraltech-impulsa-la-innovacion-tecnologica-en-el-medio-rural-con-nueve-proyectos-seleccionados/"
+      }
+    ]
   },
   {
     "slug": "la-excusa-perfecta-gijon-ia-pedidos-produccion-cocina",

@@ -20,7 +20,14 @@ export const CHECK_ES = {
  admin:['La IA no sustituye a tu gestor ni a la AEAT: contrasta en sede.agenciatributaria.gob.es.','No subas certificados digitales ni contraseñas a herramientas de IA.','Datos de salud o de terceros: usa herramientas con contrato de encargado de tratamiento (DPA) y servidores en la UE.']
 };
 export const KIT_DIGITAL = 'Kit Digital y otras ayudas públicas pueden cubrir parte de la implantación de algunas soluciones a través de agentes digitalizadores adheridos; consulta la convocatoria vigente en acelerapyme.gob.es.';
-const FUNC=new Set(['que','de','del','la','el','los','las','y','o','en','con','para','por','a','un','una']);
-export const recorta = (s,n) => { s=String(s).trim(); if(s.length<=n) return s; const cut=s.slice(0,n); const m=cut.match(/^[\s\S]*[.!?](?=\s|$)/); if(m && m[0].length>=40) return m[0].trim(); const pm=cut.match(/^[\s\S]*[,;](?=\s)/); if(pm){ const t=pm[0].slice(0,-1).trim(); if(t.length>=90) return t+'.'; } const w=cut.replace(/\s+\S*$/,'').replace(/[,;:\s]+$/,'').split(/\s+/); while(w.length>1 && FUNC.has(w[w.length-1].toLowerCase().replace(/[^\p{L}]/gu,''))) w.pop(); return w.join(' ').replace(/[,;:\s«(]+$/,'')+'.'; };
+const FUNC=new Set(['que','qué','de','del','la','el','los','las','y','e','o','u','en','con','para','por','a','al','un','una','sobre','su','sus','sin','entre','desde','hasta','como','se','lo','ya','están','es','son']);
+const ABBR=/(?:\b[A-ZÁÉÍÓÚÑ]|\b(?:incl|aprox|etc|núm|sep|oct|nov|dic|ene|feb|abr|jun|jul|ago|pág|tel|Sr|Sra|Dr|Dra|vs|art|p\.ej))\.$/;
+const abierto = t => t.split('(').length>t.split(')').length || (t.match(/«/g)||[]).length>(t.match(/»/g)||[]).length || (t.match(/(^|[\s(«])'/g)||[]).length>(t.match(/'(?=[\s.,;:)»]|$)/g)||[]).length;
+const limpia = t => { let w=t.replace(/[,;:\s]+$/,'').split(/\s+/); for(;;){ const l=w[w.length-1]; if(w.length>1 && (FUNC.has(l.toLowerCase().replace(/[^\p{L}]/gu,'')) || /^[\d.,%€$+\/→\-–—]+$/.test(l) || /^[^\p{L}\d]+$/u.test(l))) { w.pop(); continue; } break; } return w.join(' ').replace(/[\s,;:«(\/+→\-–—…]+$/u,''); };
+export const recorta = (s,n) => { s=String(s).trim(); if(s.length<=n) return s; const cut=s.slice(0,n);
+  let best=null; for(const m of cut.matchAll(/[.!?](?=\s|$)/g)){ const t=cut.slice(0,m.index+1); if(t.length>=70 && !ABBR.test(t) && !abierto(t)) best=t; } if(best) return best.trim();
+  let pb=null; for(const m of cut.matchAll(/[,;](?=\s)/g)){ const t=cut.slice(0,m.index).trim(); if(t.length>=90 && !abierto(t)) pb=t; } if(pb) return limpia(pb)+'.';
+  let t=cut.replace(/\s+\S*$/,''); while(abierto(t)){ const i=Math.max(t.lastIndexOf('('),t.lastIndexOf('«'),t.search(/'[^']*$/)); if(i<=0) break; t=t.slice(0,i); }
+  return limpia(t)+'.'; };
 export const etiquetaInst = c => `${(c.institucion??"").includes('(') ? `Programa público: ${c.institucion}` : `Programa público (${c.institucion})`} · ${c.institucionNota ?? 'lo publica el propio programa sobre su formación'}`;
 export const fechaES = d => new Date(d+'T12:00:00Z').toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
