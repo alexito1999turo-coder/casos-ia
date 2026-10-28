@@ -32,3 +32,12 @@ CasosAgentes (https://casosagentes.es): directorio estático en Astro de casos r
 - La ventana temporal usa fechas de publicación a medianoche UTC y una antigüedad desde 0 hasta menos de 7 días; excluye fechas futuras. Sin casos recientes no hay aviso de cuota.
 - Pruebas del validador: `node --test scripts/validar-casos.test.mjs`. En el entorno restringido de Codex (Node 24), usar `node --test --test-isolation=none scripts/validar-casos.test.mjs` si no permite crear subprocesos.
 - Para futuros costes: «Estimación de CasosAgentes: X € de puesta en marcha y Y €/mes; no es un dato de la fuente.»
+
+## Guías de sector
+
+- Archivos Markdown en `src/data/guias/<sector>.md`. Frontmatter obligatorio: `titulo`, `descripcion`, `sector` (clave de `SECTORES` igual al nombre del archivo), `actualizado` (fecha real `"AAAA-MM-DD"` entre comillas) y `borrador` (booleano true/false sin comillas). Usar encabezados desde `##`: la página ya muestra el título principal.
+- `cargarGuias()` valida estos metadatos al compilar y los comparte con las páginas y el sitemap. `gray-matter` es una dependencia directa para leer el frontmatter.
+- `/guias/<sector>/` muestra el texto y después los casos de ese sector con `Landing` y `Lista`/`Card`. Los enlaces Markdown internos usan rutas absolutas como `/casos/<slug>/`; el build los adapta a `BASE_PATH`.
+- Los borradores tienen URL de revisión con `noindex,follow`, quedan fuera del sitemap y no aparecen en `/guias/` ni se enlazan desde `/sector/<sector>/`. El índice también queda en noindex y fuera del sitemap mientras no haya guías publicadas.
+- El bot de Grok redacta el contenido definitivo; Alex aprueba la publicación. La guía de hostelería es solo un ejemplo en borrador basado en los casos del repo. Cambiar `borrador` a false únicamente dentro de ese proceso editorial.
+- Pruebas de metadatos y enlaces: `node --test scripts/guias.test.mjs` (en el entorno restringido de Codex: añadir `--test-isolation=none`).

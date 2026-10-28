@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { thinFacets } from './src/data/facets.mjs';
+import { cargarGuias, enlacesGuias } from './src/data/guias.mjs';
 import { readdirSync, readFileSync } from 'node:fs';
 import { titularPendiente, LEGAL_PAGES, mlAction, TITULAR } from './src/data/config.mjs';
 // Candado legal: sin los 4 datos de TITULAR (config.mjs) el build de producción se para.
@@ -16,6 +17,10 @@ const retired = ['casos','sector','ciudad','herramientas'].flatMap(d => readdirS
 // Dominio propio casosagentes.es (public/CNAME). Para la URL antigua de Pages: SITE_URL=https://alexito1999turo-coder.github.io BASE_PATH=/casos-ia
 const site = process.env.SITE_URL || 'https://casosagentes.es';
 const base = process.env.BASE_PATH || '/';
+const guias = cargarGuias();
+const guiasNoIndex = new Set(guias.filter(guia => guia.borrador).map(guia => `/guias/${guia.sector}/`));
+if (!guias.some(guia => !guia.borrador)) guiasNoIndex.add('/guias/');
 const thin = thinFacets(); ['/enviar-caso/', ...(mlAction() ? [] : ['/newsletter/']), ...(titularPendiente() ? LEGAL_PAGES : []),'/casos/clinica-domenech-valencia-kokuai/','/casos/inmobiliaria-madrid-whatsapp-ia-cualifica-leads/','/casos/glop-mcp-tpv-hosteleria-chatgpt-claude/','/casos/camby-web-asistente-energetico-gpt/', ...retired].forEach(p=>thin.add(p)); const b = base.replace(/\/$/,'');
 export default defineConfig({ site, base, trailingSlash: 'ignore',
-  integrations: [sitemap({ filter: (p) => { const path = new URL(p).pathname.slice(b.length) || '/'; return !thin.has(path.endsWith('/')?path:path+'/'); } })] });
+  markdown: { remarkPlugins: [[enlacesGuias, { base }]] },
+  integrations: [sitemap({ filter: (p) => { const path = new URL(p).pathname.slice(b.length) || '/'; const normalizado = path.endsWith('/') ? path : path + '/'; return !thin.has(normalizado) && !guiasNoIndex.has(normalizado); } })] });
