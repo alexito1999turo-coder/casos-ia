@@ -1,7 +1,7 @@
-// Comprueba enlaces internos (href/src) de dist/ sin dependencias: node scripts/check-links.mjs [base=/casos-ia]
+// Comprueba enlaces internos (href/src) de dist/ sin dependencias: node scripts/check-links.mjs [base=/]
 import { readdirSync, readFileSync, statSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-const DIST = 'dist', BASE = (process.argv[2] ?? process.env.BASE_PATH ?? '/casos-ia').replace(/\/$/, '');
+const DIST = 'dist', BASE = (process.argv[2] ?? process.env.BASE_PATH ?? '/').replace(/\/$/, '');
 const files = []; const walk = d => readdirSync(d).forEach(f => { const p = join(d, f); statSync(p).isDirectory() ? walk(p) : files.push(p); }); walk(DIST);
 const html = files.filter(f => f.endsWith('.html'));
 const ok = p => { const rel = decodeURIComponent(p.slice(BASE.length)).replace(/^\//, ''); const t = join(DIST, rel);

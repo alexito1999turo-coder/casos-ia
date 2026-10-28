@@ -4,7 +4,7 @@ import casos from '../src/data/casos.json' with { type: 'json' };
 import { ciudadSlug } from '../src/data/facets.mjs';
 const require = createRequire(import.meta.url);
 let chromium; try { ({ chromium } = require('playwright-core')); } catch { ({ chromium } = require('/usr/local/lib/pnpm/5/.pnpm/playwright-core@1.59.1/node_modules/playwright-core')); }
-const B = process.argv[2] || 'http://127.0.0.1:8801/casos-ia/'; const O = process.argv[3] || '/tmp';
+const B = process.argv[2] || 'http://127.0.0.1:8801/'; const O = process.argv[3] || '/tmp';
 const R = []; const ok = (k, pass, info = {}) => { R.push({ k, pass: !!pass, ...info }); console.log(pass ? 'PASS' : 'FAIL', k, JSON.stringify(info)); };
 const V = { sector: c => [c.sector], ciudad: c => [ciudadSlug(c)], herramienta: c => c.herramientas, fuente: c => [c.fuenteTipo || 'prensa'], tarea: c => [c.tarea] };
 const expect = f => casos.filter(c => Object.entries(f).every(([g, vs]) => V[g](c).some(v => vs.includes(v)))).length;
