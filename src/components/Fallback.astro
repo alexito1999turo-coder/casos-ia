@@ -1,8 +1,8 @@
 ---
 // Respaldo honesto cuando un formulario aún no está configurado: nunca finge que envía.
 import { CONTACT_EMAIL } from '../data/config.mjs';
-const { asunto = 'Contacto CasosAgentes', cuerpo = '', que = 'Este formulario' } = Astro.props;
+const { asunto = 'Contacto CasosAgentes', cuerpo = '', que = 'Este formulario', activo = 'activo' } = Astro.props;
 const href = CONTACT_EMAIL ? `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(asunto)}${cuerpo ? `&body=${encodeURIComponent(cuerpo)}` : ''}` : '';
 ---
-<div class="box pend" role="note"><strong>Próximamente.</strong> {que} todavía no está activo y no recoge datos.
+<div class="box pend" role="note"><strong>Próximamente.</strong> {que} todavía no está {activo} y no recoge datos.
 {href ? <> Mientras tanto, escríbenos a <a href={href}>{CONTACT_EMAIL}</a>.</> : <> En cuanto lo activemos podrás usarlo desde aquí.</>}</div>

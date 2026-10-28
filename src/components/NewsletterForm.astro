@@ -11,7 +11,7 @@ const action = mlAction();
 <label style="display:flex;gap:8px;align-items:flex-start;font-size:.86rem"><input type="checkbox" name="gdpr[]" value="newsletter" required style="width:auto;-webkit-appearance:auto;appearance:auto;margin-top:4px"> <span>Acepto recibir «Los 5 del lunes» por email y he leído la <a href={u("/privacidad")}>política de privacidad</a>.</span></label>
 <p class="rgpd" style="margin:0"><small><strong>Protección de datos.</strong> Responsable: el titular de CasosAgentes (<a href={u('/aviso-legal')}>aviso legal</a>). Finalidad: enviarte la newsletter. Base: tu consentimiento. Encargado del tratamiento: MailerLite Limited (Irlanda), que mide aperturas y clics de cada envío. Te pediremos confirmar tu email (doble opt-in) y puedes retirar tu consentimiento y darte de baja en cualquier envío. Más en <a href={u('/privacidad')}>privacidad</a>.</small></p>
 <button type="submit">Suscribirme</button><p class="nlmsg" role="status" aria-live="polite" style="margin:0"></p></form>
-: <Fallback asunto="Alta en la newsletter «Los 5 del lunes»" cuerpo="Quiero recibir la newsletter en este email." que="La suscripción a la newsletter" />}
+: <Fallback asunto="Alta en la newsletter «Los 5 del lunes»" cuerpo="Quiero recibir la newsletter en este email." que="La suscripción a la newsletter" activo="activa" />}
 {action && <script is:inline>
 document.querySelectorAll('form[data-ml]').forEach(f=>f.addEventListener('submit',async e=>{e.preventDefault();const m=f.querySelector('.nlmsg'),b=f.querySelector('button');if(f.website.value)return;b.disabled=true;m.textContent='Enviando…';
 try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});const j=await r.json().catch(()=>({}));

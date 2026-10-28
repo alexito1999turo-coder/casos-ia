@@ -13,7 +13,7 @@ const bc = crumbs && { "@context":"https://schema.org","@type":"BreadcrumbList",
 const lds = [ ...(jsonld ? (Array.isArray(jsonld)?jsonld:[jsonld]) : []), ...(bc?[bc]:[]) ];
 ---
 <!doctype html><html lang="es-ES" data-tema={TEMA}><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{full}</title><meta name="description" content={desc}><meta name="robots" content={robots}><link rel="canonical" href={canonical}>
+<title>{full}</title><meta name="description" content={desc}><meta name="robots" content={robots}><link rel="canonical" href={canonical}><link rel="icon" href={u("/favicon.svg")} type="image/svg+xml"><link rel="icon" href={u("/favicon.ico")} sizes="32x32"><link rel="apple-touch-icon" href={u("/apple-touch-icon.png")}>
 <meta property="og:title" content={full}><meta property="og:description" content={desc}><meta property="og:type" content={ogType}><meta property="og:image" content={ogImage}><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="CasosAgentes">{published && <meta property="article:published_time" content={published}>}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content={ogImage}><meta property="og:url" content={canonical}><meta property="og:locale" content="es_ES">
 <link rel="alternate" type="text/plain" href={u("/llms.txt")} title="llms.txt">
 <link rel="preload" href={u("/fonts/instrument-sans-latin.woff2")} as="font" type="font/woff2" crossorigin><link rel="stylesheet" href={u("/fonts/fonts.css")}>
@@ -45,7 +45,7 @@ nav.top .links{display:flex;gap:18px;overflow-x:auto;min-width:0;scrollbar-width
 nav.top .links a{color:var(--muted)}nav.top .links a:hover{color:var(--fg)}nav.top .links a.cta{color:var(--bg);background:var(--accent);padding:5px 11px;text-decoration:none}
 .logo{font-weight:700;font-size:1.05rem;letter-spacing:-.03em;white-space:nowrap}.logo span{color:var(--faint);font-weight:500}
 #theme{background:none;border:1px solid var(--line);color:var(--fg);width:32px;height:32px;padding:0;display:grid;place-items:center;flex:none}
-@media(max-width:760px){nav.top{flex-wrap:wrap;height:auto;padding:10px 0 0}nav.top .links{order:3;flex:1 0 100%;max-width:100%;margin:0;padding:8px 0 10px;gap:16px}nav.top .logo{min-width:0}#theme{margin-left:auto}}
+@media(max-width:760px){nav.top{flex-wrap:wrap;height:auto;padding:10px 0 0}nav.top .links{order:3;flex:1 0 100%;max-width:100%;margin:0;padding:8px 0 10px;gap:8px 14px;flex-wrap:wrap;white-space:normal;overflow:visible;align-items:center}nav.top .logo{min-width:0}#theme{margin-left:auto}}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
 @media(max-width:700px){.grid{grid-template-columns:1fr;border-left:0;margin:0 -20px}.grid>.card{border-right:0;padding:18px 20px}}
 .card{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px;display:flex;flex-direction:column;gap:10px;background:var(--bg);position:relative;transition:background .15s}
@@ -88,7 +88,7 @@ main{padding:28px 0 56px}footer{padding:28px 0;font-size:.82rem;line-height:1.7}
 h1,h2{letter-spacing:-.025em}h2{font-size:1.15rem;margin:32px 0 10px}
 .ficha{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:48px;align-items:start}.ficha h1{font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1.1;margin:14px 0 16px}.ficha .body{max-width:720px}
 .ficha aside{position:sticky;top:76px;border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:12px;font-size:.88rem}.ficha aside dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px}.ficha aside dt{font:.7rem var(--mono);text-transform:uppercase;color:var(--faint);padding-top:3px}.ficha aside dd{margin:0}
-@media(max-width:900px){.ficha{grid-template-columns:1fr;gap:8px}.ficha aside{position:static;order:-1}}
+@media(max-width:900px){.ficha{grid-template-columns:1fr;gap:8px}.ficha aside{position:static}}
 .planes .card .price{font-size:1.5rem;font-weight:750;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
 .layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:start;margin-top:8px}.mob{display:none!important}
 .side{position:sticky;top:72px;max-height:calc(100vh - 88px);overflow:auto;font-size:.86rem;padding-top:10px;scrollbar-width:thin}

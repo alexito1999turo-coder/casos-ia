@@ -10,8 +10,8 @@ const pats = casos.filter(c => c.patrocinado);
 const corta = (s, n = 70) => s.length > n ? s.slice(0, n - 1).replace(/\s\S*$/, '') + '…' : s;
 const items = [
   ...top.map(([k, n]) => ({ k: 'Más casos', kc: 'k-top', href: u(`/herramientas/${k}`), ini: iniciales(HERR[k]), c: colorDe(k), t: HERR[k], d: `${n} ${n === 1 ? 'caso' : 'casos'}` })),
-  ...recientes.map(c => ({ k: 'Reciente', kc: 'k-new', href: u(`/casos/${c.slug}`), ini: iniciales(c.herramienta), c: colorDe(herrMain(c)), t: corta(c.titulo) })),
-  ...pats.map(c => ({ k: 'Patrocinado', sp: true, href: u(`/casos/${c.slug}`), ini: iniciales(c.herramienta), t: corta(c.titulo), d: c.patrocinado })),
+  ...recientes.map(c => ({ k: 'Reciente', kc: 'k-new', href: u(`/casos/${c.slug}`), ini: iniciales(HERR[herrMain(c)]), c: colorDe(herrMain(c)), t: corta(c.titulo) })),
+  ...pats.map(c => ({ k: 'Patrocinado', sp: true, href: u(`/casos/${c.slug}`), ini: iniciales(HERR[herrMain(c)]), t: corta(c.titulo), d: c.patrocinado })),
   { k: 'Patrocinado', sp: true, href: u('/patrocinar'), ini: '+', t: 'Tu herramienta aquí', d: 'hueco libre' },
 ];
 ---
