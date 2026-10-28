@@ -6,7 +6,7 @@ const robots = casos.length >= MIN_INDEX && !NOINDEX_FACETS.includes(path) ? 'in
 const jsonld0 = {"@context":"https://schema.org","@type":"CollectionPage","name":h1,"url":`${SITE.url}${path}`,"inLanguage":"es-ES","about":intro,"mainEntity":{"@type":"ItemList","numberOfItems":casos.length,"itemListElement":casos.map((c,i)=>({"@type":"ListItem","position":i+1,"url":`${SITE.url}/casos/${c.slug}/`}))}};
 const jsonld = ex ? [jsonld0, {"@context":"https://schema.org","@type":"FAQPage","mainEntity":ex.faq.map(([q,a])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}}))}] : jsonld0;
 ---
-<Base title={titulo} description={`${intro} ${casos.length} casos reales con prompt y fuente.`} jsonld={jsonld} robots={robots} crumbs={[crumb ?? {name:'Categorías',href:'/categorias/'},{name:h1}]}><h1>{h1}</h1><p>{intro}</p>{ex && ex.intro.map(p=><p>{p}</p>)}<p class="stats">{casos.length} casos</p>
+<Base title={titulo} description={`${intro} ${casos.length} ${casos.length===1?'caso real':'casos reales'} con prompt y fuente.`} jsonld={jsonld} robots={robots} crumbs={[crumb ?? {name:'Categorías',href:'/categorias/'},{name:h1}]}><h1>{h1}</h1><p>{intro}</p>{ex && ex.intro.map(p=><p>{p}</p>)}<p class="stats">{casos.length} casos</p>
 {checklist && <div class="box"><strong>Antes de implantarlo en España</strong><ul>{checklist.map(x=><li>{x}</li>)}</ul></div>}
 <Lista casos={casos} />
 {ex && <><h2>Preguntas frecuentes</h2>{ex.faq.map(([q,a])=><><h3>{q}</h3><p>{a}</p></>)}</>}

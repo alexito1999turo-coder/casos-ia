@@ -19,7 +19,8 @@
     "herramientas": [
       "chatgpt"
     ],
-    "tituloSeo": "Autónoma crea un GPT para resolver dudas con Hacienda"
+    "tituloSeo": "Autónoma crea un GPT para resolver dudas con Hacienda",
+    "descripcionSeo": "María González, diseñadora autónoma en Madrid, creó un GPT con información oficial de la Agencia Tributaria para resolver dudas fiscales."
   },
   {
     "slug": "inmobiliaria-capta-propietarios-whatsapp-ia",
@@ -174,7 +175,7 @@
       "google-workspace"
     ],
     "tituloSeo": "RC15 Academy: alta de alumnos en segundos con Make",
-    "descripcionSeo": "Academia RC15 automatizó con Make y Google Sheets el alta de alumnos, sin transcribir a mano, para que los entrenadores se centren en entrenar."
+    "descripcionSeo": "RC15 Academy automatizó con Make y Google Sheets el alta de alumnos, sin transcribir a mano, para que los entrenadores se centren en entrenar."
   },
   {
     "slug": "fresneda-fisioterapia-ana-whatsapp",
@@ -316,7 +317,8 @@
       "chatgpt"
     ],
     "tituloSeo": "Can Pizza enfrenta a su pizzero con ChatGPT",
-    "patrocinado": "Banco Sabadell"
+    "patrocinado": "Banco Sabadell",
+    "descripcionSeo": "Can Pizza enfrentó a un maestro pizzero con un consultor que diseñó una pizza con ChatGPT: ambas gustaron, pero la del pizzero tuvo mejor acogida."
   },
   {
     "slug": "carlos-castro-vigo-claude-generador-figuras-3d",
@@ -367,7 +369,7 @@
   {
     "slug": "maria-jesus-puerta-make-chatgpt-factura-obra",
     "titulo": "María Jesús Puerta documenta facturación de plan de seguridad de obra con ChatGPT y Make",
-    "resumen": "Publicación LinkedIn: tras cerrar un plan de seguridad de obra, un mensaje a ChatGPT («factura para Construcciones Martínez, 450 €») dispara Make: alta de cliente, factura en Google Docs, PDF en Drive y envío por correo.",
+    "resumen": "Publicación LinkedIn: tras cerrar un plan de seguridad de obra, un mensaje a ChatGPT («Crea una factura para Construcciones Martínez por un plan de seguridad de obra, importe 450€») dispara Make: alta de cliente, factura en Google Docs, PDF en Drive y envío por correo.",
     "resultado": null,
     "resultadoNota": "Flujo demostrado/enseñado por la autora; sin métricas de su cartera.",
     "sector": "construccion",
@@ -1101,7 +1103,8 @@
     "fecha": "2026-10-13",
     "ciudad": "Barcelona",
     "tituloSeo": "Asesoría GEMAP (Barcelona): IA para consultas y borradores",
-    "publicado": "2026-10-25"
+    "publicado": "2026-10-25",
+    "descripcionSeo": "Juan Pañella, director de la asesoría GEMAP, cuenta en La Vanguardia que con IA consultan en segundos trabajos, costes y facturas de cada cliente."
   },
   {
     "slug": "reyca-ribamontan-al-monte-ia-datos-propios-tecnicos",
@@ -1205,6 +1208,6 @@
     "ciudad": "Madrid",
     "tituloSeo": "Christina Puder (Madrid): web con Lovable y automatizaciones con IA",
     "publicado": "2026-10-28",
-    "descripcionSeo": "Christina Puder, coach de product managers en Madrid, hizo su web con Lovable y con IA bajó la búsqueda de ofertas de 60 minutos al día a un minuto."
+    "descripcionSeo": "Christina Puder, coach en Madrid, hizo su web con Lovable y automatizó con IA la búsqueda de ofertas: de unos 60 minutos al día por cliente a un minuto."
   }
 ]

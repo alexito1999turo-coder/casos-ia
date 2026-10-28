@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro'; import { u } from '../data/meta.js';
 ---
-<Base title="Newsletter: 5 casos de IA cada semana" description="Cada lunes, 5 casos reales de IA para autónomos y pymes en España, con prompt listo para copiar." crumbs={[{name:'Newsletter'}]} robots="noindex,follow" jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Newsletter","inLanguage":"es-ES"}}>
+<Base title="Newsletter: 5 casos de IA cada semana" description="Cada lunes, 5 casos reales de IA para autónomos y pymes en España, con prompt listo para copiar y fuente verificable. Gratis y sin spam." crumbs={[{name:'Newsletter'}]} robots="noindex,follow" jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Newsletter","inLanguage":"es-ES"}}>
 <h1>Los 5 del lunes</h1><p>Cada lunes, los 5 mejores casos nuevos de la semana: qué hicieron, qué resultado tuvieron, el prompt para copiar y qué tener en cuenta en España. Se lee en 3 minutos. Sin spam, baja con un clic.</p>
 <form onsubmit="event.preventDefault();this.innerHTML='<p>¡Gracias! La newsletter arranca pronto. Este formulario aún es de prueba y no guarda tu email.</p>'" style="max-width:420px;display:grid;gap:10px">
 <input type="email" required placeholder="tu@email.com" aria-label="Email"><label><input type="checkbox" required style="width:auto"> Acepto la <a href={u("/privacidad")}>política de privacidad</a></label><button>Suscribirme</button></form>
