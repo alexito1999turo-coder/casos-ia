@@ -7,14 +7,14 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 // Email de contacto visible (hola@…). Se usa como respaldo en todos los formularios.
-export const CONTACT_EMAIL = '';
+export const CONTACT_EMAIL = 'hola@casosagentes.es';
 
 // Titular del sitio (LSSI art. 10). Si falta alguno, las páginas legales llevan noindex.
 export const TITULAR = {
-  nombre: '',     // Nombre y apellidos o razón social
-  nif: '',        // NIF / NIE / CIF
-  direccion: '',  // Domicilio completo (calle, CP, ciudad, provincia)
-  email: '',      // Email de contacto del titular (puede ser el mismo que CONTACT_EMAIL)
+  nombre: 'Alejandro González Balaguer',     // Nombre y apellidos o razón social
+  nif: '39471632K',        // NIF / NIE / CIF
+  direccion: 'C/ Josep Limona 10, 43850 Cambrils (Tarragona)',  // Domicilio completo (calle, CP, ciudad, provincia)
+  email: 'hola@casosagentes.es',      // Email de contacto del titular (puede ser el mismo que CONTACT_EMAIL)
 };
 
 // Newsletter «Los 5 del lunes» (MailerLite, formulario embebido con doble opt-in).
