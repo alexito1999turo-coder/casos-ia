@@ -64,12 +64,40 @@
       "bookline"
     ],
     "tituloSeo": "Grupo Ceviche: agente de voz IA para reservas con TheFork",
-    "notaTamano": "Grupo de restauración con unos 20 locales; en LinkedIn declara entre 201 y 500 empleados. Tamaño de pyme no confirmado.",
+    "notaTamano": "Grupo de restauración con unos 20 locales; en LinkedIn declara entre 201 y 500 empleados y, según eInforma, cinco de las siete sociedades que explotan sus locales suman 141 empleados en 2025. Tamaño de pyme no confirmado.",
     "destacable": false,
     "fuentesExtra": [
       {
         "nombre": "LinkedIn de Grupo Ceviche (tamaño declarado: 201-500 empleados)",
         "url": "https://es.linkedin.com/company/grupoceviche"
+      },
+      {
+        "nombre": "Grupo Ceviche: política de privacidad (sociedades del grupo y sus locales)",
+        "url": "https://grupoceviche.com/politica-de-privacidad/"
+      },
+      {
+        "nombre": "eInforma: LLEMPEN HOLDING GROUP S.L. (sociedad dominante, sin cifra de empleados)",
+        "url": "https://www.einforma.com/informacion-empresa/llempen-holding-group"
+      },
+      {
+        "nombre": "eInforma: AYAR ALINTER SA (48 empleados, 2025)",
+        "url": "https://www.einforma.com/informacion-empresa/ayar-alinter"
+      },
+      {
+        "nombre": "eInforma: TUKUYPAJ SL (15 empleados, 2025)",
+        "url": "https://www.einforma.com/informacion-empresa/tukuypaj-barcelona"
+      },
+      {
+        "nombre": "eInforma: INVERSIONES GALAFE SL (19 empleados, 2025)",
+        "url": "https://www.einforma.com/informacion-empresa/inversiones-galafe"
+      },
+      {
+        "nombre": "eInforma: CEVICHE 103 SL (36 empleados, 2025)",
+        "url": "https://www.einforma.com/informacion-empresa/ceviche-103"
+      },
+      {
+        "nombre": "eInforma: CHOLITO LINDO SL (23 empleados, 2025)",
+        "url": "https://www.einforma.com/informacion-empresa/cholito-lindo"
       }
     ]
   },

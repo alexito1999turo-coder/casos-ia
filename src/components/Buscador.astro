@@ -9,14 +9,14 @@ const nPat = casos.filter(c => c.patrocinado).length;
 const sinCiudad = casos.filter(c => !ciudadSlug(c)).length;
 const GROUPS = [
   { id:'sector', name:'Sector', tone:'v', keys:c=>[c.sector], label:k=>SECTORES[k] ?? k, top:12 },
-  { id:'ciudad', name:'Ciudad', tone:'c', keys:c=>[ciudadSlug(c)], label:k=>ciudadNombre(k) ?? k, top:6, help:`Municipio del negocio según la fuente.${sinCiudad ? ` ${sinCiudad} ${sinCiudad===1?'caso no indica':'casos no indican'} un municipio concreto.` : ''}` },
+  { id:'ciudad', name:'Ciudad', tone:'c', keys:c=>[ciudadSlug(c)], label:k=>ciudadNombre(k) ?? k, top:6, help:`Ciudad o zona del negocio según la fuente.${sinCiudad ? ` ${sinCiudad} ${sinCiudad===1?'caso no indica':'casos no indican'} un municipio concreto.` : ''}` },
   { id:'herramienta', name:'Herramienta', tone:'m', keys:c=>c.herramientas, label:k=>HERR[k] ?? k, top:6, help:'Cuenta todas las herramientas que usa cada caso.' },
   { id:'fuente', name:'Tipo de fuente', tone:'b', keys:c=>[fuenteTipo(c)], label:k=>FUENTES[k] ?? k, top:12, help:`Quién publica la información. «Lo publica el proveedor»: lo cuenta la propia herramienta, no es una fuente independiente.${nPat ? ` ${nPat} ${nPat===1?'caso de prensa está marcado':'casos de prensa están marcados'} como contenido patrocinado.` : ''}` },
   { id:'tarea', name:'Tarea', tone:'v', keys:c=>[c.tarea], label:k=>TAREAS[k] ?? k, top:12, closed:true },
 ].map(g => { const m = {}; casos.forEach(c => g.keys(c).forEach(k => { if (k) m[k] = (m[k] || 0) + 1; }));
   return { ...g, opts: Object.entries(m).sort((a,b) => b[1]-a[1] || g.label(a[0]).localeCompare(g.label(b[0]), 'es')) }; });
 ---
-<div class="layout bq">
+<div class="layout bq bq-nojs" id="bq"><script is:inline>document.getElementById('bq').classList.remove('bq-nojs')</script>
 <aside id="side" class="side bq-side" aria-label="Filtros del directorio">
 <div class="sidehead mob"><strong>Filtros</strong><button type="button" id="closeside" aria-label="Cerrar filtros">✕</button></div>
 <p class="bq-sidettl">Filtrar <span>{casos.length} casos</span></p>
@@ -43,9 +43,12 @@ const GROUPS = [
 <p id="sortnote" class="bq-sortnote" hidden></p>
 <p id="live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
 <div id="empty" class="bq-empty" hidden><p class="bq-eh">Ningún caso coincide <span id="emptywhy"></span></p><div id="sugs" class="bq-sugs"></div><p class="bq-ep"><button type="button" class="bq-ghost" data-clear>Ver los {casos.length} casos</button> <span>¿Conoces un caso real así? <a href={u("/enviar-caso")}>Envíanoslo</a> y lo revisamos.</span></p></div>
+<p class="box bq-nojsmsg">El buscador y los filtros necesitan JavaScript. Abajo tienes los {casos.length} casos, del más nuevo al más antiguo. También puedes explorarlos <a href={u("/categorias/")}>por sector, tarea y ciudad</a> o <a href={u("/herramientas/")}>por herramienta</a>.</p>
 <Lista casos={orden} />
 </div></div>
 <style is:global>
+/* Sin JS: fuera controles del buscador, aviso con enlaces */
+.bq-nojs.layout{display:block}.bq-nojs .bq-side,.bq-nojs .bq-bar,.bq-nojs .bq-meta,.bq-nojs #scrim,.bq-nojs #chips,.bq-nojs #empty,.bq-nojs #sortnote{display:none!important}.bq:not(.bq-nojs) .bq-nojsmsg{display:none}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .bq{--t-v:#6d28d9;--t-c:#0e7490;--t-m:#be185d;--t-b:#1d4ed8;--ai:linear-gradient(90deg,var(--t-v),var(--t-c) 55%,var(--t-m))}
 :root.dark .bq{--t-v:#a78bfa;--t-c:#22d3ee;--t-m:#f472b6;--t-b:#7cb4ff}
