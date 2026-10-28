@@ -1145,5 +1145,49 @@
     "ciudad": "Gijón",
     "tituloSeo": "La Excusa Perfecta (Gijón): IA propia para cocina y pedidos",
     "publicado": "2026-10-26"
+  },
+  {
+    "slug": "navarfincas-pamplona-asistente-chatgpt-comunidades-vecinos",
+    "titulo": "Navarfincas (Pamplona) crea con ChatGPT un asistente que resuelve dudas sobre comunidades de vecinos",
+    "resumen": "Diario de Navarra cuenta que Íñigo Iturmendi, fundador de Navarfincas, administradora de fincas que gestiona unas 250 comunidades de vecinos de Pamplona y Comarca y emplea a catorce personas, ha creado un asistente virtual basado en ChatGPT llamado «Tu administrador de fincas». Lo ha incorporado a la web de la empresa en abierto y gratis (solo hace falta crear una cuenta) para resolver dudas sobre leyes, sentencias y conflictos vecinales.",
+    "resultado": null,
+    "resultadoNota": "Sin cifras de resultado. La única cifra sobre la herramienta es que el asistente tiene «más de 7.000 documentos jurídicos relacionados con comunidades de vecinos». Las 250 comunidades y los 14 empleados describen la empresa, no el efecto de la IA.",
+    "sector": "servicios",
+    "tarea": "atencion-cliente",
+    "herramienta": "Asistente propio basado en ChatGPT («Tu administrador de fincas») con más de 7.000 documentos jurídicos, publicado en la web de la empresa",
+    "herramientas": [
+      "chatgpt"
+    ],
+    "prompt": "Prompt sugerido: «Eres el asistente de una administradora de fincas. Responde solo con la Ley de Propiedad Horizontal y los documentos que te doy [pegar estatutos, actas y normativa]. Cita el artículo o documento en que te basas y, si la duda requiere un abogado o una junta, dilo. Pregunta del vecino: [pregunta].»",
+    "adaptacion": "Cargar solo documentos revisados y mantenerlos al día, como dice Iturmendi («la idea es tenerlo actualizado»). Avisar de que no sustituye al administrador ni al abogado en casos concretos. La ciudad sale de la pieza: la empresa gestiona comunidades «de Pamplona y Comarca» y el fundador es de Pamplona; la pieza no da la dirección de la oficina. Es de noviembre de 2024.",
+    "fuente": "Diario de Navarra",
+    "fuenteUrl": "https://www.diariodenavarra.es/noticias/navarra/2024/11/11/asistente-virtual-gratuito-resuelve-dudas-vecinos-comunidades-627931-300.html",
+    "fuenteTipo": "prensa",
+    "fecha": "2024-11-11",
+    "ciudad": "Pamplona",
+    "tituloSeo": "Navarfincas (Pamplona): asistente ChatGPT para comunidades de vecinos",
+    "publicado": "2026-10-28"
+  },
+  {
+    "slug": "christina-puder-madrid-lovable-web-automatizaciones-coaching",
+    "titulo": "Christina Puder (Madrid), coach autónoma, hizo su web con Lovable y automatizó la búsqueda de ofertas para sus clientes",
+    "resumen": "Business Insider recoge el testimonio de Christina Puder, fundadora en solitario con base en Madrid que se dedica al coaching de carrera para product managers. Tras 30 o 40 horas fallidas con un constructor de webs clásico, hizo su web con Lovable, primero con los cinco créditos gratis diarios y luego con una suscripción de 20 dólares al mes, y la sigue manteniendo con ella. Además montó automatizaciones con IA para buscar ofertas de empleo que encajen con los criterios de cada cliente.",
+    "resultado": "La búsqueda de ofertas pasa de unos 60 minutos al día por cliente a un minuto (según la propia fundadora).",
+    "resultadoNota": "Cifras literales del testimonio: 30-40 horas con un constructor web sin IA y un resultado «feo y torpe»; Lovable a 20 $ al mes con 100 créditos más 5 gratis al día; búsqueda de ofertas de ~60 minutos diarios por cliente a un minuto. La pieza no dice con qué herramienta hizo esas automatizaciones. A veces sigue pagando a un ingeniero a tiempo parcial para arreglar fallos. La pieza es de una serie de Business Insider presentada por Adobe Acrobat (no por Lovable); el artículo no está marcado como patrocinado.",
+    "sector": "servicios",
+    "tarea": "marketing",
+    "herramienta": "Lovable (web y su mantenimiento) y automatizaciones con IA sin nombre para la búsqueda de ofertas",
+    "herramientas": [
+      "lovable"
+    ],
+    "prompt": "Prompt sugerido: «Revisa el código de mi web y dime qué tres partes se beneficiarían más de una refactorización, ordenadas por impacto. Explica en una frase cada una y no cambies nada todavía.»",
+    "adaptacion": "Agrupar varios cambios en un mismo mensaje para gastar menos créditos, pedir primero un diagnóstico antes de tocar el código y, si un fallo se enquista, quitar la función y empezar de cero o recurrir a un desarrollador. La ciudad sale de la pieza («a solo founder based in Madrid»). La pieza no nombra su negocio.",
+    "fuente": "Business Insider",
+    "fuenteUrl": "https://www.businessinsider.com/solo-business-owner-ai-subscription-no-employees-2026-2",
+    "fuenteTipo": "prensa",
+    "fecha": "2026-02-21",
+    "ciudad": "Madrid",
+    "tituloSeo": "Christina Puder (Madrid): web con Lovable y automatizaciones con IA",
+    "publicado": "2026-10-28"
   }
 ]
