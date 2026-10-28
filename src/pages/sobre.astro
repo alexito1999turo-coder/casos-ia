@@ -2,8 +2,17 @@
 import { u } from '../data/meta.js';
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Sobre CasosAgentes" description="Qué es CasosAgentes, quién lo hace y cómo seleccionamos casos reales de IA en autónomos y pymes españolas, siempre con fuente verificable." crumbs={[{name:'Sobre'}]} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Sobre","inLanguage":"es-ES"}}>
-<h1>Sobre CasosAgentes</h1><p>CasosAgentes recopila casos <strong>reales y replicables</strong> de uso de IA y agentes en autónomos y pymes de España.</p>
+<Base title="Sobre CasosAgentes" description="Qué es CasosAgentes, quién lo edita (Alex González, Cambrils) y cómo seleccionamos casos reales de IA en autónomos y pymes españolas, siempre con fuente verificable." crumbs={[{name:'Sobre'}]} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Sobre","inLanguage":"es-ES"}}>
+<h1>Sobre CasosAgentes</h1>
+<p>CasosAgentes recopila casos <strong>reales y replicables</strong> de uso de IA y agentes en autónomos y pymes de España: qué hizo cada negocio, qué resultado publicó la fuente y cómo copiarlo en el tuyo.</p>
+<h2>Quién está detrás</h2>
+<p>Lo edita <strong>Alex González</strong> desde Cambrils (Tarragona). Alex monta webs y automatizaciones para negocios locales y veía siempre la misma pregunta en bares, clínicas y talleres de la zona: «¿esto de la IA lo usa alguien como yo, o es solo para grandes empresas?». La mayoría de lo que se publica son tutoriales genéricos o promesas de proveedores. CasosAgentes nace para responder con ejemplos concretos, con nombre y fuente.</p>
+<h2>Cómo se hace</h2>
+<ul><li>Buscamos casos cada día en prensa local y nacional, webs de los propios negocios, programas públicos de digitalización, LinkedIn y X en español.</li>
+<li>Usamos herramientas de IA para encontrar y resumir las fuentes. Cada caso pasa una revisión antes de publicarse y Alex revisa una muestra cada semana.</li>
+<li>Solo publicamos negocios identificables de España. No publicamos casos anónimos.</li></ul>
 <h2>Criterios editoriales</h2><ul><li>Cada caso enlaza a una fuente pública y comprobamos que la URL responde.</li><li>Solo mostramos cifras (horas, euros) si la fuente las publica. Si no hay cifra, lo decimos.</li><li>Muchos casos los publica el propio proveedor o agencia: lo indicamos en cada ficha, y sus cifras no están verificadas de forma independiente.</li><li>Los prompts son ejemplos redactados por nosotros para ayudarte a replicar el caso.</li></ul>
-<p>¿Ves un error? Escríbenos desde <a href={u("/enviar-caso")}>Enviar caso</a>.</p>
+<h2>Conflicto de intereses</h2>
+<p>Alex tiene una agencia, ALAXIA, que implanta webs, automatizaciones e IA en negocios. Que una herramienta o un caso encaje con lo que ofrece ALAXIA no cambia qué casos entran ni en qué orden aparecen. Más en <a href={u("/transparencia")}>Cómo nos financiamos</a>.</p>
+<p>¿Ves un error, quieres que retiremos un caso o tienes uno que contar? <a href={u("/contacto")}>Escríbenos</a>.</p>
 </Base>
