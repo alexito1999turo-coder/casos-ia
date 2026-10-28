@@ -1,0 +1,5 @@
+---
+// Muestra el valor o un [PLACEHOLDER] muy visible si falta.
+const { v, k } = Astro.props;
+---
+{v ? <span>{v}</span> : <mark class="ph">[PLACEHOLDER: {k}]</mark>}

@@ -1,0 +1,11 @@
+---
+import { tallyUrl, tallyEmbed } from '../data/config.mjs';
+import Fallback from './Fallback.astro';
+import { u } from '../data/meta.js';
+const { id, titulo, asunto, cuerpo, que } = Astro.props;
+---
+{id ? <div class="tally">
+<p class="rgpd"><small><strong>Protección de datos.</strong> Responsable: el titular de CasosAgentes (ver <a href={u('/aviso-legal')}>aviso legal</a>). Finalidad: gestionar tu propuesta y responderte. Base: tu consentimiento, que das en el propio formulario. Encargado del tratamiento: Tally (Bélgica, UE). No cedemos tus datos a terceros. Derechos de acceso, rectificación, supresión y demás: ver <a href={u('/privacidad')}>privacidad</a>.</small></p>
+<iframe src={tallyEmbed(id)} title={titulo} loading="lazy" width="100%" height="720" frameborder="0" marginheight="0" marginwidth="0" style="border:1px solid var(--line);background:var(--bg)"></iframe>
+<p><small>¿No ves el formulario? <a href={tallyUrl(id)} target="_blank" rel="noopener">Ábrelo en una pestaña nueva ↗</a></small></p></div>
+: <Fallback asunto={asunto} cuerpo={cuerpo} que={que} />}

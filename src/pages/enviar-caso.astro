@@ -1,8 +1,9 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from '../layouts/Base.astro'; import { u } from '../data/meta.js';
+import TallyForm from '../components/TallyForm.astro'; import { TALLY } from '../data/config.mjs';
 ---
 <Base title="Enviar un caso" description="Comparte un caso real de IA en tu negocio: cuéntanos qué automatizaste, con qué herramienta y qué resultado obtuviste, con una fuente verificable." crumbs={[{name:'Enviar caso'}]} robots="noindex,follow" jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Enviar caso","inLanguage":"es-ES"}}>
-<h1>Envía un caso real</h1><p>¿Usas IA en tu negocio o has visto un caso con fuente pública? Cuéntanoslo. Publicamos solo casos con fuente verificable.</p>
-<form onsubmit="event.preventDefault();this.innerHTML='<p>¡Gracias! Formulario de prueba: el envío se activará pronto.</p>'" style="max-width:560px;display:grid;gap:10px">
-<input required placeholder="Título del caso"><input type="url" required placeholder="URL de la fuente (post, artículo…)"><input placeholder="Sector y herramienta"><textarea rows="5" placeholder="Qué hicisteis y qué resultado (horas/euros) obtuvisteis"></textarea><input type="email" placeholder="Tu email (opcional)"><button>Enviar</button></form>
+<h1>Envía un caso real</h1><p>¿Usas IA en tu negocio o has visto un caso con fuente pública? Cuéntanoslo. Publicamos solo casos de pymes o autónomos de España <strong>con nombre, ciudad y fuente verificable</strong>, y solo las cifras que aparecen tal cual en la fuente (<a href={u("/metodologia")}>metodología</a>). No publicamos casos anónimos ni tutoriales.</p>
+<p><small>Enviar un caso es gratis y no da prioridad. Si eres proveedor o agencia, tu caso se publicará marcado como «Contenido de proveedor». ¿Ves un error en una ficha? Usa también este formulario.</small></p>
+<TallyForm id={TALLY.enviarCaso} titulo="Formulario: enviar un caso" asunto="Caso para CasosAgentes" cuerpo={"Negocio y ciudad:\nURL de la fuente:\nHerramienta de IA:\nQué hicisteis y qué resultado (si la fuente da cifra):\n"} que="El formulario de envío de casos" />
 </Base>

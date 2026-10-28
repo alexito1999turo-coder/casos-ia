@@ -4,14 +4,17 @@ import casos from '../data/casos.json'; import { SECTORES, TAREAS, SITE, u, herr
 const orden = [...casos].sort((a,b)=>b.publicado.localeCompare(a.publicado));
 const cnt=(f)=>{const m={};casos.forEach(c=>{const k=f(c);m[k]=(m[k]||0)+1});return Object.entries(m).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]))};
 const cHerr=cnt(c=>HERR[herrMain(c)]), cSec=cnt(c=>c.sector), nRes=casos.filter(c=>c.resultado&&!c.patrocinado&&c.fuenteTipo!=="proveedor").length;
+const FUENTES = [['prensa','Prensa'],['proveedor','Proveedor'],['institucional','Institucional'],['cliente','El propio negocio'],['red social','Redes sociales']];
 const herrs = [...new Set(casos.map(c=>HERR[herrMain(c)]))].sort();
 const ult = orden[0].publicado; const nUlt = casos.filter(c=>c.publicado===ult).length;
 const fmt = d => new Date(d).toLocaleDateString('es-ES',{weekday:'short',day:'numeric',month:'short'});
-const jsonld = [{"@context":"https://schema.org","@type":"WebSite","name":SITE.nombre,"url":SITE.url+'/',"inLanguage":"es-ES","description":SITE.desc},{"@context":"https://schema.org","@type":"ItemList","itemListElement":orden.map((c,i)=>({"@type":"ListItem","position":i+1,"url":`${SITE.url}/casos/${c.slug}/`,"name":c.titulo}))}];
+const HOME_DESC = 'El directorio de casos reales de IA en pymes y autónomos de España, con nombre, ciudad y fuente: qué hicieron, el resultado y el prompt para copiarlo.';
+const jsonld = [{"@context":"https://schema.org","@type":"WebSite","name":SITE.nombre,"url":SITE.url+'/',"inLanguage":"es-ES","description":HOME_DESC},{"@context":"https://schema.org","@type":"ItemList","itemListElement":orden.map((c,i)=>({"@type":"ListItem","position":i+1,"url":`${SITE.url}/casos/${c.slug}/`,"name":c.titulo}))}];
 ---
-<Base jsonld={jsonld}>
+<Base jsonld={jsonld} description={HOME_DESC}>
 <section class="hero"><span class="eyebrow">Directorio · España · Actualizado {fmt(ult)}</span><h1>Lo que autónomos y pymes en España <em>ya hacen</em> con agentes de IA</h1>
-<p>Casos reales con resultado en horas o euros, prompt para copiar, notas para España (Hacienda, Verifactu, WhatsApp Business, Idealista, Kit Digital) y fuente enlazada. <strong>Copia la idea.</strong></p>
+<p class="claim"><strong>El directorio de casos reales de pymes y autónomos de España, con nombre, ciudad y fuente.</strong> Sin casos anónimos, sin tutoriales y sin grandes empresas.</p>
+<p>Cada caso trae el resultado tal como lo publica la fuente, un prompt para copiar y notas para España (Hacienda, Verifactu, WhatsApp Business, Idealista). <strong>Copia la idea.</strong></p>
 <p class="stats">{casos.length} casos · Fuentes: blogs, prensa, LinkedIn y X en español · <a href={u("/feed.xml")}>RSS</a></p>
 <div class="ctas"><a class="btn" href={u("/newsletter")}>Recibe los casos nuevos</a><a class="btn ghost" href={u("/enviar-caso")}>Enviar un caso</a></div></section>
 <div class="strip"><span class="dot" aria-hidden="true"></span><strong>{nUlt} casos nuevos</strong><span class="stats">{fmt(ult)}</span><a href={u("/nuevos")} style="margin-left:auto">Ver los nuevos →</a></div>
@@ -21,16 +24,17 @@ const jsonld = [{"@context":"https://schema.org","@type":"WebSite","name":SITE.n
 <p class="src" style="margin:12px 0 0">«Destacados» = {nRes} casos con cifra de prensa o del propio negocio, primero.</p></aside><div id="scrim" class="mob" hidden></div><div class="maincol"><div class="fbar"><div class="filters"><input type="search" id="q" placeholder="Buscar: WhatsApp, facturas, reservas, Madrid…  (⌘K)" aria-label="Buscar">
 <select id="fs" aria-label="Sector"><option value="">Sector</option>{Object.entries(SECTORES).map(([k,v])=><option value={k}>{v}</option>)}</select>
 <select id="ft" aria-label="Tarea"><option value="">Tarea</option>{Object.entries(TAREAS).map(([k,v])=><option value={k}>{v}</option>)}</select>
-<select id="fh" aria-label="Herramienta"><option value="">Herramienta</option>{herrs.map(h=><option value={h}>{h}</option>)}</select><button id="clr" type="button">Limpiar</button></div>
+<select id="fh" aria-label="Herramienta"><option value="">Herramienta</option>{herrs.map(h=><option value={h}>{h}</option>)}</select>
+<select id="ff" aria-label="Tipo de fuente"><option value="">Fuente</option>{FUENTES.filter(([k])=>casos.some(c=>(c.fuenteTipo||'prensa')===k)).map(([k,v])=><option value={k}>{v} ({casos.filter(c=>(c.fuenteTipo||'prensa')===k).length})</option>)}</select><button id="clr" type="button">Limpiar</button></div>
 <div class="fmeta"><button type="button" id="openside" class="mob">☰ Filtros</button><span class="sort" role="group" aria-label="Orden"><button type="button" data-o="new" class="on" aria-pressed="true">Nuevos</button><button type="button" data-o="top" aria-pressed="false" title="Primero los casos con cifra publicada en la fuente">Destacados</button></span><span id="count" aria-live="polite"></span><span id="sortnote" hidden>Primero los {nRes} casos con cifra de prensa o del propio negocio</span><label><input type="checkbox" id="fg"> Solo mis guardados</label></div></div>
 <Lista casos={orden} /></div></div>
 <script is:inline>
 const $=id=>document.getElementById(id);const cards=[...document.querySelectorAll('#list .card[data-slug]')];
-function f(){const q=$('q').value.toLowerCase(),s=$('fs').value,t=$('ft').value,h=$('fh').value,g=$('fg').checked,G=JSON.parse(localStorage.casosGuardados||'[]');let n=0;
-cards.forEach(c=>{const ok=(!q||c.dataset.text.includes(q))&&(!s||c.dataset.sector===s)&&(!t||c.dataset.tarea===t)&&(!h||c.dataset.herr===h)&&(!g||G.includes(c.dataset.slug));c.style.display=ok?'':'none';if(ok)n++});$('count').textContent=n+(n===1?' caso':' casos');const u=new URLSearchParams();if(q)u.set('q',q);if(s)u.set('sector',s);if(t)u.set('tarea',t);history.replaceState(null,'',u.toString()?'?'+u:location.pathname);}
-$('clr').onclick=()=>{['q','fs','ft','fh'].forEach(i=>$(i).value='');$('fg').checked=false;f()};
-['q','fs','ft','fh','fg'].forEach(i=>$(i).addEventListener('input',f));document.addEventListener('guardados',f);
-const p=new URLSearchParams(location.search);if(p.get('sector'))$('fs').value=p.get('sector');if(p.get('tarea'))$('ft').value=p.get('tarea');if(p.get('q'))$('q').value=p.get('q');f();
+function f(){const q=$('q').value.toLowerCase(),s=$('fs').value,t=$('ft').value,h=$('fh').value,ff=$('ff').value,g=$('fg').checked,G=JSON.parse(localStorage.casosGuardados||'[]');let n=0;
+cards.forEach(c=>{const ok=(!q||c.dataset.text.includes(q))&&(!s||c.dataset.sector===s)&&(!t||c.dataset.tarea===t)&&(!h||c.dataset.herr===h)&&(!ff||c.dataset.fuente===ff)&&(!g||G.includes(c.dataset.slug));c.style.display=ok?'':'none';if(ok)n++});$('count').textContent=n+(n===1?' caso':' casos');const u=new URLSearchParams();if(q)u.set('q',q);if(s)u.set('sector',s);if(t)u.set('tarea',t);if(ff)u.set('fuente',ff);history.replaceState(null,'',u.toString()?'?'+u:location.pathname);}
+$('clr').onclick=()=>{['q','fs','ft','fh','ff'].forEach(i=>$(i).value='');$('fg').checked=false;f()};
+['q','fs','ft','fh','ff','fg'].forEach(i=>$(i).addEventListener('input',f));document.addEventListener('guardados',f);
+const p=new URLSearchParams(location.search);if(p.get('sector'))$('fs').value=p.get('sector');if(p.get('tarea'))$('ft').value=p.get('tarea');if(p.get('q'))$('q').value=p.get('q');if(p.get('fuente'))$('ff').value=p.get('fuente');f();
 let ord='new';const L=$('list'),SP=L.querySelector('.card.sp'),spAt=+L.dataset.sp;
 function sortL(){const cs=[...cards].sort((a,b)=>(ord==='top'?(b.dataset.res-a.dataset.res):0)||b.dataset.pub.localeCompare(a.dataset.pub));cs.forEach((c,i)=>{if(SP&&i===spAt)L.appendChild(SP);L.appendChild(c)});if(SP&&cs.length<=spAt)L.appendChild(SP)}
 document.querySelectorAll('.sort button').forEach(b=>b.onclick=()=>{ord=b.dataset.o;$('sortnote').hidden=ord!=='top';document.querySelectorAll('.sort button').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});sortL()});

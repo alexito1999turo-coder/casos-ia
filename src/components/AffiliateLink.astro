@@ -1,0 +1,8 @@
+---
+// Enlace de afiliado: solo se pinta si el caso lleva "afiliado", el programa está activo con URL
+// en config.mjs y la herramienta ya aparece en el caso. Hoy no hay ninguno activo.
+import { afiliadoDe } from '../data/config.mjs';
+import { u } from '../data/meta.js';
+const { c } = Astro.props; const a = afiliadoDe(c);
+---
+{a && <p class="box afil"><span class="splbl">Enlace de afiliado</span> <a href={a.url} rel="sponsored nofollow noopener" target="_blank">Probar {a.nombre} ↗</a><br><small>Si contratas desde este enlace, CasosAgentes cobra una comisión y tú no pagas más. La herramienta ya aparecía en la fuente del caso; el enlace no influye en qué casos publicamos. <a href={u('/transparencia')}>Cómo nos financiamos</a>.</small></p>}

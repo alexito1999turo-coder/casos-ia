@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro'; import Ph from '../components/Ph.astro'; import { u } from '../data/meta.js';
+import casos from '../data/casos.json';
+import { TITULAR, titularPendiente, AFILIADOS } from '../data/config.mjs';
+const pend = titularPendiente();
+const activos = Object.values(AFILIADOS).filter(a => a.activo && a.url);
+const patro = [...new Set(casos.filter(c => c.patrocinado).map(c => c.patrocinado))];
+const TIPOS = { prensa: 'Prensa', proveedor: 'Proveedor o agencia', cliente: 'El propio negocio', 'red social': 'Redes sociales', institucional: 'Programa público' };
+const n = casos.length; const mezcla = Object.entries(TIPOS).map(([k, l]) => [l, casos.filter(c => (c.fuenteTipo || 'prensa') === k).length]).filter(([, x]) => x);
+---
+<Base title="Cómo nos financiamos" description="Cómo se financia CasosAgentes: patrocinio siempre marcado, reglas de afiliación y por qué ni patrocinadores ni afiliados deciden qué casos entran." crumbs={[{name:'Cómo nos financiamos'}]} robots={pend ? 'noindex,follow' : 'index,follow'} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Cómo nos financiamos","inLanguage":"es-ES"}}>
+<h1>Cómo nos financiamos</h1>
+{pend && <p class="box pend"><strong>Página en preparación:</strong> faltan los datos del titular marcados como [PLACEHOLDER].</p>}
+<p>CasosAgentes es de <Ph v={TITULAR.nombre} k="nombre del titular" /> (<a href={u('/aviso-legal')}>aviso legal</a>). Es gratis para quien lo lee. Para cubrir costes podemos usar dos vías, siempre identificadas como comunicación comercial (LSSI art. 20): <strong>patrocinio</strong> y <strong>enlaces de afiliado</strong>. No usamos publicidad programática ni cookies de seguimiento.</p>
+<h2>La regla principal</h2>
+<p class="box"><strong>Ni los afiliados ni los patrocinadores deciden qué casos entran.</strong> Todos los casos cumplen los mismos criterios de la <a href={u('/metodologia')}>metodología</a>: negocio identificable, pyme o autónomo de España, fuente pública y cifras literales. Un caso no entra, no sale ni cambia de orden porque una herramienta pague o tenga programa de afiliados.</p>
+<h2>Estado hoy</h2>
+<ul><li>Patrocinadores propios: <strong>ninguno</strong>.{patro.length ? ` Algún caso lleva «Patrocinado» porque lo patrocinó su fuente original (${patro.join(', ')}), no porque nos pague a nosotros.` : ''}</li>
+<li>Enlaces de afiliado activos: <strong>{activos.length ? activos.map(a => a.nombre).join(', ') : 'ninguno'}</strong>.</li></ul>
+<h2>Patrocinio</h2><ul>
+<li>Todo hueco o caso pagado lleva la etiqueta «Patrocinado (Marca)» y queda fuera de Destacados.</li>
+<li>El patrocinador no toca el contenido: solo puede pedir correcciones de hechos aportando una fuente. No puede pedir que se quite un caso de la competencia ni cambiar el orden fuera de su hueco.</li>
+<li>Si un proveedor nos patrocina, sus casos se marcan como patrocinados («Este proveedor patrocina CasosAgentes»).</li>
+<li>Un caso patrocinado necesita un cliente real e identificable y pasa la misma revisión que cualquier otro. Más en <a href={u('/patrocinar')}>Patrocinar</a>.</li></ul>
+<h2>Afiliación</h2><ul>
+<li>Solo ponemos un enlace de afiliado en casos donde la herramienta <strong>ya aparece</strong> en la fuente. Nunca añadimos un caso para colocar un enlace ni cambiamos la herramienta o el prompt de un caso.</li>
+<li>El enlace va marcado como «Enlace de afiliado», con el aviso «si contratas, CasosAgentes cobra una comisión y tú no pagas más», y con <code>rel="sponsored nofollow"</code>.</li>
+<li>Tener programa de afiliados no da ventaja a una herramienta en el directorio, en Destacados ni en el orden.</li></ul>
+<h2>Mezcla de fuentes de los {n} casos</h2>
+<p>Publicamos quién firma cada fuente para que se vea si el directorio depende de los proveedores. Datos actualizados en cada publicación:</p>
+<ul>{mezcla.map(([l, x]) => <li>{l}: {x} ({Math.round(x * 100 / n)} %)</li>)}</ul>
+<p><small>El Director editorial revisa cada mes que ningún proveedor afiliado o patrocinador acumule casos nuevos fuera de lo razonable.</small></p>
+</Base>

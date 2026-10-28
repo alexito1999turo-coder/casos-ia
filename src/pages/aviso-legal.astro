@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro'; import Ph from '../components/Ph.astro'; import { u } from '../data/meta.js';
+import { TITULAR, titularPendiente } from '../data/config.mjs';
+const pend = titularPendiente();
+---
+<Base title="Aviso legal" description="Aviso legal de CasosAgentes: datos del titular del sitio, condiciones de uso, propiedad intelectual de los contenidos, enlaces a fuentes y legislación aplicable." crumbs={[{name:'Aviso legal'}]} robots={pend ? 'noindex,follow' : 'index,follow'} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Aviso legal","inLanguage":"es-ES"}}>
+<h1>Aviso legal</h1>
+{pend && <p class="box pend"><strong>Página en preparación:</strong> faltan los datos del titular marcados como [PLACEHOLDER].</p>}
+<h2>1. Titular del sitio</h2>
+<p>En cumplimiento del artículo 10 de la Ley 34/2002, de servicios de la sociedad de la información y de comercio electrónico (LSSI), se informa de que este sitio web (CasosAgentes) es titularidad de:</p>
+<ul><li>Titular: <Ph v={TITULAR.nombre} k="nombre y apellidos o razón social" /></li><li>NIF: <Ph v={TITULAR.nif} k="NIF" /></li><li>Domicilio: <Ph v={TITULAR.direccion} k="dirección completa" /></li><li>Email de contacto: <Ph v={TITULAR.email} k="email" /></li></ul>
+<h2>2. Objeto</h2><p>CasosAgentes es un directorio de casos reales de uso de inteligencia artificial y agentes de IA en pymes y autónomos de España. Cada caso enlaza a su fuente pública. La información es divulgativa y no constituye asesoramiento legal, fiscal ni técnico.</p>
+<h2>3. Contenidos y cifras</h2><p>Las cifras de cada caso son las que publica su fuente, citadas de forma literal; CasosAgentes no las verifica de forma independiente. Los prompts son ejemplos redactados por CasosAgentes. Si detectas un error, puedes comunicarlo desde <a href={u('/enviar-caso')}>Enviar caso</a>. Ver <a href={u('/metodologia')}>metodología</a>.</p>
+<h2>4. Propiedad intelectual</h2><p>Los textos, prompts y diseño propios de CasosAgentes pertenecen a su titular. Las marcas, nombres comerciales y contenidos citados pertenecen a sus respectivos titulares y se mencionan solo para identificar la fuente del caso.</p>
+<h2>5. Enlaces</h2><p>El sitio enlaza a fuentes externas que no controlamos. Los enlaces comerciales (patrocinio o afiliación) se identifican siempre como tales; ver <a href={u('/transparencia')}>Cómo nos financiamos</a>.</p>
+<h2>6. Datos personales</h2><p>Ver la <a href={u('/privacidad')}>política de privacidad</a>.</p>
+<h2>7. Legislación aplicable</h2><p>Este aviso se rige por la legislación española.</p>
+</Base>

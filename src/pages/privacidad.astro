@@ -1,7 +1,21 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from '../layouts/Base.astro'; import Ph from '../components/Ph.astro'; import { u } from '../data/meta.js';
+import { TITULAR, titularPendiente, mlAction, TALLY } from '../data/config.mjs';
+const pend = titularPendiente();
 ---
-<Base title="Privacidad" description="Política de privacidad de CasosAgentes: qué datos recogemos al enviar un caso o suscribirte, para qué los usamos y cómo ejercer tus derechos." crumbs={[{name:'Privacidad'}]} robots="noindex,follow" jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Privacidad","inLanguage":"es-ES"}}>
-<h1>Privacidad</h1><p>CasosAgentes es un sitio estático. No usa cookies de seguimiento. Los casos que guardas con «Guardar» y tu preferencia de tema se quedan solo en tu navegador (localStorage), no nos llegan.</p>
-<p>Los formularios de newsletter y de envío de casos todavía no están activos y no guardan datos. Cuando se activen, explicaremos aquí quién trata los datos, para qué y cómo darte de baja (RGPD/LOPDGDD).</p>
+<Base title="Privacidad" description="Política de privacidad de CasosAgentes: quién trata tus datos al suscribirte o enviar un caso, para qué, con qué proveedores y cómo ejercer tus derechos." crumbs={[{name:'Privacidad'}]} robots={pend ? 'noindex,follow' : 'index,follow'} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Privacidad","inLanguage":"es-ES"}}>
+<h1>Política de privacidad</h1>
+{pend && <p class="box pend"><strong>Página en preparación:</strong> faltan los datos del titular marcados como [PLACEHOLDER].</p>}
+<h2>Responsable del tratamiento</h2>
+<ul><li><Ph v={TITULAR.nombre} k="nombre y apellidos o razón social" /> · NIF <Ph v={TITULAR.nif} k="NIF" /></li><li>Domicilio: <Ph v={TITULAR.direccion} k="dirección completa" /></li><li>Contacto para privacidad: <Ph v={TITULAR.email} k="email" /></li></ul>
+<h2>Navegación</h2><p>CasosAgentes es un sitio estático. No usa cookies de seguimiento ni publicidad. Los casos que guardas con «Guardar», tu preferencia de tema y el cierre de la barra de destacados se quedan solo en tu navegador (localStorage) y no nos llegan.</p>
+<h2>Qué datos tratamos y para qué</h2>
+<ul>
+<li><strong>Newsletter «Los 5 del lunes»</strong> {mlAction() ? '' : '(aún no activa)'}: tu email, para enviarte la newsletter. Base legal: tu consentimiento (art. 6.1.a RGPD), con confirmación por email (doble opt-in). Encargado del tratamiento: MailerLite. Puedes darte de baja en cualquier envío.</li>
+<li><strong>Formularios «Enviar caso» y «Plaza de fundador»</strong> {TALLY.enviarCaso || TALLY.patrocinar ? '' : '(aún no activos)'}: los datos que escribas (nombre, email, empresa, caso o propuesta), para estudiarla y responderte. Base legal: tu consentimiento. Encargado del tratamiento: Tally.</li>
+<li><strong>Email</strong>: si nos escribes, usamos tu dirección solo para contestarte.</li></ul>
+<p>No cedemos ni vendemos tus datos a terceros. Si algún día ofrecemos poner en contacto a negocios con integradores, te pediremos un consentimiento aparte y explícito.</p>
+<h2>Conservación</h2><p>Los datos de la newsletter, mientras sigas suscrito. Los de los formularios, el tiempo necesario para gestionar tu propuesta y, como máximo, 2 años.</p>
+<h2>Tus derechos</h2><p>Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a <Ph v={TITULAR.email} k="email" />. Si crees que no hemos atendido bien tu solicitud, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
+<p>Ver también el <a href={u('/aviso-legal')}>aviso legal</a> y <a href={u('/transparencia')}>cómo nos financiamos</a>.</p>
 </Base>
