@@ -8,6 +8,7 @@ Actualizado: 2026-10-16 03:00 Europe/Madrid
 - Publicado (commit 92fe975, aprobado por Alex): /sobre/ ampliada, /contacto/ nueva, conflicto de intereses ALAXIA en /transparencia/, enlace a Contacto en el pie.
 - Search Console: enviado `https://casosagentes.es/sitemap-index.xml`.
 - Decisión de Alex (28/10, 22:26): CasosAgentes y ALAXIA separadas. Retiradas de la web las menciones a ALAXIA (Sobre, Contacto, Cómo nos financiamos). Ver EDITORIAL.md.
+- Codex se suma al proyecto: instrucciones en AGENTS.md (trabaja en ramas `codex/<tarea>`, Claude revisa). Reparto de tareas en EDITORIAL.md.
 - Pendiente de Alex: cuenta nueva de MailerLite, acceso a Tally, cuenta de Umami.
 
 ## Estado actual
