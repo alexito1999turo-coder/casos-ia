@@ -11,7 +11,7 @@ CasosAgentes (https://casosagentes.es): directorio estático en Astro de casos r
 ## Comandos
 
 - Instalar: `npm ci`
-- Compilar: `npx astro build` (si faltan datos del titular, usar `npm run build:preview`)
+- Compilar con validación previa: `npm run build` (si faltan datos del titular, usar `npm run build:preview`, validando antes manualmente)
 - Comprobar enlaces internos tras compilar: `node scripts/check-links.mjs`
 - Desplegar: `bash deploy/publish-gh-pages.sh` — **solo con OK de Alex**.
 
@@ -22,3 +22,13 @@ CasosAgentes (https://casosagentes.es): directorio estático en Astro de casos r
 - No cambies el diseño (CSS, maquetación) sin OK explícito de Alex.
 - No menciones ALAXIA en la web: CasosAgentes es un medio independiente.
 - Antes de proponer el cambio, compila y pasa `check-links` sin enlaces rotos.
+
+## Validación de casos
+
+- Ejecutar: `node scripts/validar-casos.mjs`. `npm run build` lo ejecuta automáticamente mediante `prebuild`; `npx astro build` y `npm run build:preview` requieren ejecutarlo antes manualmente.
+- Falla (salida 1) con el número y slug del caso ante slugs duplicados o inválidos, campos obligatorios vacíos o de tipo incorrecto, claves ajenas a `SECTORES`, `TAREAS`, `FUENTE_TIPOS` o `HERR` de `facets.mjs`, URLs de fuente sin HTTPS y fechas inválidas. No modifica los datos.
+- `publicado` y el opcional `revisado` usan fechas reales `AAAA-MM-DD`. La fecha de la fuente (`fecha`), si existe, admite `AAAA`, `AAAA-MM`, `AAAA-MM-DD` o `no indicado`, respetando su precisión original.
+- Solo avisa (salida 0 si no hay errores) de prompts idénticos tras quitar espacios en los extremos, cuota de proveedor superior al 30 % entre los publicados en los últimos 7 días y `costeOrientativo` sin la palabra «Estimación» (sin distinguir mayúsculas).
+- La ventana temporal usa fechas de publicación a medianoche UTC y una antigüedad desde 0 hasta menos de 7 días; excluye fechas futuras. Sin casos recientes no hay aviso de cuota.
+- Pruebas del validador: `node --test scripts/validar-casos.test.mjs`. En el entorno restringido de Codex (Node 24), usar `node --test --test-isolation=none scripts/validar-casos.test.mjs` si no permite crear subprocesos.
+- Para futuros costes: «Estimación de CasosAgentes: X € de puesta en marcha y Y €/mes; no es un dato de la fuente.»

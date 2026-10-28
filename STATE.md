@@ -70,3 +70,12 @@ Actualizado: 2026-10-28 22:50 Europe/Madrid (Claude)
 - Añadidos únicamente los tres campos a Moviltecno, RC15 Academy e Il Figlio di Emiliano: orientación editorial, costes estimados de piloto (no cifras de la fuente) y pruebas con herramientas gratuitas y revisión humana.
 - Validación: `ASTRO_TELEMETRY_DISABLED=1 npm run build` OK (173 páginas); `node scripts/check-links.mjs` OK (10.290 enlaces internos, 52 anclas, 0 rotos). HTML comprobado en las 52 fichas: presencia en 3 y ausencia en 49. `git diff --check` OK.
 - Entrega en `codex/campos-caso` para PR contra main y revisión de Claude/Alex. Sin merge ni despliegue. Git por terminal sin acceso al proxy; entrega mediante el conector GitHub.
+
+## 2026-10-28 · Codex — validación de casos
+- En curso (Codex): rama `codex/validar-casos` desde main `587a20f`; validador previo al build, errores y avisos editoriales sin modificar casos.json.
+- Completado (Codex): `scripts/validar-casos.mjs` comprueba estructura, obligatorios, slug, catálogos, HTTPS y fechas reales; avisa de prompts repetidos, cuota semanal de proveedor >30 % y costes sin «Estimación». Mensajes en español con número y slug; no modifica datos.
+- `prebuild` en package.json ejecuta el validador antes de `npm run build`. `SECTORES` y `TAREAS` pasan a facets.mjs, reexportados por meta.js sin cambiar claves ni etiquetas. AGENTS.md documenta comandos, formatos, ventana de 7 días y frase acordada para futuros costes.
+- Los 52 casos actuales: 0 errores, 0 avisos; casos.json intacto. Se respetan fechas parciales y «no indicado» en fecha de la fuente; publicado/revisado requieren AAAA-MM-DD.
+- Pruebas: 7 grupos con `node --test --test-isolation=none scripts/validar-casos.test.mjs` OK (aislamiento desactivado porque este entorno no permite subprocesos del runner). CLI verificada con copias temporales: avisos salen con 0, errores y JSON roto con 1; prebuild detiene el build ante datos inválidos.
+- `ASTRO_TELEMETRY_DISABLED=1 npm run build` OK con prebuild (173 páginas); `node scripts/check-links.mjs`: 10.290 enlaces internos, 52 anclas y 0 rotos; `git diff --check` OK.
+- Main actualizado desde el conector GitHub por fallo de conexión del proxy Git; objeto firmado 587a20f recuperado y verificado por su SHA antes de crear la rama. Rama rebasada después sobre main `bb545c4`, incorporando la actualización de STATE.md de Claude. Entrega para PR contra main, pendiente de revisión. Sin merge ni despliegue.

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "node scripts/validar-casos.mjs",
     "build": "astro build",
     "build:preview": "PREVIEW=1 astro build",
     "dev": "astro dev"
