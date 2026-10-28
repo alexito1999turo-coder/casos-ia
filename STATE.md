@@ -15,7 +15,8 @@ Actualizado: 2026-10-28 22:50 Europe/Madrid
 Actualizado: 2026-10-28 22:50 Europe/Madrid (Claude)
 - En línea: https://casosagentes.es/ (GitHub Pages, rama gh-pages; casosagentes.com redirige al .es)
 - Casos publicados: **52**
-- Producción: desplegada desde main 4e8ebca. En main sin desplegar: campos opcionales de la ficha (PR #1 de Codex, 587a20f), pendiente del OK de Alex.
+- Producción: desplegada desde main 4e8ebca. En main sin desplegar, pendiente del OK de Alex: campos opcionales de la ficha (PR #1), validador de casos.json en prebuild y en el despliegue (PR #2), infraestructura de guías con hostelería en borrador (PR #3). Los tres PR de Codex, revisados por Claude.
+- Siguiente para el bot de Grok: redactar las guías de hostelería, salud y comercio (ver EDITORIAL.md).
 - Equipo: bot de Grok (casos), Codex (código, en ramas codex/*), Claude (revisión y coordinación). Reparto en EDITORIAL.md.
 - Search Console: propiedad de dominio verificada; sitemap enviado.
 - Formularios: MailerLite, Tally y analítica pendientes de que Alex cree las cuentas.

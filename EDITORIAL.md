@@ -29,6 +29,12 @@ Rellenarlos en los casos nuevos; Claude activará su visualización cuando haya 
 - `primerPaso`: lo mínimo que se puede probar mañana con una herramienta gratuita.
 - `revisado`: fecha `AAAA-MM-DD` de la última comprobación de que la fuente sigue en pie.
 
+## Guías de sector (tarea del bot de Grok)
+
+- Cada guía vive en `src/data/guias/<sector>.md` (formato en `AGENTS.md`). Ya hay un ejemplo de hostelería en borrador hecho por Codex: úsalo como modelo y reescríbelo.
+- Solo con lo que dicen los casos del repo, enlazando cada caso; sin cifras que no estén en `casos.json`.
+- Empezar por hostelería, salud y comercio. Se entregan con `borrador: true`; el paso a `false` lo aprueba Alex.
+
 ## Cómo tocar el repo sin pisarnos
 
 - Antes de cambiar nada: `git fetch origin main` y partir de lo último. Nunca revertir cambios de otro sin preguntar a Alex.
