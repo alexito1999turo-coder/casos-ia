@@ -1,4 +1,8 @@
-/* Funnel Sans (OFL) y Geist Mono (OFL), autoalojadas: sin peticiones a terceros. ~65 KB en total; el navegador solo baja el subconjunto que usa */
+/* Funnel Sans (OFL) y Geist Mono (OFL), autoalojadas: sin peticiones a terceros. ~65 KB en total; el navegador solo baja el subconjunto que usa.
+   Créditos:
+   - Funnel Sans: Copyright 2023 The Funnel Project Authors (https://github.com/Dicotype/Funnel)
+   - Geist Mono: Copyright 2024 The Geist Project Authors (https://github.com/vercel/geist-font)
+   Ambas con licencia SIL Open Font License 1.1: ver /fonts/OFL.txt y https://openfontlicense.org */
 @font-face {
   font-family: 'Funnel Sans';
   font-style: normal;
