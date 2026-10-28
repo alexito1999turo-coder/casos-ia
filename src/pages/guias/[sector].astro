@@ -1,0 +1,25 @@
+---
+import Landing from '../../components/Landing.astro';
+import casos from '../../data/casos.json';
+import { cargarGuias } from '../../data/guias.mjs';
+import { SECTORES, fechaES, u } from '../../data/meta.js';
+
+export function getStaticPaths() {
+  const documentos = import.meta.glob('../../data/guias/*.md', { eager: true });
+  return cargarGuias().map(guia => ({
+    params: { sector: guia.sector },
+    props: { guia, Content: documentos[`../../data/guias/${guia.sector}.md`].Content },
+  }));
+}
+const { guia, Content } = Astro.props;
+const cs = casos.filter(c => c.sector === guia.sector);
+---
+<Landing titulo={guia.titulo} h1={guia.titulo} intro={guia.descripcion} descripcion={guia.descripcion}
+  casos={cs} casosTitulo={`Casos de ${SECTORES[guia.sector].toLowerCase()}`}
+  path={`/guias/${guia.sector}/`} crumb={{ name: 'Guías', href: '/guias/' }}
+  robots={guia.borrador ? 'noindex,follow' : 'index,follow'}>
+  {guia.borrador && <p class="box"><strong>Borrador para revisión.</strong> Esta guía todavía no es definitiva.</p>}
+  <p class="stats">Actualizado el <time datetime={guia.actualizado}>{fechaES(guia.actualizado)}</time>.</p>
+  <Content />
+  <p><a href={u(`/sector/${guia.sector}/`)}>Ver el sector de {SECTORES[guia.sector].toLowerCase()}</a></p>
+</Landing>

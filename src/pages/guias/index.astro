@@ -1,0 +1,16 @@
+---
+import Base from '../../layouts/Base.astro';
+import { cargarGuias } from '../../data/guias.mjs';
+import { SECTORES, fechaES, u } from '../../data/meta.js';
+const guias = cargarGuias().filter(guia => !guia.borrador);
+---
+<Base title="Guías de IA por sector" description="Guías basadas en casos reales de IA en negocios españoles, organizadas por sector."
+  robots={guias.length ? 'index,follow' : 'noindex,follow'} crumbs={[{ name: 'Guías' }]}>
+  <h1>Guías de IA por sector</h1>
+  <p>Usos de la IA por sector, a partir de los casos reales del directorio.</p>
+  {guias.length ? <ul>{guias.map(guia => <li>
+    <h2><a href={u(`/guias/${guia.sector}/`)}>{guia.titulo}</a></h2>
+    <p>{guia.descripcion}</p>
+    <p class="stats">{SECTORES[guia.sector]} · Actualizado el <time datetime={guia.actualizado}>{fechaES(guia.actualizado)}</time></p>
+  </li>)}</ul> : <p>Todavía no hay guías publicadas. Puedes consultar los <a href={u('/categorias/')}>casos por sector</a>.</p>}
+</Base>
