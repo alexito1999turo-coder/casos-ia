@@ -1,6 +1,7 @@
 ---
 import { etiquetaInst } from "../data/meta.js";
 import { SECTORES, TAREAS, u, slugify, herrBase, iniciales, HERR, herrMain, ciudadSlug, FUENTE_TIPOS, fuenteTipo } from '../data/meta.js';
+import { colorDe, EMOJI_SECTOR, EMOJI_TAREA } from './ui.mjs';
 const { c } = Astro.props;
 const norm = s => String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 // «Nuevo» = publicado en los 7 días anteriores al build
@@ -8,12 +9,12 @@ const esNuevo = (Date.now() - Date.parse(c.publicado)) < 7*864e5;
 const fuenteLbl = fuenteTipo(c)==='institucional' ? etiquetaInst(c) : FUENTE_TIPOS[fuenteTipo(c)];
 ---
 <article class="card" data-sector={c.sector} data-tarea={c.tarea} data-herr={HERR[herrMain(c)]} data-slug={c.slug} data-fuente={fuenteTipo(c)} data-pub={c.publicado} data-res={c.resultado && !c.patrocinado && c.fuenteTipo!=="proveedor" && c.destacable!==false?1:0} data-ciudad={ciudadSlug(c) || ''} data-herrs={c.herramientas.join(' ')} data-text={norm([c.titulo,c.resumen,c.resultado,c.herramienta,...c.herramientas.map(h=>HERR[h]),c.ciudad,SECTORES[c.sector],TAREAS[c.tarea],c.fuente,c.patrocinado].filter(Boolean).join(' '))}>
-<div class="head"><span class="badge" aria-hidden="true">{iniciales(c.herramienta)}</span><span class="who">{herrMain(c)==='ia-generica' ? <span>{HERR[herrMain(c)]}</span> : <a href={u(`/herramientas/${herrMain(c)}`)}>{HERR[herrMain(c)]}</a>}<small>{SECTORES[c.sector]}</small></span>{esNuevo && <span class="new">Nuevo</span>}</div>
+<div class="head"><span class="badge" style={`--c:${colorDe(herrMain(c))}`} aria-hidden="true">{iniciales(c.herramienta)}</span><span class="who">{herrMain(c)==='ia-generica' ? <span>{HERR[herrMain(c)]}</span> : <a href={u(`/herramientas/${herrMain(c)}`)}>{HERR[herrMain(c)]}</a>}<small>{SECTORES[c.sector]}</small></span>{esNuevo && <span class="new">Nuevo</span>}</div>
 <div class="meta">{c.patrocinado ? <span class="new pat">{FUENTE_TIPOS[fuenteTipo(c)]} · contenido patrocinado por {c.patrocinado}</span> : <span class={['proveedor','institucional'].includes(fuenteTipo(c)) ? 'new prov' : 'new src-t'}>{FUENTE_TIPOS[fuenteTipo(c)]}</span>}</div>
 <h3><a href={u(`/casos/${c.slug}`)}>{c.titulo}</a></h3>
 <p class={c.resultado ? 'res' : 'res none'}>{c.resultado ? c.resultado : 'Sin cifra publicada en la fuente'}</p>
 <p class="sum">{c.resumen.length > 170 ? c.resumen.slice(0,168).replace(/\s\S*$/,'')+'…' : c.resumen}</p>
-<div class="meta"><a class="tag" href={u(`/sector/${c.sector}`)}>{SECTORES[c.sector]}</a><a class="tag" href={u(`/tarea/${c.tarea}`)}>{TAREAS[c.tarea]}</a>{c.ciudad && (ciudadSlug(c) ? <a class="tag" href={u(`/ciudad/${ciudadSlug(c)}`)}>📍 {c.ciudad}</a> : <span class="tag">📍 {c.ciudad}</span>)}</div><span class="src">{fuenteLbl} · {c.fecha}</span>
+<div class="meta"><a class="tag sec" style={`--c:${colorDe(c.sector)}`} href={u(`/sector/${c.sector}`)}><span class="em" aria-hidden="true">{EMOJI_SECTOR[c.sector]}</span>{SECTORES[c.sector]}</a><a class="tag" href={u(`/tarea/${c.tarea}`)}><span class="em" aria-hidden="true">{EMOJI_TAREA[c.tarea]}</span>{TAREAS[c.tarea]}</a>{c.ciudad && (ciudadSlug(c) ? <a class="tag" href={u(`/ciudad/${ciudadSlug(c)}`)}><span class="em" aria-hidden="true">📍</span>{c.ciudad}</a> : <span class="tag"><span class="em" aria-hidden="true">📍</span>{c.ciudad}</span>)}</div><span class="src">{fuenteLbl} · {c.fecha}</span>
 <details><summary>Ver prompt</summary><pre>{c.prompt}</pre></details>
 <div class="acts"><button class="cp" data-p={c.prompt}>Copiar prompt</button><button class="sh" data-u={u(`/casos/${c.slug}`)} data-t={c.titulo}>Compartir</button><button class="sv" aria-pressed="false">☆ Guardar</button></div>
 </article>

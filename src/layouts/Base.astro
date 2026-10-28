@@ -2,6 +2,8 @@
 import { SITE , u, ORIGIN } from '../data/meta.js';
 import { recorta } from '../data/meta.js';
 import Ticker from '../components/Ticker.astro';
+// Variante de tema por defecto: 'tinta' (recomendada) o 'niebla'. Cambiar este token cambia todo el sitio.
+const TEMA = 'tinta';
 const { title, rawTitle, description = SITE.desc, jsonld, robots = 'index,follow', ogType = 'website', published, crumbs } = Astro.props;
 let canonical = new URL(Astro.url.pathname, ORIGIN).href; if (!canonical.endsWith('/')) canonical += '/';
 const full = rawTitle ?? (title ? (`${title} | ${SITE.nombre}`.length <= 60 ? `${title} | ${SITE.nombre}` : title) : `${SITE.nombre} · Casos reales de IA para pymes`);
@@ -10,16 +12,30 @@ const ogImage = `${SITE.url}/og.png`;
 const bc = crumbs && { "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{name:'Inicio',href:'/'},...crumbs].map((c,i)=>({"@type":"ListItem","position":i+1,"name":c.name,...(c.href?{"item":`${SITE.url}${c.href}`}:{})})) };
 const lds = [ ...(jsonld ? (Array.isArray(jsonld)?jsonld:[jsonld]) : []), ...(bc?[bc]:[]) ];
 ---
-<!doctype html><html lang="es-ES"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html><html lang="es-ES" data-tema={TEMA}><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{full}</title><meta name="description" content={desc}><meta name="robots" content={robots}><link rel="canonical" href={canonical}>
 <meta property="og:title" content={full}><meta property="og:description" content={desc}><meta property="og:type" content={ogType}><meta property="og:image" content={ogImage}><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="CasosAgentes">{published && <meta property="article:published_time" content={published}>}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content={ogImage}><meta property="og:url" content={canonical}><meta property="og:locale" content="es_ES">
 <link rel="alternate" type="text/plain" href={u("/llms.txt")} title="llms.txt">
+<link rel="preload" href={u("/fonts/funnel-sans-latin.woff2")} as="font" type="font/woff2" crossorigin><link rel="stylesheet" href={u("/fonts/fonts.css")}>
 {lds.map(j=><script type="application/ld+json" set:html={JSON.stringify(j)} />)}
 <style is:global>
-:root{--bg:#fff;--fg:#0a0a0a;--muted:#4a4a4a;--faint:#6b6b6b;--line:#e2e2e2;--line2:#0a0a0a;--hatch:#f5f5f5;--accent:#000;--ok:#0a7a3d;--warn:#9a6700;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--r:0px}
-:root.dark{--bg:#0a0a0a;--fg:#f2f2f2;--muted:#b0b0b0;--faint:#8a8a8a;--line:#262626;--line2:#f2f2f2;--hatch:#141414;--accent:#fff;--ok:#4ade80;--warn:#fbbf24}
+/* ===== Tokens de tema. La variante por defecto se elige con UNA constante: TEMA (frontmatter de este archivo).
+   tinta  = blanco limpio, tinta casi negra, acentos IA (violeta→azul→cian), CTA violeta. Recomendada.
+   niebla = gris azulado muy claro con tarjetas blancas, esquinas más redondas, CTA azul eléctrico.
+   Las dos tienen versión oscura automática (prefers-color-scheme); el botón ◐ es opcional y se recuerda. ===== */
+:root{--bg:#fff;--card:#fff;--fg:#0c0c14;--muted:#4a4a57;--faint:#5f5f6c;--line:#e3e3ea;--line2:#0c0c14;--hatch:#f5f5f8;--accent:#0c0c14;--ok:#0a7a3d;--warn:#8a5a00;
+--violet:#6d28d9;--cyan:#0e7490;--magenta:#be185d;--blue:#1d4ed8;--ai:linear-gradient(90deg,var(--violet),var(--blue) 50%,var(--cyan));
+--cta:#6d28d9;--cta-h:#5b21b6;--cta-fg:#fff;--sp:#5b5546;--sp-fg:#fff;--sp-soft:#f3f1ec;
+--glow:radial-gradient(closest-side at 62% 40%,rgb(109 40 217/.10),transparent),radial-gradient(closest-side at 80% 55%,rgb(14 116 144/.08),transparent);
+--font:"Funnel Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;--r:6px;--rc:0px}
+:root.dark{--bg:#0a0a0f;--card:#0a0a0f;--fg:#f3f3f7;--muted:#b4b4c2;--faint:#9191a1;--line:#25252f;--line2:#f3f3f7;--hatch:#14141b;--accent:#f3f3f7;--ok:#4ade80;--warn:#fbbf24;
+--violet:#a78bfa;--cyan:#22d3ee;--magenta:#f472b6;--blue:#7cb4ff;--cta:#a78bfa;--cta-h:#c4b5fd;--cta-fg:#0a0a0f;--sp:#d9d3c3;--sp-fg:#1d1b16;--sp-soft:#1c1a15;
+--glow:radial-gradient(closest-side at 62% 40%,rgb(167 139 250/.16),transparent),radial-gradient(closest-side at 80% 55%,rgb(34 211 238/.10),transparent)}
+:root[data-tema=niebla]{--bg:#f4f6fb;--card:#fff;--fg:#101626;--muted:#434d66;--faint:#56607a;--line:#dbe0ec;--line2:#101626;--hatch:#eaeef6;--accent:#101626;--cta:#2443d0;--cta-h:#1c35a8;--r:10px;--rc:12px;
+--glow:radial-gradient(closest-side at 62% 40%,rgb(36 67 208/.10),transparent),radial-gradient(closest-side at 80% 55%,rgb(109 40 217/.08),transparent)}
+:root[data-tema=niebla].dark{--bg:#121725;--card:#171d2d;--fg:#eef1f8;--muted:#b6bed2;--faint:#97a1ba;--line:#2a3349;--line2:#eef1f8;--hatch:#1c2335;--accent:#eef1f8;--cta:#7cb4ff;--cta-h:#a5cbff;--cta-fg:#0b1020}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%;color-scheme:light}:root.dark{color-scheme:dark}
-body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg);line-height:1.55;font-feature-settings:"cv11","ss01";-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;font-family:var(--font);color:var(--fg);background:var(--bg);line-height:1.55;font-feature-settings:"cv11","ss01";-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 html,body{overflow-x:clip}header{border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px)}
 footer{border-top:1px solid var(--line);color:var(--muted)}header a,footer a{text-decoration:none}header a:hover,footer a:hover{text-decoration:underline}
@@ -103,10 +119,73 @@ body{padding-bottom:calc(var(--tk) + env(safe-area-inset-bottom,0px))}html{scrol
 @media print{.tk{display:none}}
 p.claim{font-size:1.06rem;color:var(--fg)!important}mark.ph{background:#fde047;color:#000;padding:0 4px;font:600 .85em var(--mono)}.box.pend{border-color:var(--warn)}
 .new.src-t{background:transparent;color:var(--muted);border:1px solid var(--line)}
+/* ===== Tanda de color: acentos IA solo en detalles (degradado del hero, filetes, chips, avatares, iconos) ===== */
+:focus-visible{outline-color:var(--violet)}
+::selection{background:color-mix(in srgb,var(--violet) 28%,transparent)}
+header{border-bottom-color:transparent;box-shadow:0 1px 0 var(--line)}
+header::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--ai);opacity:.55}
+.logo{font-weight:750}.logo span{color:var(--faint)}
+.logo::before{content:"";display:inline-block;width:10px;height:10px;margin-right:8px;border-radius:3px;background:var(--ai);vertical-align:1px}
+nav.top .links a[href$="/patrocinar/"]{color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+nav.top .links a[href$="/patrocinar/"]:hover{border-color:var(--violet);text-decoration:none}
+#theme{border-radius:var(--r);background:var(--card)}
+/* CTA único: newsletter, «Envía un caso» y «Plaza de fundador» llevan el mismo color en toda la web */
+.btn{border-radius:var(--r);font-weight:600}
+.btn[href$="/newsletter/"],.btn[href$="/enviar-caso/"],.btn[href$="/patrocinar/"],nav.top .links a.cta,.nlf button[type=submit]{background:var(--cta);color:var(--cta-fg);border:1px solid var(--cta);border-radius:var(--r);font-weight:600;text-decoration:none}
+.btn[href$="/newsletter/"]:hover,.btn[href$="/enviar-caso/"]:hover,.btn[href$="/patrocinar/"]:hover,nav.top .links a.cta:hover,.nlf button[type=submit]:hover{background:var(--cta-h);border-color:var(--cta-h);color:var(--cta-fg);text-decoration:none}
+nav.top .links a.cta{padding:5px 12px}
+.cta-m{display:none}
+@media(max-width:760px){nav.top .links a.cta{display:none}.cta-m{display:inline-flex;align-items:center;margin-left:auto;min-height:36px;padding:0 12px;background:var(--cta);color:var(--cta-fg);border-radius:var(--r);font-weight:600;font-size:.84rem;text-decoration:none}.cta-m:hover{background:var(--cta-h);text-decoration:none}nav.top .cta-m+#theme{margin-left:8px}}
+/* Variante niebla: tarjetas sueltas con aire, sobre fondo gris azulado */
+[data-tema=niebla] .grid{gap:12px;border:0;background:none;overflow:visible}
+[data-tema=niebla] .card{border:1px solid var(--line);border-radius:var(--rc);box-shadow:0 1px 2px rgb(16 22 38/.05)}
+[data-tema=niebla] .strip,[data-tema=niebla] .ficha aside{border-color:var(--line)}
+@media(max-width:700px){[data-tema=niebla] .grid{margin:0;gap:10px}[data-tema=niebla] .grid>.card{border-right:1px solid var(--line);padding:16px}}
+button:not(.btn){border-radius:var(--r)}
+input,select,textarea{border-radius:var(--r)}
+/* Hero: degradado sutil violeta→cian solo en el énfasis del titular y un halo fuera del texto largo */
+.hero{position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;z-index:-1;top:-120px;right:-22vw;width:min(900px,95vw);height:520px;background:var(--glow);pointer-events:none}
+.hero h1{font-weight:720;letter-spacing:-.035em}
+.hero h1 em{color:var(--violet);background:var(--ai);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.eyebrow{color:var(--faint)}.eyebrow::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cyan);margin-right:8px;vertical-align:1px}
+.strip{border-radius:var(--r);background:var(--card)}.strip .dot{background:var(--cyan);box-shadow:0 0 0 3px color-mix(in srgb,var(--cyan) 22%,transparent)}
+.box,.resumen,pre,.ficha aside{border-radius:var(--r)}.ficha aside{background:var(--card)}
+/* Tarjetas */
+.grid{border-radius:var(--rc);overflow:hidden;background:var(--line)}
+.card{background:var(--card)}.card:hover{background:color-mix(in srgb,var(--violet) 4%,var(--card))}
+.badge{border-radius:7px;border:1px solid color-mix(in srgb,var(--fg) 18%,transparent);background:var(--hatch);color:var(--fg)}
+.badge[style*="--c"]{background:var(--c);color:#0b0b0b;border-color:color-mix(in srgb,var(--c) 60%,#000)}
+.tag{border-radius:999px;padding:2px 9px}
+a.tag:hover{border-color:var(--violet);color:var(--fg)}
+.tag.sec{border-color:color-mix(in srgb,var(--c) 75%,var(--line));background:color-mix(in srgb,var(--c) 16%,var(--card));color:var(--fg)}
+.tag .em,.em{font-style:normal;margin-right:5px;font-size:.95em;line-height:1}
+.new{background:transparent;color:var(--violet);border:1px solid currentColor;border-radius:4px}
+/* Etiquetas de transparencia: color neutro propio (piedra), distinto de los acentos IA y de «Destacados» */
+.new.pat,.splbl,.tk a.sp .tk-k{background:var(--sp);color:var(--sp-fg);border:1px solid var(--sp);border-radius:4px}
+.new.prov{background:var(--sp-soft);color:var(--fg);border:2px solid var(--sp);border-radius:4px}
+.new.src-t{background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:4px}
+.card.sp{background:repeating-linear-gradient(135deg,var(--sp-soft) 0 1px,var(--card) 1px 9px)}
+.box.afil{border:2px solid var(--sp);background:var(--sp-soft)}
+.res{border-left-color:var(--cyan)}
+.acts button,.acts a{border-radius:var(--r)}
+.acts .on{background:var(--violet);border-color:var(--violet);color:var(--bg)}
+.sort{border-radius:var(--r);overflow:hidden}
+/* Barra inferior: siempre en movimiento, con avatares de color y filete IA animado */
+.tk{border-top:0}
+.tk::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,var(--violet),var(--cyan),var(--magenta),var(--blue),var(--violet));background-size:200% 100%;animation:tkg 9s linear infinite}
+@keyframes tkg{to{background-position:200% 0}}
+.tk-lbl{color:var(--fg);gap:8px}
+.tk-live{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 3px color-mix(in srgb,var(--cyan) 25%,transparent);animation:tkp 2s ease-in-out infinite}
+@keyframes tkp{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--cyan) 0%,transparent)}}
+.tk-b{border-radius:6px;border:1px solid color-mix(in srgb,var(--fg) 18%,transparent)}
+.tk-b[style*="--c"]{background:var(--c);color:#0b0b0b;border-color:transparent}
+.tk-k.k-top{color:var(--cyan)}.tk-k.k-new{color:var(--violet)}
+@media(prefers-reduced-motion:reduce){.tk::before,.tk-live{animation:none}}
 </style>
-<script is:inline>if(localStorage.tkHidden)document.documentElement.setAttribute('data-tk-hidden','');if(localStorage.theme==='dark'||(!localStorage.theme&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')</script>
+<script is:inline>/* Claro por defecto; oscuro si el sistema lo pide o si se eligió con ◐ (se recuerda). En <head>: sin destello. */if(localStorage.tkHidden)document.documentElement.setAttribute('data-tk-hidden','');if(localStorage.theme==='dark'||(!localStorage.theme&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')</script>
 <link rel="alternate" type="application/rss+xml" title="CasosAgentes" href={u("/feed.xml")}></head><body>
-<header><div class="wrap"><nav class="top" aria-label="Principal"><a class="logo" href={u("/")}>Casos<span>Agentes</span>.es</a><div class="links"><a href={u("/nuevos")}>Nuevos</a><a href={u("/herramientas")}>Herramientas</a><a href={u("/categorias")}>Categorías</a><a href={u("/newsletter")}>Newsletter</a><a href={u("/patrocinar")}>Patrocinar</a><a class="cta" href={u("/enviar-caso")}>Enviar caso</a></div><button id="theme" aria-label="Cambiar tema claro/oscuro">◐</button></nav></div></header>
+<header><div class="wrap"><nav class="top" aria-label="Principal"><a class="logo" href={u("/")}>Casos<span>Agentes</span>.es</a><div class="links"><a href={u("/nuevos")}>Nuevos</a><a href={u("/herramientas")}>Herramientas</a><a href={u("/categorias")}>Categorías</a><a href={u("/newsletter")}>Newsletter</a><a href={u("/patrocinar")}>Patrocinar</a><a class="cta" href={u("/enviar-caso")}>Enviar caso</a></div><a class="cta-m" href={u("/enviar-caso")}>Enviar caso</a><button id="theme" type="button" aria-label="Cambiar tema claro/oscuro" title="Tema claro/oscuro"><span aria-hidden="true">◐</span></button></nav></div></header>
 <main class="wrap">{crumbs && <nav class="crumbs" aria-label="Migas de pan"><a href={u("/")}>Inicio</a>{crumbs.map(c=><Fragment> › {c.href?<a href={u(c.href)}>{c.name}</a>:<span aria-current="page">{c.name}</span>}</Fragment>)}</nav>}<slot /></main>
 <footer><div class="wrap">CasosAgentes · Casos reales de IA para autónomos y pymes en España. Las cifras son las que publica cada fuente; no las verificamos de forma independiente. · <a href={u("/llms.txt")}>llms.txt</a> · <a href={u("/sitemap-index.xml")}>sitemap</a> · <a href={u("/feed.xml")}>RSS</a> · <a href={u("/metodologia")}>Metodología</a> · <a href={u("/sobre")}>Sobre</a> · <a href={u("/transparencia")}>Cómo nos financiamos</a> · <a href={u("/aviso-legal")}>Aviso legal</a> · <a href={u("/privacidad")}>Privacidad</a></div></footer>
 <Ticker />
