@@ -1,22 +1,57 @@
-/* Funnel Sans (OFL) y Geist Mono (OFL), autoalojadas: sin peticiones a terceros. ~65 KB en total; el navegador solo baja el subconjunto que usa.
+/* Instrument Sans (texto) y Geist Mono (datos), autoalojadas: sin peticiones a terceros.
+   Instrument Sans: variable recortada a wght 400–700 y wdth 100, sin hinting, en subconjuntos latin (~29 KB) y latin-ext (~10 KB);
+   el navegador solo baja el subconjunto que necesita.
    Créditos:
-   - Funnel Sans: Copyright 2023 The Funnel Project Authors (https://github.com/Dicotype/Funnel)
+   - Instrument Sans: Copyright 2022 The Instrument Sans Project Authors (https://github.com/Instrument/instrument-sans)
    - Geist Mono: Copyright 2024 The Geist Project Authors (https://github.com/vercel/geist-font)
-   Ambas con licencia SIL Open Font License 1.1: ver /fonts/OFL.txt y https://openfontlicense.org */
+   Ambas con licencia SIL Open Font License 1.1: ver /fonts/OFL.txt y https://openfontlicense.org
+   Instrument Sans va con font-display: optional (y preload): si no llega en ~100 ms, esa visita se queda con el respaldo ajustado
+   y no hay cambio de fuente a mitad de lectura (CLS 0). Geist Mono va con swap: su respaldo ajustado no provoca saltos medibles. */
+
+/* Respaldo con métricas ajustadas (Arial/Arimo/Liberation para la sans y Courier New/Cousine para la mono):
+   mientras llega la fuente, el texto ocupa casi lo mismo y no hay saltos de layout (CLS).
+   Sans: size-adjust = ancho medio de Instrument Sans / Arial en texto español; ascent y descent = métricas typo / size-adjust. */
 @font-face {
-  font-family: 'Funnel Sans';
+  font-family: 'Instrument Sans Fallback';
+  font-weight: 100 599;
+  src: local('Arial'), local('ArialMT'), local('Arimo'), local('Liberation Sans'), local('Helvetica');
+  size-adjust: 101.33%;
+  ascent-override: 95.73%;
+  descent-override: 24.67%;
+  line-gap-override: 0%;
+}
+/* Negritas (600–800, titulares y botones): Instrument Sans Bold es más estrecha que Arial Bold, así que se usa otro size-adjust */
+@font-face {
+  font-family: 'Instrument Sans Fallback';
+  font-weight: 600 800;
+  src: local('Arial Bold'), local('Arial-BoldMT'), local('Arimo Bold'), local('Arimo-Bold'), local('Liberation Sans Bold'), local('Helvetica Bold');
+  size-adjust: 97.6%;
+  ascent-override: 99.39%;
+  descent-override: 25.61%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Geist Mono Fallback';
+  src: local('Courier New'), local('CourierNewPSMT'), local('Cousine'), local('Liberation Mono');
+  size-adjust: 100%;
+  ascent-override: 100.5%;
+  descent-override: 29.5%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Instrument Sans';
   font-style: normal;
-  font-weight: 300 800;
-  font-display: swap;
-  src: url(./funnel-sans-latin-ext.woff2) format('woff2');
+  font-weight: 400 700;
+  font-display: optional;
+  src: url(./instrument-sans-latin-ext.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
-  font-family: 'Funnel Sans';
+  font-family: 'Instrument Sans';
   font-style: normal;
-  font-weight: 300 800;
-  font-display: swap;
-  src: url(./funnel-sans-latin.woff2) format('woff2');
+  font-weight: 400 700;
+  font-display: optional;
+  src: url(./instrument-sans-latin.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {

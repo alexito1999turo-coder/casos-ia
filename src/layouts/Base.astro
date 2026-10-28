@@ -16,7 +16,7 @@ const lds = [ ...(jsonld ? (Array.isArray(jsonld)?jsonld:[jsonld]) : []), ...(bc
 <title>{full}</title><meta name="description" content={desc}><meta name="robots" content={robots}><link rel="canonical" href={canonical}>
 <meta property="og:title" content={full}><meta property="og:description" content={desc}><meta property="og:type" content={ogType}><meta property="og:image" content={ogImage}><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="CasosAgentes">{published && <meta property="article:published_time" content={published}>}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content={ogImage}><meta property="og:url" content={canonical}><meta property="og:locale" content="es_ES">
 <link rel="alternate" type="text/plain" href={u("/llms.txt")} title="llms.txt">
-<link rel="preload" href={u("/fonts/funnel-sans-latin.woff2")} as="font" type="font/woff2" crossorigin><link rel="stylesheet" href={u("/fonts/fonts.css")}>
+<link rel="preload" href={u("/fonts/instrument-sans-latin.woff2")} as="font" type="font/woff2" crossorigin><link rel="stylesheet" href={u("/fonts/fonts.css")}>
 {lds.map(j=><script type="application/ld+json" set:html={JSON.stringify(j)} />)}
 <style is:global>
 /* ===== Tokens de tema. La variante por defecto se elige con UNA constante: TEMA (frontmatter de este archivo).
@@ -27,7 +27,7 @@ const lds = [ ...(jsonld ? (Array.isArray(jsonld)?jsonld:[jsonld]) : []), ...(bc
 --violet:#6d28d9;--cyan:#0e7490;--magenta:#be185d;--blue:#1d4ed8;--ai:linear-gradient(90deg,var(--violet),var(--blue) 50%,var(--cyan));
 --cta:#6d28d9;--cta-h:#5b21b6;--cta-fg:#fff;--sp:#5b5546;--sp-fg:#fff;--sp-soft:#f3f1ec;
 --glow:radial-gradient(closest-side at 62% 40%,rgb(109 40 217/.10),transparent),radial-gradient(closest-side at 80% 55%,rgb(14 116 144/.08),transparent);
---font:"Funnel Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;--r:6px;--rc:0px}
+--font:"Instrument Sans","Instrument Sans Fallback",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:"Geist Mono","Geist Mono Fallback",ui-monospace,"SF Mono",Menlo,Consolas,monospace;--r:6px;--rc:0px}
 :root.dark{--bg:#0a0a0f;--card:#0a0a0f;--fg:#f3f3f7;--muted:#b4b4c2;--faint:#9191a1;--line:#25252f;--line2:#f3f3f7;--hatch:#14141b;--accent:#f3f3f7;--ok:#4ade80;--warn:#fbbf24;
 --violet:#a78bfa;--cyan:#22d3ee;--magenta:#f472b6;--blue:#7cb4ff;--cta:#a78bfa;--cta-h:#c4b5fd;--cta-fg:#0a0a0f;--sp:#d9d3c3;--sp-fg:#1d1b16;--sp-soft:#1c1a15;
 --glow:radial-gradient(closest-side at 62% 40%,rgb(167 139 250/.16),transparent),radial-gradient(closest-side at 80% 55%,rgb(34 211 238/.10),transparent)}
@@ -131,10 +131,14 @@ nav.top .links a[href$="/patrocinar/"]:hover{border-color:var(--violet);text-dec
 #theme{border-radius:var(--r);background:var(--card)}
 /* CTA único: newsletter, «Envía un caso» y «Plaza de fundador» llevan el mismo color en toda la web */
 .btn{border-radius:var(--r);font-weight:600}
-.btn[href$="/newsletter/"],.btn[href$="/enviar-caso/"],.btn[href$="/patrocinar/"],nav.top .links a.cta,.nlf button[type=submit]{background:var(--cta);color:var(--cta-fg);border:1px solid var(--cta);border-radius:var(--r);font-weight:600;text-decoration:none}
-.btn[href$="/newsletter/"]:hover,.btn[href$="/enviar-caso/"]:hover,.btn[href$="/patrocinar/"]:hover,nav.top .links a.cta:hover,.nlf button[type=submit]:hover{background:var(--cta-h);border-color:var(--cta-h);color:var(--cta-fg);text-decoration:none}
+.btn[href$="/newsletter/"],.btn[href$="/patrocinar/"],nav.top .links a.cta,.nlf button[type=submit]{background:var(--cta);color:var(--cta-fg);border:1px solid var(--cta);border-radius:var(--r);font-weight:600;text-decoration:none}
+.btn[href$="/newsletter/"]:hover,.btn[href$="/patrocinar/"]:hover,nav.top .links a.cta:hover,.nlf button[type=submit]:hover{background:var(--cta-h);border-color:var(--cta-h);color:var(--cta-fg);text-decoration:none}
+.btn.ghost{background:transparent;color:var(--cta);border:1.5px solid var(--cta);border-radius:var(--r);font-weight:600;text-decoration:none}
+.btn.ghost:hover{background:color-mix(in srgb,var(--cta) 8%,transparent);color:var(--cta-h);border-color:var(--cta-h);text-decoration:none}
 nav.top .links a.cta{padding:5px 12px}
 .cta-m{display:none}
+html:not(.js) #theme,html:not(.js) .tk-x{display:none}
+#theme span,.tk-x{font-family:system-ui,"Segoe UI Symbol","DejaVu Sans",sans-serif}
 @media(max-width:760px){nav.top .links a.cta{display:none}.cta-m{display:inline-flex;align-items:center;margin-left:auto;min-height:36px;padding:0 12px;background:var(--cta);color:var(--cta-fg);border-radius:var(--r);font-weight:600;font-size:.84rem;text-decoration:none}.cta-m:hover{background:var(--cta-h);text-decoration:none}nav.top .cta-m+#theme{margin-left:8px}}
 /* Variante niebla: tarjetas sueltas con aire, sobre fondo gris azulado */
 [data-tema=niebla] .grid{gap:12px;border:0;background:none;overflow:visible}
@@ -173,17 +177,15 @@ a.tag:hover{border-color:var(--violet);color:var(--fg)}
 .sort{border-radius:var(--r);overflow:hidden}
 /* Barra inferior: siempre en movimiento, con avatares de color y filete IA animado */
 .tk{border-top:0}
-.tk::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,var(--violet),var(--cyan),var(--magenta),var(--blue),var(--violet));background-size:200% 100%;animation:tkg 9s linear infinite}
-@keyframes tkg{to{background-position:200% 0}}
+.tk::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--ai)}
 .tk-lbl{color:var(--fg);gap:8px}
-.tk-live{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 3px color-mix(in srgb,var(--cyan) 25%,transparent);animation:tkp 2s ease-in-out infinite}
-@keyframes tkp{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--cyan) 0%,transparent)}}
+.tk-live{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 3px color-mix(in srgb,var(--cyan) 25%,transparent)}
 .tk-b{border-radius:6px;border:1px solid color-mix(in srgb,var(--fg) 18%,transparent)}
 .tk-b[style*="--c"]{background:var(--c);color:#0b0b0b;border-color:transparent}
 .tk-k.k-top{color:var(--cyan)}.tk-k.k-new{color:var(--violet)}
 @media(prefers-reduced-motion:reduce){.tk::before,.tk-live{animation:none}}
 </style>
-<script is:inline>/* Claro por defecto; oscuro si el sistema lo pide o si se eligió con ◐ (se recuerda). En <head>: sin destello. */if(localStorage.tkHidden)document.documentElement.setAttribute('data-tk-hidden','');if(localStorage.theme==='dark'||(!localStorage.theme&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')</script>
+<script is:inline>document.documentElement.classList.add('js');/* Clase js: sin JS se ocultan ◐ y ✕, que no harían nada. Claro por defecto; oscuro si el sistema lo pide o si se eligió con ◐ (se recuerda). En <head>: sin destello. */if(localStorage.tkHidden)document.documentElement.setAttribute('data-tk-hidden','');if(localStorage.theme==='dark'||(!localStorage.theme&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')</script>
 <link rel="alternate" type="application/rss+xml" title="CasosAgentes" href={u("/feed.xml")}></head><body>
 <header><div class="wrap"><nav class="top" aria-label="Principal"><a class="logo" href={u("/")}>Casos<span>Agentes</span>.es</a><div class="links"><a href={u("/nuevos")}>Nuevos</a><a href={u("/herramientas")}>Herramientas</a><a href={u("/categorias")}>Categorías</a><a href={u("/newsletter")}>Newsletter</a><a href={u("/patrocinar")}>Patrocinar</a><a class="cta" href={u("/enviar-caso")}>Enviar caso</a></div><a class="cta-m" href={u("/enviar-caso")}>Enviar caso</a><button id="theme" type="button" aria-label="Cambiar tema claro/oscuro" title="Tema claro/oscuro"><span aria-hidden="true">◐</span></button></nav></div></header>
 <main class="wrap">{crumbs && <nav class="crumbs" aria-label="Migas de pan"><a href={u("/")}>Inicio</a>{crumbs.map(c=><Fragment> › {c.href?<a href={u(c.href)}>{c.name}</a>:<span aria-current="page">{c.name}</span>}</Fragment>)}</nav>}<slot /></main>
