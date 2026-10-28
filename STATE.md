@@ -43,3 +43,8 @@ Actualizado: 2026-10-16 03:00 Europe/Madrid
 
 ## Rutina 2026-10-26
 - Inbox sin lote nuevo (lote 7 ya publicado). Web en línea (200, 48 casos). Lote 8 pedido al Investigador (lote-8.json). Auditoría SEO del lunes pedida (seo-audit-3.md). Nada que publicar.
+
+## Rutina 2026-10-28
+- Lote 9 revisado: rama revision-2026-10-28 (2909299, apilada sobre revision-seo-2026-10-26), 52 casos, build OK. Enviado al Director; pedido lote 10 al Investigador.
+- Producción sin cambios: origin/main 7a3459d (48 casos), 200.
+- Nota: node_modules faltaba en el worktree; reinstalado con npm ci.
