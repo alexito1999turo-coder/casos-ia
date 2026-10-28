@@ -12,11 +12,12 @@ const tallyOn = tallyId(TALLY.enviarCaso) || tallyId(TALLY.patrocinar);
 
 <h2>Qué datos tratamos, para qué, con qué base y cuánto tiempo</h2>
 <h3>1. Newsletter «Los 5 del lunes» {mlAction() ? '' : '(aún no activa)'}</h3>
-<ul><li><strong>Datos:</strong> tu email y los datos técnicos del alta (fecha, IP de confirmación).</li>
-<li><strong>Finalidad:</strong> enviarte la newsletter y saber qué casos interesan más. MailerLite registra si abres cada envío y en qué enlaces haces clic (píxel y enlaces de seguimiento); usamos esos datos de forma agregada.</li>
-<li><strong>Base legal:</strong> tu consentimiento (art. 6.1.a RGPD), con confirmación por email (doble opt-in).</li>
-<li><strong>Conservación:</strong> hasta que te des de baja. Tras la baja guardamos solo tu email en la lista de bajas de MailerLite, para no volver a escribirte.</li>
-<li><strong>Encargado del tratamiento:</strong> MailerLite Limited (Irlanda). MailerLite puede transferir datos a MailerLite, Inc. (EE. UU.) y a otros subencargados; esas transferencias se amparan en las cláusulas contractuales tipo de la Comisión Europea (art. 46 RGPD) incluidas en su contrato de encargo.</li></ul>
+<ul><li><strong>Datos:</strong> tu email, tu sector si nos lo indicas, y los datos técnicos del alta (fecha, IP de confirmación).</li>
+<li><strong>Newsletter.</strong> Si te suscribes, tratamos tu email y, si nos lo indicas, tu sector, con la única finalidad de enviarte la newsletter de CasosAgentes (casos reales de IA en pymes y autónomos) y, en su caso, el bloque patrocinado que va dentro, siempre marcado como «Patrocinado». No vendemos ni cedemos tus datos.</li>
+<li><strong>Base jurídica.</strong> Tu consentimiento (art. 6.1.a RGPD), que das marcando la casilla y confirmando el email que te enviamos (doble confirmación). Puedes retirarlo cuando quieras.</li>
+<li><strong>Encargado del tratamiento.</strong> Usamos MailerLite (MailerLite Limited, 88 Harcourt Street, Dublín 2, D02 DK18, Irlanda) para guardar la lista y enviar los emails. MailerLite actúa como encargado del tratamiento con contrato conforme al art. 28 RGPD. Sus emails pueden incluir medición de aperturas y clics para estadísticas del envío. MailerLite puede transferir datos a MailerLite, Inc. (548 Market St, San Francisco, EE. UU.) y a otros subencargados; esas transferencias se amparan en las cláusulas contractuales tipo de la Comisión Europea (art. 46 RGPD) incluidas en su contrato de encargo.</li>
+<li><strong>Conservación.</strong> Mientras sigas suscrito. Si te das de baja, borramos o bloqueamos tus datos salvo lo necesario para acreditar el consentimiento y respetar tu baja.</li>
+<li><strong>Baja.</strong> En cualquier momento con el enlace «Darme de baja» que va al pie de cada email, o escribiendo a hola@casosagentes.es.</li></ul>
 <h3>2. Formulario «Enviar caso» {tallyId(TALLY.enviarCaso) ? '' : '(aún no activo)'}</h3>
 <ul><li><strong>Datos:</strong> los que escribas (nombre, email, empresa, descripción del caso y enlaces).</li>
 <li><strong>Finalidad:</strong> estudiar el caso, verificarlo y responderte.</li>
@@ -45,7 +46,7 @@ const tallyOn = tallyId(TALLY.enviarCaso) || tallyId(TALLY.patrocinar);
 <h2>Navegación y alojamiento</h2>
 <p>Al navegar no usamos cookies de seguimiento ni de publicidad, ni herramientas de analítica. Los casos que guardas con «Guardar», tu preferencia de tema y el cierre de la barra de destacados se quedan solo en tu navegador (localStorage) y no nos llegan.</p>
 <p>El sitio se aloja en GitHub Pages, de GitHub, Inc. (EE. UU.). Según su documentación, GitHub registra y guarda la dirección IP de cada visita por motivos de seguridad. Nosotros no accedemos a esos registros. Base legal: interés legítimo en mantener el sitio seguro y disponible (art. 6.1.f RGPD). GitHub declara su adhesión al Marco de Privacidad de Datos UE-EE. UU.</p>
-<p>Las páginas con formulario se conectan a tally.so (Tally) o a MailerLite solo cuando el formulario está activo; si no, no cargan nada de terceros.</p>
+<p>Las páginas con formulario de Tally se conectan a tally.so solo cuando el formulario está activo; si no, no cargan nada de terceros. El formulario de la newsletter no carga nada de MailerLite al abrir la página: envía tus datos a MailerLite solo cuando pulsas «Suscribirme».</p>
 
 <h2>Destinatarios</h2>
 <p>No cedemos ni vendemos tus datos. Solo acceden a ellos los encargados citados (MailerLite y Tally), con contrato de encargo, y las autoridades cuando la ley lo exija. Si algún día ofrecemos poner en contacto a negocios con integradores, pediremos un consentimiento aparte y explícito.</p>

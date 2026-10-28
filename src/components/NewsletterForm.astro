@@ -1,20 +1,61 @@
 ---
+// Opción A (spec del Director): <form> HTML normal que, sin JS, hace POST nativo a MailerLite;
+// con JS, un script inline lo envía con fetch y muestra el aviso aquí. Sin JS externo, sin cookies, sin píxeles.
 import { mlAction } from '../data/config.mjs';
 import Fallback from './Fallback.astro';
 import { u } from '../data/meta.js';
 const action = mlAction();
 ---
-{action ? <form class="nlf" method="post" action={action} style="max-width:460px;display:grid;gap:10px" data-ml>
-<input type="email" name="fields[email]" required placeholder="tu@email.com" aria-label="Email" autocomplete="email">
-<input type="hidden" name="ml-submit" value="1"><input type="hidden" name="anticsrf" value="true">
-<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
-<label style="display:flex;gap:8px;align-items:flex-start;font-size:.86rem"><input type="checkbox" name="gdpr[]" value="newsletter" required style="width:auto;-webkit-appearance:auto;appearance:auto;margin-top:4px"> <span>Acepto recibir «Los 5 del lunes» por email y he leído la <a href={u("/privacidad")}>política de privacidad</a>.</span></label>
-<p class="rgpd" style="margin:0"><small><strong>Protección de datos.</strong> Responsable: el titular de CasosAgentes (<a href={u('/aviso-legal')}>aviso legal</a>). Finalidad: enviarte la newsletter. Base: tu consentimiento. Encargado del tratamiento: MailerLite Limited (Irlanda), que mide aperturas y clics de cada envío. Te pediremos confirmar tu email (doble opt-in) y puedes retirar tu consentimiento y darte de baja en cualquier envío. Más en <a href={u('/privacidad')}>privacidad</a>.</small></p>
-<button type="submit">Suscribirme</button><p class="nlmsg" role="status" aria-live="polite" style="margin:0"></p></form>
+{action ? <form id="nl" class="nlf" action={action} method="post" style="max-width:460px;display:grid;gap:10px">
+  <label for="nl-email">Email</label>
+  <input id="nl-email" type="email" name="fields[email]" required autocomplete="email" placeholder="tu@email.com">
+  <label for="nl-sector">Tu sector (opcional)</label>
+  <select id="nl-sector" name="fields[sector]">
+    <option value="">— Prefiero no decirlo —</option>
+    <option value="hosteleria">Hostelería</option>
+    <option value="salud">Salud</option>
+    <option value="comercio">Comercio</option>
+    <option value="servicios">Servicios profesionales</option>
+    <option value="inmobiliaria">Inmobiliaria</option>
+    <option value="abogados">Abogados / asesoría</option>
+    <option value="academia">Academia / formación</option>
+    <option value="construccion">Construcción / reformas</option>
+    <option value="taller">Taller</option>
+    <option value="otro">Otro</option>
+  </select>
+  <input type="hidden" name="ml-submit" value="1">
+  <input type="hidden" name="anticsrf" value="true">
+  <label style="display:flex;gap:8px;align-items:flex-start;font-size:.86rem">
+    <input type="checkbox" name="consentimiento" required style="width:auto;-webkit-appearance:auto;appearance:auto;margin-top:4px">
+    <span>He leído y acepto la <a href={u("/privacidad")}>política de privacidad</a> y quiero recibir la newsletter de CasosAgentes. Te enviaremos un email para confirmar.</span>
+  </label>
+  <p class="rgpd" style="margin:0"><small><strong>Protección de datos.</strong> Responsable: el titular de CasosAgentes (<a href={u('/aviso-legal')}>aviso legal</a>). Finalidad: enviarte la newsletter. Base: tu consentimiento. Encargado del tratamiento: MailerLite Limited (Irlanda), que mide aperturas y clics de cada envío. Te pediremos confirmar tu email (doble opt-in) y puedes retirar tu consentimiento y darte de baja en cualquier envío. Más en <a href={u('/privacidad')}>privacidad</a>.</small></p>
+  <button type="submit">Suscribirme</button>
+  <p id="nl-msg" role="status" aria-live="polite" style="margin:0"></p>
+</form>
 : <Fallback asunto="Alta en la newsletter «Los 5 del lunes»" cuerpo="Quiero recibir la newsletter en este email." que="La suscripción a la newsletter" activo="activa" />}
 {action && <script is:inline>
-document.querySelectorAll('form[data-ml]').forEach(f=>f.addEventListener('submit',async e=>{e.preventDefault();const m=f.querySelector('.nlmsg'),b=f.querySelector('button');if(f.website.value)return;b.disabled=true;m.textContent='Enviando…';
-try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});const j=await r.json().catch(()=>({}));
-if(r.ok&&j.success!==false){f.querySelectorAll('input,label,.rgpd,button').forEach(x=>x.hidden=true);m.textContent='Casi está: te hemos enviado un email para confirmar la suscripción.'}else{m.textContent='No se ha podido completar el alta. Revisa el email e inténtalo de nuevo.';b.disabled=false}}
-catch(_){m.textContent='No se ha podido conectar con el servicio de envío. Inténtalo más tarde.';b.disabled=false}}));
+(() => {
+  const f = document.getElementById('nl'); if (!f) return;
+  const msg = document.getElementById('nl-msg');
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = f.querySelector('button'); btn.disabled = true; msg.textContent = 'Enviando…';
+    try {
+      const fd = new FormData(f); fd.delete('consentimiento'); // el consentimiento no se envía a MailerLite
+      const r = await fetch(f.action, { method: 'POST', body: fd });
+      const j = await r.json();
+      if (j.success) {
+        f.innerHTML = '<p><strong>¡Casi está!</strong> Te hemos enviado un email para confirmar la suscripción. Revisa tu bandeja (y la carpeta de spam o Promociones). Si no confirmas, no te enviaremos nada.</p>';
+      } else {
+        const err = j.errors && j.errors.fields && j.errors.fields.email;
+        msg.textContent = err ? 'Revisa el email: parece que no es válido.' : 'No hemos podido apuntarte. Inténtalo de nuevo en unos minutos o escríbenos a hola@casosagentes.es.';
+        btn.disabled = false;
+      }
+    } catch (_) {
+      msg.textContent = 'Error de conexión. Inténtalo de nuevo o escríbenos a hola@casosagentes.es.';
+      btn.disabled = false;
+    }
+  });
+})();
 </script>}
