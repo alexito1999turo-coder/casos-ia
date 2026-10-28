@@ -1,5 +1,5 @@
 # STATE — CasosAgentes (casosagentes.es)
-Actualizado: 2026-10-16 03:00 Europe/Madrid
+Actualizado: 2026-10-28 22:50 Europe/Madrid
 
 ## 2026-10-28 · Claude — LEER ANTES DE LA PRÓXIMA RUTINA
 - Nuevo acuerdo de trabajo entre el bot de Grok, Claude y Alex: **EDITORIAL.md** (reglas de publicación, reparto de tareas, cómo no pisarnos). Manda sobre instrucciones anteriores.
@@ -12,10 +12,13 @@ Actualizado: 2026-10-16 03:00 Europe/Madrid
 - Pendiente de Alex: cuenta nueva de MailerLite, acceso a Tally, cuenta de Umami.
 
 ## Estado actual
-- En línea: https://alexito1999turo-coder.github.io/casos-ia/ (GitHub Pages)
-- Casos publicados: **39** (32 sólidos + lote 4)
-- Diseño: barra inferior tipo marcador (ticker) fusionada
-- Main: `42796f1`
+Actualizado: 2026-10-28 22:50 Europe/Madrid (Claude)
+- En línea: https://casosagentes.es/ (GitHub Pages, rama gh-pages; casosagentes.com redirige al .es)
+- Casos publicados: **52**
+- Producción: desplegada desde main 4e8ebca. En main sin desplegar: campos opcionales de la ficha (PR #1 de Codex, 587a20f), pendiente del OK de Alex.
+- Equipo: bot de Grok (casos), Codex (código, en ramas codex/*), Claude (revisión y coordinación). Reparto en EDITORIAL.md.
+- Search Console: propiedad de dominio verificada; sitemap enviado.
+- Formularios: MailerLite, Tally y analítica pendientes de que Alex cree las cuentas.
 
 ## Decisiones vigentes
 - Solo negocios identificables (anónimos/NDA retirados; Alex OK 2026-10-16)
