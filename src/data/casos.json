@@ -459,7 +459,7 @@
     "sector": "salud",
     "tarea": "atencion-cliente",
     "herramienta": "HealthMate (WhatsApp + llamadas con IA)",
-    "prompt": "Prompt sugerido: «Eres el asistente de la clínica de fisioterapia. Da, cambia o anula citas y responde dudas sobre bonos y horarios. No des consejo sanitario: deriva al fisio cualquier pregunta sobre lesiones.»",
+    "prompt": "Prompt sugerido: «Eres el asistente de la clínica de fisioterapia. Cuando llegue un mensaje o una llamada, identifica si es cita nueva, cambio, anulación o duda sobre bonos y horarios, resuélvelo con la agenda real y deja una nota de una línea en la ficha del paciente. No des consejo sanitario: deriva al fisio cualquier pregunta sobre lesiones.»",
     "adaptacion": "AI Act: desde agosto de 2026 el asistente debe identificarse como IA ante el paciente. RGPD: datos de salud (categoría especial), exige contrato de encargado del tratamiento con el proveedor. Facturación de bonos y sesiones compatible con Verifactu.",
     "fuente": "HealthMate (testimonios de clientes)",
     "fuenteUrl": "https://www.healthmate.tech/healthmate-vs-fisiogest-halthia-fisiotribu",
@@ -468,8 +468,8 @@
     "ciudad": "Mollet del Vallès",
     "publicado": "2026-10-16",
     "herramientas": [
-      "whatsapp-business",
-      "healthmate"
+      "healthmate",
+      "whatsapp-business"
     ],
     "tituloSeo": "Més que Fisio: menos administración con IA",
     "descripcionSeo": "Toni Contreras, de Més que Fisio, explica que su cuello de botella «nunca fue tratar, fue coordinar»: con HealthMate reúnen mensajes, llamadas y agenda."
@@ -483,7 +483,7 @@
     "sector": "salud",
     "tarea": "atencion-cliente",
     "herramienta": "HealthMate (WhatsApp + llamadas con IA)",
-    "prompt": "Prompt sugerido: «Eres el asistente de la clínica de fisioterapia. Da, cambia o anula citas y responde dudas sobre bonos y horarios. No des consejo sanitario: deriva al fisio cualquier pregunta sobre lesiones.»",
+    "prompt": "Prompt sugerido: «Fuera de horario, contesta las dudas de pacientes sobre citas, bonos y horarios. A primera hora, prepara un resumen con lo que ya está resuelto y una lista aparte de lo que necesita a una persona, con el motivo. No des consejo sanitario.»",
     "adaptacion": "AI Act: desde agosto de 2026 el asistente debe identificarse como IA ante el paciente. RGPD: datos de salud (categoría especial), exige contrato de encargado del tratamiento con el proveedor. Facturación de bonos y sesiones compatible con Verifactu.",
     "fuente": "HealthMate (testimonios de clientes)",
     "fuenteUrl": "https://www.healthmate.tech/healthmate-vs-fisiogest-halthia-fisiotribu",
@@ -492,8 +492,8 @@
     "ciudad": "Huelva",
     "publicado": "2026-10-16",
     "herramientas": [
-      "whatsapp-business",
-      "healthmate"
+      "healthmate",
+      "whatsapp-business"
     ],
     "tituloSeo": "Clínica Kinética: dudas nocturnas resueltas con IA"
   },
@@ -506,7 +506,7 @@
     "sector": "salud",
     "tarea": "atencion-cliente",
     "herramienta": "HealthMate (WhatsApp + llamadas con IA)",
-    "prompt": "Prompt sugerido: «Eres el asistente de la clínica de fisioterapia. Da, cambia o anula citas y responde dudas sobre bonos y horarios. No des consejo sanitario: deriva al fisio cualquier pregunta sobre lesiones.»",
+    "prompt": "Prompt sugerido: «Si llamo o escribo mientras el fisio está en sesión, atiende tú: da, cambia o anula la cita con la agenda real y responde horarios y precios. Al terminar, resume cada conversación en dos líneas para que el fisio la revise. No des consejo sanitario.»",
     "adaptacion": "AI Act: desde agosto de 2026 el asistente debe identificarse como IA ante el paciente. RGPD: datos de salud (categoría especial), exige contrato de encargado del tratamiento con el proveedor. Facturación de bonos y sesiones compatible con Verifactu.",
     "fuente": "HealthMate (testimonios de clientes)",
     "fuenteUrl": "https://www.healthmate.tech/healthmate-vs-fisiogest-halthia-fisiotribu",
@@ -515,8 +515,8 @@
     "ciudad": "Alicante",
     "publicado": "2026-10-16",
     "herramientas": [
-      "whatsapp-business",
-      "healthmate"
+      "healthmate",
+      "whatsapp-business"
     ],
     "tituloSeo": "Fisio Miguel Pérez: la IA atiende si estás en camilla"
   },
@@ -529,7 +529,7 @@
     "sector": "salud",
     "tarea": "atencion-cliente",
     "herramienta": "HealthMate (WhatsApp + llamadas con IA)",
-    "prompt": "Prompt sugerido: «Eres el asistente de la clínica de fisioterapia. Da, cambia o anula citas y responde dudas sobre bonos y horarios. No des consejo sanitario: deriva al fisio cualquier pregunta sobre lesiones.»",
+    "prompt": "Prompt sugerido: «Eres el asistente de la bandeja compartida de la clínica. Responde citas, bonos y horarios, y deja en cada conversación una nota de qué se le ha dicho al paciente y qué queda pendiente, para que cualquiera del equipo pueda seguirla. No des consejo sanitario.»",
     "adaptacion": "AI Act: desde agosto de 2026 el asistente debe identificarse como IA ante el paciente. RGPD: datos de salud (categoría especial), exige contrato de encargado del tratamiento con el proveedor. Facturación de bonos y sesiones compatible con Verifactu.",
     "fuente": "HealthMate (testimonios de clientes)",
     "fuenteUrl": "https://www.healthmate.tech/healthmate-vs-fisiogest-halthia-fisiotribu",
@@ -538,8 +538,8 @@
     "ciudad": "Villafranca de los Caballeros",
     "publicado": "2026-10-16",
     "herramientas": [
-      "whatsapp-business",
-      "healthmate"
+      "healthmate",
+      "whatsapp-business"
     ],
     "tituloSeo": "Motiva Fisioterapia: WhatsApp compartido con IA"
   },
@@ -584,8 +584,8 @@
     "ciudad": "Marbella",
     "publicado": "2026-10-16",
     "herramientas": [
-      "whatsapp-business",
-      "solwees"
+      "solwees",
+      "whatsapp-business"
     ],
     "tituloSeo": "FaceStylist (Marbella): 93% de reservas por WhatsApp con IA"
   },
@@ -607,8 +607,8 @@
     "ciudad": "Barcelona",
     "publicado": "2026-10-16",
     "herramientas": [
-      "whatsapp-business",
-      "kokuai"
+      "kokuai",
+      "whatsapp-business"
     ],
     "tituloSeo": "Clínica Domènech: citas, reseñas y recalls por WhatsApp",
     "fuentesExtra": [
@@ -637,8 +637,8 @@
     "ciudad": "Palma",
     "publicado": "2026-10-16",
     "herramientas": [
-      "whatsapp-business",
-      "kokuai"
+      "kokuai",
+      "whatsapp-business"
     ],
     "tituloSeo": "Clínica Dental Establiments: ausencias del 10% al 3%"
   },
@@ -660,6 +660,7 @@
     "ciudad": "Comunidad de Madrid",
     "publicado": "2026-10-16",
     "herramientas": [
+      "agente-ia-a-medida",
       "whatsapp-business"
     ],
     "tituloSeo": "Grupo Torrejón: agente de voz IA para no perder llamadas",
@@ -733,6 +734,7 @@
     "ciudad": "Madrid",
     "publicado": "2026-10-16",
     "herramientas": [
+      "agente-ia-a-medida",
       "whatsapp-business"
     ],
     "tituloSeo": "Lemme's (Madrid): copiloto IA para números y WhatsApp"
@@ -1272,7 +1274,7 @@
     "herramientas": [
       "lovable"
     ],
-    "prompt": "Prompt sugerido: «Revisa el código de mi web y dime qué tres partes se beneficiarían más de una refactorización, ordenadas por impacto. Explica en una frase cada una y no cambies nada todavía.»",
+    "prompt": "Prompt sugerido: «Con los criterios de mi cliente [puesto, nivel, sector, ciudad o remoto, salario mínimo, idiomas] y estas ofertas [pegar listado], devuelve solo las que encajan, ordenadas de mejor a peor, con una frase de por qué encaja cada una y qué requisito no cumple, si alguno.»",
     "adaptacion": "Agrupar varios cambios en un mismo mensaje para gastar menos créditos, pedir primero un diagnóstico antes de tocar el código y, si un fallo se enquista, quitar la función y empezar de cero o recurrir a un desarrollador. La ciudad sale de la pieza («a solo founder based in Madrid»). La pieza no nombra su negocio.",
     "fuente": "Business Insider",
     "fuenteUrl": "https://www.businessinsider.com/solo-business-owner-ai-subscription-no-employees-2026-2",

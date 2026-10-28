@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro'; import Buscador from '../components/Bu
 import casos from '../data/casos.json'; import { SECTORES, TAREAS, SITE, u, herrBase, HERR, herrMain } from '../data/meta.js';
 const orden = [...casos].sort((a,b)=>b.publicado.localeCompare(a.publicado));
 const nRes=casos.filter(c=>c.resultado&&!c.patrocinado&&c.fuenteTipo!=="proveedor"&&c.destacable!==false).length;
-const ult = orden[0].publicado; const nUlt = casos.filter(c=>c.publicado===ult).length;
+const ult = orden[0].publicado; const nUlt = casos.filter(c=>(Date.now()-Date.parse(c.publicado)) < 7*864e5).length; // mismo criterio que la etiqueta «Nuevo» de Card.astro
 const fmt = d => new Date(d).toLocaleDateString('es-ES',{weekday:'short',day:'numeric',month:'short'});
 const HOME_DESC = 'El directorio de casos reales de IA en pymes y autónomos de España, con nombre y fuente: qué hicieron, el resultado y el prompt para copiarlo.';
 const jsonld = [{"@context":"https://schema.org","@type":"WebSite","name":SITE.nombre,"url":SITE.url+'/',"inLanguage":"es-ES","description":HOME_DESC},{"@context":"https://schema.org","@type":"ItemList","itemListElement":orden.map((c,i)=>({"@type":"ListItem","position":i+1,"url":`${SITE.url}/casos/${c.slug}/`,"name":c.titulo}))}];
@@ -14,6 +14,6 @@ const jsonld = [{"@context":"https://schema.org","@type":"WebSite","name":SITE.n
 <p>Cada caso trae el resultado tal como lo publica la fuente, un prompt para copiar y notas para España (Hacienda, Verifactu, WhatsApp Business, Idealista). <strong>Copia la idea.</strong></p>
 <p class="stats">{casos.length} casos · Fuentes: blogs, prensa, LinkedIn y X en español · <a href={u("/feed.xml")}>RSS</a></p>
 <div class="ctas"><a class="btn" href={u("/newsletter")}>Recibe los casos nuevos</a><a class="btn ghost" href={u("/enviar-caso")}>Enviar un caso</a></div></section>
-<div class="strip"><span class="dot" aria-hidden="true"></span><strong>{nUlt} {nUlt===1?'caso nuevo':'casos nuevos'}</strong><span class="stats">{fmt(ult)}</span><a href={u("/nuevos")} style="margin-left:auto">Ver los nuevos →</a></div>
+<div class="strip"><span class="dot" aria-hidden="true"></span><strong>{nUlt} {nUlt===1?'caso nuevo':'casos nuevos'}</strong><span class="stats">en los últimos 7 días</span><a href={u("/nuevos")} style="margin-left:auto">Ver los nuevos →</a></div>
 <Buscador orden={orden} nRes={nRes} />
 </Base>

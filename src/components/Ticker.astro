@@ -3,7 +3,7 @@ import casos from '../data/casos.json';
 import { u, HERR, herrMain, iniciales, NOINDEX_FACETS } from '../data/meta.js';
 import { colorDe } from './ui.mjs';
 // Solo datos reales: herramientas con más casos (conteo de casos.json), casos más recientes y huecos patrocinados marcados.
-const m = {}; casos.forEach(c => { const k = herrMain(c); m[k] = (m[k] || 0) + 1; });
+const m = {}; casos.forEach(c => c.herramientas.forEach(k => { m[k] = (m[k] || 0) + 1; })); // mismo criterio que el filtro: todas las herramientas del caso
 const top = Object.entries(m).filter(([k]) => !NOINDEX_FACETS.includes(`/herramientas/${k}/`)).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 5);
 const recientes = [...casos].filter(c => !c.patrocinado).sort((a, b) => b.publicado.localeCompare(a.publicado)).slice(0, 6);
 const pats = casos.filter(c => c.patrocinado);
