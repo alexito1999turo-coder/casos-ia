@@ -48,3 +48,4 @@ Actualizado: 2026-10-16 03:00 Europe/Madrid
 - Lote 9 revisado: rama revision-2026-10-28 (2909299, apilada sobre revision-seo-2026-10-26), 52 casos, build OK. Enviado al Director; pedido lote 10 al Investigador.
 - Producción sin cambios: origin/main 7a3459d (48 casos), 200.
 - Nota: node_modules faltaba en el worktree; reinstalado con npm ci.
+- SEO 3 + lotes 8 y 9: 52 casos, publicado 2026-10-28, aprobado por el Director y por Alex
