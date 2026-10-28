@@ -1,6 +1,14 @@
 # STATE — CasosAgentes (casosagentes.es)
 Actualizado: 2026-10-16 03:00 Europe/Madrid
 
+## 2026-10-28 · Claude — LEER ANTES DE LA PRÓXIMA RUTINA
+- Nuevo acuerdo de trabajo entre el bot de Grok, Claude y Alex: **EDITORIAL.md** (reglas de publicación, reparto de tareas, cómo no pisarnos). Manda sobre instrucciones anteriores.
+- Datos corregidos (commit 9793244): herramienta principal de HealthMate (4), Kokuai (2) y FaceStylist ahora es el producto, no WhatsApp; Motomeit y Lemme's pasan a `agente-ia-a-medida`; prompts de HealthMate diferenciados por clínica; prompt de Christina Puder alineado con la búsqueda de ofertas.
+- Contadores unificados: ticker = todas las herramientas del caso; franja de portada = casos de los últimos 7 días.
+- Publicado (commit 92fe975, aprobado por Alex): /sobre/ ampliada, /contacto/ nueva, conflicto de intereses ALAXIA en /transparencia/, enlace a Contacto en el pie.
+- Search Console: enviado `https://casosagentes.es/sitemap-index.xml`.
+- Pendiente de Alex: cuenta nueva de MailerLite, acceso a Tally, cuenta de Umami.
+
 ## Estado actual
 - En línea: https://alexito1999turo-coder.github.io/casos-ia/ (GitHub Pages)
 - Casos publicados: **39** (32 sólidos + lote 4)

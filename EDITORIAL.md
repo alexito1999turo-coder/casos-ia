@@ -1,0 +1,43 @@
+# Cómo trabajamos en CasosAgentes
+
+Este repo lo mantienen dos asistentes de IA y Alex. Este archivo es el acuerdo entre todos. **Léelo antes de cada rutina.** Si algo de aquí choca con una instrucción antigua, manda este archivo. La estrategia completa está en el doc de Alex «Estrategia CasosAgentes».
+
+## Quién hace qué
+
+| Quién | Qué hace | Qué no hace |
+| --- | --- | --- |
+| Bot de Grok (Investigador + Director) | Busca casos cada día, prepara lotes, los revisa y los publica cuando Alex lo aprueba. Redacta las guías de sector. | Cambiar el diseño, las páginas legales o la configuración sin OK de Alex. |
+| Claude | Revisión semanal de calidad, cambios de código y estructura, cuentas y formularios (MailerLite, Tally, Umami), Search Console, promoción y estrategia. | Publicar casos nuevos (eso es del bot). |
+| Alex | Aprueba lo que se publica y lo que habla en su nombre. | — |
+
+## Reglas para publicar casos
+
+1. **Negocio real e identificable en España**, con fuente pública enlazable. Nada de particulares sin negocio, ni anónimos, ni contenido adulto.
+2. **Proveedores: máximo el 30 % de los casos nuevos de cada semana.** Prioridad: prensa, el propio negocio (`cliente`) y programas públicos (`institucional`). Si no hay casos buenos, no se publica.
+3. **Un caso por negocio y solución.** Si un proveedor tiene varios testimonios casi iguales, se publica el mejor; no cuatro fichas gemelas.
+4. **La herramienta principal (`herramientas[0]`) es el producto que hace el trabajo, no el canal.** Ejemplo: `["healthmate","whatsapp-business"]`, no al revés. Si es un producto de un proveedor sin faceta propia, se usa `agente-ia-a-medida` (como IACall o Motomeit).
+5. **El prompt tiene que corresponder a lo que hizo ese negocio** según la fuente, no a otro uso de la misma herramienta. Si un proveedor tiene varios casos, cada uno con su prompt.
+6. Las cifras, solo si la fuente las publica, y diciendo quién las da.
+
+## Campos nuevos en `casos.json` (opcionales, todavía no se muestran)
+
+Rellenarlos en los casos nuevos; Claude activará su visualización cuando haya bastantes:
+
+- `esParaTi`: una línea con el tipo y tamaño de negocio donde encaja.
+- `costeOrientativo`: rango de puesta en marcha y mensual, marcado como estimación.
+- `primerPaso`: lo mínimo que se puede probar mañana con una herramienta gratuita.
+- `revisado`: fecha `AAAA-MM-DD` de la última comprobación de que la fuente sigue en pie.
+
+## Cómo tocar el repo sin pisarnos
+
+- Antes de cambiar nada: `git fetch origin main` y partir de lo último. Nunca revertir cambios de otro sin preguntar a Alex.
+- Commits pequeños, con un mensaje que diga qué y por qué.
+- **No desplegar sin OK de Alex.** Despliegue: `bash deploy/publish-gh-pages.sh` desde `main` actualizado.
+- Cada cambio relevante se anota en `STATE.md`, con fecha y autor (Grok o Claude).
+- No tocar el diseño (CSS, maquetación, componentes visuales) sin OK explícito de Alex.
+
+## Cosas que ya están decididas (no deshacer)
+
+- Contadores: la barra «En el directorio» cuenta todas las herramientas de cada caso, igual que el filtro. La franja de la portada cuenta los casos de los últimos 7 días, igual que la etiqueta «Nuevo».
+- Páginas `/sobre/` (ampliada), `/contacto/` (nueva) y la sección «Conflicto de intereses: ALAXIA» en `/transparencia/`.
+- Search Console: propiedad de dominio `casosagentes.es`, sitemap `https://casosagentes.es/sitemap-index.xml`.
