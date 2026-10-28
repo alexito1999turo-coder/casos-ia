@@ -1,14 +1,14 @@
 ---
 import { u } from '../data/meta.js'; import casos from '../data/casos.json';
 import Base from '../layouts/Base.astro'; import SponsorCard from '../components/SponsorCard.astro';
-import TallyForm from '../components/TallyForm.astro'; import { TALLY } from '../data/config.mjs';
+import TallyForm from '../components/TallyForm.astro'; import { TALLY, formsOn } from '../data/config.mjs';
 const formatos=[
 ['Hueco en el listado','Tarjeta fija en la home y en «Nuevos», con el mismo formato que un caso y la etiqueta «Patrocinado».'],
 ['Patrocinio de sector','Tu tarjeta en la página de un sector (por ejemplo Hostelería o Inmobiliaria), marcada como «Patrocinado».'],
 ['Mención en la newsletter','Bloque único y marcado al principio de «Los 5 del lunes», cuando la newsletter tenga envíos con apertura medida.'],
 ['Caso patrocinado','Ficha de un cliente real e identificable, con fuente pública y la misma revisión que cualquier caso. Va marcada como «Patrocinado».']];
 ---
-<Base title="Patrocinar: plaza de fundador" description="Plaza de fundador para patrocinar CasosAgentes: llega a autónomos y pymes de España que buscan casos reales de IA. Todo patrocinio va siempre marcado." crumbs={[{name:'Patrocinar'}]} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Patrocinar","inLanguage":"es-ES"}}>
+<Base title="Patrocinar: plaza de fundador" description="Plaza de fundador para patrocinar CasosAgentes y llegar a autónomos y pymes de España que buscan casos reales de IA. Siempre marcado." crumbs={[{name:'Patrocinar'}]} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Patrocinar","inLanguage":"es-ES"}}>
 <section class="hero"><span class="eyebrow">Patrocinio · Siempre marcado como «Patrocinado»</span><h1>Plaza de fundador</h1><p>Llega a autónomos, gestorías, clínicas, inmobiliarias y comercios de España en el momento en que buscan cómo aplicar IA a su negocio.</p>
 <p class="stats">{casos.length} casos publicados · Sitio en lanzamiento: todavía no publicamos cifras de tráfico ni precios cerrados. Los publicaremos aquí cuando haya al menos un mes de datos medidos, con su fecha.</p></section>
 <h2>Qué es la plaza de fundador</h2>
@@ -21,6 +21,7 @@ const formatos=[
 <li><strong>Si un proveedor nos patrocina, sus casos lo dicen:</strong> se marcan como patrocinados («Este proveedor patrocina CasosAgentes»), también los publicados antes del acuerdo.</li>
 <li>Pagar no da entrada a ningún caso: todos pasan los mismos criterios de la <a href={u("/metodologia")}>metodología</a> (negocio identificable, pyme o autónomo de España, fuente pública, cifras literales).</li>
 <li>Solo aceptamos productos útiles para pymes y autónomos de España. Detalle en <a href={u("/transparencia")}>Cómo nos financiamos</a>.</li></ul>
-<h2>Solicita la plaza de fundador</h2>
-<TallyForm id={TALLY.patrocinar} titulo="Formulario: plaza de fundador" asunto="Plaza de fundador CasosAgentes" cuerpo={"Empresa y web:\nProducto o servicio:\nFormato que te interesa:\n"} que="El formulario de patrocinio" />
+{formsOn() ? <><h2>Solicita la plaza de fundador</h2>
+<TallyForm id={TALLY.patrocinar} titulo="Formulario: plaza de fundador" asunto="Plaza de fundador CasosAgentes" cuerpo={"Empresa y web:\nProducto o servicio:\nFormato que te interesa:\n"} que="El formulario de patrocinio" /></>
+: <><h2>Aún no aceptamos patrocinios</h2><div class="box pend"><p>Aún no aceptamos patrocinios. Abriremos la plaza de fundador cuando el sitio tenga publicado su <a href={u("/aviso-legal")}>aviso legal</a> con el responsable identificado. Hasta entonces esta página no recoge datos.</p></div></>}
 </Base>

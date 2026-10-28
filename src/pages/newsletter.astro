@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro'; import { u } from '../data/meta.js';
 import NewsletterForm from '../components/NewsletterForm.astro'; import { mlAction } from '../data/config.mjs';
 ---
-<Base title="Newsletter: 5 casos de IA cada semana" description="Cada lunes, 5 casos reales de IA para autónomos y pymes en España, con prompt listo para copiar y fuente verificable. Gratis, sin spam y con baja en un clic." crumbs={[{name:'Newsletter'}]} robots={mlAction() ? 'index,follow' : 'noindex,follow'} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Newsletter","inLanguage":"es-ES"}}>
+<Base title="Newsletter: 5 casos de IA cada semana" description="Cada lunes, 5 casos reales de IA para autónomos y pymes en España, con prompt para copiar y fuente verificable. Gratis y baja en un clic." crumbs={[{name:'Newsletter'}]} robots={mlAction() ? 'index,follow' : 'noindex,follow'} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Newsletter","inLanguage":"es-ES"}}>
 <h1>Los 5 del lunes</h1><p>Cada lunes, los 5 mejores casos nuevos de la semana: qué hicieron, qué resultado tuvieron, el prompt para copiar y qué tener en cuenta en España. Se lee en 3 minutos. Sin spam, baja con un clic.</p>
 <NewsletterForm />
 <div class="box"><strong>¿Quieres patrocinar un envío?</strong> Un único patrocinador por envío, bloque marcado como «Patrocinado». De momento lo ofrecemos dentro de la plaza de fundador. <a href={u("/patrocinar")}>Ver la plaza de fundador →</a></div>

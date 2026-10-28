@@ -1,5 +1,5 @@
 ---
-import { etiquetaInst } from "../../data/meta.js";
+import { etiquetaInst, FUENTE_TIPOS, fuenteTipo } from "../../data/meta.js";
 import Base from '../../layouts/Base.astro'; import casos from '../../data/casos.json'; import { SECTORES, TAREAS, SITE, u, slugify, herrBase, iniciales, CHECK_ES, KIT_DIGITAL, HERR, herrMain, fechaES, ciudadSlug } from '../../data/meta.js'; import Lista from '../../components/Lista.astro';
 export function getStaticPaths(){ return casos.map(c=>({params:{slug:c.slug},props:{c}})); }
 const { c } = Astro.props; const vars=[...new Set((c.prompt.match(/\[[^\]]+\]/g)||[]))]; const rel=casos.filter(x=>x.slug!==c.slug&&(x.tarea===c.tarea||x.sector===c.sector)).slice(0,3); const url = `${SITE.url}/casos/${c.slug}/`; const serie = c.empresa ? casos.filter(x=>x.empresa===c.empresa&&x.slug!==c.slug) : [];
@@ -9,7 +9,7 @@ import AffiliateLink from '../../components/AffiliateLink.astro';
 ---
 <Base title={c.tituloSeo ?? c.titulo} rawTitle={c.tituloSeo && `${c.tituloSeo} | ${SITE.nombre}`.length <= 60 ? `${c.tituloSeo} | ${SITE.nombre}` : (c.tituloSeo ?? c.titulo)} description={c.descripcionSeo ?? c.resumen} jsonld={jsonld} ogType="article" published={c.publicado} crumbs={[{name:SECTORES[c.sector],href:`/sector/${c.sector}/`},{name:c.titulo}]}>
 <div class="ficha"><div class="body"><div class="meta"><span class="badge" aria-hidden="true">{iniciales(c.herramienta)}</span>{herrMain(c)==='ia-generica' ? <span class="tag">{HERR[herrMain(c)]}</span> : <a class="tag" href={u(`/herramientas/${herrMain(c)}`)}>{HERR[herrMain(c)]}</a>}<a class="tag" href={u(`/sector/${c.sector}`)}>{SECTORES[c.sector]}</a><a class="tag" href={u(`/tarea/${c.tarea}`)}>{TAREAS[c.tarea]}</a>{c.ciudad && (ciudadSlug(c) ? <a class="tag" href={u(`/ciudad/${ciudadSlug(c)}`)}>📍 {c.ciudad}</a> : <span class="tag">📍 {c.ciudad}</span>)}</div>
-{(c.patrocinado || c.fuenteTipo==='proveedor' || c.fuenteTipo==='institucional') && <p class="meta">{c.patrocinado && <span class="new pat">Patrocinado ({c.patrocinado})</span>}{c.fuenteTipo === 'proveedor' && <span class="new prov">Contenido de proveedor</span>}{c.fuenteTipo === 'institucional' && <span class="new prov">{etiquetaInst(c)}</span>}</p>}
+<p class="meta">{c.patrocinado ? <span class="new pat">{FUENTE_TIPOS[fuenteTipo(c)]} · contenido patrocinado por {c.patrocinado}</span> : fuenteTipo(c)==='institucional' ? <span class="new prov">{etiquetaInst(c)}</span> : <span class={fuenteTipo(c)==='proveedor' ? 'new prov' : 'new src-t'}>{FUENTE_TIPOS[fuenteTipo(c)]}</span>}</p>
 <h1>{c.titulo}</h1>
 <p class="resumen"><strong>En resumen:</strong> {SECTORES[c.sector]}{c.ciudad ? ` (${c.ciudad})` : ''} · {TAREAS[c.tarea]} con {c.herramientas.map(h=>HERR[h]).join(', ')}. Resultado: {c.resultado ? c.resultado.replace(/\.$/,'') : 'sin cifra publicada'}{c.resultadoNota ? ` (${c.resultadoNota.replace(/\.$/,'')})` : ''}. Fuente: <a href={c.fuenteUrl} rel="nofollow noopener" target="_blank">{c.fuente}</a>{c.fecha && c.fecha!=='no indicado' ? `, ${c.fecha}` : ''}. Publicado en CasosAgentes el {fechaES(c.publicado)}. <a href={u('/metodologia')}>Cómo verificamos</a>.</p>
 <p>{c.resumen}</p>

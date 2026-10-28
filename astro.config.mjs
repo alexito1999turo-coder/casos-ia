@@ -2,7 +2,15 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { thinFacets } from './src/data/facets.mjs';
 import { readdirSync, readFileSync } from 'node:fs';
-import { titularPendiente, LEGAL_PAGES, mlAction } from './src/data/config.mjs';
+import { titularPendiente, LEGAL_PAGES, mlAction, TITULAR } from './src/data/config.mjs';
+// Candado legal: sin los 4 datos de TITULAR (config.mjs) el build de producción se para.
+// Para una vista previa (formularios apagados, páginas legales noindex): PREVIEW=1 npx astro build  (o npm run build:preview)
+const isBuild = process.argv.includes('build'); const preview = ['1','true'].includes(String(process.env.PREVIEW||'').toLowerCase());
+if (isBuild && titularPendiente() && !preview) {
+  const faltan = Object.entries(TITULAR).filter(([,v]) => !String(v).trim()).map(([k]) => `TITULAR.${k}`).join(', ');
+  throw new Error(`\n\n[CasosAgentes] Build de producción bloqueado: faltan datos del titular en src/data/config.mjs (${faltan}).\nSin responsable identificado (LSSI art. 10, RGPD art. 13) no se publica.\nRellénalos, o haz una vista previa con: PREVIEW=1 npx astro build  (npm run build:preview)\n`);
+}
+if (isBuild && preview) console.warn('[CasosAgentes] Build de VISTA PREVIA (PREVIEW=1): no desplegar en producción.');
 // Páginas retiradas (noindex + refresh) fuera del sitemap
 const retired = ['casos','sector','ciudad','herramientas'].flatMap(d => readdirSync(`./src/pages/${d}`).filter(f => f.endsWith('.astro') && !f.startsWith('[') && readFileSync(`./src/pages/${d}/${f}`,'utf8').includes('http-equiv="refresh"')).map(f => `/${d}/${f.slice(0,-6)}/`));
 // GitHub Pages por defecto. Para casosagentes.es: SITE_URL=https://casosagentes.es BASE_PATH=/ (y public/CNAME)

@@ -1,21 +1,56 @@
 ---
 import Base from '../layouts/Base.astro'; import Ph from '../components/Ph.astro'; import { u } from '../data/meta.js';
-import { TITULAR, titularPendiente, mlAction, TALLY } from '../data/config.mjs';
+import { TITULAR, titularPendiente, mlAction, tallyId, TALLY } from '../data/config.mjs';
 const pend = titularPendiente();
+const tallyOn = tallyId(TALLY.enviarCaso) || tallyId(TALLY.patrocinar);
 ---
-<Base title="Privacidad" description="Política de privacidad de CasosAgentes: quién trata tus datos al suscribirte o enviar un caso, para qué, con qué proveedores y cómo ejercer tus derechos." crumbs={[{name:'Privacidad'}]} robots={pend ? 'noindex,follow' : 'index,follow'} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Privacidad","inLanguage":"es-ES"}}>
+<Base title="Privacidad" description="Privacidad en CasosAgentes: qué datos tratamos en la newsletter y los formularios, con qué base, cuánto tiempo, qué proveedores y tus derechos." crumbs={[{name:'Privacidad'}]} robots={pend ? 'noindex,follow' : 'index,follow'} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Privacidad","inLanguage":"es-ES"}}>
 <h1>Política de privacidad</h1>
-{pend && <p class="box pend"><strong>Página en preparación:</strong> faltan los datos del titular marcados como [PLACEHOLDER].</p>}
+{pend && <p class="box pend"><strong>Página en preparación:</strong> faltan los datos del titular marcados como [PLACEHOLDER]. Mientras falten, la newsletter y los formularios están apagados y el sitio no recoge datos personales.</p>}
 <h2>Responsable del tratamiento</h2>
 <ul><li><Ph v={TITULAR.nombre} k="nombre y apellidos o razón social" /> · NIF <Ph v={TITULAR.nif} k="NIF" /></li><li>Domicilio: <Ph v={TITULAR.direccion} k="dirección completa" /></li><li>Contacto para privacidad: <Ph v={TITULAR.email} k="email" /></li></ul>
-<h2>Navegación</h2><p>CasosAgentes es un sitio estático. No usa cookies de seguimiento ni publicidad. Los casos que guardas con «Guardar», tu preferencia de tema y el cierre de la barra de destacados se quedan solo en tu navegador (localStorage) y no nos llegan.</p>
-<h2>Qué datos tratamos y para qué</h2>
-<ul>
-<li><strong>Newsletter «Los 5 del lunes»</strong> {mlAction() ? '' : '(aún no activa)'}: tu email, para enviarte la newsletter. Base legal: tu consentimiento (art. 6.1.a RGPD), con confirmación por email (doble opt-in). Encargado del tratamiento: MailerLite. Puedes darte de baja en cualquier envío.</li>
-<li><strong>Formularios «Enviar caso» y «Plaza de fundador»</strong> {TALLY.enviarCaso || TALLY.patrocinar ? '' : '(aún no activos)'}: los datos que escribas (nombre, email, empresa, caso o propuesta), para estudiarla y responderte. Base legal: tu consentimiento. Encargado del tratamiento: Tally.</li>
-<li><strong>Email</strong>: si nos escribes, usamos tu dirección solo para contestarte.</li></ul>
-<p>No cedemos ni vendemos tus datos a terceros. Si algún día ofrecemos poner en contacto a negocios con integradores, te pediremos un consentimiento aparte y explícito.</p>
-<h2>Conservación</h2><p>Los datos de la newsletter, mientras sigas suscrito. Los de los formularios, el tiempo necesario para gestionar tu propuesta y, como máximo, 2 años.</p>
-<h2>Tus derechos</h2><p>Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a <Ph v={TITULAR.email} k="email" />. Si crees que no hemos atendido bien tu solicitud, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
+
+<h2>Qué datos tratamos, para qué, con qué base y cuánto tiempo</h2>
+<h3>1. Newsletter «Los 5 del lunes» {mlAction() ? '' : '(aún no activa)'}</h3>
+<ul><li><strong>Datos:</strong> tu email y los datos técnicos del alta (fecha, IP de confirmación).</li>
+<li><strong>Finalidad:</strong> enviarte la newsletter y saber qué casos interesan más. MailerLite registra si abres cada envío y en qué enlaces haces clic (píxel y enlaces de seguimiento); usamos esos datos de forma agregada.</li>
+<li><strong>Base legal:</strong> tu consentimiento (art. 6.1.a RGPD), con confirmación por email (doble opt-in).</li>
+<li><strong>Conservación:</strong> hasta que te des de baja. Tras la baja guardamos solo tu email en la lista de bajas de MailerLite, para no volver a escribirte.</li>
+<li><strong>Encargado del tratamiento:</strong> MailerLite Limited (Irlanda). MailerLite puede transferir datos a MailerLite, Inc. (EE. UU.) y a otros subencargados; esas transferencias se amparan en las cláusulas contractuales tipo de la Comisión Europea (art. 46 RGPD) incluidas en su contrato de encargo.</li></ul>
+<h3>2. Formulario «Enviar caso» {tallyId(TALLY.enviarCaso) ? '' : '(aún no activo)'}</h3>
+<ul><li><strong>Datos:</strong> los que escribas (nombre, email, empresa, descripción del caso y enlaces).</li>
+<li><strong>Finalidad:</strong> estudiar el caso, verificarlo y responderte.</li>
+<li><strong>Base legal:</strong> tu consentimiento (art. 6.1.a RGPD), que das en el propio formulario.</li>
+<li><strong>Conservación:</strong> 2 años desde el último contacto. Si el caso se publica, lo que aparece en la ficha sigue el apartado 5.</li>
+<li><strong>Encargado del tratamiento:</strong> Tally BV (Bélgica, UE).</li></ul>
+<h3>3. Solicitud de patrocinio («Plaza de fundador») {tallyId(TALLY.patrocinar) ? '' : '(aún no activa)'}</h3>
+<ul><li><strong>Datos:</strong> los de la persona de contacto (nombre, email, cargo) y los de su empresa.</li>
+<li><strong>Finalidad:</strong> responder a tu solicitud, preparar una propuesta y, si se firma, gestionar el patrocinio y su facturación.</li>
+<li><strong>Base legal:</strong> la aplicación de medidas precontractuales a petición tuya y, si hay acuerdo, la ejecución del contrato (art. 6.1.b RGPD). La facturación se basa además en obligaciones legales (art. 6.1.c RGPD).</li>
+<li><strong>Conservación:</strong> sin contrato, 2 años desde el último contacto. Con contrato, mientras dure y después durante los plazos que exige la normativa fiscal y mercantil (en general 4 años según la Ley General Tributaria y 6 años según el Código de Comercio).</li>
+<li><strong>Encargado del tratamiento:</strong> Tally BV (Bélgica, UE).</li></ul>
+<h3>4. Email</h3>
+<ul><li>Si nos escribes, usamos tu dirección y lo que nos cuentes solo para contestarte. Base legal: tu consentimiento al escribirnos (art. 6.1.a RGPD). Conservación: 2 años desde el último contacto.</li></ul>
+<h3>5. Personas y negocios que aparecen en los casos (art. 14 RGPD)</h3>
+<p>Si apareces en un caso, no nos has dado tus datos tú: los tomamos de fuentes públicas.</p>
+<ul><li><strong>Datos:</strong> nombre del negocio y, si la fuente lo publica, nombre de la persona, cargo o profesión, ciudad, herramienta usada, resultados y frases publicadas.</li>
+<li><strong>Origen:</strong> la fuente pública que se enlaza en cada ficha (prensa, la web o las redes del propio negocio, la web del proveedor o un programa público).</li>
+<li><strong>Finalidad:</strong> documentar casos reales de uso de IA en pymes y autónomos de España, con su fuente, para que otros negocios puedan aprender de ellos.</li>
+<li><strong>Base legal:</strong> interés legítimo (art. 6.1.f RGPD) en informar sobre casos ya publicados, limitado a lo que dice la fuente. No usamos datos sensibles ni creamos perfiles.</li>
+<li><strong>Conservación:</strong> mientras el caso esté publicado.</li>
+<li><strong>Tus opciones:</strong> puedes pedirnos que corrijamos un dato, que quitemos tu nombre o que retiremos el caso, y oponerte al tratamiento, escribiendo a <Ph v={TITULAR.email} k="email" />. Lo atenderemos en el plazo de un mes.</li></ul>
+
+<h2>Navegación y alojamiento</h2>
+<p>Al navegar no usamos cookies de seguimiento ni de publicidad, ni herramientas de analítica. Los casos que guardas con «Guardar», tu preferencia de tema y el cierre de la barra de destacados se quedan solo en tu navegador (localStorage) y no nos llegan.</p>
+<p>El sitio se aloja en GitHub Pages, de GitHub, Inc. (EE. UU.). Según su documentación, GitHub registra y guarda la dirección IP de cada visita por motivos de seguridad. Nosotros no accedemos a esos registros. Base legal: interés legítimo en mantener el sitio seguro y disponible (art. 6.1.f RGPD). GitHub declara su adhesión al Marco de Privacidad de Datos UE-EE. UU.</p>
+<p>Las páginas con formulario se conectan a tally.so (Tally) o a MailerLite solo cuando el formulario está activo; si no, no cargan nada de terceros.</p>
+
+<h2>Destinatarios</h2>
+<p>No cedemos ni vendemos tus datos. Solo acceden a ellos los encargados citados (MailerLite y Tally), con contrato de encargo, y las autoridades cuando la ley lo exija. Si algún día ofrecemos poner en contacto a negocios con integradores, pediremos un consentimiento aparte y explícito.</p>
+
+<h2>Tus derechos</h2>
+<p>Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a <Ph v={TITULAR.email} k="email" />.</p>
+<p><strong>Puedes retirar tu consentimiento en cualquier momento</strong>: en la newsletter, con el enlace de baja de cada envío; en los formularios, escribiéndonos. Retirarlo no afecta a la licitud de lo tratado antes.</p>
+<p>Si crees que no hemos atendido bien tu solicitud, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
 <p>Ver también el <a href={u('/aviso-legal')}>aviso legal</a> y <a href={u('/transparencia')}>cómo nos financiamos</a>.</p>
 </Base>

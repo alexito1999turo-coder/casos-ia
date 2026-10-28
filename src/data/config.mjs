@@ -43,11 +43,14 @@ export const AFILIADOS = {
 };
 
 // ── Derivados (no tocar) ─────────────────────────────────────────────────────
-export const mlAction = () => (MAILERLITE.accountId && MAILERLITE.formId)
+export const titularPendiente = () => Object.values(TITULAR).some(v => !String(v).trim());
+// Candado: sin responsable identificado no se recoge ningún dato (formularios apagados).
+export const formsOn = () => !titularPendiente();
+export const mlAction = () => (formsOn() && MAILERLITE.accountId && MAILERLITE.formId)
   ? `https://assets.mailerlite.com/jsonp/${MAILERLITE.accountId}/forms/${MAILERLITE.formId}/subscribe` : '';
+export const tallyId = id => formsOn() && id ? id : '';
 export const tallyUrl = id => id ? `https://tally.so/r/${id}` : '';
 export const tallyEmbed = id => id ? `https://tally.so/embed/${id}?alignLeft=1&hideTitle=1&transparentBackground=1` : '';
-export const titularPendiente = () => Object.values(TITULAR).some(v => !String(v).trim());
 // Páginas con datos del titular: noindex y fuera del sitemap hasta que se rellenen.
 export const LEGAL_PAGES = ['/aviso-legal/', '/privacidad/', '/transparencia/'];
 export const afiliadoDe = c => {

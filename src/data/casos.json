@@ -168,14 +168,20 @@
     "fuenteUrl": "https://www.bclia.es/servicios/automatizaciones-ia-oviedo",
     "fuenteTipo": "proveedor",
     "fecha": "no indicado",
-    "ciudad": null,
+    "ciudad": "Laviana",
     "publicado": "2026-10-16",
     "herramientas": [
       "make",
       "google-workspace"
     ],
     "tituloSeo": "RC15 Academy: alta de alumnos en segundos con Make",
-    "descripcionSeo": "RC15 Academy automatizó con Make y Google Sheets el alta de alumnos, sin transcribir a mano, para que los entrenadores se centren en entrenar."
+    "descripcionSeo": "RC15 Academy automatizó con Make y Google Sheets el alta de alumnos, sin transcribir a mano, para que los entrenadores se centren en entrenar.",
+    "fuentesExtra": [
+      {
+        "nombre": "La Nueva España: nace la RC15 Academy (ciudad: Laviana)",
+        "url": "https://www.lne.es/laviana/2026/03/25/nace-rc15-academy-nuevo-proyecto-128396343.html"
+      }
+    ]
   },
   {
     "slug": "fresneda-fisioterapia-ana-whatsapp",
@@ -216,13 +222,19 @@
     "fuenteUrl": "https://mdmarketing.es/agencia-automatizacion-ia/",
     "fuenteTipo": "proveedor",
     "fecha": "no indicado",
-    "ciudad": null,
+    "ciudad": "Barcelona",
     "publicado": "2026-10-16",
     "herramientas": [
       "make",
       "n8n"
     ],
-    "tituloSeo": "De la Tejera Abogados: chatbot con 2.500 respuestas"
+    "tituloSeo": "De la Tejera Abogados: chatbot con 2.500 respuestas",
+    "fuentesExtra": [
+      {
+        "nombre": "De La Tejera Abogados: web del despacho (dirección en Barcelona)",
+        "url": "https://www.delatejera.com/contacto/"
+      }
+    ]
   },
   {
     "slug": "adrihosan-app-chatgpt-catalogo-azulejos",
@@ -357,14 +369,20 @@
     "fuenteUrl": "https://es.linkedin.com/posts/joseluiscalderongarcia_ia-automatizaciones-make-activity-7368723360366690304-HHQ5",
     "fuenteTipo": "red social",
     "fecha": "2025",
-    "ciudad": null,
+    "ciudad": "Arteixo (A Coruña)",
     "publicado": "2026-10-16",
     "herramientas": [
       "chatgpt",
       "make"
     ],
     "tituloSeo": "Autónomo automatiza sus facturas con Make y ChatGPT",
-    "descripcionSeo": "Escenario de Make descrito en LinkedIn: ChatGPT Vision extrae proveedor, fecha, NIF e importe de facturas en PDF y los pasa a Google Sheets para el gestor."
+    "descripcionSeo": "Escenario de Make descrito en LinkedIn: ChatGPT Vision extrae proveedor, fecha, NIF e importe de facturas en PDF y los pasa a Google Sheets para el gestor.",
+    "fuentesExtra": [
+      {
+        "nombre": "José Luis Calderón García: web profesional («Dónde estamos»: Arteixo, A Coruña)",
+        "url": "https://www.joseluiscalderongarcia.es/es/consultores-estrategicos-seguros-y-pensiones-madrid-centro"
+      }
+    ]
   },
   {
     "slug": "maria-jesus-puerta-make-chatgpt-factura-obra",
@@ -381,14 +399,20 @@
     "fuenteUrl": "https://es.linkedin.com/posts/mariajesuspuertaangulo_facturaci%C3%B3n-automatizada-con-chatgpt-y-make-activity-7303605310974234625-uYLK",
     "fuenteTipo": "red social",
     "fecha": "2025",
-    "ciudad": null,
+    "ciudad": "Tarragona",
     "publicado": "2026-10-16",
     "herramientas": [
       "chatgpt",
       "make"
     ],
     "tituloSeo": "Facturas de seguridad de obra con ChatGPT y Make",
-    "descripcionSeo": "María Jesús Puerta factura una obra con un mensaje a ChatGPT que dispara Make: alta de cliente, factura en Google Docs, PDF en Drive y envío por correo."
+    "descripcionSeo": "María Jesús Puerta factura una obra con un mensaje a ChatGPT que dispara Make: alta de cliente, factura en Google Docs, PDF en Drive y envío por correo.",
+    "fuentesExtra": [
+      {
+        "nombre": "María Jesús Puerta Angulo: web personal («live in Tarragona, Spain»)",
+        "url": "https://www.mariajesuspuertaangulo.com/"
+      }
+    ]
   },
   {
     "slug": "mes-que-fisio-healthmate",
@@ -844,9 +868,15 @@
     "fuenteUrl": "https://auttomai.com/casos-de-exito/crm-automatizado-ia-urban-psi",
     "fuenteTipo": "proveedor",
     "fecha": "2026-04",
-    "ciudad": null,
+    "ciudad": "Valencia",
     "publicado": "2026-10-16",
-    "tituloSeo": "Urban PSI: CRM con IA para captar franquiciados"
+    "tituloSeo": "Urban PSI: CRM con IA para captar franquiciados",
+    "fuentesExtra": [
+      {
+        "nombre": "Urban PSI: política de privacidad (domicilio en Valencia)",
+        "url": "https://www.urbanpsi.com/politica-privacidad"
+      }
+    ]
   },
   {
     "slug": "nohek-salon-terrassa-claudia-telefono-whatsapp",
@@ -1189,7 +1219,7 @@
   },
   {
     "slug": "christina-puder-madrid-lovable-web-automatizaciones-coaching",
-    "titulo": "Christina Puder (Madrid), coach autónoma, hizo su web con Lovable y automatizó la búsqueda de ofertas para sus clientes",
+    "titulo": "Christina Puder (Madrid), «solo founder» de coaching, hizo su web con Lovable y automatizó la búsqueda de ofertas para sus clientes",
     "resumen": "Business Insider recoge el testimonio de Christina Puder, fundadora en solitario con base en Madrid que se dedica al coaching de carrera para product managers. Tras 30 o 40 horas fallidas con un constructor de webs clásico, hizo su web con Lovable, primero con los cinco créditos gratis diarios y luego con una suscripción de 20 dólares al mes, y la sigue manteniendo con ella. Además montó automatizaciones con IA para buscar ofertas de empleo que encajen con los criterios de cada cliente.",
     "resultado": "La búsqueda de ofertas pasa de unos 60 minutos al día por cliente a un minuto (según la propia fundadora).",
     "resultadoNota": "Cifras literales del testimonio: 30-40 horas con un constructor web sin IA y un resultado «feo y torpe»; Lovable a 20 $ al mes con 100 créditos más 5 gratis al día; búsqueda de ofertas de ~60 minutos diarios por cliente a un minuto. La pieza no dice con qué herramienta hizo esas automatizaciones. A veces sigue pagando a un ingeniero a tiempo parcial para arreglar fallos. La pieza es de una serie de Business Insider presentada por Adobe Acrobat, no por Lovable; el artículo no está marcado como patrocinado.",

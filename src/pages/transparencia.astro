@@ -1,12 +1,11 @@
 ---
-import Base from '../layouts/Base.astro'; import Ph from '../components/Ph.astro'; import { u } from '../data/meta.js';
+import Base from '../layouts/Base.astro'; import Ph from '../components/Ph.astro'; import { u, FUENTE_TIPOS, fuenteTipo } from '../data/meta.js';
 import casos from '../data/casos.json';
 import { TITULAR, titularPendiente, AFILIADOS } from '../data/config.mjs';
 const pend = titularPendiente();
 const activos = Object.values(AFILIADOS).filter(a => a.activo && a.url);
 const patro = [...new Set(casos.filter(c => c.patrocinado).map(c => c.patrocinado))];
-const TIPOS = { prensa: 'Prensa', proveedor: 'Proveedor o agencia', cliente: 'El propio negocio', 'red social': 'Redes sociales', institucional: 'Programa público' };
-const n = casos.length; const mezcla = Object.entries(TIPOS).map(([k, l]) => [l, casos.filter(c => (c.fuenteTipo || 'prensa') === k).length]).filter(([, x]) => x);
+const n = casos.length; const mezcla = Object.entries(FUENTE_TIPOS).map(([k, l]) => [l, casos.filter(c => fuenteTipo(c) === k).length]).filter(([, x]) => x);
 ---
 <Base title="Cómo nos financiamos" description="Cómo se financia CasosAgentes: patrocinio siempre marcado, reglas de afiliación y por qué ni patrocinadores ni afiliados deciden qué casos entran." crumbs={[{name:'Cómo nos financiamos'}]} robots={pend ? 'noindex,follow' : 'index,follow'} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Cómo nos financiamos","inLanguage":"es-ES"}}>
 <h1>Cómo nos financiamos</h1>

@@ -4,7 +4,7 @@ export const SITE = { nombre:'CasosAgentes', url:(import.meta.env.SITE+import.me
 
 export const u = (p='/') => { if(!/[.?#]/.test(p) && !p.endsWith('/')) p+='/'; else p=p.replace(/^([^?#.]*[^/])([?#])/,'$1/$2'); return import.meta.env.BASE_URL.replace(/\/$/,'') + p; };
 export const ORIGIN = new URL(import.meta.env.SITE).origin;
-export { HERR, herrMain, MIN_INDEX, thinFacets, ciudadSlug, ciudadNombre, NOINDEX_FACETS } from './facets.mjs';
+export { HERR, herrMain, MIN_INDEX, thinFacets, ciudadSlug, ciudadNombre, NOINDEX_FACETS, FUENTE_TIPOS, fuenteTipo } from './facets.mjs';
 export const slugify = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\(.*?\)/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 // Herramienta principal (antes de "+" o paréntesis) para agrupar
 export const herrBase = h => h.split(/[+(]/)[0].trim();
@@ -30,4 +30,5 @@ export const recorta = (s,n) => { s=String(s).trim(); if(s.length<=n) return s; 
   let t=cut.replace(/\s+\S*$/,''); while(abierto(t)){ const i=Math.max(t.lastIndexOf('('),t.lastIndexOf('«'),t.search(/'[^']*$/)); if(i<=0) break; t=t.slice(0,i); }
   return limpia(t)+'.'; };
 export const etiquetaInst = c => `${(c.institucion??"").includes('(') ? `Programa público: ${c.institucion}` : `Programa público (${c.institucion})`} · ${c.institucionNota ?? 'lo publica el propio programa sobre su formación'}`;
+export const nCasos = (n, real='') => `${n} ${n===1?'caso':'casos'}${real ? (n===1?' real':' reales') : ''}`;
 export const fechaES = d => new Date(d+'T12:00:00Z').toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});

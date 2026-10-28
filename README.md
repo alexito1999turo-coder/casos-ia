@@ -20,6 +20,12 @@ Todo se configura en **un único archivo: `src/data/config.mjs`**. Mientras un v
 | Formulario «Plaza de fundador» | Tally. Campos: empresa, web, nombre, email, producto, formato de interés, mensaje, **casilla obligatoria de consentimiento RGPD** | ID → `TALLY.patrocinar` |
 | Afiliación (opcional, más adelante) | Make (Wise), n8n en PartnerStack (PayPal), Lovable en Impact | `AFILIADOS.<clave>.url` y `activo: true`; además, en `casos.json`, `"afiliado": "<clave>"` solo en casos cuya herramienta ya está en `herramientas[]` |
 
+**Candado legal.** Mientras falte cualquiera de los 4 campos de `TITULAR`:
+- la newsletter y los dos formularios de Tally no se activan aunque estén sus IDs (no se recoge ningún dato);
+- `/patrocinar` sigue indexable pero dice «Aún no aceptamos patrocinios» y no muestra formulario;
+- `npm run build` / `npx astro build` (y por tanto `deploy/publish-gh-pages.sh` y el workflow de GitHub Pages) **fallan** con un mensaje que lista los campos que faltan;
+- para revisar el sitio sin desplegar: `npm run build:preview` (equivale a `PREVIEW=1 npx astro build`). Ese `dist/` es solo de revisión: no se publica.
+
 Notas:
 - En MailerLite, el texto de consentimiento y la casilla GDPR ya los pinta nuestro formulario; activa el doble opt-in en el formulario.
 - En Tally, en Settings, desactiva la marca de Tally si el plan lo permite y activa la notificación por email.

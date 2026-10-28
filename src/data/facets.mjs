@@ -7,6 +7,9 @@ export const slugify = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').to
 export const CIUDAD_ALIAS = { 'palma-de-mallorca':'palma', 'comunidad-de-madrid':null };
 export const ciudadSlug = c => { if(!c.ciudad) return null; const s = slugify(c.ciudad); return s in CIUDAD_ALIAS ? CIUDAD_ALIAS[s] : s; };
 export const ciudadNombre = k => (casos.find(c=>c.ciudad && slugify(c.ciudad)===k) || casos.find(c=>ciudadSlug(c)===k))?.ciudad;
+// Tipos de fuente: mismo nombre en tarjeta, filtro, ficha y /transparencia
+export const FUENTE_TIPOS = { prensa:'Prensa', proveedor:'Lo publica el proveedor', cliente:'Lo publica el propio negocio', 'red social':'Redes sociales', institucional:'Programa público' };
+export const fuenteTipo = c => c.fuenteTipo in FUENTE_TIPOS ? c.fuenteTipo : 'prensa';
 export const NOINDEX_FACETS = ['/herramientas/ia-generica/'];
 export const herrMain = c => c.herramientas[0];
 export function facetCounts(){

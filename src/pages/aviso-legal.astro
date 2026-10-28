@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro'; import Ph from '../components/Ph.astro
 import { TITULAR, titularPendiente } from '../data/config.mjs';
 const pend = titularPendiente();
 ---
-<Base title="Aviso legal" description="Aviso legal de CasosAgentes: datos del titular del sitio, condiciones de uso, propiedad intelectual de los contenidos, enlaces a fuentes y legislación aplicable." crumbs={[{name:'Aviso legal'}]} robots={pend ? 'noindex,follow' : 'index,follow'} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Aviso legal","inLanguage":"es-ES"}}>
+<Base title="Aviso legal" description="Aviso legal de CasosAgentes: quién es el titular del sitio, condiciones de uso, propiedad de los contenidos, enlaces a fuentes y ley aplicable." crumbs={[{name:'Aviso legal'}]} robots={pend ? 'noindex,follow' : 'index,follow'} jsonld={{"@context":"https://schema.org","@type":"WebPage","name":"Aviso legal","inLanguage":"es-ES"}}>
 <h1>Aviso legal</h1>
 {pend && <p class="box pend"><strong>Página en preparación:</strong> faltan los datos del titular marcados como [PLACEHOLDER].</p>}
 <h2>1. Titular del sitio</h2>
