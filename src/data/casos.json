@@ -1175,14 +1175,21 @@
     "fecha": "2024-11-11",
     "ciudad": "Pamplona",
     "tituloSeo": "Navarfincas (Pamplona): asistente ChatGPT para comunidades de vecinos",
-    "publicado": "2026-10-28"
+    "publicado": "2026-10-28",
+    "fuentesExtra": [
+      {
+        "nombre": "Navarfincas (web oficial): administración de fincas en Pamplona",
+        "url": "https://navarfincas.com/"
+      }
+    ],
+    "descripcionSeo": "Navarfincas, administradora de fincas de Pamplona y Comarca con 14 empleados, creó un asistente basado en ChatGPT para dudas legales de comunidades de vecinos."
   },
   {
     "slug": "christina-puder-madrid-lovable-web-automatizaciones-coaching",
     "titulo": "Christina Puder (Madrid), coach autónoma, hizo su web con Lovable y automatizó la búsqueda de ofertas para sus clientes",
     "resumen": "Business Insider recoge el testimonio de Christina Puder, fundadora en solitario con base en Madrid que se dedica al coaching de carrera para product managers. Tras 30 o 40 horas fallidas con un constructor de webs clásico, hizo su web con Lovable, primero con los cinco créditos gratis diarios y luego con una suscripción de 20 dólares al mes, y la sigue manteniendo con ella. Además montó automatizaciones con IA para buscar ofertas de empleo que encajen con los criterios de cada cliente.",
     "resultado": "La búsqueda de ofertas pasa de unos 60 minutos al día por cliente a un minuto (según la propia fundadora).",
-    "resultadoNota": "Cifras literales del testimonio: 30-40 horas con un constructor web sin IA y un resultado «feo y torpe»; Lovable a 20 $ al mes con 100 créditos más 5 gratis al día; búsqueda de ofertas de ~60 minutos diarios por cliente a un minuto. La pieza no dice con qué herramienta hizo esas automatizaciones. A veces sigue pagando a un ingeniero a tiempo parcial para arreglar fallos. La pieza es de una serie de Business Insider presentada por Adobe Acrobat (no por Lovable); el artículo no está marcado como patrocinado.",
+    "resultadoNota": "Cifras literales del testimonio: 30-40 horas con un constructor web sin IA y un resultado «feo y torpe»; Lovable a 20 $ al mes con 100 créditos más 5 gratis al día; búsqueda de ofertas de ~60 minutos diarios por cliente a un minuto. La pieza no dice con qué herramienta hizo esas automatizaciones. A veces sigue pagando a un ingeniero a tiempo parcial para arreglar fallos. La pieza es de una serie de Business Insider presentada por Adobe Acrobat, no por Lovable; el artículo no está marcado como patrocinado.",
     "sector": "servicios",
     "tarea": "marketing",
     "herramienta": "Lovable (web y su mantenimiento) y automatizaciones con IA sin nombre para la búsqueda de ofertas",
@@ -1197,6 +1204,7 @@
     "fecha": "2026-02-21",
     "ciudad": "Madrid",
     "tituloSeo": "Christina Puder (Madrid): web con Lovable y automatizaciones con IA",
-    "publicado": "2026-10-28"
+    "publicado": "2026-10-28",
+    "descripcionSeo": "Christina Puder, coach de carrera para product managers en Madrid, hizo su web con Lovable y automatizó con IA la búsqueda de ofertas: de 60 minutos al día a uno."
   }
 ]
