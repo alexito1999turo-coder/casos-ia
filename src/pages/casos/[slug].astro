@@ -13,7 +13,7 @@ import AffiliateLink from '../../components/AffiliateLink.astro';
 <h1>{c.titulo}</h1>
 <p class="resumen"><strong>En resumen:</strong> {SECTORES[c.sector]}{c.ciudad ? ` (${c.ciudad})` : ''} · {TAREAS[c.tarea]} con {c.herramientas.map(h=>HERR[h]).join(', ')}. Resultado: {c.resultado ? c.resultado.replace(/\.$/,'') : 'sin cifra publicada'}{c.resultadoNota ? ` (${c.resultadoNota.replace(/\.$/,'')})` : ''}. Fuente: <a href={c.fuenteUrl} rel="nofollow noopener" target="_blank">{c.fuente}</a>{c.fecha && c.fecha!=='no indicado' ? `, ${c.fecha}` : ''}. Publicado en CasosAgentes el {fechaES(c.publicado)}. <a href={u('/metodologia')}>Cómo verificamos</a>.</p>
 <p>{c.resumen}</p>
-<h2>Resultado</h2><p class={c.resultado?'res':'res none'}>{c.resultado ?? 'Sin cifra publicada.'} {c.resultadoNota}</p>
+<h2>Resultado</h2><p class={c.resultado?'res':'res none'}>{c.resultado ?? 'Sin cifra publicada.'} {c.resultadoNota}</p>{c.notaTamano && <p class="src"><strong>Tamaño del negocio:</strong> {c.notaTamano}</p>}
 <h2>Prompt listo para copiar</h2><p><small>Prompt de ejemplo redactado por CasosAgentes para replicar el caso (no procede de la fuente). Rellena lo que va entre [corchetes].</small></p>
 {vars.length>0 && <div class="box"><strong>Rellena antes de pegar:</strong> {vars.map(v=><code class="tag">{v}</code>)}<br><small>Consejo: pega el prompt, adjunta un ejemplo real (factura, mensaje o ficha anonimizada) y pide primero un borrador para revisarlo tú antes de automatizar.</small></div>}
 <pre id="prompt">{c.prompt}</pre><button id="copy">Copiar prompt</button>

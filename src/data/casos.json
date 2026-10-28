@@ -63,7 +63,15 @@
       "thefork",
       "bookline"
     ],
-    "tituloSeo": "Grupo Ceviche: agente de voz IA para reservas con TheFork"
+    "tituloSeo": "Grupo Ceviche: agente de voz IA para reservas con TheFork",
+    "notaTamano": "Grupo de restauración con unos 20 locales; en LinkedIn declara entre 201 y 500 empleados. Tamaño de pyme no confirmado.",
+    "destacable": false,
+    "fuentesExtra": [
+      {
+        "nombre": "LinkedIn de Grupo Ceviche (tamaño declarado: 201-500 empleados)",
+        "url": "https://es.linkedin.com/company/grupoceviche"
+      }
+    ]
   },
   {
     "slug": "froufrou-marbella-ia-reservas-telefono",
@@ -379,17 +387,17 @@
     "descripcionSeo": "Escenario de Make descrito en LinkedIn: ChatGPT Vision extrae proveedor, fecha, NIF e importe de facturas en PDF y los pasa a Google Sheets para el gestor.",
     "fuentesExtra": [
       {
-        "nombre": "José Luis Calderón García: web profesional («Dónde estamos»: Arteixo, A Coruña)",
-        "url": "https://www.joseluiscalderongarcia.es/es/consultores-estrategicos-seguros-y-pensiones-madrid-centro"
+        "nombre": "José Luis Calderón García: web profesional («Where we are: Avenida Del Balneario 12, 15142 Arteixo, A Coruña, Spain»)",
+        "url": "https://www.joseluiscalderongarcia.es/en"
       }
     ]
   },
   {
     "slug": "maria-jesus-puerta-make-chatgpt-factura-obra",
-    "titulo": "María Jesús Puerta documenta facturación de plan de seguridad de obra con ChatGPT y Make",
-    "resumen": "Publicación LinkedIn: tras cerrar un plan de seguridad de obra, un mensaje a ChatGPT («Crea una factura para Construcciones Martínez por un plan de seguridad de obra, importe 450€») dispara Make: alta de cliente, factura en Google Docs, PDF en Drive y envío por correo.",
+    "titulo": "María Jesús Puerta muestra con un ejemplo cómo facturar un plan de seguridad de obra con ChatGPT y Make",
+    "resumen": "Publicación de LinkedIn en la que muestra con un ejemplo cómo un mensaje a ChatGPT («Crea una factura para Construcciones Martínez por un plan de seguridad de obra, importe 450€») dispara Make: alta de cliente, factura en Google Docs, PDF en Drive y envío por correo. El cliente y el importe son del ejemplo («Imagina esto…»), no de una factura real.",
     "resultado": null,
-    "resultadoNota": "Flujo demostrado/enseñado por la autora; sin métricas de su cartera.",
+    "resultadoNota": "La autora muestra con un ejemplo cómo funciona el flujo; no es una factura real a un cliente y no da métricas de su actividad.",
     "sector": "construccion",
     "tarea": "facturacion",
     "herramienta": "ChatGPT + Make + Google Docs/Drive",
@@ -406,10 +414,10 @@
       "make"
     ],
     "tituloSeo": "Facturas de seguridad de obra con ChatGPT y Make",
-    "descripcionSeo": "María Jesús Puerta factura una obra con un mensaje a ChatGPT que dispara Make: alta de cliente, factura en Google Docs, PDF en Drive y envío por correo.",
+    "descripcionSeo": "María Jesús Puerta muestra con un ejemplo cómo un mensaje a ChatGPT dispara Make: alta de cliente, factura en Google Docs, PDF en Drive y envío por correo.",
     "fuentesExtra": [
       {
-        "nombre": "María Jesús Puerta Angulo: web personal («live in Tarragona, Spain»)",
+        "nombre": "María Jesús Puerta Angulo: web profesional (Contacto: «Location Tarragona, Spain»)",
         "url": "https://www.mariajesuspuertaangulo.com/"
       }
     ]
@@ -626,7 +634,14 @@
     "herramientas": [
       "whatsapp-business"
     ],
-    "tituloSeo": "Grupo Torrejón: agente de voz IA para no perder llamadas"
+    "tituloSeo": "Grupo Torrejón: agente de voz IA para no perder llamadas",
+    "notaTamano": "Red de 8 talleres (4 propios y 4 franquiciados). Según su gerente, \"supera el centenar de empleados\" (Talleres Mecánicos, 2026).",
+    "fuentesExtra": [
+      {
+        "nombre": "Talleres Mecánicos: ponencia del gerente de Grupo Torrejón (tamaño de la red)",
+        "url": "https://www.talleresmecanicos.net/articulos/articulo-taller-se-queda-relevo-batalla-talento-obliga-cambiar-horarios-formacion-carreras-1378"
+      }
+    ]
   },
   {
     "slug": "bakery-de-stefano-ia-facturacion-produccion",
@@ -1219,7 +1234,7 @@
   },
   {
     "slug": "christina-puder-madrid-lovable-web-automatizaciones-coaching",
-    "titulo": "Christina Puder (Madrid), «solo founder» de coaching, hizo su web con Lovable y automatizó la búsqueda de ofertas para sus clientes",
+    "titulo": "Christina Puder, coach de carrera para product managers en Madrid, hizo su web con Lovable y automatizó la búsqueda de ofertas de empleo para sus clientes",
     "resumen": "Business Insider recoge el testimonio de Christina Puder, fundadora en solitario con base en Madrid que se dedica al coaching de carrera para product managers. Tras 30 o 40 horas fallidas con un constructor de webs clásico, hizo su web con Lovable, primero con los cinco créditos gratis diarios y luego con una suscripción de 20 dólares al mes, y la sigue manteniendo con ella. Además montó automatizaciones con IA para buscar ofertas de empleo que encajen con los criterios de cada cliente.",
     "resultado": "La búsqueda de ofertas pasa de unos 60 minutos al día por cliente a un minuto (según la propia fundadora).",
     "resultadoNota": "Cifras literales del testimonio: 30-40 horas con un constructor web sin IA y un resultado «feo y torpe»; Lovable a 20 $ al mes con 100 créditos más 5 gratis al día; búsqueda de ofertas de ~60 minutos diarios por cliente a un minuto. La pieza no dice con qué herramienta hizo esas automatizaciones. A veces sigue pagando a un ingeniero a tiempo parcial para arreglar fallos. La pieza es de una serie de Business Insider presentada por Adobe Acrobat, no por Lovable; el artículo no está marcado como patrocinado.",
