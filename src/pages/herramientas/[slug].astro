@@ -1,6 +1,6 @@
 ---
 import Landing from '../../components/Landing.astro'; import casos from '../../data/casos.json'; import { HERR } from '../../data/meta.js';
 export function getStaticPaths(){ return [...new Set(casos.flatMap(c=>c.herramientas))].map(k=>({params:{slug:k},props:{k}})); }
-const { k } = Astro.props; const n = HERR[k]; const cs = casos.filter(c=>c.herramientas.includes(k));
+const { k } = Astro.props; const n = HERR[k]; const cs = casos.filter(c=>c.herramientas.includes(k)); const conRes = cs.some(c=>c.resultado);
 ---
-<Landing titulo={`${n}: casos reales en pymes españolas`} h1={`Qué hacen las pymes españolas con ${n}`} intro={`Casos reales de uso de ${n} en autónomos y pymes de España, con resultado publicado, prompt de ejemplo y fuente.`} casos={cs} path={`/herramientas/${k}/`} crumb={{name:'Herramientas',href:'/herramientas/'}} />
+<Landing titulo={`${n}: casos reales en pymes españolas`} h1={`Qué hacen las pymes españolas con ${n}`} intro={`Casos reales de uso de ${n} en autónomos y pymes de España, ${conRes ? 'con resultado publicado, ' : 'con '}prompt de ejemplo y fuente.`} casos={cs} path={`/herramientas/${k}/`} crumb={{name:'Herramientas',href:'/herramientas/'}} />

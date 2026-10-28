@@ -1,9 +1,9 @@
 ---
 import casos from '../data/casos.json';
-import { u, HERR, herrMain, iniciales } from '../data/meta.js';
+import { u, HERR, herrMain, iniciales, NOINDEX_FACETS } from '../data/meta.js';
 // Solo datos reales: herramientas con más casos (conteo de casos.json), casos más recientes y huecos patrocinados marcados.
 const m = {}; casos.forEach(c => { const k = herrMain(c); m[k] = (m[k] || 0) + 1; });
-const top = Object.entries(m).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 5);
+const top = Object.entries(m).filter(([k]) => !NOINDEX_FACETS.includes(`/herramientas/${k}/`)).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 5);
 const recientes = [...casos].filter(c => !c.patrocinado).sort((a, b) => b.publicado.localeCompare(a.publicado)).slice(0, 6);
 const pats = casos.filter(c => c.patrocinado);
 const corta = (s, n = 70) => s.length > n ? s.slice(0, n - 1).replace(/\s\S*$/, '') + '…' : s;
