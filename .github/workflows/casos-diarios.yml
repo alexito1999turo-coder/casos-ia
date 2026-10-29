@@ -1,0 +1,52 @@
+# Rutina diaria de CasosAgentes con Claude (sustituye a la rutina de Grok Bot).
+# Prepara 3 casos nuevos en una rama revision-AAAA-MM-DD y abre un PR. Nunca fusiona ni despliega: publicar necesita el OK de Alex.
+# Coste: lo paga la clave ANTHROPIC_API_KEY (secreto del repo). Con crédito prepago de 5 € no puede gastar más.
+name: Casos diarios (Claude)
+on:
+  schedule:
+    - cron: "15 6 * * *"   # 07:15 en Madrid (horario de invierno), 08:15 en verano
+  workflow_dispatch: {}
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+concurrency: { group: casos-diarios, cancel-in-progress: false }
+jobs:
+  lote:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - name: Fecha
+        id: f
+        run: echo "hoy=$(TZ=Europe/Madrid date +%F)" >> "$GITHUB_OUTPUT"
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_args: >-
+            --max-turns 40
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(git:*),Bash(gh pr create:*),Bash(node:*),Bash(npm run build),Bash(npx astro build)"
+          prompt: |
+            Eres el editor de CasosAgentes (casosagentes.es). Hoy es ${{ steps.f.outputs.hoy }}.
+            Lee primero EDITORIAL.md y AGENTS.md y cúmplelos; mandan sobre cualquier otra cosa.
+            Tarea: añade a src/data/casos.json 3 casos reales nuevos que no estén ya (compara slugs y nombres de negocio).
+            - Negocio español identificable con nombre; nada anónimo ni solo con nombre de pila.
+            - Fuente pública que cargue y diga lo que pones; cifras solo si la fuente las da, literales.
+            - Prioriza prensa, webs del propio negocio o programas públicos. Como mucho 1 de los 3 puede ser de proveedor.
+            - Un caso por negocio y solución. herramientas[0] = el producto (o agente-ia-a-medida si no hay faceta).
+            - El prompt debe encajar con lo que cuenta la fuente.
+            - Rellena esParaTi, costeOrientativo (empieza por «Estimación editorial…», como los existentes), primerPaso, revisado y publicado con la fecha de hoy, tituloSeo y descripcionSeo.
+            - Prioriza los sectores con menos casos.
+            - Nunca menciones ALAXIA ni incluyas datos personales (NIF, direcciones, teléfonos).
+            Después:
+            1. git switch -c revision-${{ steps.f.outputs.hoy }}
+            2. node scripts/validar-casos.mjs (0 errores) y npm run build (sin fallos). Si fallan, corrige; si fallan dos veces, para y explícalo en el PR.
+            3. Añade a STATE.md una línea «- ${{ steps.f.outputs.hoy }} (Claude, rutina diaria): …» con los slugs.
+            4. Commit, git push -u origin revision-${{ steps.f.outputs.hoy }} y abre un PR contra main con gh pr create. En el cuerpo, en español: para cada caso, negocio y ciudad, qué hace, herramienta, tipo de fuente y URL.
+            No fusiones el PR, no toques main ni gh-pages y no ejecutes deploy/.
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
