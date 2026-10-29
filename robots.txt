@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://casosagentes.es/sitemap-index.xml
