@@ -11,7 +11,7 @@ const tallyOn = tallyId(TALLY.enviarCaso) || tallyId(TALLY.patrocinar);
 <ul><li><Ph v={TITULAR.nombre} k="nombre y apellidos o razón social" /> · NIF <Ph v={TITULAR.nif} k="NIF" /></li><li>Domicilio: <Ph v={TITULAR.direccion} k="dirección completa" /></li><li>Contacto para privacidad: <Ph v={TITULAR.email} k="email" /></li></ul>
 
 <h2>Qué datos tratamos, para qué, con qué base y cuánto tiempo</h2>
-<h3>1. Newsletter «Los 5 del lunes» {mlAction() ? '' : '(aún no activa)'}</h3>
+<h3>1. Newsletter {mlAction() ? '' : '(aún no activa)'}</h3>
 <ul><li><strong>Datos:</strong> tu email, tu sector si nos lo indicas, y los datos técnicos del alta (fecha, IP de confirmación).</li>
 <li><strong>Newsletter.</strong> Si te suscribes, tratamos tu email y, si nos lo indicas, tu sector, con la única finalidad de enviarte la newsletter de CasosAgentes (casos reales de IA en pymes y autónomos) y, en su caso, el bloque patrocinado que va dentro, siempre marcado como «Patrocinado». No vendemos ni cedemos tus datos.</li>
 <li><strong>Base jurídica.</strong> Tu consentimiento (art. 6.1.a RGPD), que das marcando la casilla y confirmando el email que te enviamos (doble confirmación). Puedes retirarlo cuando quieras.</li>

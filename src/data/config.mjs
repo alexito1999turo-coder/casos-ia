@@ -17,7 +17,7 @@ export const TITULAR = {
   email: 'hola@casosagentes.es',      // Email de contacto del titular (puede ser el mismo que CONTACT_EMAIL)
 };
 
-// Newsletter «Los 5 del lunes» (MailerLite, formulario embebido con doble opt-in).
+// Newsletter de CasosAgentes (MailerLite, formulario embebido con doble opt-in).
 // accountId y formId salen del código de inserción HTML del formulario en MailerLite:
 //   https://assets.mailerlite.com/jsonp/<accountId>/forms/<formId>/subscribe
 export const MAILERLITE = {
