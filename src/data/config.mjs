@@ -21,14 +21,14 @@ export const TITULAR = {
 // accountId y formId salen del código de inserción HTML del formulario en MailerLite:
 //   https://assets.mailerlite.com/jsonp/<accountId>/forms/<formId>/subscribe
 export const MAILERLITE = {
-  accountId: '',
-  formId: '',
+  accountId: '2755356',
+  formId: '202771447377036377',
 };
 
 // Formularios Tally (ID corto de la URL tally.so/r/<ID>).
 export const TALLY = {
-  enviarCaso: '',  // formulario «Envía un caso»
-  patrocinar: '',  // formulario «Plaza de fundador / patrocinio»
+  enviarCaso: 'Ge6eDk',  // formulario «Envía un caso»
+  patrocinar: 'rD5DrR',  // formulario «Plaza de fundador / patrocinio»
 };
 
 // Programas de afiliación. NINGUNO ACTIVO. Para activarlo hacen falta las tres cosas:

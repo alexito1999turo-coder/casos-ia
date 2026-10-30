@@ -1,4 +1,11 @@
 # STATE — CasosAgentes (casosagentes.es)
+## 2026-10-30 · Codex — activación de captación
+- Alex pidió corregir los bloqueos de la web. Rama `codex/activar-captacion` desde `main`.
+- MailerLite: creado el grupo «CasosAgentes · Los 5 del lunes» y un formulario integrado asociado, con doble confirmación activada. La dirección postal de la cuenta se ajustó a la publicada en el aviso legal, por indicación de Alex. IDs públicos incorporados a `src/data/config.mjs`; la newsletter muestra un error si la respuesta del servicio no confirma expresamente el alta.
+- Tally: publicados «Envía un caso real a CasosAgentes» (`Ge6eDk`) y «Solicita la plaza de fundador» (`rD5DrR`), con campos obligatorios, casilla de consentimiento e interfaz en español. Sus IDs se integraron en la web; el enlace clicable a privacidad aparece antes del formulario incrustado. No se han enviado propuestas de prueba.
+- Validación: 55 casos, 0 errores, 0 avisos; build limpio de 180 páginas; `check-links` 10.931 enlaces internos, 55 anclas, 0 rotos; `git diff --check` sin errores. Verificados en HTML generado los dos enlaces Tally y la acción MailerLite.
+- Pendiente: revisión y despliegue de la rama, prueba real del flujo de suscripción con un buzón de prueba, y configurar analítica (Alex aún no tiene cuenta de Umami). La confirmación estándar de MailerLite aparece en inglés y su personalización depende del plan.
+
 Actualizado: 2026-10-28 22:50 Europe/Madrid
 
 ## 2026-10-28 · Claude — LEER ANTES DE LA PRÓXIMA RUTINA
@@ -9,7 +16,7 @@ Actualizado: 2026-10-28 22:50 Europe/Madrid
 - Search Console: enviado `https://casosagentes.es/sitemap-index.xml`.
 - Decisión de Alex (28/10, 22:26): CasosAgentes y ALAXIA separadas. Retiradas de la web las menciones a ALAXIA (Sobre, Contacto, Cómo nos financiamos). Ver EDITORIAL.md.
 - Codex se suma al proyecto: instrucciones en AGENTS.md (trabaja en ramas `codex/<tarea>`, Claude revisa). Reparto de tareas en EDITORIAL.md.
-- Pendiente de Alex: cuenta nueva de MailerLite, acceso a Tally, cuenta de Umami.
+- MailerLite creado el 30/10; acceso a Tally y cuenta de Umami pendientes.
 
 ## Estado actual
 Actualizado: 2026-10-28 22:50 Europe/Madrid (Claude)
