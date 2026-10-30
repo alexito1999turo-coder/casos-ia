@@ -2,9 +2,10 @@
 ## 2026-10-30 · Codex — activación de captación
 - Alex pidió corregir los bloqueos de la web. Rama `codex/activar-captacion` desde `main`.
 - MailerLite: creado el grupo «CasosAgentes · Los 5 del lunes» y un formulario integrado asociado, con doble confirmación activada. La dirección postal de la cuenta se ajustó a la publicada en el aviso legal, por indicación de Alex. IDs públicos incorporados a `src/data/config.mjs`; la newsletter muestra un error si la respuesta del servicio no confirma expresamente el alta.
-- Tally: publicados «Envía un caso real a CasosAgentes» (`Ge6eDk`) y «Solicita la plaza de fundador» (`rD5DrR`), con campos obligatorios, casilla de consentimiento e interfaz en español. Sus IDs se integraron en la web; el enlace clicable a privacidad aparece antes del formulario incrustado. No se han enviado propuestas de prueba.
+- Tally: publicados «Envía un caso real a CasosAgentes» (`Ge6eDk`) y «Solicita la plaza de fundador» (`rD5DrR`), con campos obligatorios, casilla de consentimiento e interfaz en español. Sus IDs se integraron en la web; el enlace clicable a privacidad aparece antes del formulario incrustado. Alex autorizó las notificaciones por email, activadas en ambos formularios para la cuenta Tally. No se han enviado propuestas de prueba.
+- Umami Cloud: Alex creó la cuenta; registrado `casosagentes.es`, ID público incorporado al `<head>` de todas las páginas. Región de datos verificada en la cuenta: EU (Frankfurt). Política de privacidad actualizada con la medición sin cookies y el tratamiento técnico de IP.
 - Validación: 55 casos, 0 errores, 0 avisos; build limpio de 180 páginas; `check-links` 10.931 enlaces internos, 55 anclas, 0 rotos; `git diff --check` sin errores. Verificados en HTML generado los dos enlaces Tally y la acción MailerLite.
-- Pendiente: revisión y despliegue de la rama, prueba real del flujo de suscripción con un buzón de prueba, y configurar analítica (Alex aún no tiene cuenta de Umami). La confirmación estándar de MailerLite aparece en inglés y su personalización depende del plan.
+- Pendiente: revisión y despliegue de la rama, comprobar las primeras visitas en Umami y prueba real del flujo de suscripción con un buzón de prueba. La confirmación estándar de MailerLite aparece en inglés y su personalización depende del plan.
 
 Actualizado: 2026-10-28 22:50 Europe/Madrid
 

@@ -11,7 +11,7 @@ Directorio de casos reales de agentes de IA para autónomos y pymes en España: 
 
 Todo se configura en **un único archivo: `src/data/config.mjs`**. Mientras un valor esté vacío, esa parte no se activa: los formularios muestran «Próximamente» (o un `mailto:` si hay `CONTACT_EMAIL`) y nunca fingen que envían; las páginas legales muestran `[PLACEHOLDER]` y van en `noindex` y fuera del sitemap.
 
-Estado 2026-10-30: el grupo y formulario de MailerLite y los dos formularios de Tally están creados. Sus identificadores están configurados en la rama `codex/activar-captacion`; aún falta integrar esa rama en la web pública. No hay cuenta de Umami ni medición de visitas configurada.
+Estado 2026-10-30: el grupo y formulario de MailerLite y los dos formularios de Tally están creados. Tally avisa por email de nuevas respuestas. Umami Cloud tiene registrado `casosagentes.es` en la región UE (Frankfurt). Sus identificadores públicos están configurados en la rama `codex/activar-captacion`; aún falta integrar esa rama en la web pública.
 
 | Qué crear | Dónde | Valor que hay que pegar en `config.mjs` |
 |---|---|---|
@@ -30,6 +30,6 @@ Estado 2026-10-30: el grupo y formulario de MailerLite y los dos formularios de 
 
 Notas:
 - En MailerLite, el texto de consentimiento y la casilla GDPR ya los pinta nuestro formulario; el doble opt-in está activo. La dirección postal de la cuenta coincide con el aviso legal de la web.
-- En Tally, en Settings, desactiva la marca de Tally si el plan lo permite y activa la notificación por email.
+- En Tally, las notificaciones por email están activas para ambos formularios. La marca de Tally se mantiene en el plan gratuito.
 - Tras pegar los valores: `npm run build` y desplegar. La newsletter pasa a `index` y entra en el sitemap; aviso legal, privacidad y transparencia pasan a `index` cuando los 4 campos de `TITULAR` estén rellenos.
 - Campo opcional nuevo en `casos.json`: `afiliado` (clave de `AFILIADOS`). Hoy ningún caso lo usa.

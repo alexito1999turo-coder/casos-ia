@@ -31,6 +31,9 @@ export const TALLY = {
   patrocinar: 'rD5DrR',  // formulario «Plaza de fundador / patrocinio»
 };
 
+// Analítica de visitas sin cookies (Umami Cloud). ID público del sitio casosagentes.es.
+export const UMAMI_WEBSITE_ID = '24b90874-7d78-4816-8564-658809259e1c';
+
 // Programas de afiliación. NINGUNO ACTIVO. Para activarlo hacen falta las tres cosas:
 //   1) activo: true y url de afiliado aquí;
 //   2) el caso lleva el campo opcional "afiliado": "<clave>" en casos.json;
