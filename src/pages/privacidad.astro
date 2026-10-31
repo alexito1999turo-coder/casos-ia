@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'; import Ph from '../components/Ph.astro'; import { u } from '../data/meta.js';
-import { TITULAR, titularPendiente, mlAction, tallyId, TALLY } from '../data/config.mjs';
+import { TITULAR, titularPendiente, mlAction, tallyId, TALLY, UMAMI_WEBSITE_ID } from '../data/config.mjs';
 const pend = titularPendiente();
 const tallyOn = tallyId(TALLY.enviarCaso) || tallyId(TALLY.patrocinar);
 ---
@@ -43,12 +43,13 @@ const tallyOn = tallyId(TALLY.enviarCaso) || tallyId(TALLY.patrocinar);
 <li><strong>Tus opciones:</strong> puedes pedirnos que corrijamos un dato, que quitemos tu nombre o que retiremos el caso, y oponerte al tratamiento, escribiendo a <Ph v={TITULAR.email} k="email" />. Lo atenderemos en el plazo de un mes.</li></ul>
 
 <h2>Navegación y alojamiento</h2>
-<p>Al navegar no usamos cookies de seguimiento ni de publicidad, ni herramientas de analítica. Los casos que guardas con «Guardar», tu preferencia de tema y el cierre de la barra de destacados se quedan solo en tu navegador (localStorage) y no nos llegan.</p>
+<p>No usamos cookies de seguimiento ni de publicidad. Los casos que guardas con «Guardar», tu preferencia de tema y el cierre de la barra de destacados se quedan solo en tu navegador (localStorage) y no nos llegan.</p>
+{UMAMI_WEBSITE_ID && <p>Usamos Umami Cloud para medir visitas de forma agregada y mejorar el sitio. Registra páginas vistas, procedencia, navegador, dispositivo y ubicación aproximada, sin instalar cookies. Umami procesa temporalmente la dirección IP y el navegador para calcular sesiones y ubicación; no guarda la IP como campo de los registros analíticos ordinarios, aunque puede figurar en registros técnicos o de seguridad. Base legal: interés legítimo en conocer el uso del sitio (art. 6.1.f RGPD). Encargado del tratamiento: Umami Software, Inc.; el almacenamiento analítico de esta cuenta está configurado en la región UE, pero otros tratamientos operativos pueden realizarse fuera de ella.</p>}
 <p>El sitio se aloja en GitHub Pages, de GitHub, Inc. (EE. UU.). Según su documentación, GitHub registra y guarda la dirección IP de cada visita por motivos de seguridad. Nosotros no accedemos a esos registros. Base legal: interés legítimo en mantener el sitio seguro y disponible (art. 6.1.f RGPD). GitHub declara su adhesión al Marco de Privacidad de Datos UE-EE. UU.</p>
 <p>Las páginas con formulario se conectan a tally.so (Tally) o a MailerLite solo cuando el formulario está activo; si no, no cargan nada de terceros.</p>
 
 <h2>Destinatarios</h2>
-<p>No cedemos ni vendemos tus datos. Solo acceden a ellos los encargados citados (MailerLite y Tally), con contrato de encargo, y las autoridades cuando la ley lo exija. Si algún día ofrecemos poner en contacto a negocios con integradores, pediremos un consentimiento aparte y explícito.</p>
+<p>No cedemos ni vendemos tus datos. Solo acceden a ellos los encargados citados (MailerLite, Tally y, cuando está activa la medición, Umami), con contrato de encargo, y las autoridades cuando la ley lo exija. Si algún día ofrecemos poner en contacto a negocios con integradores, pediremos un consentimiento aparte y explícito.</p>
 
 <h2>Tus derechos</h2>
 <p>Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a <Ph v={TITULAR.email} k="email" />.</p>
