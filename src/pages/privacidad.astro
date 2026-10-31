@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'; import Ph from '../components/Ph.astro'; import { u } from '../data/meta.js';
-import { TITULAR, titularPendiente, mlAction, tallyId, TALLY, UMAMI_WEBSITE_ID } from '../data/config.mjs';
+import { TITULAR, titularPendiente, mlAction, tallyId, TALLY, UMAMI_WEBSITE_ID, GA_MEASUREMENT_ID } from '../data/config.mjs';
 const pend = titularPendiente();
 const tallyOn = tallyId(TALLY.enviarCaso) || tallyId(TALLY.patrocinar);
 ---
@@ -43,7 +43,8 @@ const tallyOn = tallyId(TALLY.enviarCaso) || tallyId(TALLY.patrocinar);
 <li><strong>Tus opciones:</strong> puedes pedirnos que corrijamos un dato, que quitemos tu nombre o que retiremos el caso, y oponerte al tratamiento, escribiendo a <Ph v={TITULAR.email} k="email" />. Lo atenderemos en el plazo de un mes.</li></ul>
 
 <h2>Navegación y alojamiento</h2>
-<p>No usamos cookies de seguimiento ni de publicidad. Los casos que guardas con «Guardar», tu preferencia de tema y el cierre de la barra de destacados se quedan solo en tu navegador (localStorage) y no nos llegan.</p>
+<p>No usamos cookies de publicidad ni de seguimiento entre sitios. Los casos que guardas con «Guardar», tu preferencia de tema, la de cookies y el cierre de la barra de destacados se quedan solo en tu navegador (localStorage) y no nos llegan.</p>
+{GA_MEASUREMENT_ID && <p>Si aceptas en el banner, usamos Google Analytics 4 para medir visitas de forma agregada. Instala cookies propias de Google (por ejemplo _ga) y envía a Google datos de navegación, dispositivo y ubicación aproximada, con la IP anonimizada. Google puede tratar datos fuera de la UE (EE. UU.) al amparo de sus cláusulas contractuales tipo. Base legal: tu consentimiento (art. 6.1.a RGPD y art. 22.2 LSSI). Puedes retirarlo en cualquier momento borrando la clave «ca-analitica» de tu navegador; a partir de entonces no se carga nada de Google. Encargado: Google Ireland Limited.</p>}
 {UMAMI_WEBSITE_ID && <p>Usamos Umami Cloud para medir visitas de forma agregada y mejorar el sitio. Registra páginas vistas, procedencia, navegador, dispositivo y ubicación aproximada, sin instalar cookies. Umami procesa temporalmente la dirección IP y el navegador para calcular sesiones y ubicación; no guarda la IP como campo de los registros analíticos ordinarios, aunque puede figurar en registros técnicos o de seguridad. Base legal: interés legítimo en conocer el uso del sitio (art. 6.1.f RGPD). Encargado del tratamiento: Umami Software, Inc.; el almacenamiento analítico de esta cuenta está configurado en la región UE, pero otros tratamientos operativos pueden realizarse fuera de ella.</p>}
 <p>El sitio se aloja en GitHub Pages, de GitHub, Inc. (EE. UU.). Según su documentación, GitHub registra y guarda la dirección IP de cada visita por motivos de seguridad. Nosotros no accedemos a esos registros. Base legal: interés legítimo en mantener el sitio seguro y disponible (art. 6.1.f RGPD). GitHub declara su adhesión al Marco de Privacidad de Datos UE-EE. UU.</p>
 <p>Las páginas con formulario se conectan a tally.so (Tally) o a MailerLite solo cuando el formulario está activo; si no, no cargan nada de terceros.</p>

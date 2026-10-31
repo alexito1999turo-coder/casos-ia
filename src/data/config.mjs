@@ -34,6 +34,9 @@ export const TALLY = {
 // Analítica de visitas sin cookies (Umami Cloud). ID público del sitio casosagentes.es.
 export const UMAMI_WEBSITE_ID = '24b90874-7d78-4816-8564-658809259e1c';
 
+// Google Analytics 4. Solo se carga si el visitante acepta el banner (ver Base.astro).
+export const GA_MEASUREMENT_ID = 'G-3FGTX0C8C6';
+
 // Programas de afiliación. NINGUNO ACTIVO. Para activarlo hacen falta las tres cosas:
 //   1) activo: true y url de afiliado aquí;
 //   2) el caso lleva el campo opcional "afiliado": "<clave>" en casos.json;
