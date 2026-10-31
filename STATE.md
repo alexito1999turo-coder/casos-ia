@@ -94,3 +94,9 @@ Actualizado: 2026-10-28 22:50 Europe/Madrid (Claude)
 - 2026-10-29 11:50 (Grok, OK de Alex): /sobre declara que los casos de clientes de Alex se marcarán en la ficha y que Alex aprueba cada lote; /contacto sin plazo fijo de respuesta.
 - 2026-10-29 (Grok): rama revision-2026-10-29 con el lote 10 (3 casos de prensa: B1 B2 Academy, Puyol Abogados, L35 Architects) con esParaTi, costeOrientativo, primerPaso y revisado. Validador 55/0/0, build 180 páginas, 0 enlaces rotos. Pendiente: Director y OK de Alex; sin desplegar.
 - 2026-10-29 (Grok, OK de Alex): rutina de casos pasada a GitHub Actions (casos-claude.yml, L-X-V 07:15, Sonnet, ~0,18 $ por ejecución). casos-diarios.yml desactivada. Rutina de Grok pausada.
+
+## 2026-10-31 · Codex — activación de la newsletter
+- En curso (Codex): rama `codex/activar-newsletter` desde main `6e20850`; conectar el formulario embebido «CasosAgentes · Los 5 del lunes», evitar mensajes de éxito ante respuestas ambiguas y validar el flujo local sin desplegar.
+- Completado (Codex): configurados los identificadores públicos de MailerLite para que `/newsletter/` muestre el formulario real y vuelva a `index,follow`; el mensaje de confirmación solo se muestra si MailerLite responde explícitamente con `success: true`.
+- Estado externo comprobado por Windsor.ai: formulario con contenido, grupo asociado y doble opt-in, pero todavía `active: false`; 1 alta sin confirmar y 0 activas en el grupo. No se ha enviado ninguna alta de prueba ni campaña.
+- Validación: 55 casos, 0 errores y 0 avisos; build OK (180 páginas); `check-links` con 10.927 enlaces internos, 55 anclas y 0 rotos. HTML verificado con endpoint, consentimiento obligatorio, `index,follow` e inclusión en sitemap. Pendiente activar el formulario en MailerLite y probar el recorrido real antes de fusionar o desplegar.

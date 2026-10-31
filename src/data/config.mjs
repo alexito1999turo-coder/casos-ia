@@ -21,8 +21,8 @@ export const TITULAR = {
 // accountId y formId salen del código de inserción HTML del formulario en MailerLite:
 //   https://assets.mailerlite.com/jsonp/<accountId>/forms/<formId>/subscribe
 export const MAILERLITE = {
-  accountId: '',
-  formId: '',
+  accountId: '47840855',
+  formId: '202771447377036377',
 };
 
 // Formularios Tally (ID corto de la URL tally.so/r/<ID>).
