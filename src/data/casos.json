@@ -1375,5 +1375,32 @@
     "primerPaso": "Con ChatGPT, sube el PDF oficial de un documento del CTE y pregunta por un requisito concreto pidiendo que cite el apartado; comprueba la respuesta en el documento original.",
     "publicado": "2026-10-29",
     "revisado": "2026-10-29"
+  },
+  {
+    "slug": "seras-academia-oposiciones-ia-planificador-estudio",
+    "titulo": "Serás, academia de oposiciones, planifica el estudio de cada opositor con IA generativa",
+    "resumen": "La academia online Serás (antes ASM Online) presentó en Madrid un sistema de estudio basado en IA generativa para oposiciones a Guardia Civil, Policía Nacional y Fuerzas Armadas. Según su comunicado, planifica el día a día de cada alumno según su tiempo, hábitos, progreso y resultados en tests y simulacros, y ayuda a decidir qué estudiar y qué no. Incluye CreaTest para simulacros personalizados y un agente tutor digital cuando el tutor humano no está disponible.",
+    "resultado": null,
+    "resultadoNota": "Sin cifras verificadas. El comunicado es de la propia academia y cita el caso de un alumno que obtuvo el número 1 en unas pruebas de Guardia Civil estudiando el 57 % del temario; es un dato de la empresa, no comprobado de forma independiente.",
+    "sector": "academia",
+    "tarea": "atencion-cliente",
+    "herramienta": "Sistema propio de IA generativa de Serás (planificador de estudio, CreaTest y agente tutor)",
+    "herramientas": [
+      "agente-ia-a-medida"
+    ],
+    "prompt": "Prompt sugerido: «Soy opositor y dispongo de [horas] al día, [días] a la semana. Estos son mis resultados en los últimos simulacros por tema: [pegar aciertos y fallos]. Propón un plan de estudio para las próximas dos semanas que priorice los temas más flojos y reserve un repaso final. Explica por qué priorizas cada tema.»",
+    "adaptacion": "Una academia pequeña puede empezar por un plan semanal personalizado a partir de los resultados de cada alumno, revisado siempre por el preparador. La sede del comunicado es Madrid (presentación); el servicio es online.",
+    "fuente": "Moncloa (comunicado de Serás vía Comunicae)",
+    "fuenteUrl": "https://www.moncloa.com/2025/07/11/la-academia-online-seras-reinventa-con-ia-la-preparacion-de-oposiciones-a-guardia-civil-policia-y-ejercito-3247180/",
+    "fuenteTipo": "cliente",
+    "fecha": "2025-07-11",
+    "ciudad": "Madrid",
+    "tituloSeo": "Serás (Madrid): academia de oposiciones con IA para planificar el estudio",
+    "descripcionSeo": "La academia online Serás usa IA generativa para planificar el estudio de cada opositor y generar simulacros personalizados; así lo cuenta su comunicado.",
+    "esParaTi": "Para academias de oposiciones o de formación con alumnos que preparan pruebas a largo plazo y un preparador que pueda revisar los planes.",
+    "costeOrientativo": "Estimación editorial para un piloto con un asistente de IA de uso general, no coste publicado por Serás: 0 € de puesta en marcha y 20–30 €/mes por preparador, sin valorar el tiempo propio. Confirmar tarifas vigentes.",
+    "primerPaso": "Con ChatGPT o Claude gratuitos, pega los resultados de un simulacro de un alumno (con su permiso, sin datos personales) y pide un plan de dos semanas; el preparador lo corrige antes de entregarlo.",
+    "publicado": "2026-10-30",
+    "revisado": "2026-10-30"
   }
 ]
