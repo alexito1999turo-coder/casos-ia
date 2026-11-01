@@ -15,7 +15,7 @@ Actualizado: 2026-10-28 22:50 Europe/Madrid
 Actualizado: 2026-11-01 (Claude)
 - En línea: https://casosagentes.es/ (GitHub Pages, rama gh-pages; casosagentes.com redirige al .es)
 - Casos en `main`: **56** (último: Serás, academia de oposiciones). **`gh-pages` sin actualizar — pendiente desplegar** (ver rutina 2026-11-01: el despliegue fue bloqueado por el entorno de Claude, no por falta de OK).
-- Guías de sector en borrador en `main`: hostelería, salud y comercio (`borrador: true`), ninguna publicada todavía.
+- Guías de sector en `main`: **salud y comercio publicadas** (`borrador: false`, OK de Alex 2026-11-01); hostelería sigue en borrador (ejemplo de formato, no contenido definitivo).
 - PR abiertos sin fusionar: #5 y #6 (Codex, formularios/captación), pendientes de Codex/Alex — no son del flujo de casos diarios.
 - Producción: desplegada desde main 4e8ebca. En main sin desplegar, pendiente del OK de Alex: campos opcionales de la ficha (PR #1), validador de casos.json en prebuild y en el despliegue (PR #2), infraestructura de guías con hostelería en borrador (PR #3). Los tres PR de Codex, revisados por Claude.
 - Siguiente para el bot de Grok: redactar las guías de hostelería, salud y comercio (ver EDITORIAL.md).
@@ -110,3 +110,4 @@ Actualizado: 2026-11-01 (Claude)
   - **ClaudiaTech**: Alex ya había respondido él mismo (30/10) pidiendo el enlace; sin respuesta nueva de ellos, nada que hacer.
   - Nuevo (no es respuesta de outreach, es una propuesta de caso por email a hola@casosagentes.es): **Awakate** propone un caso de Clínica NeoPostural (Málaga, informes por dictado), presentándose como proveedor, con aviso legal y fuente pública (https://awakate.com/ia-para-clinicas). No se ha añadido a `casos.json` — queda para que Alex decida si entra en un próximo lote (fuera del alcance de esta rutina, que solo fusiona los PR ya generados por `casos-claude.yml`).
 - SEO/Search Console: no es lunes (2026-11-01 es domingo), se omite. Tampoco toca outreach semanal a gremios/asociaciones (es los lunes).
+- **Guías de salud y comercio publicadas** (OK explícito de Alex en conversación, 2026-11-01): `borrador: false` en ambas (commit `bd7ee1a`). Ya son `index,follow`, están en el sitemap, aparecen en `/guias/` y se enlazan desde `/sector/salud/` y `/sector/comercio/`. La guía de hostelería sigue en borrador — es solo el ejemplo de formato de Codex, no contenido definitivo (AGENTS.md); no se ha tocado salvo que Alex lo apruebe también.
