@@ -1,9 +1,9 @@
 ---
 titulo: "IA en comercio: tiendas online y de barrio"
-descripcion: "Guía en borrador basada en los casos de tiendas, ecommerce y comercio de proximidad del directorio."
+descripcion: "Guía basada en los casos de tiendas, ecommerce y comercio de proximidad del directorio."
 sector: comercio
 actualizado: "2026-11-01"
-borrador: true
+borrador: false
 ---
 
 ## Fichas de producto y contenido

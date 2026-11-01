@@ -1,9 +1,9 @@
 ---
 titulo: "IA en salud: fisioterapia y clínicas dentales"
-descripcion: "Guía en borrador basada en los casos de clínicas, centros de fisioterapia y consultas dentales del directorio."
+descripcion: "Guía basada en los casos de clínicas, centros de fisioterapia y consultas dentales del directorio."
 sector: salud
 actualizado: "2026-11-01"
-borrador: true
+borrador: false
 ---
 
 ## Confirmaciones, recordatorios y recalls por WhatsApp
