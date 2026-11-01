@@ -15,6 +15,6 @@ const action = mlAction();
 {action && <script is:inline>
 document.querySelectorAll('form[data-ml]').forEach(f=>f.addEventListener('submit',async e=>{e.preventDefault();const m=f.querySelector('.nlmsg'),b=f.querySelector('button');if(f.website.value)return;b.disabled=true;m.textContent='Enviando…';
 try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});const j=await r.json().catch(()=>({}));
-if(r.ok&&j.success!==false){f.querySelectorAll('input,label,.rgpd,button').forEach(x=>x.hidden=true);m.textContent='Casi está: te hemos enviado un email para confirmar la suscripción.'}else{m.textContent='No se ha podido completar el alta. Revisa el email e inténtalo de nuevo.';b.disabled=false}}
+if(r.ok&&j.success===true){f.querySelectorAll('input,label,.rgpd,button').forEach(x=>x.hidden=true);m.textContent='Casi está: te hemos enviado un email para confirmar la suscripción.'}else{m.textContent='No se ha podido completar el alta. Revisa el email e inténtalo de nuevo.';b.disabled=false}}
 catch(_){m.textContent='No se ha podido conectar con el servicio de envío. Inténtalo más tarde.';b.disabled=false}}));
 </script>}

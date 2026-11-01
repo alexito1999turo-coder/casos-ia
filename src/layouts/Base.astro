@@ -2,6 +2,7 @@
 import { SITE , u, ORIGIN } from '../data/meta.js';
 import { recorta } from '../data/meta.js';
 import Ticker from '../components/Ticker.astro';
+import { UMAMI_WEBSITE_ID } from '../data/config.mjs';
 // Variante de tema por defecto: 'tinta' (recomendada) o 'niebla'. Cambiar este token cambia todo el sitio.
 const TEMA = 'tinta';
 const { title, rawTitle, description = SITE.desc, jsonld, robots = 'index,follow', ogType = 'website', published, crumbs } = Astro.props;
@@ -17,6 +18,7 @@ const lds = [ ...(jsonld ? (Array.isArray(jsonld)?jsonld:[jsonld]) : []), ...(bc
 <meta property="og:title" content={full}><meta property="og:description" content={desc}><meta property="og:type" content={ogType}><meta property="og:image" content={ogImage}><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="CasosAgentes">{published && <meta property="article:published_time" content={published}>}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content={ogImage}><meta property="og:url" content={canonical}><meta property="og:locale" content="es_ES">
 <link rel="alternate" type="text/plain" href={u("/llms.txt")} title="llms.txt">
 <link rel="preload" href={u("/fonts/instrument-sans-latin.woff2")} as="font" type="font/woff2" crossorigin><link rel="stylesheet" href={u("/fonts/fonts.css")}>
+{UMAMI_WEBSITE_ID && <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id={UMAMI_WEBSITE_ID}></script>}
 {lds.map(j=><script type="application/ld+json" set:html={JSON.stringify(j)} />)}
 <style is:global>
 /* ===== Tokens de tema. La variante por defecto se elige con UNA constante: TEMA (frontmatter de este archivo).

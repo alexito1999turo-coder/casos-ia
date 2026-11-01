@@ -1,4 +1,13 @@
 # STATE — CasosAgentes (casosagentes.es)
+## 2026-10-30 · Codex — activación de captación
+- Alex pidió corregir los bloqueos de la web. Rama `codex/activar-captacion` desde `main`.
+- MailerLite: creado el grupo «CasosAgentes · Los 5 del lunes» y un formulario integrado asociado, con doble confirmación activada. La dirección postal de la cuenta se ajustó a la publicada en el aviso legal, por indicación de Alex. IDs públicos incorporados a `src/data/config.mjs`; la newsletter muestra un error si la respuesta del servicio no confirma expresamente el alta.
+- Tally: publicados «Envía un caso real a CasosAgentes» (`Ge6eDk`) y «Solicita la plaza de fundador» (`rD5DrR`), con campos obligatorios, casilla de consentimiento e interfaz en español. Sus IDs se integraron en la web; el enlace clicable a privacidad aparece antes del formulario incrustado. Alex autorizó las notificaciones por email, activadas en ambos formularios para la cuenta Tally. No se han enviado propuestas de prueba.
+- Umami Cloud: Alex creó la cuenta; registrado `casosagentes.es`, ID público incorporado al `<head>` de todas las páginas. Región de datos verificada en la cuenta: EU (Frankfurt). Política de privacidad actualizada con la medición sin cookies y el tratamiento técnico de IP.
+- Validación: 55 casos, 0 errores, 0 avisos; build limpio de 180 páginas; `check-links` 10.931 enlaces internos, 55 anclas, 0 rotos; `git diff --check` sin errores. Verificados en HTML generado los dos enlaces Tally y la acción MailerLite.
+- Prueba de newsletter completada: enviado el formulario de la web compilada desde una vista local con el correo autorizado por Alex. La web mostró el mensaje de confirmación; MailerLite registró primero «No confirmado» y, tras pulsar Alex el enlace del email, «Activo» en el grupo «CasosAgentes · Los 5 del lunes», con permiso de marketing «newsletter» y evento de confirmación.
+- Pendiente: revisión y despliegue de la rama y comprobar las primeras visitas en Umami. La confirmación estándar de MailerLite aparece en inglés y su personalización depende del plan.
+
 Actualizado: 2026-10-28 22:50 Europe/Madrid
 
 ## 2026-10-28 · Claude — LEER ANTES DE LA PRÓXIMA RUTINA
@@ -9,7 +18,7 @@ Actualizado: 2026-10-28 22:50 Europe/Madrid
 - Search Console: enviado `https://casosagentes.es/sitemap-index.xml`.
 - Decisión de Alex (28/10, 22:26): CasosAgentes y ALAXIA separadas. Retiradas de la web las menciones a ALAXIA (Sobre, Contacto, Cómo nos financiamos). Ver EDITORIAL.md.
 - Codex se suma al proyecto: instrucciones en AGENTS.md (trabaja en ramas `codex/<tarea>`, Claude revisa). Reparto de tareas en EDITORIAL.md.
-- Pendiente de Alex: cuenta nueva de MailerLite, acceso a Tally, cuenta de Umami.
+- MailerLite creado el 30/10; acceso a Tally y cuenta de Umami pendientes.
 
 ## Estado actual
 Actualizado: 2026-11-01 (Claude)
@@ -111,3 +120,12 @@ Actualizado: 2026-11-01 (Claude)
   - Nuevo (no es respuesta de outreach, es una propuesta de caso por email a hola@casosagentes.es): **Awakate** propone un caso de Clínica NeoPostural (Málaga, informes por dictado), presentándose como proveedor, con aviso legal y fuente pública (https://awakate.com/ia-para-clinicas). No se ha añadido a `casos.json` — queda para que Alex decida si entra en un próximo lote (fuera del alcance de esta rutina, que solo fusiona los PR ya generados por `casos-claude.yml`).
 - SEO/Search Console: no es lunes (2026-11-01 es domingo), se omite. Tampoco toca outreach semanal a gremios/asociaciones (es los lunes).
 - **Guías de salud y comercio publicadas** (OK explícito de Alex en conversación, 2026-11-01): `borrador: false` en ambas (commit `bd7ee1a`). Ya son `index,follow`, están en el sitemap, aparecen en `/guias/` y se enlazan desde `/sector/salud/` y `/sector/comercio/`. La guía de hostelería sigue en borrador — es solo el ejemplo de formato de Codex, no contenido definitivo (AGENTS.md); no se ha tocado salvo que Alex lo apruebe también.
+
+## 2026-11-01 · Codex — consolidación de captación (PR #5 / #6)
+- En curso (Codex), por petición de Alex: actualizar `codex/activar-captacion` con `main`, resolver el solapamiento de newsletter y validar antes de integrar. Sin fusionar PR a main ni desplegar.
+- Comparación: `NewsletterForm.astro` es idéntico en #5 y #6 (`r.ok && j.success === true`). #6 no aporta otra corrección funcional; su configuración difiere solo en `MAILERLITE.accountId` (`47840855` frente a `2755356` del #5), con el mismo formId. Se conserva `2755356` por la prueba completa documentada en #5; falta contrastarlo con el código de inserción actual. `settings.groot_id` no se toma como prueba del accountId del endpoint.
+- MailerLite, lectura Windsor con `data_fetched_at: 2026-11-01T20:46:37Z`: formulario `202771447377036377`, grupo `202771456055051788`, doble opt-in true, 1 activo y 0 no confirmados; el formulario sigue `active: false`. La lectura no permite deducir si ese indicador impide el POST. No se han activado servicios ni enviado altas en esta revisión. El refresco forzado no está disponible en el plan Trial; se conserva la fecha de la lectura devuelta.
+- Evidencias conciliadas: el activo observado es compatible con la prueba histórica del #5; la afirmación de #6 de 0 activos ha quedado desactualizada. La disponibilidad del formulario y el endpoint siguen pendientes. El acceso al JS público de MailerLite devolvió HTTP 403; no se ha podido verificar el código de inserción desde este entorno.
+- Completado (Codex): incorporado `main` `638602c` a la rama del #5 sin conflictos, conservando íntegros los 56 casos, guías y documentación posteriores. Añadidas 10 pruebas sin red en `scripts/newsletter-form.test.mjs` que ejecutan el manejador real y comprueban éxito explícito, respuestas ambiguas, JSON inválido, errores HTTP y fallos de red.
+- Validación consolidada: `npm run build` con prebuild, 56 casos / 0 errores / 0 avisos, 183 páginas; `node scripts/check-links.mjs`: 11.263 enlaces internos, 56 anclas, 0 rotos. Pruebas existentes 11/11 y newsletter 10/10. HTML comprobado: endpoint esperado, consentimiento obligatorio, newsletter index/sitemap, ambos Tally; Umami una vez en las 142 páginas con Base (41 redirecciones sin Base no lo cargan). `git diff --check` OK. Casos idénticos a main.
+- Entrega: #5 concentra toda la activación; #6 se considera sustituido, conservando aquí su accountId alternativo y sus observaciones. Mantener #5 en borrador hasta verificar el endpoint con el código de inserción y el estado externo del formulario, y repetir alta → no confirmado → confirmación → activo desde esta versión. También pendientes envíos de prueba y notificaciones de ambos Tally. Tras un futuro despliegue, comprobar visitas en Umami. No se han fusionado PR a main ni desplegado.
