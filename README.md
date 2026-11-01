@@ -33,3 +33,9 @@ Notas:
 - En Tally, las notificaciones por email están activas para ambos formularios. La marca de Tally se mantiene en el plan gratuito.
 - Tras pegar los valores: `npm run build` y desplegar. La newsletter pasa a `index` y entra en el sitemap; aviso legal, privacidad y transparencia pasan a `index` cuando los 4 campos de `TITULAR` estén rellenos.
 - Campo opcional nuevo en `casos.json`: `afiliado` (clave de `AFILIADOS`). Hoy ningún caso lo usa.
+
+## Validación de la activación (PR #5)
+
+Rama consolidada con `main` `638602c` el 2026-11-01. El PR #6 queda sustituido: la comprobación estricta de éxito ya está incluida. Pruebas del formulario, sin enviar altas: `node --test scripts/newsletter-form.test.mjs`.
+
+Antes de integrar o desplegar, contrastar el endpoint de MailerLite con su código de inserción: se conserva el accountId `2755356`, con prueba histórica de alta completa; el #6 usaba `47840855`. La lectura de MailerLite del 2026-11-01T20:46:37Z devuelve doble opt-in activo y un suscriptor activo en el grupo, pero el formulario figura como `active: false`. Ese estado debe aclararse y repetirse la prueba desde la versión consolidada. Los dos Tally aún necesitan un envío de prueba y comprobar sus notificaciones. No se debe dar por terminada la activación solo porque el build pase.

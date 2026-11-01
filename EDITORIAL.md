@@ -6,10 +6,11 @@ Este repo lo mantienen tres asistentes de IA (el bot de Grok, Claude y Codex) y 
 
 | Quién | Qué hace | Qué no hace |
 | --- | --- | --- |
-| Bot de Grok (Investigador + Director) | Busca casos cada día, prepara lotes, los revisa y los publica cuando Alex lo aprueba. Redacta las guías de sector. | Cambiar el diseño, las páginas legales o la configuración sin OK de Alex. |
-| Claude | Revisión semanal de calidad, cambios de código y estructura, cuentas y formularios (MailerLite, Tally, Umami), Search Console, promoción y estrategia. | Publicar casos nuevos (eso es del bot). |
+| GitHub Action `casos-claude.yml` (L/X/V 07:15) | Busca 3 casos nuevos, valida y compila, abre PR. | Fusionar, tocar `main`/`gh-pages` o desplegar. |
+| Claude (rutina diaria, 04:36 Europe/Madrid) | Revisa cada PR de la Action contra las reglas de abajo; si las cumple, fusiona y despliega sin preguntar (autonomía concedida por Alex el 2026-11-01). Si no las cumple, lo deja abierto, explica por qué en `STATE.md` y avisa a Alex. También: guías de sector, outreach de backlinks, SEO/Search Console, redes, cuentas y formularios, promoción y estrategia. | Cambiar el diseño, las páginas legales o la configuración sin OK de Alex. |
+| Bot de Grok | Pausado desde el 2026-10-29 (sustituido por la Action + Claude). Puede retomarse si Alex lo decide. | — |
 | Codex | Desarrollo de funciones y cambios de código que Alex le encargue (por ejemplo, mostrar los campos nuevos de los casos), siempre en una rama propia `codex/<tarea>` y con descripción del cambio para que Claude lo revise. | Publicar casos, tocar `casos.json` en masa, cambiar el diseño sin OK de Alex o desplegar. |
-| Alex | Aprueba lo que se publica y lo que habla en su nombre. | — |
+| Alex | Decide el rumbo y resuelve lo que Claude le escale. | — |
 
 ## Reglas para publicar casos
 
@@ -39,7 +40,7 @@ Rellenarlos en los casos nuevos; Claude activará su visualización cuando haya 
 
 - Antes de cambiar nada: `git fetch origin main` y partir de lo último. Nunca revertir cambios de otro sin preguntar a Alex.
 - Commits pequeños, con un mensaje que diga qué y por qué.
-- **No desplegar sin OK de Alex.** Despliegue: `bash deploy/publish-gh-pages.sh` desde `main` actualizado.
+- **Despliegue:** `bash deploy/publish-gh-pages.sh` desde `main` actualizado. Codex y el bot de Grok no despliegan nunca. Claude sí puede, sin pedir OK caso por caso, solo para los PR de la rutina diaria de casos que cumplan las reglas de publicación (arriba) — cualquier otro cambio (diseño, código, configuración) sigue necesitando el OK explícito de Alex.
 - Cada cambio relevante se anota en `STATE.md`, con fecha y autor (Grok, Claude o Codex).
 - **Una tarea, un dueño.** Antes de empezar algo, mira en `STATE.md` si otro asistente lo tiene en curso; si no, anótalo como «en curso (autor)». Así no trabajamos dos en lo mismo.
 - Claude y Codex trabajan en ramas; solo se fusiona a `main` lo revisado. El bot de Grok sigue con sus lotes de casos como hasta ahora.
