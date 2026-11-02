@@ -11,6 +11,14 @@ Actualizado: 2026-10-28 22:50 Europe/Madrid
 - Codex se suma al proyecto: instrucciones en AGENTS.md (trabaja en ramas `codex/<tarea>`, Claude revisa). Reparto de tareas en EDITORIAL.md.
 - Pendiente de Alex: cuenta nueva de MailerLite, acceso a Tally, cuenta de Umami.
 
+## 2026-11-02 · Claude — crecimiento 1, 2 y 3 (rama claude/crecimiento-1-2-3)
+- Estado: en revisión de Alex. No fusionado ni desplegado.
+- 1) Sello «Caso destacado»: página /sello/ con código para copiar y SVG en /sello/caso-destacado.svg. Enlaza a la ficha del caso. Sin mención a ALAXIA.
+- 2) Informe /informe/ia-pymes-2026/: cifras calculadas en build desde casos.json (56 casos). Sin cifras inventadas; las de proveedor se marcan como declaradas.
+- 3) Intro y FAQ nuevas en src/data/extra.js para sectores servicios, salud, comercio, hostelería, inmobiliaria, abogados, construcción y ciudades Madrid, Valencia y Barcelona. Sin cambios de diseño ni de robots.
+- Validación: validar-casos 0 errores; build correcto; check-links 0 rotos.
+- Pendiente de Alex: revisar textos de sello e informe antes de desplegar.
+
 ## Estado actual
 Actualizado: 2026-11-01 (Claude)
 - En línea: https://casosagentes.es/ (GitHub Pages, rama gh-pages; casosagentes.com redirige al .es)

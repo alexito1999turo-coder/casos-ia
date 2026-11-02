@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import casos from '../../data/casos.json';
+const ejemplo = casos.find(c => c.publicado && c.fuenteTipo === 'cliente') ?? casos[0];
+const codigo = `<a href="https://casosagentes.es/casos/${ejemplo.slug}/"><img src="https://casosagentes.es/sello/caso-destacado.svg" alt="Caso destacado en CasosAgentes" width="220" height="56"></a>`;
+---
+<Base title="Sello «Caso destacado» para negocios y proveedores" description="Sello gratuito que negocios y proveedores pueden mostrar en su web si tienen un caso publicado en CasosAgentes. Enlaza a su ficha." crumbs={[{name:'Sello «Caso destacado»'}]}>
+<h1>Sello «Caso destacado»</h1>
+<p>Si tu negocio o tu empresa tiene un caso publicado en CasosAgentes, puedes mostrar este sello en tu web. El sello enlaza a la ficha de tu caso, con su fuente y su fecha.</p>
+<h2>Cómo se ve</h2>
+<p><img src="/sello/caso-destacado.svg" alt="Sello Caso destacado en CasosAgentes" width="220" height="56"></p>
+<h2>Código para copiar</h2>
+<p>Cambia <code>{ejemplo.slug}</code> por el identificador de tu caso (la parte final de la dirección de su ficha). El de este ejemplo es el de un caso real del directorio.</p>
+<pre><code>{codigo}</code></pre>
+<h2>Condiciones</h2>
+<ul>
+<li>El sello solo puede usarse con un caso publicado en CasosAgentes. No lo uses para casos que no estén en el directorio.</li>
+<li>No modifiques el texto del sello ni le añadas logotipos de CasosAgentes.</li>
+<li>El sello indica que el caso figura en el directorio. No significa que CasosAgentes haya verificado los resultados que tú declaras: esos siguen la fuente indicada en la ficha.</li>
+<li>Si el caso se retira del directorio, deja de cumplirse esta condición: debes retirar el sello de tu web.</li>
+</ul>
+<p>¿Tienes un caso que no está publicado? Puedes <a href="/enviar-caso/">enviarlo para revisión</a>.</p>
+</Base>

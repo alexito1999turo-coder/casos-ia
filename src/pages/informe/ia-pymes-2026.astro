@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import casos from '../../data/casos.json';
+import { SECTORES, TAREAS, FUENTE_TIPOS, fuenteTipo, slugify } from '../../data/facets.mjs';
+const total = casos.length;
+const cuenta = (f) => { const m = {}; for (const c of casos) { const k = f(c); m[k] = (m[k] || 0) + 1; } return Object.entries(m).sort((a, b) => b[1] - a[1]); };
+const porSector = cuenta(c => SECTORES[c.sector] ?? c.sector);
+const porTarea = cuenta(c => TAREAS[c.tarea] ?? c.tarea);
+const porFuente = cuenta(c => FUENTE_TIPOS[fuenteTipo(c)]);
+const conCifra = casos.filter(c => c.resultado).length;
+const ciudades = new Set(casos.filter(c => c.ciudad).map(c => slugify(c.ciudad))).size;
+const fechaCorte = new Date().toISOString().slice(0, 10);
+const pct = (n) => Math.round((n / total) * 100);
+---
+<Base title="La IA en las pymes españolas 2026: informe con datos del directorio" description={`Informe con los ${total} casos reales de CasosAgentes: qué tareas automatizan las pymes españolas, en qué sectores y qué fuentes respaldan cada cifra.`} crumbs={[{name:'Informe 2026'}]}>
+<h1>La IA en las pymes españolas 2026</h1>
+<p>Este informe resume los {total} casos reales de IA y agentes publicados en CasosAgentes, en {ciudades} localidades y {porSector.length} sectores. Los datos se calculan directamente del directorio (última actualización: {fechaCorte}); no son una encuesta ni una muestra estadística de todas las pymes.</p>
+
+<h2>Qué tareas se automatizan primero</h2>
+<p>La atención al cliente y la administración concentran casi siete de cada diez casos.</p>
+<ul>{porTarea.map(([k, n]) => <li>{k}: {n} {n === 1 ? 'caso' : 'casos'} ({pct(n)} %)</li>)}</ul>
+
+<h2>En qué sectores</h2>
+<ul>{porSector.map(([k, n]) => <li>{k}: {n} {n === 1 ? 'caso' : 'casos'}</li>)}</ul>
+
+<h2>Qué fuentes respaldan los casos</h2>
+<p>No todas las cifras tienen el mismo peso. Por eso indicamos el tipo de fuente en cada caso. Las cifras que publica un proveedor son autodeclaradas y no están verificadas de forma independiente.</p>
+<ul>{porFuente.map(([k, n]) => <li>{k}: {n} {n === 1 ? 'caso' : 'casos'} ({pct(n)} %)</li>)}</ul>
+<p>Solo {conCifra} de los {total} casos tienen una cifra de resultado en la fuente. Nunca estimamos cifras que la fuente no da.</p>
+
+<h2>Lo que sí podemos concluir</h2>
+<ul>
+<li>La IA llega antes a la pyme como asistente de atención (WhatsApp, teléfono y reservas) que como sistema de gestión completo.</li>
+<li>Muchos casos usan herramientas generalistas (ChatGPT, Claude) con instrucciones propias, sin desarrollo a medida.</li>
+<li>Las cifras de ahorro de tiempo son sobre todo de proveedores y de los propios negocios: conviene pedir la metodología antes de tomarlas como referencia.</li>
+</ul>
+
+<h2>Lo que no podemos concluir</h2>
+<p>El directorio recoge casos que alguien ha publicado, no todas las pymes. No mide la tasa de éxito ni el coste medio de implantación. Tampoco permite comparar sectores con el mismo peso, porque cada uno tiene un número distinto de casos.</p>
+
+<h2>Cómo citar este informe</h2>
+<p>Puedes citarlo como «CasosAgentes, La IA en las pymes españolas 2026 (datos a {fechaCorte})» y enlazar a esta página. Para la metodología completa, consulta <a href="/metodologia/">cómo elegimos y verificamos los casos</a>.</p>
+</Base>
