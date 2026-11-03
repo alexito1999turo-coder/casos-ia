@@ -1402,5 +1402,32 @@
     "primerPaso": "Con ChatGPT o Claude gratuitos, pega los resultados de un simulacro de un alumno (con su permiso, sin datos personales) y pide un plan de dos semanas; el preparador lo corrige antes de entregarlo.",
     "publicado": "2026-10-30",
     "revisado": "2026-10-30"
+  },
+  {
+    "slug": "neopostural-malaga-informes-clinicos-dictado-ia-awakate",
+    "titulo": "NeoPostural (Málaga) convierte el dictado tras cada sesión en un informe clínico con IA",
+    "resumen": "NeoPostural, clínica de fisioterapia y pilates en Málaga, usa una app propia desarrollada por Awakate. Según la página del proveedor, el fisioterapeuta dicta tras cada sesión, la IA transcribe el audio y ordena el informe (caso, tratamiento, recomendaciones), el profesional lo revisa y valida, y el informe sale en PDF por correo.",
+    "resultado": null,
+    "resultadoNota": "Sin cifras: la propia página de Awakate indica que no incluye métricas y que las añadirá cuando estén verificadas. Caso publicado por el proveedor; no hay fecha de publicación en la página.",
+    "sector": "salud",
+    "tarea": "admin",
+    "herramienta": "App propia de dictado con IA de Awakate (transcripción en servidor de la UE y modelo de Google Cloud para ordenar el texto)",
+    "herramientas": [
+      "agente-ia-a-medida"
+    ],
+    "prompt": "Prompt sugerido: «Te paso la transcripción del dictado de una sesión de fisioterapia: [pegar texto sin datos identificativos]. Ordénala en un informe con tres apartados: caso, tratamiento realizado y recomendaciones. No añadas nada que no esté en el dictado y marca lo que falte para que lo revise el fisioterapeuta.»",
+    "adaptacion": "RGPD: son datos de salud (categoría especial); según la página, los datos se tratan en la UE, no se usan para entrenar y el audio se borra al terminar, pero conviene un contrato de encargado del tratamiento. El informe lo revisa y valida siempre el profesional.",
+    "fuente": "Awakate (página «IA para clínicas», caso real)",
+    "fuenteUrl": "https://awakate.com/ia-para-clinicas",
+    "fuenteTipo": "proveedor",
+    "fecha": "no indicado",
+    "ciudad": "Málaga",
+    "tituloSeo": "NeoPostural (Málaga): informes clínicos por dictado con IA",
+    "descripcionSeo": "La clínica de fisioterapia NeoPostural, en Málaga, dicta tras cada sesión y una IA ordena el informe clínico, que el fisio revisa; así lo cuenta Awakate.",
+    "esParaTi": "Para clínicas de fisioterapia, pilates o salud con pocos profesionales que pierden tiempo redactando informes tras cada sesión.",
+    "costeOrientativo": "Estimación editorial para un piloto con herramientas genéricas, no coste publicado por Awakate: 0 € de puesta en marcha y 0–25 €/mes con la transcripción del móvil y un asistente de IA, sin valorar el tiempo propio. Una app a medida como la del caso exigiría presupuesto aparte.",
+    "primerPaso": "Dicta una sesión ficticia o anonimizada con la transcripción del móvil, pega el texto en un asistente de IA con el prompt y compara el informe con el que redactarías tú; no uses datos de pacientes reales hasta tener contrato de tratamiento de datos.",
+    "publicado": "2026-11-02",
+    "revisado": "2026-11-02"
   }
 ]
