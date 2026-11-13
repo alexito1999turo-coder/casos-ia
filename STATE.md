@@ -169,3 +169,5 @@ Actualizado: 2026-11-01 (Claude)
 - **Guías de sector**: sin cambios — salud y comercio siguen publicadas, hostelería en borrador de ejemplo. Nada nuevo que incorporar (redactar contenido es tarea del bot de Grok).
 - **Outreach de backlinks y outreach semanal a gremios**: **Gmail sigue sin reconectarse** (`needs_reconnect` en el listado de conectores, confirmado de nuevo hoy mediante `ListConnectors`) — no se ha podido revisar respuestas de proveedores. Hoy es miércoles, no toca la tanda semanal a gremios (es los lunes). Sigue pendiente de que Alex reconecte Gmail en los ajustes de conectores.
 - **SEO/Search Console**: no es lunes, se omite.
+
+- 2026-11-11 (Claude, rutina diaria): 0 casos nuevos, sin slugs. 10 búsquedas (talleres, asesorías/gestorías, inmobiliarias, construcción/reformas, abogados, oficios, Cámaras/Kit Digital) sin ningún negocio español con nombre, fuente pública verificable y herramienta identificable; solo blogs de proveedores, casos anónimos o notas promocionales (p. ej. Confortauto 2023, sin ciudad ni herramienta, descartado). `casos.json` sin cambios; validador 57 casos, 0 errores; build 184 páginas OK.
