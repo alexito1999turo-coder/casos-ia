@@ -1429,5 +1429,98 @@
     "primerPaso": "Dicta una sesión ficticia o anonimizada con la transcripción del móvil, pega el texto en un asistente de IA con el prompt y compara el informe con el que redactarías tú; no uses datos de pacientes reales hasta tener contrato de tratamiento de datos.",
     "publicado": "2026-11-02",
     "revisado": "2026-11-02"
+  },
+  {
+    "slug": "livit-alcobendas-chatgpt-gemini-conceptos-hospitality",
+    "titulo": "Livit (Alcobendas) usa modelos de lenguaje, tipo ChatGPT o Gemini, para investigar tendencias y crear conceptos de hospitality",
+    "resumen": "NAN Arquitectura entrevista a Miguel Chillerón Filoso, director de diseño e inteligencia artificial en Livit, en el sector del hospitality. A la pregunta de qué herramientas de IA usa con regularidad, responde que en su trabajo emplea sobre todo modelos de lenguaje (LLM) y herramientas de creación de imágenes con IA, y que «los LLM, tipo Chat GPT o Gemini, son esenciales» para analizar y generar información (mapeo de tendencias, soluciones y storytelling). Las de imagen, que no nombra, le sirven para visualizar conceptos y probar estilos, desde la ideación hasta la presentación al cliente. En Livit aplican la IA en la investigación previa (tendencias de consumo, preferencias y mercado) y para generar ideas y conceptos de F&B; la describen como una herramienta que potencia, pero no reemplaza, la visión del diseñador.",
+    "resultado": null,
+    "resultadoNota": "Sin cifras en la entrevista. Tamaño, solo para confirmar que es pyme: Livit tiene sede en Coral Gables (EE. UU.) y oficina en Abu Dabi (Emiratos Árabes Unidos), además de la de Alcobendas. Los 44 empleados de eInforma («Número de Empleados 44 (año 2026)») son solo de la SL española, GLOBAL EXPERIENCE DESIGN SL (CIF B83114322, web www.livit.design); la ficha de eInforma conserva en la URL un slug antiguo de la sociedad («abc-consultoria-tecnica-europea»). Para el grupo, la página de empresa de Livit en LinkedIn declara «Tamaño de la empresa: De 51 a 200 empleados», por debajo del límite de 250 de la UE.",
+    "sector": "servicios",
+    "tarea": "admin",
+    "herramienta": "Modelos de lenguaje, «tipo Chat GPT o Gemini», y herramientas de creación de imágenes con IA que la entrevista no nombra",
+    "herramientas": [
+      "chatgpt"
+    ],
+    "prompt": "Prompt sugerido: «Somos un estudio de diseño de experiencias de hospitality. A partir de estas notas de tendencias y del briefing del cliente [pegar notas, sin datos confidenciales], propón un concepto de F&B: nombre de trabajo, storytelling de una página, tres ejes de experiencia y cinco ideas de ambiente. Distingue lo que sale de las notas y lo que es una hipótesis, y no presentes ninguna cifra que yo no te haya dado.»",
+    "adaptacion": "La entrevista no dice la ciudad; Alcobendas sale de la web oficial de Livit (livit.design/contact: «EMEA Headquarters C/ Anabel Segura, 10 28108 Alcobendas Madrid Spain»). La pieza es del 30 de septiembre de 2024 (la página indica una actualización el 5 de enero de 2026). Chillerón afirma que la IA «potencia, pero no reemplaza, la visión creativa del diseñador». Consejo editorial, no está en la entrevista: revisar lo que se presente al cliente y no subir material confidencial.",
+    "fuente": "NAN Arquitectura",
+    "fuenteUrl": "https://nanarquitectura.com/2024/09/30/miguel-chilleron-livit-ia-diseno-arquitectura/43353",
+    "fuenteTipo": "prensa",
+    "fecha": "2024-09-30",
+    "ciudad": "Alcobendas",
+    "tituloSeo": "Livit (Alcobendas): LLM tipo ChatGPT o Gemini para conceptos de hospitality",
+    "descripcionSeo": "En Livit, en Alcobendas, usan modelos de lenguaje, tipo ChatGPT o Gemini, para investigar tendencias y crear conceptos de F&B; así lo cuenta su director de diseño e IA en NAN.",
+    "esParaTi": "Para equipos de diseño de hospitality o de experiencias de F&B que quieren apoyo en la investigación previa y en visualizar alternativas antes de presentárselas al cliente.",
+    "costeOrientativo": "Estimación editorial, no hay precio en la entrevista: 0 € de puesta en marcha y 20–25 €/mes con ChatGPT Plus o un plan equivalente de Gemini, sin valorar el tiempo propio. Las herramientas de imagen de pago irían aparte.",
+    "primerPaso": "Coge el briefing de un concepto ya cerrado (o uno ficticio), pégalo en ChatGPT con el prompt y compara el storytelling y las ideas de ambiente con los que habrías escrito tú; no subas material confidencial del cliente.",
+    "revisado": "2026-11-16",
+    "publicado": "2026-11-16",
+    "fuentesExtra": [
+      {
+        "nombre": "LinkedIn de Livit («Tamaño de la empresa: De 51 a 200 empleados»)",
+        "url": "https://es.linkedin.com/company/livit-design"
+      }
+    ]
+  },
+  {
+    "slug": "dms-legal-palma-chatgpt-ialaboral-asesoramiento-laboral",
+    "titulo": "DMS Legal Intelligence (Palma) usa IAlaboral, un ChatGPT-4o de laboral, y ChatGPT para redactar y resumir",
+    "resumen": "Economist & Jurist cuenta que el despacho balear DMS Legal Intelligence, creado en Palma de Mallorca, ha puesto en marcha IAlaboral, un ChatGPT-4o especializado en asesoramiento laboral, con la multinacional Nagarro como partner tecnológico y el socio laboral José Manuel Raya al frente. Según la pieza, el despacho lo utiliza en su operativa «desde finales del año pasado» (respecto a mayo de 2024). Raya explica que, junto con «la parte general de ChatGPT para redactar y hacer resúmenes», IAlaboral «mejora nuestro asesoramiento laboral a los clientes». También la ha empleado en juicios recientes como herramienta de consulta y de apoyo, y la considera «un elemento bastante útil para la preparación de interrogatorios, preguntas a peritos y otras cuestiones». El mismo Raya admite que ChatGPT «genera muchos [errores] a nivel jurídico» y que dedicaron seis meses a corregirlos. El propio despacho comercializa IAlaboral, así que las valoraciones son suyas.",
+    "resultado": null,
+    "resultadoNota": "Sin cifras del uso en el despacho. La pieza dice que, tras un periodo de prueba, IAlaboral «ya se está comercializando para profesionales y hay medio centenar de expertos que han adquirido una licencia de uso mensual»; eso son licencias vendidas a terceros, no un resultado de la práctica del bufete. La pieza es una entrevista a quien lidera y comercializa la herramienta; las valoraciones de calidad son autodeclaradas.",
+    "sector": "abogados",
+    "tarea": "admin",
+    "herramienta": "IAlaboral (ChatGPT-4o especializado en laboral, con Nagarro) y ChatGPT para redactar y resumir",
+    "herramientas": [
+      "chatgpt"
+    ],
+    "prompt": "Prompt sugerido: «Con estos hechos públicos y esta norma [pegar solo información no confidencial], prepárame un guion de preguntas para un interrogatorio o para un perito en un asunto laboral: objetivo de cada pregunta, riesgo si se formula mal y qué debo comprobar yo. No inventes jurisprudencia ni artículos; si te hace falta una cita, márcala como pendiente de verificar.»",
+    "adaptacion": "La ciudad sale de la pieza («este despacho creado en Palma de Mallorca»). La pieza es del 29 de mayo de 2024. Raya insiste en que las preguntas a IAlaboral sean lo más concretas posible y cuenta que ChatGPT genera muchos errores jurídicos. Consejo editorial, no es cita de Raya: no pegar datos de clientes ni del expediente en una cuenta de consumo, y revisar cualquier cita o borrador antes de usarlo.",
+    "fuente": "Economist & Jurist",
+    "fuenteUrl": "https://www.economistjurist.es/actualidad-juridica/el-despacho-balear-dms-legal-intelligence-crea-ialaboral-el-primer-chatgpt-especializado-en-el-asesoramiento-laboral/",
+    "fuenteTipo": "prensa",
+    "fecha": "2024-05-29",
+    "ciudad": "Palma de Mallorca",
+    "tituloSeo": "DMS Legal Intelligence (Palma): IAlaboral (ChatGPT-4o) y ChatGPT",
+    "descripcionSeo": "El despacho DMS Legal Intelligence, en Palma, usa IAlaboral, un ChatGPT-4o de laboral, en su asesoramiento, y ChatGPT para redactar y resumir; así lo cuenta E&J.",
+    "esParaTi": "Para despachos, abogados de empresa u otros operadores jurídicos que quieran un primer apoyo para redactar, resumir o preparar vistas laborales, siempre con revisión de quien firma.",
+    "costeOrientativo": "Estimación editorial, no hay precio en la pieza: 0 € de puesta en marcha y 20–25 €/mes con ChatGPT de pago para redactar y resumir, sin valorar el tiempo propio. IAlaboral está desarrollada con Nagarro sobre ChatGPT-4o y el bufete también la comercializa; la pieza no publica su tarifa, solo que la licencia es mensual y «similar a las existentes en ChatGPT».",
+    "primerPaso": "Con un supuesto laboral inventado o con hechos ya públicos, pide a ChatGPT un guion de preguntas para un interrogatorio y comprueba una a una las normas o sentencias que cite antes de usarlas.",
+    "revisado": "2026-11-16",
+    "publicado": "2026-11-16"
+  },
+  {
+    "slug": "alierta-zaragoza-chatgpt-asesor-vivienda",
+    "titulo": "Alierta Servicios Inmobiliarios (Zaragoza) lanza un ChatGPT especializado en vivienda, alimentado con fuentes oficiales",
+    "resumen": "Heraldo de Aragón cuenta que la empresa zaragozana Alierta Servicios Inmobiliarios ha lanzado un chat de IA especializado en vivienda que se nutre de fuentes oficiales. La pieza, que anuncia ese lanzamiento, muestra cómo ese «ChatGPT especializado en este sector» pregunta al usuario el objetivo de la compra (primera vivienda, inversión para alquilar o segunda residencia) y, a continuación, ofrece recomendaciones de barrios de Zaragoza, por ejemplo Valdespartera para familias jóvenes. La fuente de prensa cuenta el lanzamiento: no describe el uso cotidiano en la agencia ni da datos de uso ni resultados. La propia empresa dice en su web que GPT Alierta sigue integrado (comprobado el 16-11-2026).",
+    "resultado": null,
+    "resultadoNota": "Sin cifras de resultado en la parte visible de la pieza (el resto está detrás de pago). Tamaño, solo para confirmar que es pyme: el aviso legal de aliertainmuebles.com identifica al titular de la web como «ALIERTA INMUEBLES Y GESTIÓN S.L.», CIF B-99536351, con domicilio en Calle Almagro nº 4, 1º, Zaragoza; el directorio de Informa D&B, con esa misma web y domicilio, da «Número de Empleados 5 (año 2025)» y «un número de empleados de Entre 5 y 25». Heraldo nombra a la empresa «Alierta Servicios Inmobiliarios»; la razón social sale del aviso legal, no de la pieza.",
+    "sector": "inmobiliaria",
+    "tarea": "atencion-cliente",
+    "herramienta": "Un chat de IA especializado en vivienda, que Heraldo identifica como un «ChatGPT especializado en este sector» y que se nutre de fuentes oficiales",
+    "herramientas": [
+      "chatgpt"
+    ],
+    "prompt": "Prompt sugerido: «Soy un comprador que busca [primera vivienda / inversión / segunda residencia] en Zaragoza, con este presupuesto y estas necesidades [pegar datos, sin datos personales]. Recomiéndame barrios y explica por qué encajan. Basa la respuesta en fuentes oficiales o en datos que puedas citar y, si das precios por m², indica la fuente y la fecha. Si no las tienes, no inventes la cifra y márcalo como pendiente de comprobar.»",
+    "adaptacion": "La ciudad sale de la propia pieza («la empresa zaragozana Alierta Servicios Inmobiliarios»). Heraldo lo titula como «el primer ChatGPT inmobiliario de España»; es formulación del medio, no algo que esta ficha dé por verificado. De la pieza solo se ha usado el texto visible (entradilla, descripción y el cuerpo que el propio Heraldo publica en sus metadatos); el resto está detrás de pago. Heraldo llama al chat un «ChatGPT especializado en este sector»; la ficha sigue esa denominación, sin haber comprobado por su cuenta el producto subyacente. «atencion-cliente» es una clasificación editorial: la pieza muestra al chat respondiendo a un comprador, pero no dice en qué área lo usa la agencia. La pieza es del 19 de junio de 2025.",
+    "fuente": "Heraldo de Aragón",
+    "fuenteUrl": "https://www.heraldo.es/noticias/economia/2025/06/19/cual-es-mejor-barrio-vivir-zaragoza-primer-chatgpt-inmobiliario-espana-responde-1831220.html",
+    "fuenteTipo": "prensa",
+    "fecha": "2025-06-19",
+    "ciudad": "Zaragoza",
+    "tituloSeo": "Alierta (Zaragoza): ChatGPT especializado en vivienda",
+    "descripcionSeo": "Alierta Servicios Inmobiliarios, en Zaragoza, ha lanzado un ChatGPT especializado en vivienda alimentado con fuentes oficiales; así lo cuenta Heraldo de Aragón.",
+    "esParaTi": "Para inmobiliarias pequeñas que quieren un chat que resuelva dudas habituales de compradores sobre barrios y precios, siempre con revisión de las cifras.",
+    "costeOrientativo": "Estimación editorial, no hay precio en la pieza: 0 € de puesta en marcha y 20–25 €/mes con un plan de pago de un asistente de IA, sin valorar el tiempo propio de preparar las fuentes y revisar las respuestas.",
+    "primerPaso": "Crea un chat o un GPT con el prompt, pásale solo información de fuentes oficiales o de tu web y pruébalo con una consulta ficticia de un comprador; comprueba a mano cualquier precio o dato que te devuelva antes de enseñárselo a un cliente.",
+    "revisado": "2026-11-16",
+    "publicado": "2026-11-16",
+    "fuentesExtra": [
+      {
+        "nombre": "La propia empresa dice que GPT Alierta sigue integrado en su web (comprobado el 16-11-2026)",
+        "url": "https://aliertainmuebles.com/inteligencia-artificial-inmobiliaria/"
+      }
+    ]
   }
 ]
