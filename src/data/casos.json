@@ -1435,7 +1435,7 @@
     "titulo": "Livit (Alcobendas) usa modelos de lenguaje, tipo ChatGPT o Gemini, para investigar tendencias y crear conceptos de hospitality",
     "resumen": "NAN Arquitectura entrevista a Miguel Chillerón Filoso, director de diseño e inteligencia artificial en Livit, en el sector del hospitality. A la pregunta de qué herramientas de IA usa con regularidad, responde que en su trabajo emplea sobre todo modelos de lenguaje (LLM) y herramientas de creación de imágenes con IA, y que «los LLM, tipo Chat GPT o Gemini, son esenciales» para analizar y generar información (mapeo de tendencias, soluciones y storytelling). Las de imagen, que no nombra, le sirven para visualizar conceptos y probar estilos, desde la ideación hasta la presentación al cliente. En Livit aplican la IA en la investigación previa (tendencias de consumo, preferencias y mercado) y para generar ideas y conceptos de F&B; la describen como una herramienta que potencia, pero no reemplaza, la visión del diseñador.",
     "resultado": null,
-    "resultadoNota": "Sin cifras en la entrevista. Tamaño, solo para confirmar que es pyme: eInforma da a GLOBAL EXPERIENCE DESIGN SL (web www.livit.design, CIF B83114322, Alcobendas) «Número de Empleados 44 (año 2026)».",
+    "resultadoNota": "Sin cifras en la entrevista. Tamaño, solo para confirmar que es pyme: Livit tiene sede en Coral Gables (EE. UU.) y oficina en Abu Dabi (Emiratos Árabes Unidos), además de la de Alcobendas. Los 44 empleados de eInforma («Número de Empleados 44 (año 2026)») son solo de la SL española, GLOBAL EXPERIENCE DESIGN SL (CIF B83114322, web www.livit.design); la ficha de eInforma conserva en la URL un slug antiguo de la sociedad («abc-consultoria-tecnica-europea»). Para el grupo, la página de empresa de Livit en LinkedIn declara «Tamaño de la empresa: De 51 a 200 empleados», por debajo del límite de 250 de la UE.",
     "sector": "servicios",
     "tarea": "admin",
     "herramienta": "Modelos de lenguaje, «tipo Chat GPT o Gemini», y herramientas de creación de imágenes con IA que la entrevista no nombra",
@@ -1455,12 +1455,18 @@
     "costeOrientativo": "Estimación editorial, no hay precio en la entrevista: 0 € de puesta en marcha y 20–25 €/mes con ChatGPT Plus o un plan equivalente de Gemini, sin valorar el tiempo propio. Las herramientas de imagen de pago irían aparte.",
     "primerPaso": "Coge el briefing de un concepto ya cerrado (o uno ficticio), pégalo en ChatGPT con el prompt y compara el storytelling y las ideas de ambiente con los que habrías escrito tú; no subas material confidencial del cliente.",
     "revisado": "2026-11-16",
-    "publicado": "2026-11-16"
+    "publicado": "2026-11-16",
+    "fuentesExtra": [
+      {
+        "nombre": "LinkedIn de Livit («Tamaño de la empresa: De 51 a 200 empleados»)",
+        "url": "https://es.linkedin.com/company/livit-design"
+      }
+    ]
   },
   {
     "slug": "dms-legal-palma-chatgpt-ialaboral-asesoramiento-laboral",
     "titulo": "DMS Legal Intelligence (Palma) usa IAlaboral, un ChatGPT-4o de laboral, y ChatGPT para redactar y resumir",
-    "resumen": "Economist & Jurist cuenta que el despacho balear DMS Legal Intelligence, creado en Palma de Mallorca, ha puesto en marcha IAlaboral, un ChatGPT-4o especializado en asesoramiento laboral, con la multinacional Nagarro como partner tecnológico y el socio laboral José Manuel Raya al frente. Según la pieza, el despacho lo utiliza en su operativa «desde finales del año pasado» (respecto a mayo de 2024). Raya explica que, junto con «la parte general de ChatGPT para redactar y hacer resúmenes», IAlaboral «mejora nuestro asesoramiento laboral a los clientes». También la ha empleado en juicios recientes como herramienta de consulta y de apoyo, y la considera «un elemento bastante útil para la preparación de interrogatorios, preguntas a peritos y otras cuestiones». El mismo Raya admite que ChatGPT «genera muchos [errores] a nivel jurídico» y que dedicaron seis meses a corregirlos.",
+    "resumen": "Economist & Jurist cuenta que el despacho balear DMS Legal Intelligence, creado en Palma de Mallorca, ha puesto en marcha IAlaboral, un ChatGPT-4o especializado en asesoramiento laboral, con la multinacional Nagarro como partner tecnológico y el socio laboral José Manuel Raya al frente. Según la pieza, el despacho lo utiliza en su operativa «desde finales del año pasado» (respecto a mayo de 2024). Raya explica que, junto con «la parte general de ChatGPT para redactar y hacer resúmenes», IAlaboral «mejora nuestro asesoramiento laboral a los clientes». También la ha empleado en juicios recientes como herramienta de consulta y de apoyo, y la considera «un elemento bastante útil para la preparación de interrogatorios, preguntas a peritos y otras cuestiones». El mismo Raya admite que ChatGPT «genera muchos [errores] a nivel jurídico» y que dedicaron seis meses a corregirlos. El propio despacho comercializa IAlaboral, así que las valoraciones son suyas.",
     "resultado": null,
     "resultadoNota": "Sin cifras del uso en el despacho. La pieza dice que, tras un periodo de prueba, IAlaboral «ya se está comercializando para profesionales y hay medio centenar de expertos que han adquirido una licencia de uso mensual»; eso son licencias vendidas a terceros, no un resultado de la práctica del bufete. La pieza es una entrevista a quien lidera y comercializa la herramienta; las valoraciones de calidad son autodeclaradas.",
     "sector": "abogados",
