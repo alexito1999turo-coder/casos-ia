@@ -1489,5 +1489,32 @@
     "primerPaso": "Con un supuesto laboral inventado o con hechos ya públicos, pide a ChatGPT un guion de preguntas para un interrogatorio y comprueba una a una las normas o sentencias que cite antes de usarlas.",
     "revisado": "2026-11-16",
     "publicado": "2026-11-16"
+  },
+  {
+    "slug": "alierta-zaragoza-chatgpt-asesor-vivienda",
+    "titulo": "Alierta Servicios Inmobiliarios (Zaragoza) lanza un ChatGPT especializado en vivienda, alimentado con fuentes oficiales",
+    "resumen": "Heraldo de Aragón cuenta que la empresa zaragozana Alierta Servicios Inmobiliarios ha lanzado un chat de IA especializado en vivienda que se nutre de fuentes oficiales. La pieza, que anuncia ese lanzamiento, muestra cómo ese «ChatGPT especializado en este sector» pregunta al usuario el objetivo de la compra (primera vivienda, inversión para alquilar o segunda residencia) y, a continuación, ofrece recomendaciones de barrios de Zaragoza, por ejemplo Valdespartera «para familias jóvenes, con zonas verdes y tranvía cerca, por un precio de entre 1.600 y 1.800 € el m2». No describe el uso cotidiano en la agencia ni da resultados.",
+    "resultado": null,
+    "resultadoNota": "Sin cifras de resultado en la parte visible de la pieza (el resto está detrás de pago). Tamaño, solo para confirmar que es pyme: el aviso legal de aliertainmuebles.com identifica al titular de la web como «ALIERTA INMUEBLES Y GESTIÓN S.L.», CIF B-99536351, con domicilio en Calle Almagro nº 4, 1º, Zaragoza; el directorio de Informa D&B, con esa misma web y domicilio, da «Número de Empleados 5 (año 2025)» y «un número de empleados de Entre 5 y 25». Heraldo nombra a la empresa «Alierta Servicios Inmobiliarios»; la razón social sale del aviso legal, no de la pieza.",
+    "sector": "inmobiliaria",
+    "tarea": "atencion-cliente",
+    "herramienta": "Un chat de IA especializado en vivienda, que Heraldo identifica como un «ChatGPT especializado en este sector» y que se nutre de fuentes oficiales",
+    "herramientas": [
+      "chatgpt"
+    ],
+    "prompt": "Prompt sugerido: «Soy un comprador que busca [primera vivienda / inversión / segunda residencia] en Zaragoza, con este presupuesto y estas necesidades [pegar datos, sin datos personales]. Recomiéndame barrios y explica por qué encajan. Basa la respuesta en fuentes oficiales o en datos que puedas citar y, si das precios por m², indica la fuente y la fecha. Si no las tienes, no inventes la cifra y márcalo como pendiente de comprobar.»",
+    "adaptacion": "La ciudad sale de la propia pieza («la empresa zaragozana Alierta Servicios Inmobiliarios»). El titular del periódico habla del «primer ChatGPT inmobiliario de España»; eso es formulación del medio, no una afirmación que esta ficha dé por verificada. De la pieza solo se ha usado el texto visible (entradilla, descripción y el cuerpo que el propio Heraldo publica en sus metadatos); el resto está detrás de pago. Heraldo llama al chat un «ChatGPT especializado en este sector»; la ficha sigue esa denominación, sin haber comprobado por su cuenta el producto subyacente. Los precios por m² del ejemplo los da el chat, no el periódico como dato propio, y hay que comprobarlos. «atencion-cliente» es una clasificación editorial: la pieza muestra al chat respondiendo a un comprador, pero no dice en qué área lo usa la agencia. La pieza es del 19 de junio de 2025.",
+    "fuente": "Heraldo de Aragón",
+    "fuenteUrl": "https://www.heraldo.es/noticias/economia/2025/06/19/cual-es-mejor-barrio-vivir-zaragoza-primer-chatgpt-inmobiliario-espana-responde-1831220.html",
+    "fuenteTipo": "prensa",
+    "fecha": "2025-06-19",
+    "ciudad": "Zaragoza",
+    "tituloSeo": "Alierta (Zaragoza): ChatGPT especializado en vivienda",
+    "descripcionSeo": "Alierta Servicios Inmobiliarios, en Zaragoza, ha lanzado un ChatGPT especializado en vivienda alimentado con fuentes oficiales; así lo cuenta Heraldo de Aragón.",
+    "esParaTi": "Para inmobiliarias pequeñas que quieren un chat que resuelva dudas habituales de compradores sobre barrios y precios, siempre con revisión de las cifras.",
+    "costeOrientativo": "Estimación editorial, no hay precio en la pieza: 0 € de puesta en marcha y 20–25 €/mes con un plan de pago de un asistente de IA, sin valorar el tiempo propio de preparar las fuentes y revisar las respuestas.",
+    "primerPaso": "Crea un chat o un GPT con el prompt, pásale solo información de fuentes oficiales o de tu web y pruébalo con una consulta ficticia de un comprador; comprueba a mano cualquier precio o dato que te devuelva antes de enseñárselo a un cliente.",
+    "revisado": "2026-11-16",
+    "publicado": "2026-11-16"
   }
 ]
