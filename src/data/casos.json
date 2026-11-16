@@ -1429,5 +1429,33 @@
     "primerPaso": "Dicta una sesión ficticia o anonimizada con la transcripción del móvil, pega el texto en un asistente de IA con el prompt y compara el informe con el que redactarías tú; no uses datos de pacientes reales hasta tener contrato de tratamiento de datos.",
     "publicado": "2026-11-02",
     "revisado": "2026-11-02"
+  },
+  {
+    "slug": "talleres-piba-daimiel-ia-presupuesto-whatsapp-aprobacion",
+    "titulo": "Talleres Piba (Daimiel) envía por WhatsApp un presupuesto desglosado y el cliente aprueba cada arreglo antes de empezar",
+    "resumen": "Talleres Piba, taller de Daimiel (Ciudad Real) que lleva Kike, usa según El Español «un software basado en inteligencia artificial» que, mediante WhatsApp, envía un presupuesto detallado y desglosado con la prioridad de cada arreglo. El cliente acepta los puntos que quiere antes de que el mecánico se ponga con el coche.",
+    "resultado": null,
+    "resultadoNota": "Sin métricas de ahorro o ventas: el artículo solo da precios de ejemplo (p. ej. filtro del habitáculo, 30 euros) y no nombra el software.",
+    "sector": "taller",
+    "tarea": "atencion-cliente",
+    "herramienta": "Software con IA para presupuestos por WhatsApp (la prensa no cita el nombre)",
+    "herramientas": [
+      "ia-generica",
+      "whatsapp-business"
+    ],
+    "prompt": "Prompt sugerido: «Soy un taller mecánico. Te paso las averías y revisiones detectadas en un coche: [lista sin matrícula ni datos del cliente]. Prepara un mensaje de WhatsApp con un presupuesto desglosado por arreglo, con el precio que te indico yo, prioridad (urgente / recomendable / puede esperar) y una línea clara por punto para que el cliente conteste qué acepta. No añadas arreglos que no estén en la lista.»",
+    "adaptacion": "El precio, el diagnóstico y la garantía los fija el taller; la IA solo ordena y redacta. Guarda la aceptación del cliente por escrito (el propio WhatsApp sirve) y evita enviar matrícula u otros datos personales a herramientas sin contrato de tratamiento de datos.",
+    "fuente": "El Español – El Digital Castilla-La Mancha (14-06-2026)",
+    "fuenteUrl": "https://www.elespanol.com/eldigitalcastillalamancha/vivir/20260614/kike-mecanico-desconfianza-no-podemos-poner-bombilla-euros-sin-consultar-cliente/1003744285462_0.amp.html",
+    "fuenteTipo": "prensa",
+    "fecha": "2026-06-14",
+    "ciudad": "Daimiel",
+    "tituloSeo": "Talleres Piba (Daimiel): presupuesto por WhatsApp con IA",
+    "descripcionSeo": "Un taller de Daimiel envía por WhatsApp un presupuesto desglosado por prioridad con un software de IA y el cliente aprueba cada arreglo, según El Español.",
+    "esParaTi": "Para talleres mecánicos pequeños que quieren evitar discusiones por el precio final y que el cliente apruebe cada arreglo antes de empezar.",
+    "costeOrientativo": "Estimación editorial para un piloto con herramientas genéricas, no coste publicado por la fuente: 0 € de puesta en marcha y 0–25 €/mes con WhatsApp Business y un asistente de IA, sin valorar el tiempo propio. Un software específico para talleres exigiría presupuesto aparte.",
+    "primerPaso": "Coge un presupuesto real ya cerrado, quita matrícula y datos del cliente, pásalo a un asistente de IA con el prompt y compara el mensaje con el que enviarías; prueba después con un cliente que ya conozcas.",
+    "publicado": "2026-11-16",
+    "revisado": "2026-11-16"
   }
 ]
