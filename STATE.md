@@ -206,3 +206,5 @@ Actualizado: 2026-11-01 (Claude)
 - **Guías de sector**: sin cambios — salud y comercio siguen publicadas (`borrador: false`), hostelería en borrador de ejemplo. Redactar/ampliar contenido (incluyendo los casos nuevos del Lote 11 y Talleres Piba) sigue siendo tarea del bot de Grok (AGENTS.md/EDITORIAL.md), no de esta rutina.
 - **Outreach de backlinks y outreach semanal a gremios**: **Gmail sigue sin reconectarse** (`needs_reconnect` en `ListConnectors`, confirmado de nuevo hoy; conector sugerido a Alex vía `SuggestConnectors`) — no se ha podido revisar respuestas de proveedores contactados. Hoy es martes, no toca la tanda semanal a gremios (es los lunes).
 - **SEO/Search Console**: no es lunes, se omite.
+
+- 2026-11-18 (Claude, rutina diaria): 1 caso nuevo: `proyecto-idiomas-alicante-ia-personalizar-corregir-examenes` (Proyecto Idiomas, Alicante; prensa, El Español). 10 búsquedas; resto de candidatos descartados (Technify/MK20 y Lexy son proveedores sin ningún cliente con nombre; Kit Digital sin casos concretos). Validador 62 casos, 0 errores; build 192 páginas OK.

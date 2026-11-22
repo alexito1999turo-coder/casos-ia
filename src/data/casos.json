@@ -1550,5 +1550,32 @@
     "primerPaso": "Coge un presupuesto real ya cerrado, quita matrícula y datos del cliente, pásalo a un asistente de IA con el prompt y compara el mensaje con el que enviarías; prueba después con un cliente que ya conozcas.",
     "publicado": "2026-11-16",
     "revisado": "2026-11-16"
+  },
+  {
+    "slug": "proyecto-idiomas-alicante-ia-personalizar-corregir-examenes",
+    "titulo": "Proyecto Idiomas (Alicante) integra la IA para personalizar el aprendizaje y corregir exámenes, sin sustituir al profesor",
+    "resumen": "Proyecto Idiomas, academia de Alicante, explica a El Español que la IA puede ayudar a personalizar el aprendizaje, optimizar el tiempo, mejorar materiales y corregir exámenes, y que forma a sus profesores en las nuevas herramientas, las integra y las observa. Su directora de marketing y operaciones defiende que la IA debe complementar y que «lo humano siempre va por encima».",
+    "resultado": null,
+    "resultadoNota": "Sin cifras: el artículo no da ahorros, precios ni número de alumnos y no nombra ninguna herramienta concreta.",
+    "sector": "academia",
+    "tarea": "admin",
+    "herramienta": "Herramientas de IA generativa (la prensa no cita el nombre)",
+    "herramientas": [
+      "ia-generica"
+    ],
+    "prompt": "Prompt sugerido: «Soy profesor de idiomas. Te paso las respuestas de un examen de nivel [A2/B1/B2] sin nombre del alumno: [texto]. Corrígelo con esta rúbrica: [criterios]. Señala los errores por categoría (gramática, vocabulario, ortografía), propón una nota orientativa y sugiere tres ejercicios de refuerzo personalizados. No inventes errores que no estén en el texto; la nota final la decido yo.»",
+    "adaptacion": "La nota y el criterio pedagógico los pone el profesor; la IA solo propone una primera corrección y ejercicios. Quita nombres y datos personales de los alumnos (sobre todo menores) antes de pegar textos en una herramienta sin contrato de tratamiento de datos.",
+    "fuente": "El Español – Alicante (07-02-2026)",
+    "fuenteUrl": "https://www.elespanol.com/alacant/cultura/educacio/20260207/miedo-academias-inteligencia-artificial-cambios-humano-prevalece/1003744119300_0.html",
+    "fuenteTipo": "prensa",
+    "fecha": "2026-02-07",
+    "ciudad": "Alicante",
+    "tituloSeo": "Proyecto Idiomas (Alicante): IA para corregir exámenes",
+    "descripcionSeo": "Una academia de idiomas de Alicante integra la IA para personalizar el aprendizaje y corregir exámenes, y forma a sus profesores, según El Español.",
+    "esParaTi": "Para academias y profesores particulares de idiomas que dedican muchas horas a corregir y preparar materiales y quieren probar la IA sin perder el criterio docente.",
+    "costeOrientativo": "Estimación editorial para un piloto con herramientas genéricas, no coste publicado por la fuente: 0 € de puesta en marcha y 0–25 €/mes con un asistente de IA, sin valorar el tiempo de formación del profesorado.",
+    "primerPaso": "Coge un examen ya corregido, quita el nombre del alumno, pásalo a un asistente de IA con tu rúbrica y compara su corrección con la tuya antes de usarla con alumnos reales.",
+    "publicado": "2026-11-18",
+    "revisado": "2026-11-18"
   }
 ]
